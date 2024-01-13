@@ -3,6 +3,12 @@ Fabledose project demo page.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+### Node version: 
+`20.11.0`
+Best to use [NVM](https://github.com/nvm-sh/nvm)
+
+run `nvm install` in the root of the project. see the .nvmrc file
+
 ### Requirements:
 ```text
 node: ^18.17.0
