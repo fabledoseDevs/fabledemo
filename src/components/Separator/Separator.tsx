@@ -1,4 +1,5 @@
-import separatorImg from '@/public/separator-line.svg';
+// explicite path for storybook component
+import separatorImg from '../../../public/images/separator-line.svg';
 import { StyledSeparator } from './Separator.styled';
 import type { SeparatorProps } from './Separator.types';
 
