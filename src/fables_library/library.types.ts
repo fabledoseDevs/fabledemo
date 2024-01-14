@@ -2,7 +2,7 @@ export interface Info {
   id: string;
   title: string;
   author: String[];
-  translation: String[];
+  translation?: String[];
   pictures: String[];
   thumb: string;
   cover: string;
@@ -17,7 +17,15 @@ export enum LAYOUT_VARIANTS {
   TWO_COLUMNS_TEXT_LEFT,
   TWO_COLUMNS_TEXT_RIGHT,
   DIAGONAL_TLBR,
-  DIAGONAL_TRBL
+  DIAGONAL_TRBL,
+  WILDCARD,
+}
+
+export interface WildcardData {
+  top: number;
+  left: number;
+  width: number;
+  height?: number;
 }
 
 export interface Picture {
@@ -28,6 +36,7 @@ export interface Picture {
 export interface Slide {
   slideId: number;
   layout: LAYOUT_VARIANTS;
+  widcardsData?: WildcardData[]
   paragraphs: String[];
   picture: Picture;
 }
