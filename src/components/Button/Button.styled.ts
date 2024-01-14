@@ -1,10 +1,6 @@
 import { styled, css } from 'styled-components'
 import { COLOR_VARIANTS, FONT_VARIANTS } from './Button.types';
 
-const fontBasic = css`
-  font-family: Lato, sans-serif;
-  font-size: 18px;
-`
 
 export const ButtonWrapper = styled.div<{
   bgcolorvariant: COLOR_VARIANTS,
@@ -12,21 +8,21 @@ export const ButtonWrapper = styled.div<{
 }>`
   button {
     text-transform: ${({fontcapvariant}) => fontcapvariant === FONT_VARIANTS.STANDARD ? 'none' : 'uppercase'};
-    color: ${({bgcolorvariant}) => bgcolorvariant === COLOR_VARIANTS.GREEN ? '#ffffff' : '#000000'};
-    background: ${({bgcolorvariant}) => bgcolorvariant === COLOR_VARIANTS.GREEN ? '#6C7716' : '#fefefe'};
-  
+    color: ${({bgcolorvariant, theme}) => 
+      bgcolorvariant === COLOR_VARIANTS.GREEN ? theme.palette.secondary : theme.palette.primary
+    };
+    background: ${({bgcolorvariant, theme}) => 
+      bgcolorvariant === COLOR_VARIANTS.GREEN ? theme.palette.green : theme.palette.secondary
+    };
     &:active {
-      background: ${({bgcolorvariant}) => bgcolorvariant === COLOR_VARIANTS.GREEN ? '#7E8B1A' : '#eeeeee'};
+      background: ${({bgcolorvariant, theme}) => 
+        bgcolorvariant === COLOR_VARIANTS.GREEN ? theme.palette.lightergreen : theme.palette.offwhite
+      };
     }
   }
 `;
 
-export const Anchor = styled.a`
-  ${fontBasic};
-`;
-
 export const ButtonBody = styled.button`
-  ${fontBasic};
   border: none;
   width: auto;
   min-width: 200px;

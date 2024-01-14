@@ -1,16 +1,16 @@
 import { PURPOSE } from "./Button.types";
 import { Button as ButtonType, PurposeSelector as PurposeSelectorType } from "./Button.types";
-import { ButtonWrapper, Anchor, ButtonBody} from "./Button.styled";
+import { ButtonWrapper, ButtonBody} from "./Button.styled";
 
 const purposeSelector: PurposeSelectorType = (purpose, label, anchorLink, onclickAction) => {
   switch (purpose) {
     case PURPOSE.ANCHOR:
       return (
-        <Anchor href={anchorLink} aria-label={label}>
+        <a href={anchorLink} aria-label={label}>
           <ButtonBody>
             {label}
           </ButtonBody>
-        </Anchor>
+        </a>
       )
     case PURPOSE.SUBMIT:
       return (
