@@ -1,3 +1,4 @@
+
 import Button from '@/components/Button';
 import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from '@/components/Button/Button.types';
 import type { NextPage } from 'next';
