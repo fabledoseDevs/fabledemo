@@ -14,6 +14,11 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     font-family: ${({ theme }) => theme.fonts.poltawskiNowy};
     font-weight: 500;
   }
+  
+  button {
+    font-family: ${({ theme }) => theme.fonts.lato};
+    font-size: 18px;
+  }
 `;
 
 export default GlobalStyle;
