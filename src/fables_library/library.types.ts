@@ -1,9 +1,9 @@
 export interface Info {
   id: string;
   title: string;
-  author: String[];
-  translation?: String[];
-  pictures: String[];
+  author: string[];
+  translation?: string[];
+  pictures: string[];
   thumb: string;
   cover: string;
   excerpt: string;
@@ -37,7 +37,7 @@ export interface Slide {
   slideId: number;
   layout: LAYOUT_VARIANTS;
   widcardsData?: WildcardData[]
-  paragraphs: String[];
+  paragraphs: string[];
   picture: Picture;
 }
 
