@@ -15,7 +15,8 @@ const theme: Theme = {
     green: '#6C7716',
     lightergreen: '#7E8B1A',
     accent: '#DF4F4A',
-    linearBackground: 'linear-gradient(32deg, #FAF3D3 0%, #FFF 68%)',
+    background: '#FAF3D3FF',
+    linearBackground: 'linear-gradient(55deg, #FAF3D3 0%, #FFF 100%)',
   },
   maxWidth: `${breakpoints.maxWidth}px`,
   media: {
