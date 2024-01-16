@@ -13,6 +13,7 @@ export interface Palette {
   green: string;
   lightergreen: string;
   accent: string;
+  background: string;
   linearBackground: string;
 }
 
