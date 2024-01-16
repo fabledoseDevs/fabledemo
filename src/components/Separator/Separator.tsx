@@ -1,9 +1,11 @@
-// explicite path for storybook component
-import separatorImg from '../../../public/images/separator-line.svg';
-import { StyledSeparator } from './Separator.styled';
-import type { SeparatorProps } from './Separator.types';
+import type { ReactElement } from 'react';
 
-export const Separator = ({ type }: SeparatorProps) => (
+import separatorImg from '@/public/images/separator-line.svg';
+
+import { StyledSeparator } from './Separator.styled';
+import type { Separator as SeparatorType } from './Separator.types';
+
+export const Separator: SeparatorType = ({ type }): ReactElement => (
   <StyledSeparator type={type}>
     <img src={separatorImg.src} alt="separator" />
   </StyledSeparator>
