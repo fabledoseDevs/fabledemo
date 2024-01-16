@@ -10,9 +10,20 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     font-family: ${({ theme }) => theme.fonts.lato};
   }
   
+  main {
+      min-height: 100vh;
+      background: ${({ theme }) => theme.palette.background};
+      background: ${({ theme }) => theme.palette.linearBackground};
+  }
+  
   h1 {
     font-family: ${({ theme }) => theme.fonts.poltawskiNowy};
     font-weight: 500;
+  }
+  
+  button {
+    font-family: ${({ theme }) => theme.fonts.lato};
+    font-size: 18px;
   }
 `;
 

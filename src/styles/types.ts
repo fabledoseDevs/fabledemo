@@ -9,8 +9,11 @@ export type ViewportName = 'desktop' | 'tablet' | 'mobile';
 export interface Palette {
   primary: string;
   secondary: string;
+  offwhite: string;
   green: string;
+  lightergreen: string;
   accent: string;
+  background: string;
   linearBackground: string;
 }
 
