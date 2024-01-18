@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   height: 50px;
   display: flex;
   align-items: center;

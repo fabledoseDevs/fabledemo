@@ -14,16 +14,18 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       min-height: 100vh;
       background: ${({ theme }) => theme.palette.background};
       background: ${({ theme }) => theme.palette.linearBackground};
+      
   }
   
-  h1 {
+  h1, h2 {
     font-family: ${({ theme }) => theme.fonts.poltawskiNowy};
     font-weight: 500;
   }
+
   
   button {
     font-family: ${({ theme }) => theme.fonts.lato};
-    font-size: 18px;
+    font-size: 14px;
   }
 `;
 
