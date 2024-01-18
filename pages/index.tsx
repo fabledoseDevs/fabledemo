@@ -16,7 +16,6 @@ const Home: NextPage = () => (
       <meta name="description" content="Let's make magic" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
-    <main></main>
     <main>
       <Header />
       <Jumbotron {...jumbotronData} />
