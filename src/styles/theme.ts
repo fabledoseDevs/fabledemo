@@ -25,8 +25,8 @@ const theme: Theme = {
     desktop: `screen and (min-width: ${breakpoints.desktop}px)`,
   },
   fonts: {
-    poltawskiNowy: 'Poltawski Nowy',
-    lato: 'Lato',
+    poltawskiNowy: "Poltawski Nowy, serif",
+    lato: "Lato, sans-serif",
   },
 };
 

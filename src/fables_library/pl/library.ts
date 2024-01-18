@@ -7,10 +7,12 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     title: 'Złotowłosa i trzy misie',
     author: ['Paweł Modzelewski'],
     pictures: ['Edyta Petrzak'],
-    thumb: '/',
+    thumb: '/images/fairytale-thumb-placeholder-01.png',
     cover: '/',
-    excerpt: 'Przygotowana przez nasz zespół wciągająca wersja klasycznej bajki „Złotowłosa i Trzy Misie”. Gdy Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, otrzymuje lekcję na temat znaczenia odpowiedzialności. Ta czarująca adaptacja przypomina zarówno najmłodszym, jak i starszym dzieciom, że nasze działania mają konsekwencje i nigdy nie jest za późno, aby to naprawić błędy.',
-    summary: ''
+    excerpt: 'Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, w konsekwencji czego otrzymuje lekcję na temat znaczenia odpowiedzialności.',
+    summary: '',
+    mainTags: ['3+', 'Bajka'],
+    detailedTags: ['Odpowiedzialność', 'Odwaga', 'Przepraszam', 'Przyroda']
   },
   content: [
     {

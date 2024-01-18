@@ -8,6 +8,8 @@ export interface Info {
   cover: string;
   excerpt: string;
   summary: string;
+  mainTags: string[];
+  detailedTags: string[];
 }
 
 export enum LAYOUT_VARIANTS {
