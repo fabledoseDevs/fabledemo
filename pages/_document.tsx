@@ -37,7 +37,6 @@ class MyDocument extends Document {
       <Html lang="pl">
         <Head>
           <link rel="stylesheet" href="/fonts/fonts.css" />
-          <link rel="preload" href="/fonts/Lato/Lato-Regular.woff2" as="font" type="font/woff2" />
         </Head>
         <body>
           <Main />
