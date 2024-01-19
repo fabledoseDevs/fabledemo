@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Lato Regular';
+    font-family: 'Lato';
     src: url("Lato/Lato-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family: 'Lato Bold';
+    font-family: 'Lato';
     src: url("Lato/Lato-Bold.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
@@ -17,18 +17,18 @@
 }
 
 @font-face {
-    font-family: 'Poltawski Medium';
-    src: url("PoltawskiNowy/PoltawskiNowy-Medium.woff2") format("woff2");
-    font-weight: 500;
+    font-family: 'Poltawski';
+    src: url("PoltawskiNowy/PoltawskiNowy-Regular.woff2") format("woff2");
+    font-weight: 400;
     font-style: normal;
     unicode-range: U+0020-00FE;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poltawski Regular';
-    src: url("PoltawskiNowy/PoltawskiNowy-Regular.woff2") format("woff2");
-    font-weight: 400;
+    font-family: 'Poltawski';
+    src: url("PoltawskiNowy/PoltawskiNowy-Medium.woff2") format("woff2");
+    font-weight: 500;
     font-style: normal;
     unicode-range: U+0020-00FE;
     font-display: swap;
