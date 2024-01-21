@@ -12,7 +12,6 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
     "@types/node": "20.11.0",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
@@ -23,14 +22,6 @@
     "styled-icons": "^10.47.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.8",
-    "@storybook/addon-interactions": "^7.6.8",
-    "@storybook/addon-links": "^7.6.8",
-    "@storybook/addon-onboarding": "^1.0.10",
-    "@storybook/blocks": "^7.6.8",
-    "@storybook/nextjs": "^7.6.8",
-    "@storybook/react": "^7.6.8",
-    "@storybook/test": "^7.6.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -46,7 +37,7 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-storybook": "^0.6.15",
     "prettier": "^2.8.8",
-    "storybook": "^7.6.8",
+    "react-icons": "^5.0.1",
     "typescript": "^5"
   }
 }

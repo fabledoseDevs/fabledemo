@@ -19,8 +19,8 @@ module.exports = {
     node: true,
     es6: true
   },
-  extends: ['typescript', 'typescript/react', 'eslint:recommended', 'plugin:react/recommended', 'plugin:jsx-a11y/recommended', 'plugin:react-hooks/recommended', 'plugin:@next/next/recommended', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
-  plugins: ['simple-import-sort', '@typescript-eslint', 'eslint-plugin-tsdoc'],
+  extends: ['typescript', 'typescript/react', 'eslint:recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@next/next/recommended', 'plugin:prettier/recommended'],
+  plugins: ['simple-import-sort', '@typescript-eslint',],
   rules: {
     'prettier/prettier': ['error', {
       singleQuote: true
@@ -28,6 +28,11 @@ module.exports = {
       usePrettierrc: true
     }],
     'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/anchor-is-valid': ['error', {
+      components: ['Link'],
+      specialLink: ['hrefLeft', 'hrefRight'],
+      aspects: ['invalidHref', 'preferButton']
+    }],
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': ['error', 'as-needed'],
     'max-lines': ['error', 350],
