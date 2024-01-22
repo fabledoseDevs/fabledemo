@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import BookCard from '@/components/BookCard';
 import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
@@ -19,6 +20,7 @@ const Home: NextPage = () => (
     <main>
       <Header />
       <Jumbotron {...jumbotronData} />
+      <Footer>{/* toDo: add SocialMediaBlock here */}</Footer>
     </main>
   </>
 );
