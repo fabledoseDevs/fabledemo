@@ -27,6 +27,11 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     font-family: ${({ theme }) => theme.fonts.lato};
     font-size: 14px;
   }
+  
+  a {
+    color: ${({ theme }) => theme.palette.primary};
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;
