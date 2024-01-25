@@ -1,16 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import BookCard from '@/components/BookCard';
-import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
-import { BOOKCARD_LAYOUT } from '@/components/BookCard/BookCard.types';
-import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
-import { jumbotronData } from '@/components/Jumbotron/Jumbotron.data';
-import TagElement from '@/components/TagElement';
-import TagList from '@/components/TagList';
-
 
 const Home: NextPage = () => (
   <>
