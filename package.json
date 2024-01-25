@@ -2,14 +2,16 @@
   "name": "fabledemo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18",
+    "npm": ">=10"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "npm run lint -- --fix",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "@types/node": "20.11.0",
@@ -34,6 +36,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
     "prettier": "^2.8.8",
     "react-icons": "^5.0.1",
     "typescript": "^5"
