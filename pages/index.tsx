@@ -7,6 +7,8 @@ import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
 import { BOOKCARD_LAYOUT } from '@/components/BookCard/BookCard.types';
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
 import { jumbotronData } from '@/components/Jumbotron/Jumbotron.data';
+import TagElement from '@/components/TagElement';
+import TagList from '@/components/TagList';
 
 
 const Home: NextPage = () => (
@@ -17,8 +19,7 @@ const Home: NextPage = () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
     <main>
-      <Header />
-      <Jumbotron {...jumbotronData} />
+      content
     </main>
   </>
 );

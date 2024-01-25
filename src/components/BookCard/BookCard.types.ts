@@ -1,6 +1,7 @@
 import { ImageProps } from "next/image";
 import { ReactElement } from "react";
 import { ButtonProps } from "../Button";
+import { TagListProps } from "../TagList/TagList.types";
 
 export enum BOOKCARD_LAYOUT {
   IMAGE_LEFT,
@@ -16,7 +17,7 @@ export interface ContentBlockPropos {
   author: string[];
   bookTitle: string;
   bookExcerpt: string;
-  iconsBlock: IconsBlock //TODO: Change later to IconsBlockProps;
+  iconsBlock: TagListProps;
   ctaButton: ButtonProps;
 }
 
