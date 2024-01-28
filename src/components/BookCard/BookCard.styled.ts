@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const imageStyle = css`
   img {
@@ -8,11 +8,12 @@ const imageStyle = css`
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   }
-`
+`;
 
-export const BookCardBody = styled.div<{mobileSort: boolean}>`
+export const BookCardBody = styled.div<{ mobileSort: boolean }>`
   display: flex;
-  flex-direction: ${({mobileSort}) => mobileSort === true ? 'column-reverse' : 'column'};
+  flex-direction: ${({ mobileSort }) =>
+    mobileSort === true ? 'column-reverse' : 'column'};
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
@@ -76,4 +77,4 @@ export const IconsBlock = styled.ul`
 export const TagIcon = styled.li`
   padding: 5px;
   display: inline;
-`
+`;

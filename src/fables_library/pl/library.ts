@@ -4,19 +4,24 @@ import { LAYOUT_VARIANTS } from '../library.types';
 export const GOLDILOCKS_AND_THREE_BEARS: Story = {
   info: {
     id: '230100_GOLDILOCK_PL',
-    title: 'Złotowłosa i trzy misie',
+    title: 'Złotowłosa i Trzy Misie',
     author: ['Paweł Modzelewski'],
     pictures: ['Edyta Petrzak'],
+    translation: ['Franek', 'Józiak'],
     thumb: '/images/fairytale-thumb-placeholder-01.png',
-    cover: '/',
-
-    excerpt: 'Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, w konsekwencji czego otrzymuje lekcję na temat znaczenia odpowiedzialności.',
-    summary: '',
+    cover: {
+      '1080': 'images/Złotowłosa_1920x1080.webm',
+      '720': 'images/Trzy misie_1920x1080.webm',
+      '480': '/',
+      '360': '/',
+    },
+    excerpt:
+      'Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, w konsekwencji czego otrzymuje lekcję na temat znaczenia odpowiedzialności.',
+    summary:
+      'Przygotowana przez nasz zespół wciągająca wersja klasycznej bajki „Złotowłosa i Trzy Misie”. Gdy Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, otrzymuje lekcję na temat znaczenia odpowiedzialności. Ta czarująca adaptacja przypomina zarówno najmłodszym, jak i starszym dzieciom, że nasze działania mają konsekwencje i nigdy nie jest za późno, aby to naprawić błędy.',
+    summaryDecor: '/images/decor-01.png',
     mainTags: ['3+', 'Bajka'],
     detailedTags: ['Odpowiedzialność', 'Odwaga', 'Przepraszam', 'Przyroda'],
-    excerpt:
-      'Przygotowana przez nasz zespół wciągająca wersja klasycznej bajki „Złotowłosa i Trzy Misie”. Gdy Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, otrzymuje lekcję na temat znaczenia odpowiedzialności. Ta czarująca adaptacja przypomina zarówno najmłodszym, jak i starszym dzieciom, że nasze działania mają konsekwencje i nigdy nie jest za późno, aby to naprawić błędy.',
-    summary: '',
   },
   content: [
     {
@@ -26,8 +31,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Na skraju przytulnego lasu, w drewnianym domu żyły sobie trzy misie. Tata miś, który był duży i silny, mama miś o łagodnym sercu, oraz mały misio co był marudny. W domu misiów było przytulnie. Były w nim trzy fotele oraz trzy, starannie pościelone łóżeczka. Misiowa rodzina codziennie rano jadała owsiankę przygotowywaną przez mamę. To była najlepsza owsianka na świecie — z miodem i jagodami. Jednak bardziej niż owsiankę misie uwielbiały spacery po lesie. Pewnego ranka postanowiły ruszyć na taki spacer wyjątkowo wcześnie. Wstały od stołu, od śniadania, nie skończywszy owsianki, i wyszły do lasu.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
@@ -37,14 +44,16 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Tak się złożyło, że tego dnia nieopodal ich domu przechadzała się złotowłosa dziewczynka. Niesforne to było dziecko, znane z psotnego zachowania i niebaczenia na innych. Złotowłosa zobaczywszy otwarty dom, wślizgnęła się do środka bez zaproszenia. I od razu poczuła w powietrzu zapach owsianki. Usiadła przy stole kuchennym i zaczęła wyjadać owsiankę należącą do misiów.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
       slideId: 3,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      widcardsData: [
+      wildcardsData: [
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
@@ -55,14 +64,16 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Ta jest w sam raz!" Powiedziała po spróbowaniu owsianki z miseczki małego misia. A potem zjadła całą jego owsiankę.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
       slideId: 4,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      widcardsData: [
+      wildcardsData: [
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
@@ -75,14 +86,16 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Ten jest w sam raz!" Powiedziała gdy rozsiadła się wygodnie w najmniejszym fotelu, który należał do małego misia. I wtem TRACH! Noga od fotelika ułamała się, a dziewczynka wylądowała na podłodze.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
       slideId: 5,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      widcardsData: [
+      wildcardsData: [
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
@@ -95,14 +108,16 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"To jest w sam raz!" Powiedziała po wejściu pod kołderkę w trzecim, najmniejszym łóżeczku. I tam zasnęła.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
       slideId: 6,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      widcardsData: [
+      wildcardsData: [
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
@@ -115,14 +130,16 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Błeee!" Zajęczał mały miś-maruda. "Moją owsiankę ktoś zjadł w całości!"',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
       slideId: 7,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      widcardsData: [
+      wildcardsData: [
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
@@ -135,14 +152,16 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Błeee!" Zajęczał mały miś-maruda. "W moim foteliku ktoś ułamał nogę!"',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
       slideId: 8,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      widcardsData: [
+      wildcardsData: [
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
         { top: 10, left: 10, width: 25 },
@@ -155,8 +174,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Błeee!" Zajęczał mały miś-maruda. "W moim łóżeczku nadal ktoś śpi!"',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
@@ -167,8 +188,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Gdy dziewczynka biegła przez las, serce ją zakuło. "Co ja najlepszego zrobiłam?" Pomyślała. "Zjadła nie swoją owsiankę. Połamałam fotelik. I nabałaganiłam w sypialni." Zatrzymała się w biegu. "Nie mogę tego tak zostawić. Muszę wszystko naprawić!" Ze smutkiem na twarzy wróciła do domu misiów i zapukała do drzwi. Otworzył tata miś i ze srogą miną zapytał.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
@@ -180,8 +203,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Zza pleców taty misia wyjrzała mama miś o łagodnym sercu "No myślę, że po takich przeprosinach musimy dać ci szansę dziewczynko." Powiedziała mama miś. "Proszę, wejdź!".',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
     {
@@ -192,8 +217,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Chociaż wszyscy wiedzą, że rozrabiać nie wypada, to nie ma takiego dziecka, które nie psoci od czasu do czasu. Jednak ważne jest, aby zawsze przeprosić i naprawić to, co się popsuło.',
       ],
       picture: {
-        general: '/',
-        mobile: '/',
+        '1080': '/',
+        '720': '/',
+        '480': '/',
+        '360': '/',
       },
     },
   ],

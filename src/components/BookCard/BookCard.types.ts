@@ -5,7 +5,7 @@ import { TagListProps } from "../TagList/TagList.types";
 
 export enum BOOKCARD_LAYOUT {
   IMAGE_LEFT,
-  IMAGE_RIGHT
+  IMAGE_RIGHT,
 }
 
 export interface IconsBlock {
@@ -13,7 +13,7 @@ export interface IconsBlock {
   details: string[];
 }
 
-export interface ContentBlockPropos {
+export interface ContentBlockProps {
   author: string[];
   bookTitle: string;
   bookExcerpt: string;
@@ -24,8 +24,8 @@ export interface ContentBlockPropos {
 export interface BookCardProps {
   bookCover: ImageProps;
   layout: BOOKCARD_LAYOUT;
-  content: ContentBlockPropos;
+  content: ContentBlockProps;
 }
 
-export type ContentBlock = (props: ContentBlockPropos) => ReactElement;
+export type ContentBlock = (props: ContentBlockProps) => ReactElement;
 export type BookCard = (props: BookCardProps) => ReactElement;
