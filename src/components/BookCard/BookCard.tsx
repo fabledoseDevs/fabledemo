@@ -1,14 +1,14 @@
 import Image from 'next/image';
+
 import Button from '../Button';
 import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from '../Button/Button.types';
+import TagList from '../TagList';
 import {
   Author,
   BookCardBody,
   Excerpt,
-  IconsBlock,
   LeftSide,
   RightSide,
-  TagIcon,
   Title,
 } from './BookCard.styled';
 import type {
@@ -16,7 +16,6 @@ import type {
   ContentBlock as ContentBlockType,
 } from './BookCard.types';
 import { BOOKCARD_LAYOUT } from './BookCard.types';
-import TagList from "../TagList";
 
 const ContentBlock: ContentBlockType = ({
   author,
@@ -31,11 +30,11 @@ const ContentBlock: ContentBlockType = ({
     <Excerpt>{bookExcerpt}</Excerpt>
     <TagList {...iconsBlock} />
     <Button
-      label='Cztyaj Bajkę'
+      label="Cztyaj Bajkę"
       colorVariant={COLOR_VARIANTS.GREEN}
       fontVariant={FONT_VARIANTS.UPPERCASE}
-      purpose={PURPOSE.FUNCTION_TRIGGER} //TODO: Update purpouse when ready!
-      onclickAction={() => console.info('Openibg fairy tale...')} //TODO: Update this when ready!
+      purpose={PURPOSE.FUNCTION_TRIGGER}
+      onclickAction={() => console.info('Openibg fairy tale...')}
     />
   </>
 );

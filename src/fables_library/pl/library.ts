@@ -10,8 +10,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     translation: ['Franek', 'Józiak'],
     thumb: '/images/fairytale-thumb-placeholder-01.png',
     cover: {
-      '1080': 'images/Złotowłosa_1920x1080.webm',
-      '720': 'images/Trzy misie_1920x1080.webm',
+      '1080': 'images/goldilock_cover.webm',
+      '720': 'images/goldilock_cover.webm',
       '480': '/',
       '360': '/',
     },

@@ -1,5 +1,5 @@
-import { ImageProps } from "next/image";
-import { ReactElement } from "react";
+import type { ImageProps } from 'next/image';
+import type { ReactElement } from 'react';
 
 export interface TagElementProps {
   tagName: string;
