@@ -6,6 +6,7 @@ import {
 import Image from "next/image";
 import Button from "../Button";
 import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from "../Button/Button.types";
+import TagList from "../TagList";
 
 const ContentBlock: ContentBlockType = ({
   author,
@@ -18,7 +19,7 @@ const ContentBlock: ContentBlockType = ({
     <Author>{author}</Author>
     <Title>{bookTitle}</Title>
     <Excerpt>{bookExcerpt}</Excerpt>
-    <IconsBlock>{iconsBlock.main.map((icon) => <TagIcon>{icon}</TagIcon>)} | {iconsBlock.details.map((icon) => <TagIcon>{icon}</TagIcon>)}</IconsBlock> {/* TODO: Switch this to real component IconsBlock! */}
+    <TagList {...iconsBlock} />
     <Button
       label='Cztyaj Bajkę'
       colorVariant={COLOR_VARIANTS.GREEN}
