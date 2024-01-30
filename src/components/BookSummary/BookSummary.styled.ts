@@ -19,15 +19,33 @@ export const SummaryLayer = styled.div<{ layout: boolean }>`
   height: auto;
   padding: 5dvw;
   z-index: 2;
-  overflow: clip;
+
+  @media (orientation: portrait) {
+    height: 100dvh;
+    align-items: flex-end !important;
+  }
 `;
 
 export const SummaryCard = styled.div<{ decor?: string }>`
-  width: 40dvw;
+  width: 50dvw;
   height: auto;
+  max-height: 80dvh;
+  overflow: clip;
   border-radius: 10px;
   background-color: antiquewhite;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 45dvw;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    width: 40dvw;
+  }
+
+  @media (orientation: portrait) {
+    width: 90dvw;
+  }
 
   ${({ decor }) =>
     decor &&
@@ -41,31 +59,90 @@ export const SummaryCard = styled.div<{ decor?: string }>`
 
 export const Logo = styled(Image)`
   display: block;
-  margin: 20px auto;
+  margin: 5px auto;
+  width: 120px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    margin: 10px auto;
+    width: 160px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    margin: 20px auto;
+    width: 200px;
+  }
 `;
 
 export const MainContent = styled.div`
-  padding: 40px 80px;
+  padding: 10px 10px;
+  height: auto;
+  max-height: 70dvh;
+  overflow-x: clip;
+  overflow-y: scroll;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    padding: 10px 20px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    padding: 20px 40px;
+  }
 `;
 
 export const Author = styled.p`
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 14px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 18px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    font-size: 22px;
+  }
 `;
 
 export const Title = styled.h2`
-  font-size: 46px;
+  font-size: 24px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 30px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    font-size: 44px;
+  }
 `;
 
 export const Credits = styled.p`
-  font-size: 12px;
+  font-size: 8px;
   margin: 5px 0;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 10px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    font-size: 12px;
+  }
 `;
 
 export const BookExcerpt = styled.p`
-  font-size: 18px;
-  line-height: 2;
-  margin: 20px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 5px 0;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 10px 0;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    font-size: 16px;
+    line-height: 2;
+    margin: 20px 0;
+  }
 `;
 
 export const ButtonsContaineer = styled.div`
