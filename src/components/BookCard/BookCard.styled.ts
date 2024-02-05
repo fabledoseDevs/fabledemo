@@ -6,14 +6,14 @@ const imageStyle = css`
     width: 100%;
     height: auto;
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    box-shadow: ${({ theme }) => theme.palette.wideShadow};
   }
 `;
 
 export const BookCardBody = styled.div<{ mobileSort: boolean }>`
   display: flex;
   flex-direction: ${({ mobileSort }) =>
-    mobileSort === true ? 'column-reverse' : 'column'};
+    mobileSort ? 'column-reverse' : 'column'};
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;

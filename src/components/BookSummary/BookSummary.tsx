@@ -6,14 +6,14 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
+import { SlidePicture } from '@/components/SlidePicture/SlidePicture';
+import { TagList } from '@/components/TagList/TagList';
 
-import { SlidePicture } from '../SlidePicture/SlidePicture';
-import TagList from '../TagList';
 import {
   Author,
   BookCoverBody,
   BookExcerpt,
-  ButtonsContaineer,
+  ButtonsContainer,
   Credits,
   Logo,
   MainContent,
@@ -62,7 +62,7 @@ export const BookSummary: BookSummaryType = ({
           </Credits>
           <TagList {...iconsBlock} />
           <BookExcerpt>{bookSummary}</BookExcerpt>
-          <ButtonsContaineer>
+          <ButtonsContainer>
             <Button
               label="Cztyaj Bajkę"
               colorVariant={COLOR_VARIANTS.GREEN}
@@ -78,7 +78,7 @@ export const BookSummary: BookSummaryType = ({
                 height={50}
               />
             </SettingsButton>
-          </ButtonsContaineer>
+          </ButtonsContainer>
         </MainContent>
       </SummaryCard>
     </SummaryLayer>

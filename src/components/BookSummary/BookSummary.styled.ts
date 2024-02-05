@@ -33,7 +33,7 @@ export const SummaryCard = styled.div<{ decor?: string }>`
   overflow: clip;
   border-radius: 10px;
   background-color: antiquewhite;
-  box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+  box-shadow: ${({ theme }) => theme.palette.wideShadow};
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 45dvw;
@@ -84,8 +84,9 @@ export const MainContent = styled.div`
     padding: 10px 20px;
   }
 
-  @media ${({ theme }) => theme.media.desktop} {
+  @media ${({ theme }) => theme.media.laptop} {
     padding: 20px 40px;
+    overflow-y: hidden;
   }
 `;
 
@@ -145,7 +146,7 @@ export const BookExcerpt = styled.p`
   }
 `;
 
-export const ButtonsContaineer = styled.div`
+export const ButtonsContainer = styled.div`
   width: 100%;
   margin: 60px 0;
   display: flex;

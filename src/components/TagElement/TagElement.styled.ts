@@ -26,10 +26,10 @@ export const TagModal = styled.div<{ isModalOpen: boolean }>`
   padding: 10px;
   width: 220px;
   height: auto;
-  background-color: #faf3d3;
-  border: 2px solid #dc4e49;
+  background-color: ${({ theme }) => theme.palette.background};
+  border: 2px solid ${({ theme }) => theme.palette.accent};
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0 15px 10px -10px;
+  box-shadow: ${({ theme }) => theme.palette.closeShadow};
   text-align: center;
   z-index: 10;
 
@@ -48,7 +48,7 @@ export const TagModal = styled.div<{ isModalOpen: boolean }>`
 
 export const CloseX = styled(CloseCircle)`
   position: absolute;
-  color: #dc4e49;
+  color: ${({ theme }) => theme.palette.accent};
   top: 5px;
   right: 5px;
   width: 20px;

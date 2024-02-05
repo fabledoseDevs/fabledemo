@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
+
 import { BookSummary } from '../src/components/BookSummary/BookSummary';
-import { GOLDILOCKS_AND_THREE_BEARS } from '../src/fables_library/pl/library';
 
 const Home: NextPage = () => (
   <>
