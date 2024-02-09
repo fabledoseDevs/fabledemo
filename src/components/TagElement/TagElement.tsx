@@ -1,27 +1,24 @@
-import Image from "next/image";
-import { TagBody, TagModal, CloseX } from "./TagElement.styled";
-import type { TagElement as TagElementType } from "./TagElement.types" 
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
+
+import { CloseX, TagBody, TagModal } from './TagElement.styled';
+import type { TagElement as TagElementType } from './TagElement.types';
 
 export const TagElement: TagElementType = ({
   tagName,
   tagDescription,
-  icon
+  icon,
 }) => {
   const [isModalActive, setIsModalActive] = useState<boolean>(false);
 
   const modalHandler = () => {
-    setIsModalActive((prevState) => !prevState);
-  }
+    setIsModalActive(prevState => !prevState);
+  };
 
   return (
     <TagBody>
       <button onClick={modalHandler}>
-        <Image
-          {...icon}
-          width={85} 
-          height={85}
-        />
+        <Image {...icon} width={50} height={50} />
       </button>
       <TagModal isModalOpen={isModalActive}>
         <button onClick={modalHandler}>
@@ -31,5 +28,5 @@ export const TagElement: TagElementType = ({
         </button>
       </TagModal>
     </TagBody>
-  )
-}
+  );
+};

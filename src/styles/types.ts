@@ -4,7 +4,7 @@ declare module 'styled-components' {
   export type DefaultTheme = Theme;
 }
 
-export type ViewportName = 'desktop' | 'tablet' | 'mobile';
+export type ViewportName = 'desktop' | 'laptop' | 'tablet' | 'mobile';
 
 export interface Palette {
   primary: string;
@@ -15,6 +15,8 @@ export interface Palette {
   accent: string;
   background: string;
   linearBackground: string;
+  wideShadow: string;
+  closeShadow: string;
 }
 
 export interface Theme {

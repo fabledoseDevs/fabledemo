@@ -1,38 +1,44 @@
-import { PURPOSE } from "./Button.types";
-import { Button as ButtonType, PurposeSelector as PurposeSelectorType } from "./Button.types";
-import { ButtonWrapper, ButtonBody} from "./Button.styled";
+import { ButtonBody, ButtonWrapper } from './Button.styled';
+import type {
+  Button as ButtonType,
+  PurposeSelector as PurposeSelectorType,
+} from './Button.types';
+import { PURPOSE } from './Button.types';
 
-const purposeSelector: PurposeSelectorType = (purpose, label, anchorLink, onclickAction) => {
+const purposeSelector: PurposeSelectorType = (
+  purpose,
+  label,
+  anchorLink,
+  onclickAction,
+) => {
   switch (purpose) {
     case PURPOSE.ANCHOR:
       return (
         <a href={anchorLink} aria-label={label}>
-          <ButtonBody>
-            {label}
-          </ButtonBody>
+          <ButtonBody>{label}</ButtonBody>
         </a>
-      )
+      );
     case PURPOSE.SUBMIT:
       return (
         <ButtonBody type="submit" aria-label={label}>
           {label}
         </ButtonBody>
-      )
+      );
     case PURPOSE.FUNCTION_TRIGGER:
       return (
         <ButtonBody onClick={onclickAction} aria-label={label}>
           {label}
         </ButtonBody>
-      )
+      );
     default:
       return null;
   }
-}
+};
 
 export const Button: ButtonType = ({
   label,
-  colorVariant, 
-  fontVariant, 
+  colorVariant,
+  fontVariant,
   purpose,
   anchorLink,
   onclickAction,
@@ -40,4 +46,4 @@ export const Button: ButtonType = ({
   <ButtonWrapper bgcolorvariant={colorVariant} fontcapvariant={fontVariant}>
     {purposeSelector(purpose, label, anchorLink, onclickAction)}
   </ButtonWrapper>
-)
+);

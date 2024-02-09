@@ -1,12 +1,21 @@
-import { BOOKCARD_LAYOUT, BookCard as BookCardType, ContentBlock as ContentBlockType} from "./BookCard.types";
+import Image from 'next/image';
+
+import Button from '../Button';
+import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from '../Button/Button.types';
+import TagList from '../TagList';
 import {
-  BookCardBody, LeftSide, RightSide,
-  Author, Title, Excerpt, IconsBlock, TagIcon
-} from './BookCard.styled'
-import Image from "next/image";
-import Button from "../Button";
-import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from "../Button/Button.types";
-import TagList from "../TagList";
+  Author,
+  BookCardBody,
+  Excerpt,
+  LeftSide,
+  RightSide,
+  Title,
+} from './BookCard.styled';
+import type {
+  BookCard as BookCardType,
+  ContentBlock as ContentBlockType,
+} from './BookCard.types';
+import { BOOKCARD_LAYOUT } from './BookCard.types';
 
 const ContentBlock: ContentBlockType = ({
   author,
@@ -21,34 +30,30 @@ const ContentBlock: ContentBlockType = ({
     <Excerpt>{bookExcerpt}</Excerpt>
     <TagList {...iconsBlock} />
     <Button
-      label='Cztyaj Bajkę'
+      label="Cztyaj Bajkę"
       colorVariant={COLOR_VARIANTS.GREEN}
       fontVariant={FONT_VARIANTS.UPPERCASE}
-      purpose={PURPOSE.FUNCTION_TRIGGER} //TODO: Update purpouse when ready!
-      onclickAction={() => console.info('Openibg fairy tale...')} //TODO: Update this when ready!
+      purpose={PURPOSE.FUNCTION_TRIGGER}
+      onclickAction={() => console.info('Openibg fairy tale...')}
     />
   </>
-)
+);
 
-export const BookCard: BookCardType = ({
-  layout,
-  bookCover,
-  content,
-}) => (
+export const BookCard: BookCardType = ({ layout, bookCover, content }) => (
   <BookCardBody mobileSort={layout === BOOKCARD_LAYOUT.IMAGE_RIGHT}>
     <LeftSide>
-      {
-        layout === BOOKCARD_LAYOUT.IMAGE_LEFT ? 
-        <Image {...bookCover}/> : 
-        <ContentBlock {...content}/>
-      }
+      {layout === BOOKCARD_LAYOUT.IMAGE_LEFT ? (
+        <Image {...bookCover} />
+      ) : (
+        <ContentBlock {...content} />
+      )}
     </LeftSide>
     <RightSide>
-      {
-        layout === BOOKCARD_LAYOUT.IMAGE_RIGHT ? 
-        <Image {...bookCover}/> : 
-        <ContentBlock {...content}/>
-      }
+      {layout === BOOKCARD_LAYOUT.IMAGE_RIGHT ? (
+        <Image {...bookCover} />
+      ) : (
+        <ContentBlock {...content} />
+      )}
     </RightSide>
   </BookCardBody>
-)
+);

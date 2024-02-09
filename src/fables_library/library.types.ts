@@ -5,9 +5,10 @@ export interface Info {
   translation?: string[];
   pictures: string[];
   thumb: string;
-  cover: string;
+  cover: Picture;
   excerpt: string;
   summary: string;
+  summaryDecor?: string;
   mainTags: string[];
   detailedTags: string[];
 }
@@ -31,14 +32,16 @@ export interface WildcardData {
 }
 
 export interface Picture {
-  general: string;
-  mobile: string;
+  1080?: string;
+  720: string;
+  480?: string;
+  360?: string;
 }
 
 export interface Slide {
   slideId: number;
   layout: LAYOUT_VARIANTS;
-  widcardsData?: WildcardData[]
+  wildcardsData?: WildcardData[];
   paragraphs: string[];
   picture: Picture;
 }
