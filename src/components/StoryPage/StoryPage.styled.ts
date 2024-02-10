@@ -1,5 +1,6 @@
 import { css, styled } from 'styled-components';
 
+import type { WildcardData } from '@/fables_library/library.types';
 import { LAYOUT_VARIANTS } from '@/fables_library/library.types';
 
 import { FONT_COLOR } from './StoryPage.types';
@@ -29,7 +30,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   padding: 30px;
   z-index: 2;
 
-  p:first-child {
+  p {
     width: auto;
     display: block;
   }
@@ -63,8 +64,8 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           ${FlexCenterAlignment};
           justify-content: flex-start;
 
-          p:last-child {
-            width: 45%;
+          p {
+            width: 50%;
           }
         `;
 
@@ -74,9 +75,48 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           ${FlexCenterAlignment};
           justify-content: flex-end;
 
+          p {
+            width: 50%;
+          }
+        `;
+
+      case LAYOUT_VARIANTS.DIAGONAL_TLBR:
+        return css`
+          flex-direction: row;
+          ${FlexCenterAlignment};
+
+          p:first-child {
+            width: 45%;
+            align-self: flex-start;
+          }
+
           p:last-child {
             width: 45%;
+            margin-left: 10%;
+            align-self: flex-end;
           }
+        `;
+
+      case LAYOUT_VARIANTS.DIAGONAL_TRBL:
+        return css`
+          flex-direction: row;
+          ${FlexCenterAlignment};
+
+          p:first-child {
+            width: 45%;
+            align-self: flex-end;
+          }
+
+          p:last-child {
+            width: 45%;
+            margin-left: 10%;
+            align-self: flex-start;
+          }
+        `;
+
+      case LAYOUT_VARIANTS.WILDCARD:
+        return css`
+          display: block;
         `;
 
       default:
@@ -93,8 +133,10 @@ export const TextBox = styled.p<{
   background: BACKGROUND_VARIANTS;
   fontSize: FONT_SIZE;
   fontColor: FONT_COLOR;
+  wildcard?: WildcardData;
 }>`
   padding: 20px;
+  line-height: 1.6;
 
   //BACKGROUND SELECTOR
   ${({ background }) => {
@@ -193,6 +235,19 @@ export const TextBox = styled.p<{
         `;
     }
   }};
+
+  ${({ wildcard }) => {
+    if (wildcard) {
+      return css`
+        position: absolute;
+        width: ${wildcard.width}% !important;
+        height: ${wildcard.height}% !important;
+        top: ${wildcard.top}% !important;
+        left: ${wildcard.left}% !important;
+        overflow: clip;
+      `;
+    }
+  }}
 `;
 
 export const Toolbox = styled.div<{ isVisible: boolean }>``;

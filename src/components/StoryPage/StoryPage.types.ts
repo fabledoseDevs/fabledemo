@@ -1,10 +1,11 @@
 import type { ReactElement } from 'react';
 
-import type { SlidePictureProps } from '@/components/SlidePicture';
 import type {
   LAYOUT_VARIANTS,
   WildcardData,
 } from '@/fables_library/library.types';
+
+import type { SlidePictureProps } from '../StoryPagePicture';
 
 export enum BACKGROUND_VARIANTS {
   NONE = 'none',

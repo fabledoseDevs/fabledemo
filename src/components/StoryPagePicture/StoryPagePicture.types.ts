@@ -7,10 +7,9 @@ export interface AvailableSizes {
   360?: string; //LQ
 }
 
-export interface SlidePictureProps {
+export interface StoryPagePictureProps {
   description: string;
   picSizes: AvailableSizes;
 }
 
-export type PictureSelector = (props: AvailableSizes) => string;
-export type SlidePicture = (props: SlidePictureProps) => ReactElement;
+export type StoryPagePicture = (props: StoryPagePictureProps) => ReactElement;

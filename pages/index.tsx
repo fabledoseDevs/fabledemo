@@ -14,7 +14,21 @@ const Home: NextPage = () => (
     </Head>
     <main>
       <StoryPage
-        layout={LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT}
+        layout={LAYOUT_VARIANTS.WILDCARD}
+        wildcardsData={[
+          {
+            width: 5,
+            height: 5,
+            top: 10,
+            left: 10,
+          },
+          {
+            width: 5,
+            height: 5,
+            top: 20,
+            left: 10,
+          },
+        ]}
         text={GOLDILOCKS_AND_THREE_BEARS.content[0].paragraphs}
         backgroundPicture={GOLDILOCKS_AND_THREE_BEARS.content[0].picture}
       />
