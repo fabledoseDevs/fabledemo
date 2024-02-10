@@ -20,6 +20,18 @@ const theme: Theme = {
     linearBackground: 'linear-gradient(55deg, #FAF3D3 0%, #FFF 100%)',
     wideShadow: 'rgba(0, 0, 0, 0.45) 0 25px 20px -20px',
     closeShadow: 'rgba(0, 0, 0, 0.45) 0 15px 10px -10px;',
+    storyPage: {
+      textbox0: 'rgba(26,26,26,0)',
+      textbox40: 'rgba(26,26,26,0.4)',
+      textbox60: 'rgba(26,26,26,0.6)',
+      textbox85: 'rgba(26,26,26,0.85)',
+      fontSmall: '20px',
+      fontMedium: '22px',
+      fontLarge: '26px',
+      fontWhite: '#efefef',
+      fontBlack: '#111111',
+      fontYellow: '#ffe54f',
+    },
   },
   maxWidth: `${breakpoints.maxWidth}px`,
   media: {

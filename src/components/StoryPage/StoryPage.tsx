@@ -9,6 +9,7 @@ import {
 } from '@/components/StoryPage/StoryPage.styled';
 
 import type { StoryPage as StoryPageType } from './StoryPage.types';
+import { BACKGROUND_VARIANTS, FONT_COLOR, FONT_SIZE } from './StoryPage.types';
 
 export const StoryPage: StoryPageType = ({
   layout,
@@ -18,15 +19,19 @@ export const StoryPage: StoryPageType = ({
 }) => {
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
 
-  //TODO: Remove this
-  setSettingsVisibility(false);
-
   return (
     <PageBody>
       <SlidePicture {...backgroundPicture} />
       <TextContent layout={layout}>
         {text.map((paragraph, index) => (
-          <TextBox key={index}>{paragraph}</TextBox>
+          <TextBox
+            key={index}
+            background={BACKGROUND_VARIANTS.INTENSE}
+            fontSize={FONT_SIZE.SMALL}
+            fontColor={FONT_COLOR.YELLOW_STROKED}
+          >
+            {paragraph}
+          </TextBox>
         ))}
       </TextContent>
       <Toolbox isVisible={settingsVisibility}>toolbox</Toolbox>

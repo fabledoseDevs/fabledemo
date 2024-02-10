@@ -6,6 +6,18 @@ declare module 'styled-components' {
 
 export type ViewportName = 'desktop' | 'laptop' | 'tablet' | 'mobile';
 
+export type StoryPageOptions =
+  | 'textbox0'
+  | 'textbox40'
+  | 'textbox60'
+  | 'textbox85'
+  | 'fontSmall'
+  | 'fontMedium'
+  | 'fontLarge'
+  | 'fontWhite'
+  | 'fontBlack'
+  | 'fontYellow';
+
 export interface Palette {
   primary: string;
   secondary: string;
@@ -17,6 +29,9 @@ export interface Palette {
   linearBackground: string;
   wideShadow: string;
   closeShadow: string;
+  storyPage: {
+    [key in StoryPageOptions]: string;
+  };
 }
 
 export interface Theme {

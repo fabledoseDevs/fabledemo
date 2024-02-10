@@ -8,7 +8,7 @@ export interface AvailableSizes {
 }
 
 export interface SlidePictureProps {
-  picDescription: string;
+  description: string;
   picSizes: AvailableSizes;
 }
 
