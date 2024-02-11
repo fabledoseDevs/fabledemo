@@ -1,11 +1,10 @@
 import { css, styled } from 'styled-components';
 
+import { FONT_COLOR } from '@/context/SettingsContext/SettingsContext.types';
+import { FONT_SIZE } from '@/context/SettingsContext/SettingsContext.types';
+import { BACKGROUND_VARIANTS } from '@/context/SettingsContext/SettingsContext.types';
 import type { WildcardData } from '@/fables_library/library.types';
 import { LAYOUT_VARIANTS } from '@/fables_library/library.types';
-
-import { FONT_COLOR } from './StoryPage.types';
-import { FONT_SIZE } from './StoryPage.types';
-import { BACKGROUND_VARIANTS } from './StoryPage.types';
 
 const FlexCenterAlignment = css`
   align-items: center;
@@ -240,14 +239,65 @@ export const TextBox = styled.p<{
     if (wildcard) {
       return css`
         position: absolute;
+        overflow: clip;
         width: ${wildcard.width}% !important;
-        height: ${wildcard.height}% !important;
+        ${wildcard.height && `height: ${wildcard.height}% !important;`}
         top: ${wildcard.top}% !important;
         left: ${wildcard.left}% !important;
-        overflow: clip;
       `;
     }
   }}
 `;
 
-export const Toolbox = styled.div<{ isVisible: boolean }>``;
+export const Toolbox = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  ${FlexCenterAlignment};
+  justify-content: center;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background: ${({ theme }) => theme.palette.storyPage.textbox60};
+`;
+
+export const ToolboxContainer = styled.div`
+  width: 50dvw;
+  height: 50dvh;
+  background: antiquewhite;
+`;
+
+const ButtonStyle = css`
+  position: fixed;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: 0;
+  opacity: 0.25;
+  transition: opacity 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  svg {
+    color: #fff;
+  }
+`;
+
+export const SettingsButton = styled.button`
+  ${ButtonStyle};
+  bottom: 10px;
+  left: 10px;
+`;
+
+export const FullscreenButton = styled.button`
+  ${ButtonStyle};
+  bottom: 10px;
+  left: 70px;
+`;

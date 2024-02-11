@@ -29,10 +29,14 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
   content: [
     {
       slideId: 1,
-      layout: LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_BOTTOM,
+      layout: LAYOUT_VARIANTS.WILDCARD,
+      wildcardsData: [
+        { top: 10, left: 5, width: 50 },
+        { top: 40, left: 15, width: 50 },
+      ],
       paragraphs: [
-        'Na skraju przytulnego lasu, w drewnianym domu żyły sobie trzy misie. Tata miś, który był duży i silny, mama miś o łagodnym sercu, oraz mały misio co był marudny. W domu misiów było przytulnie. Były w nim trzy fotele oraz trzy, starannie pościelone łóżeczka. Misiowa rodzina codziennie rano jadała owsiankę przygotowywaną przez mamę. To była najlepsza owsianka na świecie — z miodem i jagodami. Jednak bardziej niż owsiankę misie uwielbiały spacery po lesie. Pewnego ranka postanowiły ruszyć na taki spacer wyjątkowo wcześnie. Wstały od stołu, od śniadania, nie skończywszy owsianki, i wyszły do lasu.',
-        'Lorem ipsum sit amet.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra leo odio, vel iaculis elit aliquet vel. Quisque a eros elit. Pellentesque id ex eu leo efficitur vehicula at elementum magna. Aliquam eu lacus purus. Fusce pellentesque nunc ut ex tempor, vel volutpat enim pretium. Ut blandit aliquam dui id aliquam. ',
+        'Quisque id sodales sapien, eget imperdiet est. Sed tempus mi nec est mollis, feugiat pulvinar tellus sodales. Donec rhoncus felis a arcu pretium fringilla. Nunc eu sapien risus. Integer convallis tellus sed consectetur fermentum. Donec faucibus ex ac tellus pretium, ut viverra nisl suscipit. Curabitur viverra placerat varius.',
       ],
       picture: {
         description: 'Lorem',
