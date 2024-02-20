@@ -34,6 +34,13 @@ export interface Palette {
   };
 }
 
+export interface Layers {
+  standard: string;
+  medium: string;
+  high: string;
+  veryTop: string;
+}
+
 export interface Theme {
   palette: Palette;
   maxWidth: string;
@@ -44,4 +51,5 @@ export interface Theme {
     poltawskiNowy: string;
     lato: string;
   };
+  zIndex: Layers;
 }

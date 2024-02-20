@@ -6,8 +6,8 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
-import { StoryPagePicture } from '@/components/StoryPagePicture/StoryPagePicture';
-import { TagList } from '@/components/TagList/TagList';
+import { StoryPagePicture } from '@/components/StoryPagePicture';
+import { TagList } from '@/components/TagList';
 
 import {
   Author,

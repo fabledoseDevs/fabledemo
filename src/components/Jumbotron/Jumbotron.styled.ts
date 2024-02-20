@@ -12,7 +12,7 @@ export const ContentWrapper = styled.div`
   max-width: 550px;
   gap: 20px;
   position: relative;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.high};
 
   p {
     font-family: ${({ theme }) => theme.fonts.lato};

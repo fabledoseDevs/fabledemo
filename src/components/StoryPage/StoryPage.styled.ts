@@ -6,7 +6,7 @@ import { BACKGROUND_VARIANTS } from '@/context/SettingsContext/SettingsContext.t
 import type { WildcardData } from '@/fables_library/library.types';
 import { LAYOUT_VARIANTS } from '@/fables_library/library.types';
 
-const FlexCenterAlignment = css`
+const flexCenterAlignment = css`
   align-items: center;
   align-content: center;
 `;
@@ -27,7 +27,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   left: 0;
   display: flex;
   padding: 30px;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.zIndex.medium};
 
   p {
     width: auto;
@@ -39,28 +39,28 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
       case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_BOTTOM:
         return css`
           flex-direction: column;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
           justify-content: flex-end;
         `;
 
       case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_MIDDLE:
         return css`
           flex-direction: column;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
           justify-content: center;
         `;
 
       case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_TOP:
         return css`
           flex-direction: column;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
           justify-content: flex-start;
         `;
 
       case LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT:
         return css`
           flex-direction: row;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
           justify-content: flex-start;
 
           p {
@@ -71,7 +71,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
       case LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_RIGHT:
         return css`
           flex-direction: row;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
           justify-content: flex-end;
 
           p {
@@ -82,7 +82,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
       case LAYOUT_VARIANTS.DIAGONAL_TLBR:
         return css`
           flex-direction: row;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
 
           p:first-child {
             width: 45%;
@@ -99,7 +99,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
       case LAYOUT_VARIANTS.DIAGONAL_TRBL:
         return css`
           flex-direction: row;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
 
           p:first-child {
             width: 45%;
@@ -121,7 +121,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
       default:
         return css`
           flex-direction: row;
-          ${FlexCenterAlignment};
+          ${flexCenterAlignment};
           justify-content: flex-end;
         `;
     }
@@ -253,10 +253,10 @@ export const Toolbox = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.high};
   display: flex;
   flex-direction: column;
-  ${FlexCenterAlignment};
+  ${flexCenterAlignment};
   justify-content: center;
   width: 100dvw;
   height: 100dvh;
@@ -270,9 +270,9 @@ export const ToolboxContainer = styled.div`
   background: antiquewhite;
 `;
 
-const ButtonStyle = css`
+const buttonStyle = css`
   position: fixed;
-  z-index: 999;
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
   width: 50px;
   height: 50px;
   background: none;
@@ -291,13 +291,13 @@ const ButtonStyle = css`
 `;
 
 export const SettingsButton = styled.button`
-  ${ButtonStyle};
+  ${buttonStyle};
   bottom: 10px;
   left: 10px;
 `;
 
 export const FullscreenButton = styled.button`
-  ${ButtonStyle};
+  ${buttonStyle};
   bottom: 10px;
   left: 70px;
 `;

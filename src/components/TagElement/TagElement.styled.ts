@@ -31,7 +31,7 @@ export const TagModal = styled.div<{ isModalOpen: boolean }>`
   border-radius: 10px;
   box-shadow: ${({ theme }) => theme.palette.closeShadow};
   text-align: center;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.high};
 
   h3 {
     font-family: ${({ theme }) => theme.fonts.lato};

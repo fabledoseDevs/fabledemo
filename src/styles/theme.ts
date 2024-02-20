@@ -44,6 +44,12 @@ const theme: Theme = {
     poltawskiNowy: 'Poltawski',
     lato: 'Lato',
   },
+  zIndex: {
+    standard: '1',
+    medium: '5',
+    high: '10',
+    veryTop: '15',
+  },
 };
 
 export default theme;
