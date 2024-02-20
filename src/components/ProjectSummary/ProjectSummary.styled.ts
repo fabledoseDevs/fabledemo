@@ -1,6 +1,6 @@
 import { css, styled } from 'styled-components';
 
-const BasicColumnStyle = css`
+const basicColumnStyle = css`
   width: 100%;
 
   @media ${({ theme }) => theme.media.laptop} {
@@ -23,11 +23,11 @@ export const SummaryBody = styled.section`
 `;
 
 export const LeftColumn = styled.div`
-  ${BasicColumnStyle}
+  ${basicColumnStyle}
 `;
 
 export const RightColumn = styled.div`
-  ${BasicColumnStyle}
+  ${basicColumnStyle}
 
   img {
     display: block;

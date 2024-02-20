@@ -11,6 +11,7 @@ import {
   SummaryBody,
 } from './ProjectSummary.styled';
 import type { ProjectSummary as ProjectSummaryType } from './ProjectSummary.types';
+
 export const ProjectSummary: ProjectSummaryType = ({
   mainText,
   supplementaryText,
