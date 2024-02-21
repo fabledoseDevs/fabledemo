@@ -18,7 +18,7 @@ export const SummaryLayer = styled.div<{ layout: boolean }>`
   width: 100dvw;
   height: auto;
   padding: 5dvw;
-  z-index: 2;
+  z-index: ${({ theme }) => theme.zIndex.medium};
 
   @media (orientation: portrait) {
     height: 100dvh;

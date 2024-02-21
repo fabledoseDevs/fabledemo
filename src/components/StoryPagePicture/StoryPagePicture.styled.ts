@@ -7,5 +7,5 @@ export const AnimatedPicture = styled.video`
   width: 100dvw;
   height: 100dvh;
   object-fit: cover;
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndex.standard};
 `;

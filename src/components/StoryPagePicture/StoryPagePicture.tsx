@@ -1,8 +1,8 @@
-import { AnimatedPicture } from './SlidePicture.styled';
-import type { SlidePicture as SlidePictureType } from './SlidePicture.types';
+import { AnimatedPicture } from './StoryPagePicture.styled';
+import type { StoryPagePicture as StoryPagePictureType } from './StoryPagePicture.types';
 
-export const SlidePicture: SlidePictureType = ({
-  picDescription,
+export const StoryPagePicture: StoryPagePictureType = ({
+  description,
   picSizes,
 }) => (
   <AnimatedPicture
@@ -10,7 +10,7 @@ export const SlidePicture: SlidePictureType = ({
     muted={true}
     controls={false}
     loop={true}
-    aria-label={picDescription}
+    aria-label={description}
   >
     <source src={picSizes['1080']} media={'(min-width: 1920px)'} />
     <source src={picSizes['720']} media={'(min-width: 1280px)'} />

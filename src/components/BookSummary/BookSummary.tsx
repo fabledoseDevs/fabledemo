@@ -6,8 +6,8 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
-import { SlidePicture } from '@/components/SlidePicture/SlidePicture';
-import { TagList } from '@/components/TagList/TagList';
+import { StoryPagePicture } from '@/components/StoryPagePicture';
+import { TagList } from '@/components/TagList';
 
 import {
   Author,
@@ -37,7 +37,7 @@ export const BookSummary: BookSummaryType = ({
   ctaButton,
 }) => (
   <BookCoverBody>
-    <SlidePicture picDescription={bookTitle} picSizes={bookCover} />
+    <StoryPagePicture {...bookCover} />
     <SummaryLayer layout={revertLayout}>
       <SummaryCard decor={coverDecor}>
         <Logo

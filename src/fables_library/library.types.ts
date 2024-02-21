@@ -31,11 +31,16 @@ export interface WildcardData {
   height?: number;
 }
 
-export interface Picture {
+export interface PictureSizes {
   1080?: string;
   720: string;
   480?: string;
   360?: string;
+}
+
+export interface Picture {
+  description: string;
+  picSizes: PictureSizes;
 }
 
 export interface Slide {
