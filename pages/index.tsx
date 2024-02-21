@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { StoryPage } from '@/components/StoryPage/StoryPage';
+import StoryPage from '@/components/StoryPage';
 import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
 
 const Home: NextPage = () => (
