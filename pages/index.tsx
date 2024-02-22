@@ -23,7 +23,7 @@ import coverTwo from '../public/images/fairytale-thumb-placeholder-02.png';
 import coverThree from '../public/images/fairytale-thumb-placeholder-03.png';
 
 const Home: NextPage = () => {
-  const [isPortalActive, setPortalActive] = useState<boolean>(true);
+  const [isPortalActive, setPortalActive] = useState<boolean>(false);
 
   const portalHandler = () => {
     setPortalActive(true);
@@ -151,31 +151,29 @@ const Home: NextPage = () => {
         <Separator type={'MEDIUM'} />
         <Footer />
       </main>
-      {isPortalActive &&
-        createPortal(
-          <StorySummary
-            revertLayout={false}
-            author={GOLDILOCKS_AND_THREE_BEARS.info.author}
-            picturesAuthor={GOLDILOCKS_AND_THREE_BEARS.info.pictures}
-            bookCover={GOLDILOCKS_AND_THREE_BEARS.info.cover}
-            bookTitle={GOLDILOCKS_AND_THREE_BEARS.info.title}
-            bookSummary={GOLDILOCKS_AND_THREE_BEARS.info.summary}
-            iconsBlock={{
-              mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
-              extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
-            }}
-            ctaButton={{
-              purpose: PURPOSE.FUNCTION_TRIGGER,
-              label: 'Dowiedz się więcej',
-              anchorLink: '#content-start',
-              colorVariant: COLOR_VARIANTS.GREEN,
-              fontVariant: FONT_VARIANTS.UPPERCASE,
-              isDisabled: false,
-              onclickAction: portalHandler,
-            }}
-          />,
-          document.body,
-        )}
+      {isPortalActive && (
+        <StorySummary
+          revertLayout={false}
+          author={GOLDILOCKS_AND_THREE_BEARS.info.author}
+          picturesAuthor={GOLDILOCKS_AND_THREE_BEARS.info.pictures}
+          bookCover={GOLDILOCKS_AND_THREE_BEARS.info.cover}
+          bookTitle={GOLDILOCKS_AND_THREE_BEARS.info.title}
+          bookSummary={GOLDILOCKS_AND_THREE_BEARS.info.summary}
+          iconsBlock={{
+            mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
+            extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
+          }}
+          ctaButton={{
+            purpose: PURPOSE.FUNCTION_TRIGGER,
+            label: 'Dowiedz się więcej',
+            anchorLink: '#content-start',
+            colorVariant: COLOR_VARIANTS.GREEN,
+            fontVariant: FONT_VARIANTS.UPPERCASE,
+            isDisabled: false,
+            onclickAction: portalHandler,
+          }}
+        />
+      )}
     </>
   );
 };
