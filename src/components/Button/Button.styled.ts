@@ -1,4 +1,4 @@
-import { css, styled } from 'styled-components';
+import { styled } from 'styled-components';
 
 import { COLOR_VARIANTS, FONT_VARIANTS } from './Button.types';
 
@@ -22,6 +22,11 @@ export const ButtonWrapper = styled.div<{
         bgcolorvariant === COLOR_VARIANTS.GREEN
           ? theme.palette.lightergreen
           : theme.palette.offwhite};
+    }
+
+    &:disabled {
+      filter: grayscale(1);
+      opacity: 0.5;
     }
   }
 `;

@@ -8,13 +8,22 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     margin: 0;
     padding: 0;
     font-family: ${({ theme }) => theme.fonts.lato};
+      scroll-behavior: smooth;
+  }
+  
+  body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
   }
   
   main {
       min-height: 100vh;
+      max-width: 1440px;
       background: ${({ theme }) => theme.palette.background};
       background: ${({ theme }) => theme.palette.linearBackground};
-      
   }
   
   h1, h2 {

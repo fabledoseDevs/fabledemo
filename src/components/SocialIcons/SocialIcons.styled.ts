@@ -5,6 +5,15 @@ import { FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { styled } from 'styled-components';
 
+export const SocialIconsBody = styled.div`
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 26px;
+`;
+
 export const PinterestIcon = styled(FaPinterest)`
   width: 25px;
   height: 25px;

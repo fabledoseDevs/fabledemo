@@ -4,7 +4,7 @@ import type { ButtonProps } from '@/components/Button';
 import type { StoryPagePictureProps } from '@/components/StoryPagePicture';
 import type { TagListProps } from '@/components/TagList/TagList.types';
 
-export interface BookSummaryProps {
+export interface StorySummaryProps {
   revertLayout: boolean;
   author: string[];
   translation?: string[];
@@ -17,4 +17,4 @@ export interface BookSummaryProps {
   ctaButton: ButtonProps;
 }
 
-export type BookSummary = (props: BookSummaryProps) => ReactElement;
+export type StorySummary = (props: StorySummaryProps) => ReactElement;

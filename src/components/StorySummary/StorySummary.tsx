@@ -11,20 +11,20 @@ import { TagList } from '@/components/TagList';
 
 import {
   Author,
-  BookCoverBody,
   BookExcerpt,
   ButtonsContainer,
   Credits,
   Logo,
   MainContent,
   SettingsButton,
+  StoryCoverBody,
   SummaryCard,
   SummaryLayer,
   Title,
-} from './BookSummary.styled';
-import type { BookSummary as BookSummaryType } from './BookSummary.types';
+} from './StorySummary.styled';
+import type { StorySummary as StorySummaryType } from './StorySummary.types';
 
-export const BookSummary: BookSummaryType = ({
+export const StorySummary: StorySummaryType = ({
   revertLayout,
   author,
   translation,
@@ -34,9 +34,8 @@ export const BookSummary: BookSummaryType = ({
   bookCover,
   coverDecor,
   iconsBlock,
-  ctaButton,
 }) => (
-  <BookCoverBody>
+  <StoryCoverBody>
     <StoryPagePicture {...bookCover} />
     <SummaryLayer layout={revertLayout}>
       <SummaryCard decor={coverDecor}>
@@ -82,5 +81,5 @@ export const BookSummary: BookSummaryType = ({
         </MainContent>
       </SummaryCard>
     </SummaryLayer>
-  </BookCoverBody>
+  </StoryCoverBody>
 );
