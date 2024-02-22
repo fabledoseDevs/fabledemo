@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
 
 import {
   COLOR_VARIANTS,
