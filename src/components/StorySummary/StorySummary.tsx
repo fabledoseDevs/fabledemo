@@ -33,7 +33,9 @@ export const StorySummary: StorySummaryType = ({
   bookSummary,
   bookCover,
   coverDecor,
-  iconsBlock,
+  mainTags,
+  detailedTags,
+  storyStatusHandler,
 }) => (
   <StoryCoverBody>
     <StoryPagePicture {...bookCover} />
@@ -59,15 +61,15 @@ export const StorySummary: StorySummaryType = ({
                 translation.map(person => <span key={person}>{person} </span>)}
             </p>
           </Credits>
-          <TagList {...iconsBlock} />
+          <TagList mainTags={mainTags} extraTags={detailedTags} />
           <BookExcerpt>{bookSummary}</BookExcerpt>
           <ButtonsContainer>
             <Button
               label="Cztyaj Bajkę"
               colorVariant={COLOR_VARIANTS.GREEN}
               fontVariant={FONT_VARIANTS.UPPERCASE}
-              purpose={PURPOSE.FUNCTION_TRIGGER} //TODO: Update purpouse when ready!
-              onclickAction={() => console.info('Openibg fairy tale...')} //TODO: Update this when ready!
+              purpose={PURPOSE.FUNCTION_TRIGGER}
+              onclickAction={() => storyStatusHandler(true)}
             />
             <SettingsButton>
               <Image

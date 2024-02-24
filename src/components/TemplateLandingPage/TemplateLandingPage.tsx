@@ -48,7 +48,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => (
         ctaButton: {
           purpose: PURPOSE.ANCHOR,
           label: 'Dowiedz się więcej',
-          anchorLink: '#content-start',
+          anchorLink: '/goldilocks',
           colorVariant: COLOR_VARIANTS.GREEN,
           fontVariant: FONT_VARIANTS.UPPERCASE,
           isDisabled: false,

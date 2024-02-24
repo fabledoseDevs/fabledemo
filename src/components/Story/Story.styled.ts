@@ -18,6 +18,9 @@ const swiperArrowButton = css`
 export const Slider = styled(Swiper)`
   width: 100dvw;
   height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   div.swiper-button-prev {
     ${swiperArrowButton};

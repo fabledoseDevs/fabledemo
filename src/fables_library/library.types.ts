@@ -48,7 +48,7 @@ export interface Picture {
 export interface Slide {
   slideId: number;
   layout: LAYOUT_VARIANTS;
-  wildcardsData?: WildcardData[];
+  wildcardData?: WildcardData[];
   paragraphs: string[];
   picture: Picture;
 }
