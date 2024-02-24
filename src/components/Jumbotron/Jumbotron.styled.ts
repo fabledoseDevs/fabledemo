@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { styled } from 'styled-components';
 
 export const ContentWrapper = styled.div`
@@ -9,7 +10,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   text-transform: uppercase;
   text-align: center;
-  max-width: 550px;
+  max-width: 1280px;
   gap: 20px;
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.high};
@@ -19,9 +20,12 @@ export const ContentWrapper = styled.div`
     font-weight: 200;
     font-size: 20px;
   }
+
   h2 {
+    width: 90%;
     font-size: 32px;
     font-weight: 400;
+    margin-bottom: 24px;
   }
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -30,6 +34,7 @@ export const ContentWrapper = styled.div`
     p {
       font-size: 24px;
     }
+
     h2 {
       font-size: 48px;
     }
@@ -41,7 +46,8 @@ export const RedSpan = styled.span`
   margin-right: 10px;
 
   img {
-    width: 140%;
+    width: 130%;
+    height: 140%;
     position: absolute;
     top: -5px;
     left: -20px;
@@ -55,20 +61,23 @@ export const RedSpan = styled.span`
   }
 `;
 
-export const JumbotronImage = styled.img`
+export const JumbotronImage = styled(Image)`
   width: 100%;
-  min-height: 550px;
   object-fit: cover;
-  position: relative;
-  top: -170px;
+  position: absolute;
+  top: 0;
 
   @media ${({ theme }) => theme.media.tablet} {
-    min-height: 800px;
-    top: -200px;
+    min-height: 840px;
   }
 `;
 
 export const JumbotronWrapper = styled.section`
   position: relative;
+  min-height: 600px;
   margin-top: 50px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    min-height: 840px;
+  }
 `;

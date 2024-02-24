@@ -1,9 +1,4 @@
 import Button from '@/components/Button';
-import {
-  COLOR_VARIANTS,
-  FONT_VARIANTS,
-  PURPOSE,
-} from '@/components/Button/Button.types';
 
 import Image from '../../../public/images/Jumbotron.png';
 import RedLine from '../../../public/images/Span.png';
@@ -35,6 +30,6 @@ export const Jumbotron: JumbotronType = ({
       </h2>
       <Button {...button} />
     </ContentWrapper>
-    <JumbotronImage src={Image.src} alt="Jumbo" />
+    <JumbotronImage src={Image.src} alt="Jumbo" width={966} height={577} />
   </JumbotronWrapper>
 );

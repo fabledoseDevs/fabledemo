@@ -10,7 +10,7 @@ const imageStyle = css`
   }
 `;
 
-export const BookCardBody = styled.div<{ mobileSort: boolean }>`
+export const StoryCardBody = styled.div<{ mobileSort: boolean }>`
   display: flex;
   flex-direction: ${({ mobileSort }) =>
     mobileSort ? 'column-reverse' : 'column'};

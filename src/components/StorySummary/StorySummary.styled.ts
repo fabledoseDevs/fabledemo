@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-export const BookCoverBody = styled.section`
+export const StoryCoverBody = styled.section`
+  position: fixed;
+  top: 0;
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
   width: 100dvw;
   height: 100dvh;
   background-color: #184e18;

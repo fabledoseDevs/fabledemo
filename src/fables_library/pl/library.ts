@@ -23,8 +23,58 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     summary:
       'Przygotowana przez nasz zespół wciągająca wersja klasycznej bajki „Złotowłosa i Trzy Misie”. Gdy Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, otrzymuje lekcję na temat znaczenia odpowiedzialności. Ta czarująca adaptacja przypomina zarówno najmłodszym, jak i starszym dzieciom, że nasze działania mają konsekwencje i nigdy nie jest za późno, aby to naprawić błędy.',
     summaryDecor: '/images/decor-01.png',
-    mainTags: ['3+', 'Bajka'],
-    detailedTags: ['Odpowiedzialność', 'Odwaga', 'Przepraszam', 'Przyroda'],
+    mainTags: [
+      {
+        tagName: '3+',
+        tagDescription: 'Dobra dla dzieci od trzeciego roku życia',
+        icon: {
+          src: 'images/icon-tag-placeholder-01.svg',
+          alt: '2+',
+        },
+      },
+      {
+        tagName: '3+',
+        tagDescription: 'Dobra dla dzieci od trzeciego roku życia',
+        icon: {
+          src: 'images/icon-tag-placeholder-01.svg',
+          alt: '2+',
+        },
+      },
+    ],
+    detailedTags: [
+      {
+        tagName: '3+',
+        tagDescription: 'Dobra dla dzieci od trzeciego roku życia',
+        icon: {
+          src: 'images/icon-tag-placeholder-01.svg',
+          alt: '2+',
+        },
+      },
+      {
+        tagName: '3+',
+        tagDescription: 'Dobra dla dzieci od trzeciego roku życia',
+        icon: {
+          src: 'images/icon-tag-placeholder-01.svg',
+          alt: '2+',
+        },
+      },
+      {
+        tagName: '3+',
+        tagDescription: 'Dobra dla dzieci od trzeciego roku życia',
+        icon: {
+          src: 'images/icon-tag-placeholder-01.svg',
+          alt: '2+',
+        },
+      },
+      {
+        tagName: '3+',
+        tagDescription: 'Dobra dla dzieci od trzeciego roku życia',
+        icon: {
+          src: 'images/icon-tag-placeholder-01.svg',
+          alt: '2+',
+        },
+      },
+    ],
   },
   content: [
     {

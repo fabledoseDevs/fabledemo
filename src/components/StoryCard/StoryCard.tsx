@@ -2,20 +2,20 @@ import Image from 'next/image';
 
 import Button from '../Button';
 import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from '../Button/Button.types';
-import TagList from '../TagList';
+import { TagList } from '../TagList';
 import {
   Author,
-  BookCardBody,
   Excerpt,
   LeftSide,
   RightSide,
+  StoryCardBody,
   Title,
-} from './BookCard.styled';
+} from './StoryCard.styled';
 import type {
-  BookCard as BookCardType,
   ContentBlock as ContentBlockType,
-} from './BookCard.types';
-import { BOOKCARD_LAYOUT } from './BookCard.types';
+  StoryCard as StoryCardType,
+} from './StoryCard.types';
+import { BOOKCARD_LAYOUT } from './StoryCard.types';
 
 const ContentBlock: ContentBlockType = ({
   author,
@@ -30,17 +30,18 @@ const ContentBlock: ContentBlockType = ({
     <Excerpt>{bookExcerpt}</Excerpt>
     <TagList {...iconsBlock} />
     <Button
-      label="Cztyaj Bajkę"
+      label={ctaButton.isDisabled ? 'Dostępna w krótce' : 'Czytaj bajkę'}
       colorVariant={COLOR_VARIANTS.GREEN}
       fontVariant={FONT_VARIANTS.UPPERCASE}
       purpose={PURPOSE.FUNCTION_TRIGGER}
       onclickAction={() => console.info('Openibg fairy tale...')}
+      isDisabled={ctaButton.isDisabled}
     />
   </>
 );
 
-export const BookCard: BookCardType = ({ layout, bookCover, content }) => (
-  <BookCardBody mobileSort={layout === BOOKCARD_LAYOUT.IMAGE_RIGHT}>
+export const StoryCard: StoryCardType = ({ layout, bookCover, content }) => (
+  <StoryCardBody mobileSort={layout === BOOKCARD_LAYOUT.IMAGE_RIGHT}>
     <LeftSide>
       {layout === BOOKCARD_LAYOUT.IMAGE_LEFT ? (
         <Image {...bookCover} />
@@ -55,5 +56,5 @@ export const BookCard: BookCardType = ({ layout, bookCover, content }) => (
         <ContentBlock {...content} />
       )}
     </RightSide>
-  </BookCardBody>
+  </StoryCardBody>
 );

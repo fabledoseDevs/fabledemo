@@ -10,6 +10,7 @@ const purposeSelector: PurposeSelectorType = (
   label,
   anchorLink,
   onclickAction,
+  isDisabled,
 ) => {
   switch (purpose) {
     case PURPOSE.ANCHOR:
@@ -20,13 +21,17 @@ const purposeSelector: PurposeSelectorType = (
       );
     case PURPOSE.SUBMIT:
       return (
-        <ButtonBody type="submit" aria-label={label}>
+        <ButtonBody type="submit" aria-label={label} disabled={isDisabled}>
           {label}
         </ButtonBody>
       );
     case PURPOSE.FUNCTION_TRIGGER:
       return (
-        <ButtonBody onClick={onclickAction} aria-label={label}>
+        <ButtonBody
+          onClick={onclickAction}
+          aria-label={label}
+          disabled={isDisabled}
+        >
           {label}
         </ButtonBody>
       );
@@ -42,8 +47,9 @@ export const Button: ButtonType = ({
   purpose,
   anchorLink,
   onclickAction,
+  isDisabled = false,
 }) => (
   <ButtonWrapper bgcolorvariant={colorVariant} fontcapvariant={fontVariant}>
-    {purposeSelector(purpose, label, anchorLink, onclickAction)}
+    {purposeSelector(purpose, label, anchorLink, onclickAction, isDisabled)}
   </ButtonWrapper>
 );

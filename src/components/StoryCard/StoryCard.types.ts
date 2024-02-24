@@ -1,7 +1,8 @@
-import { ImageProps } from "next/image";
-import { ReactElement } from "react";
-import { ButtonProps } from "../Button";
-import { TagListProps } from "../TagList/TagList.types";
+import type { ImageProps } from 'next/image';
+import type { ReactElement } from 'react';
+
+import type { ButtonProps } from '../Button';
+import type { TagListProps } from '../TagList/TagList.types';
 
 export enum BOOKCARD_LAYOUT {
   IMAGE_LEFT,
@@ -21,11 +22,11 @@ export interface ContentBlockProps {
   ctaButton: ButtonProps;
 }
 
-export interface BookCardProps {
+export interface StoryCardProps {
   bookCover: ImageProps;
   layout: BOOKCARD_LAYOUT;
   content: ContentBlockProps;
 }
 
 export type ContentBlock = (props: ContentBlockProps) => ReactElement;
-export type BookCard = (props: BookCardProps) => ReactElement;
+export type StoryCard = (props: StoryCardProps) => ReactElement;

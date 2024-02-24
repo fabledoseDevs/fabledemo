@@ -1,3 +1,5 @@
+import type { TagElementProps } from '@/components/TagElement';
+
 export interface Info {
   id: string;
   title: string;
@@ -9,8 +11,8 @@ export interface Info {
   excerpt: string;
   summary: string;
   summaryDecor?: string;
-  mainTags: string[];
-  detailedTags: string[];
+  mainTags: [TagElementProps, TagElementProps];
+  detailedTags: TagElementProps[];
 }
 
 export enum LAYOUT_VARIANTS {
