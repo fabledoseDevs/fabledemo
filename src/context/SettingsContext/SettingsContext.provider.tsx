@@ -22,9 +22,9 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [settings, setSettings] = useState<SettingContextProps>({
-    background: BACKGROUND_VARIANTS.NONE,
-    fontSize: FONT_SIZE.MEDIUM,
-    fontColor: FONT_COLOR.WHITE,
+    background: BACKGROUND_VARIANTS.LIGHT,
+    fontSize: FONT_SIZE.LARGE,
+    fontColor: FONT_COLOR.YELLOW_STROKED,
   });
 
   return (

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import type { ReactElement } from 'react';
 
-//import separatorImg from '@/public/images/separator-line.svg';
 import separatorImg from '../../../public/images/separator-line.svg';
 import { StyledSeparator } from './Separator.styled';
 import type { Separator as SeparatorType } from './Separator.types';

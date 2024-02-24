@@ -1,0 +1,1 @@
+export { TemplateLandingPage } from './TemplateLandingPage';
