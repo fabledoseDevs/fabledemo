@@ -29,14 +29,7 @@ const ContentBlock: ContentBlockType = ({
     <Title>{bookTitle}</Title>
     <Excerpt>{bookExcerpt}</Excerpt>
     <TagList {...iconsBlock} />
-    <Button
-      label={ctaButton.isDisabled ? 'Dostępna w krótce' : 'Czytaj bajkę'}
-      colorVariant={COLOR_VARIANTS.GREEN}
-      fontVariant={FONT_VARIANTS.UPPERCASE}
-      purpose={PURPOSE.FUNCTION_TRIGGER}
-      onclickAction={() => console.info('Openibg fairy tale...')}
-      isDisabled={ctaButton.isDisabled}
-    />
+    <Button {...ctaButton} />
   </>
 );
 

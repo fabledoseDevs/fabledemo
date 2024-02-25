@@ -1,0 +1,1 @@
+export { TemplateStoryPage } from './TemplateStoryPage';

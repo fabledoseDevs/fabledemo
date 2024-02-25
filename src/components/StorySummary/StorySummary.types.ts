@@ -1,8 +1,7 @@
-import type { ReactElement } from 'react';
+import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
-import type { ButtonProps } from '@/components/Button';
 import type { StoryPagePictureProps } from '@/components/StoryPagePicture';
-import type { TagListProps } from '@/components/TagList/TagList.types';
+import type { TagElementProps } from '@/components/TagElement';
 
 export interface StorySummaryProps {
   revertLayout: boolean;
@@ -13,8 +12,9 @@ export interface StorySummaryProps {
   coverDecor?: string;
   bookTitle: string;
   bookSummary: string;
-  iconsBlock: TagListProps;
-  ctaButton: ButtonProps;
+  mainTags: [TagElementProps, TagElementProps];
+  detailedTags: TagElementProps[];
+  storyStatusHandler: Dispatch<SetStateAction<boolean>>;
 }
 
 export type StorySummary = (props: StorySummaryProps) => ReactElement;

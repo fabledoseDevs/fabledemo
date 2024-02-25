@@ -80,13 +80,29 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     {
       slideId: 1,
       layout: LAYOUT_VARIANTS.WILDCARD,
-      wildcardsData: [
+      wildcardData: [
         { top: 10, left: 5, width: 50 },
         { top: 40, left: 15, width: 50 },
       ],
       paragraphs: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra leo odio, vel iaculis elit aliquet vel. Quisque a eros elit. Pellentesque id ex eu leo efficitur vehicula at elementum magna. Aliquam eu lacus purus. Fusce pellentesque nunc ut ex tempor, vel volutpat enim pretium. Ut blandit aliquam dui id aliquam. ',
         'Quisque id sodales sapien, eget imperdiet est. Sed tempus mi nec est mollis, feugiat pulvinar tellus sodales. Donec rhoncus felis a arcu pretium fringilla. Nunc eu sapien risus. Integer convallis tellus sed consectetur fermentum. Donec faucibus ex ac tellus pretium, ut viverra nisl suscipit. Curabitur viverra placerat varius.',
+      ],
+      picture: {
+        description: 'Lorem',
+        picSizes: {
+          '1080': 'images/goldilock_cover.webm',
+          '720': 'images/goldilock_cover.webm',
+          '480': '/',
+          '360': '/',
+        },
+      },
+    },
+    {
+      slideId: 2,
+      layout: LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT,
+      paragraphs: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra leo odio, vel iaculis elit aliquet vel. Quisque a eros elit. Pellentesque id ex eu leo efficitur vehicula at elementum magna. Aliquam eu lacus purus. Fusce pellentesque nunc ut ex tempor, vel volutpat enim pretium. Ut blandit aliquam dui id aliquam. ',
       ],
       picture: {
         description: 'Lorem',
