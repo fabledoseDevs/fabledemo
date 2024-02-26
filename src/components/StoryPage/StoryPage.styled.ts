@@ -249,32 +249,13 @@ export const TextBox = styled.p<{
   }}
 `;
 
-export const Toolbox = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: ${({ theme }) => theme.zIndex.high};
-  display: flex;
-  flex-direction: column;
-  ${flexCenterAlignment};
-  justify-content: center;
-  width: 100dvw;
-  height: 100dvh;
-  overflow: hidden;
-  background: ${({ theme }) => theme.palette.storyPage.textbox60};
-`;
-
-export const ToolboxContainer = styled.div`
-  width: 50dvw;
-  height: 50dvh;
-  background: antiquewhite;
-`;
-
-const buttonStyle = css`
+export const FullscreenButton = styled.button`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.veryTop};
   width: 50px;
   height: 50px;
+  bottom: 10px;
+  left: 70px;
   background: none;
   border: 0;
   opacity: 0.25;
@@ -288,16 +269,4 @@ const buttonStyle = css`
   svg {
     color: #fff;
   }
-`;
-
-export const SettingsButton = styled.button`
-  ${buttonStyle};
-  bottom: 10px;
-  left: 10px;
-`;
-
-export const FullscreenButton = styled.button`
-  ${buttonStyle};
-  bottom: 10px;
-  left: 70px;
 `;

@@ -64,3 +64,25 @@ export const Slide = styled(SwiperSlide)`
   //TODO: DELETE ABOVE
   background-color: ${({ theme }) => theme.palette.lightergreen};
 `;
+
+export const SettingsButton = styled.button`
+  position: fixed;
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  left: 10px;
+  background: none;
+  border: 0;
+  opacity: 0.25;
+  transition: opacity 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  svg {
+    color: #fff;
+  }
+`;

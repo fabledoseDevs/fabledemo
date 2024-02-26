@@ -65,7 +65,7 @@ export const StorySummary: StorySummaryType = ({
           <BookExcerpt>{bookSummary}</BookExcerpt>
           <ButtonsContainer>
             <Button
-              label="Cztyaj Bajkę"
+              label="Czytaj Bajkę"
               colorVariant={COLOR_VARIANTS.GREEN}
               fontVariant={FONT_VARIANTS.UPPERCASE}
               purpose={PURPOSE.FUNCTION_TRIGGER}

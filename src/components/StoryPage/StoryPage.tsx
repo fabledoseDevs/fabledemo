@@ -1,21 +1,16 @@
-import { ArrowExportRtl as ExitIcon } from '@styled-icons/fluentui-system-regular/ArrowExportRtl';
 import { FullScreenMaximize as FullscreenUpIcon } from '@styled-icons/fluentui-system-regular/FullScreenMaximize';
 import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui-system-regular/FullScreenMinimize';
-import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
 import { useEffect, useState } from 'react';
 
 import {
   FullscreenButton,
   PageBody,
-  SettingsButton,
   TextBox,
   TextContent,
-  Toolbox,
-  ToolboxContainer,
 } from '@/components/StoryPage/StoryPage.styled';
+import { StoryPagePicture } from '@/components/StoryPagePicture';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
-import { StoryPagePicture } from '../StoryPagePicture/StoryPagePicture';
 import type { StoryPage as StoryPageType } from './StoryPage.types';
 
 export const StoryPage: StoryPageType = ({
@@ -24,7 +19,6 @@ export const StoryPage: StoryPageType = ({
   backgroundPicture,
   wildcardsData,
 }) => {
-  const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [fullscreen, setFullscreen] = useState<boolean>();
   const { settings } = useSettingsContext();
 
@@ -69,16 +63,6 @@ export const StoryPage: StoryPageType = ({
       <FullscreenButton onClick={toggleFullscreen}>
         {fullscreen ? <FullscreenDownIcon /> : <FullscreenUpIcon />}
       </FullscreenButton>
-      <SettingsButton
-        onClick={() => setSettingsVisibility(!settingsVisibility)}
-      >
-        {settingsVisibility ? <ExitIcon /> : <TextBoxSettingsIcon />}
-      </SettingsButton>
-      {settingsVisibility && (
-        <Toolbox>
-          <ToolboxContainer />
-        </Toolbox>
-      )}
     </PageBody>
   );
 };
