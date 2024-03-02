@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
@@ -16,7 +14,6 @@ import {
   Credits,
   Logo,
   MainContent,
-  SettingsButton,
   StoryCoverBody,
   SummaryCard,
   SummaryLayer,
@@ -30,7 +27,8 @@ export const StorySummary: StorySummaryType = ({
   translation,
   picturesAuthor,
   bookTitle,
-  bookSummary,
+  extendedSummary,
+  synopsis,
   bookCover,
   coverDecor,
   mainTags,
@@ -61,8 +59,13 @@ export const StorySummary: StorySummaryType = ({
                 translation.map(person => <span key={person}>{person} </span>)}
             </p>
           </Credits>
-          <TagList mainTags={mainTags} extraTags={detailedTags} />
-          <BookExcerpt>{bookSummary}</BookExcerpt>
+          <TagList
+            mainTags={mainTags}
+            synopsis={synopsis}
+            extraTags={detailedTags}
+            storyTitle={bookTitle}
+          />
+          <BookExcerpt>{extendedSummary}</BookExcerpt>
           <ButtonsContainer>
             <Button
               label="Czytaj Bajkę"
@@ -71,14 +74,6 @@ export const StorySummary: StorySummaryType = ({
               purpose={PURPOSE.FUNCTION_TRIGGER}
               onclickAction={() => storyStatusHandler(true)}
             />
-            <SettingsButton>
-              <Image
-                src={'images/icon-settings.svg'}
-                alt={'Sprawdź Ustawienia'}
-                width={50}
-                height={50}
-              />
-            </SettingsButton>
           </ButtonsContainer>
         </MainContent>
       </SummaryCard>

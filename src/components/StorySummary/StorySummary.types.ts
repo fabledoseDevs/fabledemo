@@ -1,7 +1,7 @@
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
 import type { StoryPagePictureProps } from '@/components/StoryPagePicture';
-import type { TagElementProps } from '@/components/TagElement';
+import type { TAG_NAMES } from '@/fables_library/library.types';
 
 export interface StorySummaryProps {
   revertLayout: boolean;
@@ -11,9 +11,10 @@ export interface StorySummaryProps {
   bookCover: StoryPagePictureProps;
   coverDecor?: string;
   bookTitle: string;
-  bookSummary: string;
-  mainTags: [TagElementProps, TagElementProps];
-  detailedTags: TagElementProps[];
+  extendedSummary: string;
+  synopsis: string;
+  mainTags: [TAG_NAMES, TAG_NAMES];
+  detailedTags: TAG_NAMES[];
   storyStatusHandler: Dispatch<SetStateAction<boolean>>;
 }
 

@@ -1,5 +1,3 @@
-import type { TagElementProps } from '@/components/TagElement';
-
 export interface Info {
   id: string;
   title: string;
@@ -8,11 +6,12 @@ export interface Info {
   pictures: string[];
   thumb: string;
   cover: Picture;
-  excerpt: string;
   summary: string;
+  extendedSummary: string;
+  synopsis: string;
   summaryDecor?: string;
-  mainTags: [TagElementProps, TagElementProps];
-  detailedTags: TagElementProps[];
+  mainTags: [TAG_NAMES, TAG_NAMES];
+  detailedTags: TAG_NAMES[];
 }
 
 export enum LAYOUT_VARIANTS {
@@ -24,6 +23,24 @@ export enum LAYOUT_VARIANTS {
   DIAGONAL_TLBR,
   DIAGONAL_TRBL,
   WILDCARD,
+}
+
+export enum TAG_NAMES {
+  AGE_3 = 'age-3',
+  AGE_5 = 'age-5',
+  CLASSIC_FABLE = 'classic-fable',
+  CONTEMPORARY_FABLE = 'contemporary-fable',
+  RESPONSIBILITY = 'responsibility',
+  CAREFULNESS = 'carefulness',
+  HELPFULNESS = 'helpfulness',
+  DILIGENCE = 'diligence',
+  PRIVACY = 'privacy',
+  FAMILY = 'family',
+  DEATH = 'death',
+  TOXIC_RELATIONS = 'toxic-relations',
+  MODERATION = 'moderation',
+  COOPERATION = 'cooperation',
+  REPARATION = 'reparation',
 }
 
 export interface WildcardData {
