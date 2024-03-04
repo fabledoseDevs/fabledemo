@@ -1,8 +1,9 @@
 import type { ImageProps } from 'next/image';
 import type { ReactElement } from 'react';
 
+import type { TAG_NAMES } from '@/fables_library/library.types';
+
 import type { ButtonProps } from '../Button';
-import type { TagListProps } from '../TagList/TagList.types';
 
 export enum BOOKCARD_LAYOUT {
   IMAGE_LEFT,
@@ -10,15 +11,16 @@ export enum BOOKCARD_LAYOUT {
 }
 
 export interface IconsBlock {
-  main: string[];
-  details: string[];
+  mainTags: [TAG_NAMES, TAG_NAMES];
+  extraTags: TAG_NAMES[];
 }
 
 export interface ContentBlockProps {
   author: string[];
   bookTitle: string;
-  bookExcerpt: string;
-  iconsBlock: TagListProps;
+  summary: string;
+  synopsis: string;
+  iconsBlock: IconsBlock;
   ctaButton: ButtonProps;
 }
 

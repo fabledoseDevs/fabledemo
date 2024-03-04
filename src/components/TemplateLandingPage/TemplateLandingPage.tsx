@@ -53,7 +53,8 @@ export const TemplateLandingPage: TemplateLandingPageType = () => (
           fontVariant: FONT_VARIANTS.UPPERCASE,
           isDisabled: false,
         },
-        bookExcerpt: GOLDILOCKS_AND_THREE_BEARS.info.excerpt,
+        summary: GOLDILOCKS_AND_THREE_BEARS.info.summary,
+        synopsis: GOLDILOCKS_AND_THREE_BEARS.info.synopsis,
         iconsBlock: {
           mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
           extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
@@ -79,8 +80,9 @@ export const TemplateLandingPage: TemplateLandingPageType = () => (
           fontVariant: FONT_VARIANTS.UPPERCASE,
           isDisabled: true,
         },
-        bookExcerpt:
+        summary:
           'Baśń o maleńkiej (nie większej od ludzkiego kciuka) dziewczynce, narodzonej z ziarna zasianego przez bezdzietną kobietę i jej przygodach, które sprawiły, że stała się wróżką.',
+        synopsis: 'brak przygotowanego streszczenia',
         iconsBlock: {
           mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
           extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
@@ -106,8 +108,9 @@ export const TemplateLandingPage: TemplateLandingPageType = () => (
           fontVariant: FONT_VARIANTS.UPPERCASE,
           isDisabled: true,
         },
-        bookExcerpt:
+        summary:
           'Trzy małe świnki były rodzeństwem, które przemierzały świat, szukając miejsca do zbudowania domu. W końcu świnki znalazły dla siebie odpowiednie miejsce. Każda postanowiła zbudować dom dla siebie. Jedna zbudowała go ze słomy, druga z drewna, a trzecia – najbardziej pracowita – z cegieł. ',
+        synopsis: 'brak przygotowanego streszczenia',
         iconsBlock: {
           mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
           extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,

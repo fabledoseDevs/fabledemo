@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import Button from '../Button';
-import { COLOR_VARIANTS, FONT_VARIANTS, PURPOSE } from '../Button/Button.types';
 import { TagList } from '../TagList';
 import {
   Author,
@@ -20,15 +19,21 @@ import { BOOKCARD_LAYOUT } from './StoryCard.types';
 const ContentBlock: ContentBlockType = ({
   author,
   bookTitle,
-  bookExcerpt,
+  summary,
+  synopsis,
   iconsBlock,
   ctaButton,
 }) => (
   <>
     <Author>{author}</Author>
     <Title>{bookTitle}</Title>
-    <Excerpt>{bookExcerpt}</Excerpt>
-    <TagList {...iconsBlock} />
+    <Excerpt>{summary}</Excerpt>
+    <TagList
+      storyTitle={bookTitle}
+      synopsis={synopsis}
+      mainTags={iconsBlock.mainTags}
+      extraTags={iconsBlock.extraTags}
+    />
     <Button {...ctaButton} />
   </>
 );
