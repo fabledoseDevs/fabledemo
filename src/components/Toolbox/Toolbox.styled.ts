@@ -96,7 +96,7 @@ export const SettingButton = styled.div`
 export const Preview = styled.div`
   width: 100%;
   height: auto;
-  min-height: 200px;
+  min-height: 380px;
   padding: 24px;
   box-shadow: ${({ theme }) => theme.palette.innerShadow};
   background-image: url('/images/fairytale-thumb-placeholder-01.png');
