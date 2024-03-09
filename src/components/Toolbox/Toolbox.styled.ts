@@ -16,18 +16,51 @@ export const ToolboxModal = styled.div`
   background: ${({ theme }) => theme.palette.storyPage.textbox60};
 `;
 
+export const ExitLayer = styled.button`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background: none;
+  opacity: 0;
+`;
+
+export const ExitButton = styled.button`
+  position: absolute;
+  top: -45px;
+  right: 0;
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
+  width: auto;
+  height: 50px;
+  bottom: 10px;
+  background: none;
+  border: 0;
+  color: ${({ theme }) => theme.palette.secondary};
+  cursor: pointer;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: ${({ theme }) => theme.palette.secondary};
+  }
+`;
+
 export const ToolboxContainer = styled.div`
   width: 50dvw;
   height: auto;
+  position: relative;
   padding: 24px;
   box-shadow: ${({ theme }) => theme.palette.wideShadow};
   border-radius: 15px;
-  background: antiquewhite;
+  background: ${({ theme }) => theme.palette.background};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-content: center;
   justify-content: space-evenly;
+  z-index: ${({ theme }) => theme.zIndex.standard};
 `;
 
 export const Settings = styled.div`

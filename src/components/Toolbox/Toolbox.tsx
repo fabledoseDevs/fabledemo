@@ -1,3 +1,5 @@
+import { Close } from '@styled-icons/ionicons-outline/Close';
+
 import { TextBox } from '@/components/StoryPage/StoryPage.styled';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import {
@@ -7,6 +9,8 @@ import {
 } from '@/context/SettingsContext/SettingsContext.types';
 
 import {
+  ExitButton,
+  ExitLayer,
   Preview,
   SettingButton,
   SettingElementWrapper,
@@ -18,7 +22,7 @@ import {
 } from './Toolbox.styled';
 import type { Toolbox as ToolboxType } from './Toolbox.types';
 
-export const Toolbox: ToolboxType = () => {
+export const Toolbox: ToolboxType = ({ exitFunction }) => {
   const { settings, setSettings } = useSettingsContext();
 
   const handleBackgroundChange = (background: BACKGROUND_VARIANTS) => {
@@ -35,7 +39,12 @@ export const Toolbox: ToolboxType = () => {
 
   return (
     <ToolboxModal>
+      <ExitLayer onClick={() => exitFunction(false)} />
       <ToolboxContainer>
+        <ExitButton onClick={() => exitFunction(false)}>
+          <span>Zamknij</span>
+          <Close />
+        </ExitButton>
         <Settings>
           <SettingWrapper>
             <SettingName>Tło dla tekstu</SettingName>

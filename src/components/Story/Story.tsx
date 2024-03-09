@@ -62,7 +62,7 @@ export const Story: StoryType = ({ storyContent }) => {
           </Slide>
         ))}
       </Slider>
-      {settingsVisibility && <Toolbox />}
+      {settingsVisibility && <Toolbox exitFunction={setSettingsVisibility} />}
       <SettingsButton
         onClick={() => setSettingsVisibility(prevState => !prevState)}
       >
