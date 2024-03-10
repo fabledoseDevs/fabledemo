@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import React from 'react';
 import { createContext, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 import type {
   SettingContextProps,
@@ -21,11 +23,21 @@ const SettingsContext = createContext<SettingsContextType | undefined>(
 export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [settings, setSettings] = useState<SettingContextProps>({
-    background: BACKGROUND_VARIANTS.LIGHT,
-    fontSize: FONT_SIZE.LARGE,
-    fontColor: FONT_COLOR.YELLOW_STROKED,
-  });
+  const [cookies, setCookie] = useCookies(['settings']);
+  const storedSettings = cookies.settings;
+
+  const [settings, setSettings] = useState<SettingContextProps>(
+    () =>
+      storedSettings || {
+        background: BACKGROUND_VARIANTS.LIGHT,
+        fontSize: FONT_SIZE.LARGE,
+        fontColor: FONT_COLOR.YELLOW_STROKED,
+      },
+  );
+
+  useEffect(() => {
+    setCookie('settings', settings, { maxAge: 2592000 });
+  }, [settings, setCookie]);
 
   return (
     <SettingsContext.Provider value={{ settings, setSettings }}>
