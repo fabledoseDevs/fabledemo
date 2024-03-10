@@ -30,6 +30,7 @@ export interface Palette {
   linearBackground: string;
   wideShadow: string;
   closeShadow: string;
+  innerShadow: string;
   storyPage: {
     [key in StoryPageOptions]: string;
   };

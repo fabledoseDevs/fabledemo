@@ -16,11 +16,13 @@ const theme: Theme = {
     green: '#6C7716',
     lightergreen: '#7E8B1A',
     accent: '#cc2c28',
-    accentActive: '#E16763',
+    accentActive: '#DC4E49',
     background: '#FAF3D3',
     linearBackground: 'linear-gradient(55deg, #FAF3D3 0%, #FFF 100%)',
     wideShadow: 'rgba(0, 0, 0, 0.45) 0 25px 20px -20px',
     closeShadow: 'rgba(0, 0, 0, 0.45) 0 15px 10px -10px;',
+    innerShadow:
+      'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;',
     storyPage: {
       textbox0: 'rgba(26,26,26,0)',
       textbox40: 'rgba(26,26,26,0.4)',
