@@ -21,10 +21,6 @@ export const TagList: TagListType = ({
 }) => {
   const [isInfoModalActive, setInfoModalActive] = useState<boolean>(false);
 
-  const modalHandler = () => {
-    setInfoModalActive(prevState => !prevState);
-  };
-
   return (
     <>
       <TagListBody>
@@ -40,13 +36,16 @@ export const TagList: TagListType = ({
           ))}
         </TagsListUl>
         <SeparatorElement />
-        <TagsSummaryButton onClick={modalHandler}>
+        <TagsSummaryButton
+          onClick={() => setInfoModalActive(prevState => !prevState)}
+        >
           <InfoCircle />
           <span>Sprawdź tagi</span>
         </TagsSummaryButton>
       </TagListBody>
       {isInfoModalActive && (
         <Tagbox
+          exitFunction={setInfoModalActive}
           storyTitle={storyTitle}
           synopsis={synopsis}
           mainTags={mainTags}

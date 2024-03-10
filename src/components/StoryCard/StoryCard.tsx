@@ -1,11 +1,10 @@
-import Image from 'next/image';
-
 import Button from '../Button';
 import { TagList } from '../TagList';
 import {
   Author,
   Excerpt,
   LeftSide,
+  MiniCoverImage,
   RightSide,
   StoryCardBody,
   Title,
@@ -42,14 +41,14 @@ export const StoryCard: StoryCardType = ({ layout, bookCover, content }) => (
   <StoryCardBody mobileSort={layout === BOOKCARD_LAYOUT.IMAGE_RIGHT}>
     <LeftSide>
       {layout === BOOKCARD_LAYOUT.IMAGE_LEFT ? (
-        <Image {...bookCover} />
+        <MiniCoverImage {...bookCover} />
       ) : (
         <ContentBlock {...content} />
       )}
     </LeftSide>
     <RightSide>
       {layout === BOOKCARD_LAYOUT.IMAGE_RIGHT ? (
-        <Image {...bookCover} />
+        <MiniCoverImage {...bookCover} />
       ) : (
         <ContentBlock {...content} />
       )}

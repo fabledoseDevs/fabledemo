@@ -1,13 +1,12 @@
-import styled, { css } from 'styled-components';
+import Image from 'next/image';
+import styled from 'styled-components';
 
-const imageStyle = css`
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: ${({ theme }) => theme.palette.wideShadow};
-  }
+export const MiniCoverImage = styled(Image)`
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: ${({ theme }) => theme.palette.wideShadow};
 `;
 
 export const StoryCardBody = styled.div<{ mobileSort: boolean }>`
@@ -32,8 +31,6 @@ export const LeftSide = styled.div`
   @media ${({ theme }) => theme.media.tablet} {
     width: 48%;
   }
-
-  ${imageStyle};
 `;
 
 export const RightSide = styled.div`
@@ -42,8 +39,6 @@ export const RightSide = styled.div`
   @media ${({ theme }) => theme.media.tablet} {
     width: 48%;
   }
-
-  ${imageStyle};
 `;
 
 export const Author = styled.div`
