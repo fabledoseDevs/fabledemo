@@ -1,10 +1,13 @@
+import { Close } from '@styled-icons/ionicons-outline/Close';
 import React from 'react';
 
 import {
-  Container,
+  ExitButton,
+  ExitLayer,
   Headline,
   InfoLine,
   Synopsis,
+  TagboxContainer,
   TagboxModal,
   TagColumn,
   TagSorter,
@@ -15,13 +18,19 @@ import type { TAG_NAMES } from '@/fables_library/library.types';
 import type { Tagbox as TagboxType } from './Tagbox.types';
 
 export const Tagbox: TagboxType = ({
+  exitFunction,
   mainTags,
   extraTags,
   storyTitle,
   synopsis,
 }) => (
   <TagboxModal>
-    <Container>
+    <ExitLayer onClick={() => exitFunction(false)} />
+    <TagboxContainer>
+      <ExitButton onClick={() => exitFunction(false)}>
+        <span>Zamknij</span>
+        <Close />
+      </ExitButton>
       <Headline>
         <InfoLine>Motywy i rekomendacje dla utworu</InfoLine>
         <h2>{storyTitle}</h2>
@@ -40,6 +49,6 @@ export const Tagbox: TagboxType = ({
       </TagSorter>
       <InfoLine>Streszczenie</InfoLine>
       <Synopsis>{synopsis}</Synopsis>
-    </Container>
+    </TagboxContainer>
   </TagboxModal>
 );
