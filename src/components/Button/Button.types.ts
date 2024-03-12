@@ -1,4 +1,4 @@
-import type { Dispatch, ReactElement, SetStateAction } from 'react';
+import type { ReactElement } from 'react';
 
 export enum COLOR_VARIANTS {
   GREEN = 'green',
@@ -20,7 +20,7 @@ export interface ButtonProps {
   fontVariant: FONT_VARIANTS;
   purpose: PURPOSE;
   anchorLink?: string;
-  onclickAction?: Dispatch<SetStateAction<boolean>> | (() => void);
+  onclickAction?: () => void;
   isDisabled?: boolean;
 }
 
@@ -28,7 +28,7 @@ export type PurposeSelector = (
   purpose: string,
   label: string,
   anchorLink?: string,
-  onclickAction?: Dispatch<SetStateAction<boolean>> | (() => void),
+  onclickAction?: () => void,
   isDisabled?: boolean,
 ) => ReactElement | null;
 
