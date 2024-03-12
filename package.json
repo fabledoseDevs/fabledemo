@@ -10,6 +10,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "types-check": "tsc --noEmit",
+    "prepare": "husky install",
+    "prepush": "npm run lint && npm run types-check",
     "lint": "next lint",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -41,6 +44,7 @@
     "eslint-plugin-tsdoc": "^0.2.17",
     "prettier": "^2.8.8",
     "react-icons": "^5.0.1",
+    "husky": "^8.0.1",
     "typescript": "^5"
   }
 }

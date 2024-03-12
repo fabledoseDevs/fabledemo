@@ -3,7 +3,7 @@ import { FaFacebook } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 export const SocialIconsBody = styled.div`
   display: flex;
