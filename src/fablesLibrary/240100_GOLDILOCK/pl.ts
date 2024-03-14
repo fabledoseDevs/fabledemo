@@ -1,8 +1,6 @@
-import cover from '@/fablesLibrary/240100_GOLDILOCK/images/cover.webm';
+import cover from '@/fablesLibrary/240100_GOLDILOCK/images/goldilock_cover.webm';
 import img_1_fhd from '@/fablesLibrary/240100_GOLDILOCK/images/img_1_1920x1080.webm';
 import img_2_fhd from '@/fablesLibrary/240100_GOLDILOCK/images/img_2_1920x1080.webm';
-import img_3_lq from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_640x360.webm';
-import img_3_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_854x480.webm';
 import img_3_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_1280x720.webm';
 import img_3_fhd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_1920x1080.webm';
 import decorator from '@/fablesLibrary240100_GOLDILOCK/images/decorator.png';
@@ -96,8 +94,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         picSizes: {
           '1080': img_3_fhd,
           '720': img_3_hd,
-          '480': img_3_sd,
-          '360': img_3_lq,
+          '480': '/',
+          '360': '/',
         },
       },
     },
