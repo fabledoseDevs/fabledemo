@@ -2,7 +2,7 @@ import { InfoCircle } from '@styled-icons/bootstrap/InfoCircle';
 import React, { useState } from 'react';
 
 import Tagbox from '@/components/Tagbox';
-import type { TAG_NAMES } from '@/fables_library/library.types';
+import type { TAG_NAMES } from '@/fablesLibrary/library.types';
 
 import TagElement from '../TagElement';
 import {

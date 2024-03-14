@@ -1,7 +1,7 @@
 import Button from '@/components/Button';
 
-import Image from '../../../public/images/Jumbotron.png';
-import RedLine from '../../../public/images/Span.png';
+import Image from '../../../public/images/jumbotron.png';
+import RedLine from '../../../public/images/span.png';
 import {
   ContentWrapper,
   JumbotronImage,

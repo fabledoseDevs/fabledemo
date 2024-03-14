@@ -3,8 +3,8 @@ import { css, styled } from 'styled-components';
 import { FONT_COLOR } from '@/context/SettingsContext/SettingsContext.types';
 import { FONT_SIZE } from '@/context/SettingsContext/SettingsContext.types';
 import { BACKGROUND_VARIANTS } from '@/context/SettingsContext/SettingsContext.types';
-import type { WildcardData } from '@/fables_library/library.types';
-import { LAYOUT_VARIANTS } from '@/fables_library/library.types';
+import type { WildcardData } from '@/fablesLibrary/library.types';
+import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
 const flexCenterAlignment = css`
   align-items: center;

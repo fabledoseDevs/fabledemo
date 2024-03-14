@@ -1,7 +1,7 @@
 import type { ImageProps } from 'next/image';
 import type { ReactElement } from 'react';
 
-import type { TAG_NAMES } from '@/fables_library/library.types';
+import type { TAG_NAMES } from '@/fablesLibrary/library.types';
 
 import type { ButtonProps } from '../Button';
 

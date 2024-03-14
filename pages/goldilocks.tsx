@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import { TemplateStoryPage } from '@/components/TemplateStoryPage';
-import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
+import { GOLDILOCKS_AND_THREE_BEARS } from '@/fablesLibrary240100_GOLDILOCK/pl';
 
 const Home: NextPage = () => (
   <>
