@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import mockImage from '@/fablesLibrary240100_GOLDILOCK/images/thumb.png';
+
 export const ToolboxModal = styled.div`
   position: fixed;
   top: 0;
@@ -132,7 +134,7 @@ export const Preview = styled.div`
   min-height: 380px;
   padding: 24px;
   box-shadow: ${({ theme }) => theme.palette.innerShadow};
-  background-image: url('/images/fairytale-thumb-placeholder-01.png');
+  background-image: url(${mockImage.src});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -9,11 +9,7 @@ import Separator from '@/components/Separator';
 import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import type { TemplateLandingPage as TemplateLandingPageType } from '@/components/TemplateLandingPage/TemplateLandingPage.types';
-import { GOLDILOCKS_AND_THREE_BEARS } from '@/fables_library/pl/library';
-
-import coverOne from '../../../public/images/fairytale-thumb-placeholder-01.png';
-import coverTwo from '../../../public/images/fairytale-thumb-placeholder-02.png';
-import coverThree from '../../../public/images/fairytale-thumb-placeholder-03.png';
+import { GOLDILOCKS_AND_THREE_BEARS } from '@/fablesLibrary240100_GOLDILOCK/pl';
 
 export const TemplateLandingPage: TemplateLandingPageType = () => (
   <>
@@ -36,8 +32,8 @@ export const TemplateLandingPage: TemplateLandingPageType = () => (
     <Separator type={'SMALL'} />
     <StoryCard
       bookCover={{
-        src: coverOne,
-        alt: 'Złotowłosa',
+        src: GOLDILOCKS_AND_THREE_BEARS.info.thumb,
+        alt: GOLDILOCKS_AND_THREE_BEARS.info.title,
         width: 640,
         height: 340,
       }}
@@ -55,62 +51,6 @@ export const TemplateLandingPage: TemplateLandingPageType = () => (
         },
         summary: GOLDILOCKS_AND_THREE_BEARS.info.summary,
         synopsis: GOLDILOCKS_AND_THREE_BEARS.info.synopsis,
-        iconsBlock: {
-          mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
-          extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
-        },
-      }}
-    />
-    <StoryCard
-      bookCover={{
-        src: coverThree,
-        alt: 'Złotowłosa',
-        width: 640,
-        height: 340,
-      }}
-      layout={BOOKCARD_LAYOUT.IMAGE_RIGHT}
-      content={{
-        bookTitle: 'Calineczka',
-        author: ['Hans Christian Andersen'],
-        ctaButton: {
-          purpose: PURPOSE.ANCHOR,
-          label: 'Dowiedz się więcej',
-          anchorLink: '#content-start',
-          colorVariant: COLOR_VARIANTS.GREEN,
-          fontVariant: FONT_VARIANTS.UPPERCASE,
-          isDisabled: true,
-        },
-        summary:
-          'Baśń o maleńkiej (nie większej od ludzkiego kciuka) dziewczynce, narodzonej z ziarna zasianego przez bezdzietną kobietę i jej przygodach, które sprawiły, że stała się wróżką.',
-        synopsis: 'brak przygotowanego streszczenia',
-        iconsBlock: {
-          mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
-          extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
-        },
-      }}
-    />
-    <StoryCard
-      bookCover={{
-        src: coverTwo,
-        alt: 'Złotowłosa',
-        width: 640,
-        height: 340,
-      }}
-      layout={BOOKCARD_LAYOUT.IMAGE_LEFT}
-      content={{
-        bookTitle: 'Trzy świnki',
-        author: GOLDILOCKS_AND_THREE_BEARS.info.author,
-        ctaButton: {
-          purpose: PURPOSE.ANCHOR,
-          label: 'Dowiedz się więcej',
-          anchorLink: '#content-start',
-          colorVariant: COLOR_VARIANTS.GREEN,
-          fontVariant: FONT_VARIANTS.UPPERCASE,
-          isDisabled: true,
-        },
-        summary:
-          'Trzy małe świnki były rodzeństwem, które przemierzały świat, szukając miejsca do zbudowania domu. W końcu świnki znalazły dla siebie odpowiednie miejsce. Każda postanowiła zbudować dom dla siebie. Jedna zbudowała go ze słomy, druga z drewna, a trzecia – najbardziej pracowita – z cegieł. ',
-        synopsis: 'brak przygotowanego streszczenia',
         iconsBlock: {
           mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
           extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,

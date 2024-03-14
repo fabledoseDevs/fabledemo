@@ -18,6 +18,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           author={storyData.info.author}
           picturesAuthor={storyData.info.pictures}
           bookCover={storyData.info.cover}
+          coverDecor={storyData.info.decorator}
           bookTitle={storyData.info.title}
           extendedSummary={storyData.info.extendedSummary}
           synopsis={storyData.info.synopsis}

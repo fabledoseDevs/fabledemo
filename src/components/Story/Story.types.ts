@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import type { Slide } from '@/fables_library/library.types';
+import type { Slide } from '@/fablesLibrary/library.types';
 
 export interface StoryProps {
   storyContent: Slide[];

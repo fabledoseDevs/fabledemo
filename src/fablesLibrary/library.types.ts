@@ -5,6 +5,7 @@ export interface Info {
   translation?: string[];
   pictures: string[];
   thumb: string;
+  decorator: string;
   cover: Picture;
   summary: string;
   extendedSummary: string;

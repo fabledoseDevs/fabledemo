@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import type {
   LAYOUT_VARIANTS,
   WildcardData,
-} from '@/fables_library/library.types';
+} from '@/fablesLibrary/library.types';
 
 import type { StoryPagePictureProps } from '../StoryPagePicture';
 
