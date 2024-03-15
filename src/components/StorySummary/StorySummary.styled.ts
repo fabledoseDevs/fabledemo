@@ -65,6 +65,7 @@ export const Logo = styled(Image)`
   display: block;
   margin: 5px auto;
   width: 120px;
+  height: auto;
 
   @media ${({ theme }) => theme.media.tablet} {
     margin: 10px auto;
@@ -107,7 +108,7 @@ export const Author = styled.p`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   font-size: 24px;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -119,7 +120,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const Credits = styled.p`
+export const Credits = styled.div`
   font-size: 8px;
   margin: 5px 0;
 
