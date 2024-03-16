@@ -23,6 +23,7 @@ export enum FONT_COLOR {
 }
 
 export interface SettingContextProps {
+  cookieConsent: boolean;
   background: BACKGROUND_VARIANTS;
   fontSize: FONT_SIZE;
   fontColor: FONT_COLOR;

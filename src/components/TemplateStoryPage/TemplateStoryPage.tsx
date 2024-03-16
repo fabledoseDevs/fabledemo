@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
+import CookieBanner from '@/components/CookieBanner';
 import Story from '@/components/Story';
 import StorySummary from '@/components/StorySummary';
+import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
 import type { TemplateStoryPage as TemplateStoryPageType } from './TemplateStoryPage.types';
 
 export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
   const [storyStatus, setStoryStatus] = useState<boolean>(false);
-
+  const { settings } = useSettingsContext();
   return (
     <>
       {storyStatus ? (
@@ -27,6 +29,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           storyStatusHandler={setStoryStatus}
         />
       )}
+      {!settings.cookieConsent && <CookieBanner />}
     </>
   );
 };
