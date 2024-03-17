@@ -12,7 +12,7 @@ import type {
 import { ORIENTATION } from './ScreenContext.types';
 
 const orientationGetter = () =>
-  window.innerWidth > window.innerHeight
+  typeof window !== 'undefined' && window.innerWidth > window.innerHeight
     ? ORIENTATION.LANDSCAPE
     : ORIENTATION.PORTRAIT;
 
@@ -22,8 +22,8 @@ export const ScreenProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [screenData, setScreenData] = useState<ScreenContextProps>(() => ({
-    screenWidth: window.innerWidth,
-    screenHeight: window.innerHeight,
+    screenWidth: typeof window !== 'undefined' ? window.innerWidth : 0,
+    screenHeight: typeof window !== 'undefined' ? window.innerHeight : 0,
     orientation: orientationGetter(),
   }));
 
