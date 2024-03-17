@@ -13,9 +13,14 @@ import type { TemplateLandingPage as TemplateLandingPageType } from '@/component
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import { GOLDILOCKS_AND_THREE_BEARS } from '@/fablesLibrary240100_GOLDILOCK/pl';
 
+const cookieBannerCheckAndRender = (consentStatus: boolean) => {
+  if (!consentStatus) {
+    return <CookieBanner />;
+  }
+};
+
 export const TemplateLandingPage: TemplateLandingPageType = () => {
   const { settings } = useSettingsContext();
-
   return (
     <>
       <Jumbotron
@@ -75,7 +80,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
         ]}
       />
       <Separator type={'MEDIUM'} />
-      {!settings.cookieConsent && <CookieBanner />}
+      {cookieBannerCheckAndRender(settings.cookieConsent)}
     </>
   );
 };

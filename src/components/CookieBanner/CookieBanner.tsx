@@ -22,9 +22,9 @@ export const CookieBanner: CookieBannerType = () => {
   return (
     <BannerBody>
       <TextField>
-        <h3>
+        <h5>
           Czy przyniosłeś ciasteczka, aby umilić sobie spotkanie z bajkami?
-        </h3>
+        </h5>
         <p>
           My przynieśliśmy swoje, ale te nie nadają się do jedzenia. Nasze
           ciasteczka to niewielkie pliki, które zapisujemy na Twoim urządzeniu,
