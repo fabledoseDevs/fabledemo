@@ -29,6 +29,7 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
   const [settings, setSettings] = useState<SettingContextProps>(
     () =>
       storedSettings || {
+        cookieConsent: false,
         background: BACKGROUND_VARIANTS.LIGHT,
         fontSize: FONT_SIZE.LARGE,
         fontColor: FONT_COLOR.YELLOW_STROKED,
