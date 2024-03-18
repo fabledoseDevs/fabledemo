@@ -1,8 +1,15 @@
-import cover from '@/fablesLibrary/240100_GOLDILOCK/images/goldilock_cover.webm';
-import img_1_fhd from '@/fablesLibrary/240100_GOLDILOCK/images/img_1_1920x1080.webm';
-import img_2_fhd from '@/fablesLibrary/240100_GOLDILOCK/images/img_2_1920x1080.webm';
-import img_3_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_1280x720.webm';
-import img_3_fhd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_1920x1080.webm';
+import cover_sd from '@/fablesLibrary/240100_GOLDILOCK/images/cover_1280x720.webm';
+import cover_hd from '@/fablesLibrary/240100_GOLDILOCK/images/cover_1920x1080.webm';
+import img_1_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_1_1280x720.webm';
+import img_1_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_1_1920x1080.webm';
+import img_2_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_2_1280x720.webm';
+import img_2_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_2_1920x1080.webm';
+import img_3_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_1280x720.webm';
+import img_3_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_3_1920x1080.webm';
+import img_6_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_6_1280x720.webm';
+import img_6_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_6_1920x1080.webm';
+import img_7_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_7_1280x720.webm';
+import img_7_hd from '@/fablesLibrary/240100_GOLDILOCK/images/img_7_1920x1080.webm';
 import decorator from '@/fablesLibrary240100_GOLDILOCK/images/decorator.png';
 import thumb from '@/fablesLibrary240100_GOLDILOCK/images/thumb.png';
 
@@ -21,10 +28,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     cover: {
       description: 'Złotowłosa i Trzy Misie',
       picSizes: {
-        '1080': cover,
-        '720': cover,
-        '480': '/',
-        '360': '/',
+        '1080': cover_hd,
+        '720': cover_sd,
       },
     },
     summary:
@@ -51,10 +56,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       picture: {
         description: 'Lorem',
         picSizes: {
-          '1080': img_1_fhd,
-          '720': img_1_fhd,
-          '480': '/',
-          '360': '/',
+          '1080': img_1_hd,
+          '720': img_1_sd,
         },
       },
     },
@@ -67,10 +70,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       picture: {
         description: 'Lorem',
         picSizes: {
-          '1080': img_2_fhd,
-          '720': img_2_fhd,
-          '480': '/',
-          '360': '/',
+          '1080': img_2_hd,
+          '720': img_2_sd,
         },
       },
     },
@@ -92,10 +93,56 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       picture: {
         description: 'Lorem',
         picSizes: {
-          '1080': img_3_fhd,
-          '720': img_3_hd,
-          '480': '/',
-          '360': '/',
+          '1080': img_3_hd,
+          '720': img_3_sd,
+        },
+      },
+    },
+
+    {
+      slideId: 6,
+      layout: LAYOUT_VARIANTS.WILDCARD,
+      wildcardData: [
+        { top: 65, left: 2.5, width: 30 },
+        { top: 10, left: 62, width: 35 },
+        { top: 25, left: 57, width: 35 },
+        { top: 40, left: 52, width: 40 },
+      ],
+      paragraphs: [
+        'Wtem misie wróciły ze swojego porannego spaceru. I od razu po wejściu do kuchni zorientowały się, że coś jest nie tak. Podeszły do stolika, na którym stała owsianka i zdumione zaczęły ze sobą rozmawiać.',
+        '"Ktoś jadł moją owsiankę." Powiedział mocnym głosem tata miś po zerknięciu do swojej miseczki.',
+        '"I moją także." Powiedziała zdziwiona mama miś.',
+        'Błeee!" Zajęczał mały miś-maruda. "Moją owsiankę ktoś zjadł w całości!',
+      ],
+      picture: {
+        description: 'Lorem',
+        picSizes: {
+          '1080': img_6_hd,
+          '720': img_6_sd,
+        },
+      },
+    },
+
+    {
+      slideId: 7,
+      layout: LAYOUT_VARIANTS.WILDCARD,
+      wildcardData: [
+        { top: 5, left: 65, width: 30 },
+        { top: 30, left: 60, width: 35 },
+        { top: 45, left: 57, width: 35 },
+        { top: 60, left: 54, width: 40 },
+      ],
+      paragraphs: [
+        'Wciąż czujne i nieufne misie przeszły do saloniku, aby sprawdzić, czy intruz wciąż krząta się po domu. Z wielkim zdziwieniem zaczęły badać swoje foteliki.',
+        '"Ktoś siedział na moim fotelu." Mocnym głosem powiedział tata miś.',
+        '"I na moim także." Powiedziała zatroskana mama miś.',
+        '"Błeee!" Zajęczał mały miś-maruda. "W moim foteliku ktoś ułamał nogę!"',
+      ],
+      picture: {
+        description: 'Lorem',
+        picSizes: {
+          '1080': img_7_hd,
+          '720': img_7_sd,
         },
       },
     },

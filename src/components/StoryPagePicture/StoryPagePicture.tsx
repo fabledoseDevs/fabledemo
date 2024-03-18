@@ -13,8 +13,6 @@ export const StoryPagePicture: StoryPagePictureType = ({
     aria-label={description}
   >
     <source src={picSizes['1080']} media={'(min-width: 1920px)'} />
-    <source src={picSizes['720']} media={'(min-width: 1280px)'} />
-    <source src={picSizes['480']} media={'(min-width: 720px)'} />
-    <source src={picSizes['360']} />
+    <source src={picSizes['720']} />
   </AnimatedPicture>
 );
