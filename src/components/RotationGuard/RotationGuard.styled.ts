@@ -40,7 +40,7 @@ const IconAnimation = keyframes`
   }
   90% {
     ${rotated90};
-      opacity: 1;
+    opacity: 1;
   }
   98% {
     ${rotated90};
