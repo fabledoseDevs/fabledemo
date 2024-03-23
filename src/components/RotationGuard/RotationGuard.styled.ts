@@ -68,6 +68,7 @@ export const GuardBody = styled.div`
 `;
 
 export const MainMessage = styled.h2`
+  text-align: center;
   font-size: 34px;
   font-family: ${({ theme }) => theme.fonts.lato};
 `;
@@ -85,4 +86,5 @@ export const DetailedMessage = styled.p`
   line-height: 1.4;
   width: 100%;
   text-align: center;
+  padding: 12px;
 `;
