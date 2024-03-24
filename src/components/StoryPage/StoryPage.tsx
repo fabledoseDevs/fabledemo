@@ -1,9 +1,4 @@
-import { FullScreenMaximize as FullscreenUpIcon } from '@styled-icons/fluentui-system-regular/FullScreenMaximize';
-import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui-system-regular/FullScreenMinimize';
-import { useEffect, useState } from 'react';
-
 import {
-  FullscreenButton,
   PageBody,
   TextBox,
   TextContent,
@@ -19,30 +14,7 @@ export const StoryPage: StoryPageType = ({
   backgroundPicture,
   wildcardsData,
 }) => {
-  const [fullscreen, setFullscreen] = useState<boolean>();
   const { settings } = useSettingsContext();
-
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().then(() => {
-        setFullscreen(true);
-      });
-    } else {
-      document.exitFullscreen().then(() => {
-        setFullscreen(false);
-      });
-    }
-  };
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setFullscreen(!!document.fullscreenElement);
-    };
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
-    };
-  }, []);
 
   return (
     <PageBody>
@@ -60,9 +32,6 @@ export const StoryPage: StoryPageType = ({
           </TextBox>
         ))}
       </TextContent>
-      <FullscreenButton onClick={toggleFullscreen}>
-        {fullscreen ? <FullscreenDownIcon /> : <FullscreenUpIcon />}
-      </FullscreenButton>
     </PageBody>
   );
 };

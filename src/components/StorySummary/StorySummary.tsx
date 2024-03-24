@@ -74,6 +74,13 @@ export const StorySummary: StorySummaryType = ({
               purpose={PURPOSE.FUNCTION_TRIGGER}
               onclickAction={() => storyStatusHandler(true)}
             />
+            <Button
+              label="Wyjdź"
+              colorVariant={COLOR_VARIANTS.WHITE}
+              fontVariant={FONT_VARIANTS.UPPERCASE}
+              purpose={PURPOSE.ANCHOR}
+              anchorLink={'/'}
+            />
           </ButtonsContainer>
         </MainContent>
       </SummaryCard>
