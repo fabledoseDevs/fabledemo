@@ -1,12 +1,16 @@
 import { useState } from 'react';
 
+import { RotationGuard } from '@/components/RotationGuard/RotationGuard';
 import Story from '@/components/Story';
 import StorySummary from '@/components/StorySummary';
+import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
+import { ORIENTATION } from '@/context/ScreenContext/ScreenContext.types';
 
 import type { TemplateStoryPage as TemplateStoryPageType } from './TemplateStoryPage.types';
 
 export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
   const [storyStatus, setStoryStatus] = useState<boolean>(false);
+  const { screenData } = useScreenContext();
 
   return (
     <>
@@ -27,6 +31,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           storyStatusHandler={setStoryStatus}
         />
       )}
+      {screenData.orientation === ORIENTATION.PORTRAIT && <RotationGuard />}
     </>
   );
 };
