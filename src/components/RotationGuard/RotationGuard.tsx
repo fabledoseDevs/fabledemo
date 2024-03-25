@@ -3,8 +3,7 @@ import {
   GuardBody,
   MainMessage,
   RotationIcon,
-} from '@/components/RotationGuard/RotationGuard.styled';
-
+} from './RotationGuard.styled';
 import type { RotationGuard as RotationGuardType } from './RotationGuard.types';
 
 export const RotationGuard: RotationGuardType = () => (
