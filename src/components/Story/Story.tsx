@@ -38,15 +38,19 @@ export const Story: StoryType = ({ storyContent }) => {
   const [fullscreen, setFullscreen] = useState<boolean>();
 
   const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().then(() => {
+    const requestFullscreen = document.documentElement
+      .requestFullscreen()
+      .then(() => {
         setFullscreen(true);
       });
-    } else {
+
+    const exitFullscreen =
+      fullscreen &&
       document.exitFullscreen().then(() => {
         setFullscreen(false);
       });
-    }
+
+    return document.fullscreenElement ? exitFullscreen : requestFullscreen;
   };
 
   useEffect(() => {
