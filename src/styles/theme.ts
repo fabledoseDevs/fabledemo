@@ -24,13 +24,9 @@ const theme: Theme = {
     innerShadow:
       'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;',
     storyPage: {
-      textbox0: 'rgba(26,26,26,0)',
-      textbox40: 'rgba(26,26,26,0.4)',
-      textbox60: 'rgba(26,26,26,0.6)',
-      textbox85: 'rgba(26,26,26,0.85)',
-      fontSmall: '20px',
-      fontMedium: '22px',
-      fontLarge: '26px',
+      textboxNone: 'none',
+      textboxStandard: 'rgba(26,26,26,0.45)',
+      textboxIntense: 'rgba(26,26,26,0.65)',
       fontWhite: '#efefef',
       fontBlack: '#111111',
       fontYellow: '#ffe54f',

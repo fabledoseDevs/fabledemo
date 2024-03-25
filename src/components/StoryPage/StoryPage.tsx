@@ -1,11 +1,7 @@
-import {
-  PageBody,
-  TextBox,
-  TextContent,
-} from '@/components/StoryPage/StoryPage.styled';
 import { StoryPagePicture } from '@/components/StoryPagePicture';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
+import { PageBody, TextBox, TextContent } from './StoryPage.styled';
 import type { StoryPage as StoryPageType } from './StoryPage.types';
 
 export const StoryPage: StoryPageType = ({
@@ -23,9 +19,8 @@ export const StoryPage: StoryPageType = ({
         {text.map((paragraph, index) => (
           <TextBox
             key={index}
-            background={settings.background}
+            textboxTheme={settings.theme}
             fontSize={settings.fontSize}
-            fontColor={settings.fontColor}
             wildcard={wildcardsData && wildcardsData[index]}
           >
             {paragraph}
