@@ -1,8 +1,6 @@
 import { css, styled } from 'styled-components';
 
-import { FONT_COLOR } from '@/context/SettingsContext/SettingsContext.types';
-import { FONT_SIZE } from '@/context/SettingsContext/SettingsContext.types';
-import { BACKGROUND_VARIANTS } from '@/context/SettingsContext/SettingsContext.types';
+import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 import type { WildcardData } from '@/fablesLibrary/library.types';
 import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
@@ -42,21 +40,18 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           ${flexCenterAlignment};
           justify-content: flex-end;
         `;
-
       case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_MIDDLE:
         return css`
           flex-direction: column;
           ${flexCenterAlignment};
           justify-content: center;
         `;
-
       case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_TOP:
         return css`
           flex-direction: column;
           ${flexCenterAlignment};
           justify-content: flex-start;
         `;
-
       case LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT:
         return css`
           flex-direction: row;
@@ -67,7 +62,6 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
             width: 50%;
           }
         `;
-
       case LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_RIGHT:
         return css`
           flex-direction: row;
@@ -78,7 +72,6 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
             width: 50%;
           }
         `;
-
       case LAYOUT_VARIANTS.DIAGONAL_TLBR:
         return css`
           flex-direction: row;
@@ -95,7 +88,6 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
             align-self: flex-end;
           }
         `;
-
       case LAYOUT_VARIANTS.DIAGONAL_TRBL:
         return css`
           flex-direction: row;
@@ -112,12 +104,10 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
             align-self: flex-start;
           }
         `;
-
       case LAYOUT_VARIANTS.WILDCARD:
         return css`
           display: block;
         `;
-
       default:
         return css`
           flex-direction: row;
@@ -129,108 +119,74 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
 `;
 
 export const TextBox = styled.p<{
-  background: BACKGROUND_VARIANTS;
-  fontSize: FONT_SIZE;
-  fontColor: FONT_COLOR;
+  textboxTheme: TEXTBOX_THEME;
+  fontSize: number;
   wildcard?: WildcardData;
 }>`
   padding: 20px;
   line-height: 1.6;
 
-  //BACKGROUND SELECTOR
-  ${({ background }) => {
-    switch (background) {
-      case BACKGROUND_VARIANTS.NONE:
-        return css`
-          background-color: ${({ theme }) => theme.palette.storyPage.textbox0};
-        `;
-      case BACKGROUND_VARIANTS.LIGHT:
-        return css`
-          background-color: ${({ theme }) => theme.palette.storyPage.textbox40};
-        `;
-      case BACKGROUND_VARIANTS.MEDIUM:
-        return css`
-          background-color: ${({ theme }) => theme.palette.storyPage.textbox60};
-        `;
-      case BACKGROUND_VARIANTS.INTENSE:
-        return css`
-          background-color: ${({ theme }) => theme.palette.storyPage.textbox85};
-        `;
-      default:
-        return css`
-          background-color: ${({ theme }) => theme.palette.storyPage.textbox0};
-        `;
-    }
-  }};
+  //FONT SIZE
+  font-size: ${({ fontSize }) => fontSize + 'px'};
 
-  //FONT SIZE SELECTOR
-  ${({ fontSize }) => {
-    switch (fontSize) {
-      case FONT_SIZE.SMALL:
-        return css`
-          font-size: ${({ theme }) => theme.palette.storyPage.fontSmall};
-        `;
-      case FONT_SIZE.MEDIUM:
-        return css`
-          font-size: ${({ theme }) => theme.palette.storyPage.fontMedium};
-        `;
-      case FONT_SIZE.LARGE:
-        return css`
-          font-size: ${({ theme }) => theme.palette.storyPage.fontLarge};
-        `;
-      default:
-        return css`
-          font-size: ${({ theme }) => theme.palette.storyPage.fontMedium};
-        `;
-    }
-  }};
-
-  //FONT COLOR SELECTOR
-  ${({ fontColor }) => {
-    switch (fontColor) {
-      case FONT_COLOR.WHITE:
+  //THEME SELECTOR
+  ${({ textboxTheme }) => {
+    switch (textboxTheme) {
+      case TEXTBOX_THEME.AUTO:
         return css`
           color: ${({ theme }) => theme.palette.storyPage.fontWhite};
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxNone};
         `;
-      case FONT_COLOR.WHITE_STROKED:
+      case TEXTBOX_THEME.TEXT_WHITE:
         return css`
           color: ${({ theme }) => theme.palette.storyPage.fontWhite};
-          font-weight: bold;
-          -webkit-text-stroke: ${({ theme }) =>
-              theme.palette.storyPage.fontBlack}
-            1px;
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxNone};
         `;
-      case FONT_COLOR.YELLOW:
+      case TEXTBOX_THEME.TEXT_YELLOW:
         return css`
           color: ${({ theme }) => theme.palette.storyPage.fontYellow};
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxNone};
         `;
-      case FONT_COLOR.YELLOW_STROKED:
+      case TEXTBOX_THEME.TEXT_BLACK:
+        return css`
+          color: ${({ theme }) => theme.palette.storyPage.fontBlack};
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxNone};
+        `;
+
+      case TEXTBOX_THEME.TEXTBOX_WHITE_STANDARD:
+        return css`
+          color: ${({ theme }) => theme.palette.storyPage.fontWhite};
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxStandard};
+        `;
+      case TEXTBOX_THEME.TEXTBOX_WHITE_INTENSE:
+        return css`
+          color: ${({ theme }) => theme.palette.storyPage.fontWhite};
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxIntense};
+        `;
+      case TEXTBOX_THEME.TEXTBOX_YELLOW_STANDARD:
         return css`
           color: ${({ theme }) => theme.palette.storyPage.fontYellow};
-          font-weight: bold;
-          -webkit-text-stroke: ${({ theme }) =>
-              theme.palette.storyPage.fontBlack}
-            1px;
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxStandard};
         `;
-      case FONT_COLOR.BLACK:
+      case TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE:
         return css`
-          color: ${({ theme }) => theme.palette.storyPage.fontBlack};
+          color: ${({ theme }) => theme.palette.storyPage.fontYellow};
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxIntense};
         `;
-      case FONT_COLOR.BLACK_STROKED:
-        return css`
-          color: ${({ theme }) => theme.palette.storyPage.fontBlack};
-          font-weight: bold;
-          -webkit-text-stroke: ${({ theme }) =>
-              theme.palette.storyPage.fontWhite}
-            1px;
-        `;
+
       default:
         return css`
           color: ${({ theme }) => theme.palette.storyPage.fontWhite};
-          font-weight: bold;
-          -webkit-text-stroke: ${({ theme }) =>
-              theme.palette.storyPage.fontBlack}
-            1px;
+          background-color: ${({ theme }) =>
+            theme.palette.storyPage.textboxNone};
         `;
     }
   }};

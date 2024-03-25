@@ -73,18 +73,6 @@ export const Settings = styled.div`
   align-content: center;
   justify-content: space-evenly;
   margin-bottom: 24px;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    flex-direction: row;
-  }
-`;
-
-export const SettingWrapper = styled.div`
-  width: 32%;
-  height: auto;
-  display: flex;
-  padding: 0 12px;
-  flex-direction: column;
 `;
 
 export const SettingName = styled.h4`
@@ -95,17 +83,49 @@ export const SettingName = styled.h4`
   margin-bottom: 24px;
 `;
 
+export const SettingsGroup = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 24px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: row;
+  }
+`;
+
+export const SettingWrapper = styled.div`
+  width: 44%;
+  height: auto;
+  display: flex;
+  padding: 0 12px;
+  flex-direction: column;
+`;
+
 export const SettingElementWrapper = styled.label`
   position: relative;
 
   input {
     position: absolute;
     opacity: 0;
-    color: ${({ theme }) => theme.palette.accent};
 
     &:checked ~ div {
       background-color: ${({ theme }) => theme.palette.accentActive};
     }
+  }
+`;
+
+export const SettingRangeWrapper = styled.label`
+  width: 100%;
+
+  input {
+    display: block;
+    width: 80%;
+    height: 24px;
+    margin: 0 auto;
   }
 `;
 
@@ -117,7 +137,6 @@ export const SettingButton = styled.div`
   margin-bottom: 6px;
   text-align: center;
   cursor: pointer;
-
   color: ${({ theme }) => theme.palette.secondary};
   background-color: ${({ theme }) => theme.palette.green};
 

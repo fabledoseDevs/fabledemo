@@ -7,13 +7,9 @@ declare module 'styled-components' {
 export type ViewportName = 'desktop' | 'laptop' | 'tablet' | 'mobile';
 
 export type StoryPageOptions =
-  | 'textbox0'
-  | 'textbox40'
-  | 'textbox60'
-  | 'textbox85'
-  | 'fontSmall'
-  | 'fontMedium'
-  | 'fontLarge'
+  | 'textboxNone'
+  | 'textboxStandard'
+  | 'textboxIntense'
   | 'fontWhite'
   | 'fontBlack'
   | 'fontYellow';

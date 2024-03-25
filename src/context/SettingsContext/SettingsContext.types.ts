@@ -1,32 +1,20 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-export enum BACKGROUND_VARIANTS {
-  NONE = 'none',
-  LIGHT = 'light',
-  MEDIUM = 'medium',
-  INTENSE = 'intense',
-}
-
-export enum FONT_SIZE {
-  SMALL = 'small',
-  MEDIUM = 'medium',
-  LARGE = 'large',
-}
-
-export enum FONT_COLOR {
-  WHITE = 'white',
-  WHITE_STROKED = 'white-stroked',
-  BLACK = 'black',
-  BLACK_STROKED = 'black-stroked',
-  YELLOW = 'yellow',
-  YELLOW_STROKED = 'yellow-stroked',
+export enum TEXTBOX_THEME {
+  AUTO = 'auto',
+  TEXT_WHITE = 'text-white',
+  TEXT_YELLOW = 'text-yellow',
+  TEXT_BLACK = 'text-black',
+  TEXTBOX_WHITE_STANDARD = 'textbox-white-standard',
+  TEXTBOX_WHITE_INTENSE = 'textbox-white-intense',
+  TEXTBOX_YELLOW_STANDARD = 'textbox-yellow-standard',
+  TEXTBOX_YELLOW_INTENSE = 'textbox-yellow-intense',
 }
 
 export interface SettingContextProps {
   cookieConsent: boolean;
-  background: BACKGROUND_VARIANTS;
-  fontSize: FONT_SIZE;
-  fontColor: FONT_COLOR;
+  fontSize: number;
+  theme: TEXTBOX_THEME;
 }
 
 export type SettingsContext = {
