@@ -65,13 +65,12 @@ export const Slide = styled(SwiperSlide)`
   background-color: ${({ theme }) => theme.palette.lightergreen};
 `;
 
-export const SettingsButton = styled.button`
+const iconsCommon = css`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.veryTop};
   width: 50px;
   height: 50px;
-  bottom: 10px;
-  left: 10px;
+
   background: none;
   border: 0;
   opacity: 0.25;
@@ -85,4 +84,22 @@ export const SettingsButton = styled.button`
   svg {
     color: #fff;
   }
+`;
+
+export const ReturnToMainPage = styled.button`
+  ${iconsCommon};
+  bottom: 10px;
+  left: 10px;
+`;
+
+export const SettingsButton = styled.button`
+  ${iconsCommon};
+  bottom: 10px;
+  left: 65px;
+`;
+
+export const FullscreenButton = styled.button`
+  ${iconsCommon};
+  bottom: 10px;
+  left: 125px;
 `;
