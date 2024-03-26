@@ -1,14 +1,10 @@
-import { Close } from '@styled-icons/ionicons-outline/Close';
 import React from 'react';
 
+import ModalWindow from '@/components/ModalWindow';
 import {
-  ExitButton,
-  ExitLayer,
   Headline,
   InfoLine,
   Synopsis,
-  TagboxContainer,
-  TagboxModal,
   TagColumn,
   TagSorter,
 } from '@/components/Tagbox/Tagbox.styled';
@@ -24,13 +20,8 @@ export const Tagbox: TagboxType = ({
   storyTitle,
   synopsis,
 }) => (
-  <TagboxModal>
-    <ExitLayer onClick={() => exitFunction(false)} />
-    <TagboxContainer>
-      <ExitButton onClick={() => exitFunction(false)}>
-        <span>Zamknij</span>
-        <Close />
-      </ExitButton>
+  <>
+    <ModalWindow exitFunction={exitFunction}>
       <Headline>
         <InfoLine>Motywy i rekomendacje dla utworu</InfoLine>
         <h2>{storyTitle}</h2>
@@ -49,6 +40,6 @@ export const Tagbox: TagboxType = ({
       </TagSorter>
       <InfoLine>Streszczenie</InfoLine>
       <Synopsis>{synopsis}</Synopsis>
-    </TagboxContainer>
-  </TagboxModal>
+    </ModalWindow>
+  </>
 );
