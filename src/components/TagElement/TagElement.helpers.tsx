@@ -66,7 +66,7 @@ export const tagDataSelector: TagDataSelectorType = tagName => {
       return {
         title: 'Rodzina',
         description:
-          'Utwór zawiera komentarze na temat wartości płynących z więzi rodzinnych ',
+          'Utwór zawiera komentarze na temat wartości płynących z więzi rodzinnych.',
         icon: '/images/tags/Rodzina.svg',
       };
     case TAG_NAMES.DEATH:

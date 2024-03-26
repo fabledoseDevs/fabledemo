@@ -40,7 +40,7 @@ export const TagList: TagListType = ({
           onClick={() => setInfoModalActive(prevState => !prevState)}
         >
           <InfoCircle />
-          <span>Sprawdź tagi</span>
+          <span>Dla rodzica</span>
         </TagsSummaryButton>
       </TagListBody>
       {isInfoModalActive && (
