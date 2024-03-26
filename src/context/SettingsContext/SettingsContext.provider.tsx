@@ -23,14 +23,14 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
     () =>
       storedSettings || {
         cookieConsent: false,
-        theme: TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE,
+        theme: TEXTBOX_THEME.AUTO,
         fontSize: 22,
       },
   );
 
   useEffect(() => {
     setCookie('settings', settings, { maxAge: 2592000 });
-  }, [settings, setCookie]);
+  }, [settings]);
 
   return (
     <SettingsContext.Provider value={{ settings, setSettings }}>
