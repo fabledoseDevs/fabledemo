@@ -1,6 +1,8 @@
+import Image from 'next/image';
+
 import Button from '@/components/Button';
 
-import Image from '../../../public/images/jumbotron.png';
+import MainImage from '../../../public/images/jumbotron.png';
 import RedLine from '../../../public/images/span.png';
 import {
   ContentWrapper,
@@ -23,13 +25,13 @@ export const Jumbotron: JumbotronType = ({
         {header.before}
         <br />
         <RedSpan>
-          <img src={RedLine.src} alt="Red line" />
+          <Image src={RedLine.src} alt="Red line" width={282} height={116} />
           {redLineText}
         </RedSpan>
         {header.after}
       </h2>
       <Button {...button} />
     </ContentWrapper>
-    <JumbotronImage src={Image.src} alt="Jumbo" width={966} height={577} />
+    <JumbotronImage src={MainImage.src} alt="Jumbo" width={966} height={577} />
   </JumbotronWrapper>
 );

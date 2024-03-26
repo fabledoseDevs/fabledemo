@@ -19,6 +19,7 @@ const theme: Theme = {
     accentActive: '#DC4E49',
     background: '#FAF3D3',
     linearBackground: 'linear-gradient(55deg, #FAF3D3 0%, #FFF 100%)',
+    modalBackground: 'rgba(0, 0, 0, 0.7)',
     wideShadow: 'rgba(0, 0, 0, 0.45) 0 25px 20px -20px',
     closeShadow: 'rgba(0, 0, 0, 0.45) 0 15px 10px -10px;',
     innerShadow:

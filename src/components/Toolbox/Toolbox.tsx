@@ -1,13 +1,11 @@
-import { Close } from '@styled-icons/ionicons-outline/Close';
 import { useRef } from 'react';
 
+import ModalWindow from '@/components/ModalWindow';
 import { TextBox } from '@/components/StoryPage/StoryPage.styled';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 
 import {
-  ExitButton,
-  ExitLayer,
   Preview,
   SettingButton,
   SettingElementWrapper,
@@ -16,8 +14,6 @@ import {
   Settings,
   SettingsGroup,
   SettingWrapper,
-  ToolboxContainer,
-  ToolboxModal,
 } from './Toolbox.styled';
 import type { Toolbox as ToolboxType } from './Toolbox.types';
 
@@ -35,136 +31,126 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
   const fontRange = useRef<HTMLInputElement>(null);
 
   return (
-    <ToolboxModal>
-      <ExitLayer onClick={() => exitFunction(false)} />
-      <ToolboxContainer>
-        <ExitButton onClick={() => exitFunction(false)}>
-          <span>Zamknij</span>
-          <Close />
-        </ExitButton>
-        <Settings>
-          <SettingName>Wygląd tekstu</SettingName>
-          <SettingsGroup>
-            <SettingWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={settings.theme === TEXTBOX_THEME.AUTO}
-                  onChange={() => handleThemeChange(TEXTBOX_THEME.AUTO)}
-                />
-                <SettingButton>Domyślne</SettingButton>
-              </SettingElementWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={settings.theme === TEXTBOX_THEME.TEXT_WHITE}
-                  onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_WHITE)}
-                />
-                <SettingButton>Biały Tekst</SettingButton>
-              </SettingElementWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={settings.theme === TEXTBOX_THEME.TEXT_YELLOW}
-                  onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_YELLOW)}
-                />
-                <SettingButton>Żółty Tekst</SettingButton>
-              </SettingElementWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={settings.theme === TEXTBOX_THEME.TEXT_BLACK}
-                  onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_BLACK)}
-                />
-                <SettingButton>Czarny Tekst</SettingButton>
-              </SettingElementWrapper>
-            </SettingWrapper>
-            <SettingWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={
-                    settings.theme === TEXTBOX_THEME.TEXTBOX_WHITE_STANDARD
-                  }
-                  onChange={() =>
-                    handleThemeChange(TEXTBOX_THEME.TEXTBOX_WHITE_STANDARD)
-                  }
-                />
-                <SettingButton>Biały Tekst / Delikatny Cień</SettingButton>
-              </SettingElementWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={
-                    settings.theme === TEXTBOX_THEME.TEXTBOX_WHITE_INTENSE
-                  }
-                  onChange={() =>
-                    handleThemeChange(TEXTBOX_THEME.TEXTBOX_WHITE_INTENSE)
-                  }
-                />
-                <SettingButton>Biały Tekst / Intensywny Cień</SettingButton>
-              </SettingElementWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={
-                    settings.theme === TEXTBOX_THEME.TEXTBOX_YELLOW_STANDARD
-                  }
-                  onChange={() =>
-                    handleThemeChange(TEXTBOX_THEME.TEXTBOX_YELLOW_STANDARD)
-                  }
-                />
-                <SettingButton>Żółty Tekst / Delikatny Cień</SettingButton>
-              </SettingElementWrapper>
-              <SettingElementWrapper>
-                <input
-                  type="radio"
-                  value="none"
-                  checked={
-                    settings.theme === TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE
-                  }
-                  onChange={() =>
-                    handleThemeChange(TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE)
-                  }
-                />
-                <SettingButton>Żółty Tekst / Intensywny Cień</SettingButton>
-              </SettingElementWrapper>
-            </SettingWrapper>
-          </SettingsGroup>
-          <SettingName>Wielkość czcionki ({settings.fontSize})</SettingName>
-          <SettingRangeWrapper>
-            <input
-              ref={fontRange}
-              type="range"
-              min="12"
-              max="36"
-              step="1"
-              value={settings.fontSize}
-              onChange={() =>
-                fontRange.current &&
-                handleFontSizeChange(Number(fontRange.current.value))
-              }
-            />
-          </SettingRangeWrapper>
-        </Settings>
-        <Preview>
-          <TextBox textboxTheme={settings.theme} fontSize={settings.fontSize}>
-            Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
-            malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej
-            skóra była biała jak śnieg, a włosy czarne jak atrament. Jednak
-            szczęśliwe życie Śnieżki było zagrożone przez kaprys jej złej
-            macochy, która ponad wszystko, pragnęła być uznawaną za
-            najpięknijeszą...
-          </TextBox>
-        </Preview>
-      </ToolboxContainer>
-    </ToolboxModal>
+    <ModalWindow exitFunction={exitFunction}>
+      <Settings>
+        <SettingName>Wygląd tekstu</SettingName>
+        <SettingsGroup>
+          <SettingWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={settings.theme === TEXTBOX_THEME.AUTO}
+                onChange={() => handleThemeChange(TEXTBOX_THEME.AUTO)}
+              />
+              <SettingButton>Domyślne</SettingButton>
+            </SettingElementWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={settings.theme === TEXTBOX_THEME.TEXT_WHITE}
+                onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_WHITE)}
+              />
+              <SettingButton>Biały Tekst</SettingButton>
+            </SettingElementWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={settings.theme === TEXTBOX_THEME.TEXT_YELLOW}
+                onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_YELLOW)}
+              />
+              <SettingButton>Żółty Tekst</SettingButton>
+            </SettingElementWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={settings.theme === TEXTBOX_THEME.TEXT_BLACK}
+                onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_BLACK)}
+              />
+              <SettingButton>Czarny Tekst</SettingButton>
+            </SettingElementWrapper>
+          </SettingWrapper>
+          <SettingWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={
+                  settings.theme === TEXTBOX_THEME.TEXTBOX_WHITE_STANDARD
+                }
+                onChange={() =>
+                  handleThemeChange(TEXTBOX_THEME.TEXTBOX_WHITE_STANDARD)
+                }
+              />
+              <SettingButton>Biały Tekst / Delikatny Cień</SettingButton>
+            </SettingElementWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={settings.theme === TEXTBOX_THEME.TEXTBOX_WHITE_INTENSE}
+                onChange={() =>
+                  handleThemeChange(TEXTBOX_THEME.TEXTBOX_WHITE_INTENSE)
+                }
+              />
+              <SettingButton>Biały Tekst / Intensywny Cień</SettingButton>
+            </SettingElementWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={
+                  settings.theme === TEXTBOX_THEME.TEXTBOX_YELLOW_STANDARD
+                }
+                onChange={() =>
+                  handleThemeChange(TEXTBOX_THEME.TEXTBOX_YELLOW_STANDARD)
+                }
+              />
+              <SettingButton>Żółty Tekst / Delikatny Cień</SettingButton>
+            </SettingElementWrapper>
+            <SettingElementWrapper>
+              <input
+                type="radio"
+                value="none"
+                checked={
+                  settings.theme === TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE
+                }
+                onChange={() =>
+                  handleThemeChange(TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE)
+                }
+              />
+              <SettingButton>Żółty Tekst / Intensywny Cień</SettingButton>
+            </SettingElementWrapper>
+          </SettingWrapper>
+        </SettingsGroup>
+        <SettingName>Wielkość czcionki ({settings.fontSize})</SettingName>
+        <SettingRangeWrapper>
+          <input
+            ref={fontRange}
+            type="range"
+            min="12"
+            max="36"
+            step="1"
+            value={settings.fontSize}
+            onChange={() =>
+              fontRange.current &&
+              handleFontSizeChange(Number(fontRange.current.value))
+            }
+          />
+        </SettingRangeWrapper>
+      </Settings>
+      <Preview>
+        <TextBox textboxTheme={settings.theme} fontSize={settings.fontSize}>
+          Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
+          malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej skóra
+          była biała jak śnieg, a włosy czarne jak atrament. Jednak szczęśliwe
+          życie Śnieżki było zagrożone przez kaprys jej złej macochy, która
+          ponad wszystko, pragnęła być uznawaną za najpięknijeszą...
+        </TextBox>
+      </Preview>
+    </ModalWindow>
   );
 };

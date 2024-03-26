@@ -4,13 +4,13 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
+import ModalWindow from '@/components/ModalWindow';
 
-import { ExitboxContainer, ExitboxModal, ExitLayer } from './Exitbox.styled';
+import { ExitboxContainer } from './Exitbox.styled';
 import type { Exitbox as ExitboxType } from './Exitbox.types';
 
 export const Exitbox: ExitboxType = ({ exitFunction }) => (
-  <ExitboxModal>
-    <ExitLayer onClick={() => exitFunction(false)} />
+  <ModalWindow exitFunction={exitFunction}>
     <ExitboxContainer>
       <h3>Czy chesz zakończyć czytanie i wrócić do strony głównej?</h3>
       <div>
@@ -30,5 +30,5 @@ export const Exitbox: ExitboxType = ({ exitFunction }) => (
         />
       </div>
     </ExitboxContainer>
-  </ExitboxModal>
+  </ModalWindow>
 );

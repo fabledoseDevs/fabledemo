@@ -23,6 +23,7 @@ export interface Palette {
   accent: string;
   accentActive: string;
   background: string;
+  modalBackground: string;
   linearBackground: string;
   wideShadow: string;
   closeShadow: string;
