@@ -8,9 +8,9 @@ import theme from '@/styles/theme';
 
 const App = ({ Component, pageProps }: AppProps): ReactElement => (
   <ThemeProvider>
-    <GlobalStyle theme={theme} />
     <ScreenProvider>
       <SettingsProvider>
+        <GlobalStyle theme={theme} />
         <Component {...pageProps} />
       </SettingsProvider>
     </ScreenProvider>

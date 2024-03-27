@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import {
   FacebookIcon,
   InstagramIcon,
@@ -15,19 +13,27 @@ export const SocialIcons: SocialIconsType = () => (
     Napisz do nas &nbsp;&nbsp;|
     <List>
       <li>
-        <Link href="https://www.facebook.com/fabledose/">
+        <a
+          href="https://www.facebook.com/fabledose/"
+          target="_blank"
+          aria-label="Go to Facebook Page"
+        >
           <FacebookIcon />
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="/">
+        <a href="/" target="_blank" aria-label="Go to Instagram Page">
           <InstagramIcon />
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="https://twitter.com/fabledose">
+        <a
+          href="https://twitter.com/fabledose"
+          target="_blank"
+          aria-label="Go to Twitter Page"
+        >
           <TwitterIcon />
-        </Link>
+        </a>
       </li>
     </List>
   </SocialIconsBody>
