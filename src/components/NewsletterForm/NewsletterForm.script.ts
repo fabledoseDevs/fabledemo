@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import type { UseScript as UseScriptType } from '@/components/NewsletterForm/NewsletterForm.types';
+import type { UseScript as UseScriptType } from './NewsletterForm.types';
 
 const useScript: UseScriptType = src => {
   useEffect(() => {

@@ -10,7 +10,7 @@ export const Captcha: CaptchaType = () => (
   >
     <div
       className="g-recaptcha"
-      data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"
+      data-sitekey={process.env.NEWSLETTER_CAPTCHA_ID}
     />
   </CaptchaDiv>
 );

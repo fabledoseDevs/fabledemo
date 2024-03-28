@@ -15,7 +15,7 @@ import type { NewsletterForm as NewsletterFormType } from './NewsletterForm.type
 export const NewsletterForm: NewsletterFormType = () => {
   useScript('https://www.google.com/recaptcha/api.js');
   useScript(
-    'https://groot.mailerlite.com/js/w/webforms.min.js?v2d8fb22bb5b3677f161552cd9e774127',
+    `https://groot.mailerlite.com/js/w/webforms.min.js?${process.env.NEWSLETTER_SUBMISSION_KEY}`,
   );
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
