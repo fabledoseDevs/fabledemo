@@ -10,10 +10,21 @@ Best to use [NVM](https://github.com/nvm-sh/nvm)
 run `nvm install` in the root of the project. see the .nvmrc file
 
 ### Requirements:
-```text
-node: ^18.17.0
-next: 14.0.4
-react: ^18
+```json
+{
+  "node": "^18.17.0",
+  "next": "14.0.4",
+  "react": "^18"
+}
+```
+
+### Env file
+
+for sending an email you need to create an `.env` file in root 
+
+```dotenv
+NEWSLETTER_SUBMISSION_KEY=
+NEWSLETTER_CAPTCHA_ID=
 ```
 
 ### Workflow:
