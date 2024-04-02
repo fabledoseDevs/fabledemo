@@ -34,70 +34,98 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
 
   ${({ layout }) => {
     switch (layout) {
-      case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_BOTTOM:
+      case LAYOUT_VARIANTS.WIDE_TEXT_TOP:
         return css`
           flex-direction: column;
           ${flexCenterAlignment};
-          justify-content: flex-end;
+          justify-content: flex-start;
         `;
-      case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_MIDDLE:
+      case LAYOUT_VARIANTS.WIDE_TEXT_MIDDLE:
         return css`
           flex-direction: column;
           ${flexCenterAlignment};
           justify-content: center;
         `;
-      case LAYOUT_VARIANTS.SINGLE_COLUMN_TEXT_TOP:
+      case LAYOUT_VARIANTS.WIDE_TEXT_BOTTOM:
         return css`
           flex-direction: column;
           ${flexCenterAlignment};
-          justify-content: flex-start;
-        `;
-      case LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT:
-        return css`
-          flex-direction: row;
-          ${flexCenterAlignment};
-          justify-content: flex-start;
-
-          p {
-            width: 50%;
-          }
-        `;
-      case LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_RIGHT:
-        return css`
-          flex-direction: row;
-          ${flexCenterAlignment};
           justify-content: flex-end;
+        `;
 
+      case LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT:
+        return css`
+          flex-direction: row;
+          align-items: flex-start;
           p {
             width: 50%;
           }
         `;
-      case LAYOUT_VARIANTS.DIAGONAL_TLBR:
+      case LAYOUT_VARIANTS.NARROW_TEXT_MIDDLE_LEFT:
         return css`
           flex-direction: row;
           ${flexCenterAlignment};
+          p {
+            width: 50%;
+          }
+        `;
+      case LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_LEFT:
+        return css`
+          flex-direction: row;
+          align-items: flex-end;
+          p {
+            width: 50%;
+          }
+        `;
+      case LAYOUT_VARIANTS.NARROW_TEXT_TOP_RIGHT:
+        return css`
+          flex-direction: row;
+          justify-content: flex-end;
+          p {
+            width: 50%;
+          }
+        `;
+      case LAYOUT_VARIANTS.NARROW_TEXT_MIDDLE_RIGHT:
+        return css`
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+          p {
+            width: 50%;
+          }
+        `;
+      case LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_RIGHT:
+        return css`
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: flex-end;
+          p {
+            width: 50%;
+          }
+        `;
 
+      case LAYOUT_VARIANTS.DIAGONAL_TOP_LEFT_TO_BOTTOM_RIGHT:
+        return css`
+          flex-direction: row;
+          ${flexCenterAlignment};
           p:first-child {
             width: 45%;
             align-self: flex-start;
           }
-
           p:last-child {
             width: 45%;
             margin-left: 10%;
             align-self: flex-end;
           }
         `;
-      case LAYOUT_VARIANTS.DIAGONAL_TRBL:
+      case LAYOUT_VARIANTS.DIAGONAL_TOP_RIGHT_TO_BOTTOM_LEFT:
         return css`
           flex-direction: row;
           ${flexCenterAlignment};
-
           p:first-child {
             width: 45%;
             align-self: flex-end;
           }
-
           p:last-child {
             width: 45%;
             margin-left: 10%;

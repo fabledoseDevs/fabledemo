@@ -49,7 +49,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
   content: [
     {
       slideId: 1,
-      layout: LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT,
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT,
       paragraphs: [
         'Na skraju przytulnego lasu, w drewnianym domu żyły sobie trzy misie. Tata miś, który był duży i silny, mama miś o łagodnym sercu, oraz mały misio co był marudny. W domu misiów było przytulnie. Były w nim trzy fotele oraz trzy, starannie pościelone łóżeczka. Misiowa rodzina codziennie rano jadała owsiankę przygotowywaną przez mamę. To była najlepsza owsianka na świecie — z miodem i jagodami. Jednak bardziej niż owsiankę misie uwielbiały spacery po lesie. Pewnego ranka postanowiły ruszyć na taki spacer wyjątkowo wcześnie. Wstały od stołu, od śniadania, nie skończywszy owsianki, i wyszły do lasu.\n',
       ],
@@ -63,7 +63,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     },
     {
       slideId: 2,
-      layout: LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_RIGHT,
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_RIGHT,
       paragraphs: [
         'Tak się złożyło, że tego dnia nieopodal ich domu przechadzała się złotowłosa dziewczynka. Niesforne to było dziecko, znane z psotnego zachowania i niebaczenia na innych. Złotowłosa zobaczywszy otwarty dom, wślizgnęła się do środka bez zaproszenia.\n',
       ],
