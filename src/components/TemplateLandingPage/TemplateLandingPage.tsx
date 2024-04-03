@@ -53,7 +53,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
           author: GOLDILOCKS_AND_THREE_BEARS.info.author,
           ctaButton: {
             purpose: PURPOSE.ANCHOR,
-            label: 'Dowiedz się więcej',
+            label: 'Czytaj',
             anchorLink: '/goldilocks',
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
