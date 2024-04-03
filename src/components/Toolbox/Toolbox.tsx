@@ -131,9 +131,9 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
           <input
             ref={fontRange}
             type="range"
-            min="12"
-            max="36"
-            step="1"
+            min="0.6"
+            max="2"
+            step="0.1"
             value={settings.fontSize}
             onChange={() =>
               fontRange.current &&

@@ -24,7 +24,7 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
       storedSettings || {
         cookieConsent: false,
         theme: TEXTBOX_THEME.AUTO,
-        fontSize: 22,
+        fontSize: 1,
       },
   );
 

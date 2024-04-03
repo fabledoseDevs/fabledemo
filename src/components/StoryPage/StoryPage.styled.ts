@@ -151,11 +151,26 @@ export const TextBox = styled.p<{
   fontSize: number;
   wildcard?: WildcardData;
 }>`
-  padding: 20px;
   line-height: 1.6;
 
   //FONT SIZE
-  font-size: ${({ fontSize }) => fontSize + 'px'};
+  font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
+  padding: 0.8%;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
+    padding: 1%;
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
+    padding: 1.2%;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
+    padding: 1.4%;
+  }
 
   //THEME SELECTOR
   ${({ textboxTheme }) => {

@@ -79,10 +79,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       slideId: 3,
       layout: LAYOUT_VARIANTS.WILDCARD,
       wildcardData: [
-        { top: 5, left: 2.5, width: 30 },
-        { top: 30, left: 45, width: 35 },
-        { top: 45, left: 50, width: 35 },
-        { top: 60, left: 55, width: 40 },
+        { top: 5, left: 2.5, width: 40 },
+        { top: 20, left: 48, width: 40 },
+        { top: 40, left: 50, width: 40 },
+        { top: 60, left: 52, width: 40 },
       ],
       paragraphs: [
         'Będąc w środku, od razu poczuła w powietrzu zapach owsianki. Usiadła przy stole kuchennym i zaczęła wyjadać owsiankę należącą do misiów.',
@@ -103,10 +103,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       slideId: 6,
       layout: LAYOUT_VARIANTS.WILDCARD,
       wildcardData: [
-        { top: 65, left: 2.5, width: 30 },
+        { top: 55, left: 2.5, width: 30 },
         { top: 10, left: 62, width: 35 },
-        { top: 25, left: 57, width: 35 },
-        { top: 40, left: 52, width: 40 },
+        { top: 25, left: 59, width: 35 },
+        { top: 38, left: 57, width: 35 },
       ],
       paragraphs: [
         'Wtem misie wróciły ze swojego porannego spaceru. I od razu po wejściu do kuchni zorientowały się, że coś jest nie tak. Podeszły do stolika, na którym stała owsianka i zdumione zaczęły ze sobą rozmawiać.',
