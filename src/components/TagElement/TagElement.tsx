@@ -1,11 +1,26 @@
 import Image from 'next/image';
+import { useState } from 'react';
 
 import { tagDataSelector } from './TagElement.helpers';
-import { DescriptionBox, IconBox, TagBody } from './TagElement.styled';
+import {
+  CustomLabel,
+  DescriptionBox,
+  IconBox,
+  TagBody,
+} from './TagElement.styled';
 import type { TagElement as TagElementType } from './TagElement.types';
 
 export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
+  const [labelActive, setLabelActive] = useState<boolean>(false);
   const tagData = tagDataSelector(tagName);
+
+  const handleMouseEnter = () => {
+    setLabelActive(true);
+  };
+
+  const handleMouseLeave = () => {
+    setLabelActive(false);
+  };
 
   if (extendedTag) {
     return (
@@ -25,14 +40,13 @@ export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
   }
 
   return (
-    <TagBody extend={false}>
-      <Image
-        src={tagData.icon}
-        alt={tagData.title}
-        width={50}
-        height={50}
-        title={tagData.title}
-      />
+    <TagBody
+      extend={false}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Image src={tagData.icon} alt={tagData.title} width={50} height={50} />
+      {labelActive && <CustomLabel>{tagData.title}</CustomLabel>}
     </TagBody>
   );
 };

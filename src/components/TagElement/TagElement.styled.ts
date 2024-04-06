@@ -52,3 +52,19 @@ export const DescriptionBox = styled.p`
   height: 80px;
   width: calc(100% - 120px);
 `;
+
+export const CustomLabel = styled.div`
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: auto;
+  min-width: 100px;
+  color: black;
+  padding: 10px;
+  border: 2px solid ${({ theme }) => theme.palette.accentActive};
+  border-radius: 6px;
+  background-color: ${({ theme }) => theme.palette.background};
+  z-index: ${({ theme }) => theme.zIndex.high};
+  box-shadow: ${({ theme }) => theme.palette.closeShadow};
+`;
