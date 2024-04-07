@@ -10,9 +10,9 @@ import {
 import type { ModalWindow as ModalWindowType } from './ModalWindow.types';
 
 export const ModalWindow: ModalWindowType = ({ exitFunction, children }) => (
-  <ModalWindowBody>
+  <ModalWindowBody className="WINDOW">
     <ExitLayer onClick={() => exitFunction(false)} />
-    <ModalContentContainer>
+    <ModalContentContainer className="CONTAINER">
       <ExitButton onClick={() => exitFunction(false)}>
         <span>Zamknij</span>
         <Close />

@@ -14,16 +14,20 @@ export const Settings = styled.div`
 
 export const SettingName = styled.h4`
   width: 100%;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
   text-align: center;
   margin-bottom: 24px;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    font-size: 20px;
+  }
 `;
 
 export const SettingsGroup = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   align-content: center;
   justify-content: space-evenly;
@@ -73,6 +77,8 @@ export const SettingButton = styled.div`
   height: 30px;
   margin-bottom: 6px;
   text-align: center;
+  font-size: 12px;
+  line-height: 30px;
   cursor: pointer;
   color: ${({ theme }) => theme.palette.secondary};
   background-color: ${({ theme }) => theme.palette.green};

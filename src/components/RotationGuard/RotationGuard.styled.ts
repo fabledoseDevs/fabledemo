@@ -56,7 +56,7 @@ export const GuardBody = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: ${({ theme }) => theme.zIndex.veryTop};
+  z-index: ${({ theme }) => theme.zIndex.guard};
   width: 100dvw;
   height: 100dvh;
   display: flex;

@@ -2,13 +2,18 @@ import { styled } from 'styled-components';
 
 export const ExitboxContainer = styled.div`
   width: auto;
-  height: auto;
+  height: 100dvh;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
   align-content: center;
-  justify-content: space-evenly;
+  margin-top: -24px;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    height: auto;
+    margin-top: auto;
+  }
 
   h3 {
     width: 100%;
@@ -18,7 +23,8 @@ export const ExitboxContainer = styled.div`
 
   div {
     display: flex;
+    width: 100%;
     flex-direction: row;
-    gap: 24px;
+    justify-content: space-evenly;
   }
 `;

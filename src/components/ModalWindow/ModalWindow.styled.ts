@@ -15,9 +15,12 @@ export const ModalWindowBody = styled.div`
   z-index: ${({ theme }) => theme.zIndex.high};
   ${flexboxCentered};
   width: 100dvw;
-  height: 100dvh;
-  overflow: hidden;
-  background: ${({ theme }) => theme.palette.storyPage.textbox60};
+  background: ${({ theme }) => theme.palette.storyPage.textboxStandard};
+
+  @media ${({ theme }) => theme.media.laptop} {
+    height: 100dvh;
+    overflow: hidden;
+  }
 `;
 
 export const ExitLayer = styled.button`
@@ -32,37 +35,46 @@ export const ExitLayer = styled.button`
 `;
 
 export const ExitButton = styled.button`
-  position: absolute;
-  top: -45px;
+  position: fixed;
+  top: 0;
   right: 0;
   z-index: ${({ theme }) => theme.zIndex.veryTop};
   width: auto;
-  height: 50px;
+  height: 30px;
   bottom: 10px;
-  background: none;
+  padding: 2px 4px;
   border: 0;
-  color: ${({ theme }) => theme.palette.secondary};
+  color: ${({ theme }) => theme.palette.primary};
+  background-color: ${({ theme }) => theme.palette.secondary};
   cursor: pointer;
 
   svg {
     width: 30px;
     height: 30px;
+    color: ${({ theme }) => theme.palette.accentActive};
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    height: 50px;
     color: ${({ theme }) => theme.palette.secondary};
+    background: none;
   }
 `;
 
 export const ModalContentContainer = styled.div`
   position: relative;
-  width: auto;
-  max-width: 90dvw;
-  height: auto;
-  max-height: 80dvh;
+  width: 100dvw;
+  max-height: 100dvh;
+  overflow: scroll;
   padding: 24px;
-  border-radius: 10px;
   background: ${({ theme }) => theme.palette.background};
-  ${flexboxCentered};
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     max-width: 70dvw;
+    max-height: 90dvh;
+    border-radius: 10px;
   }
 `;

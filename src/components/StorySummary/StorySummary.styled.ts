@@ -21,34 +21,29 @@ export const SummaryLayer = styled.div<{ layout: boolean }>`
   justify-content: ${({ layout }) => (layout ? 'flex-end' : 'flex-start')};
   width: 100dvw;
   height: auto;
-  padding: 5dvw;
+  padding: 0;
   z-index: ${({ theme }) => theme.zIndex.medium};
 
-  @media (orientation: portrait) {
-    height: 100dvh;
-    align-items: flex-end !important;
+  @media ${({ theme }) => theme.media.laptop} {
+    padding: 5dvw;
   }
 `;
 
 export const SummaryCard = styled.div<{ decor?: string }>`
-  width: 50dvw;
+  width: 55dvw;
   height: auto;
-  max-height: 80dvh;
   overflow: clip;
-  border-radius: 10px;
   background-color: antiquewhite;
   box-shadow: ${({ theme }) => theme.palette.wideShadow};
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     width: 45dvw;
+    max-height: 80dvh;
+    border-radius: 10px;
   }
 
   @media ${({ theme }) => theme.media.desktop} {
     width: 40dvw;
-  }
-
-  @media (orientation: portrait) {
-    width: 90dvw;
   }
 
   ${({ decor }) =>
@@ -67,7 +62,7 @@ export const Logo = styled(Image)`
   width: 120px;
   height: auto;
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     margin: 10px auto;
     width: 160px;
   }
@@ -80,16 +75,17 @@ export const Logo = styled(Image)`
 
 export const MainContent = styled.div`
   padding: 10px 10px;
-  height: auto;
-  max-height: 70dvh;
+  height: calc(100dvh - 28px);
   overflow-x: clip;
   overflow-y: scroll;
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     padding: 10px 20px;
+    height: auto;
+    max-height: 70dvh;
   }
 
-  @media ${({ theme }) => theme.media.laptop} {
+  @media ${({ theme }) => theme.media.desktop} {
     padding: 20px 40px;
     overflow-y: hidden;
   }
@@ -99,7 +95,7 @@ export const Author = styled.p`
   text-transform: uppercase;
   font-size: 14px;
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     font-size: 18px;
   }
 
@@ -111,7 +107,7 @@ export const Author = styled.p`
 export const Title = styled.h1`
   font-size: 24px;
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     font-size: 30px;
   }
 
@@ -124,7 +120,7 @@ export const Credits = styled.div`
   font-size: 8px;
   margin: 5px 0;
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     font-size: 10px;
   }
 
@@ -160,11 +156,4 @@ export const ButtonsContainer = styled.div`
   gap: 20px;
   align-items: center;
   align-self: flex-end;
-`;
-
-export const SettingsButton = styled.button`
-  background: none;
-  border: none;
-  padding: 10px 0 0 0;
-  cursor: pointer;
 `;
