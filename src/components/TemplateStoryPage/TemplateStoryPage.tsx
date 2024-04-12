@@ -14,6 +14,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
 
   return (
     <>
+      {screenData.orientation === ORIENTATION.PORTRAIT && <RotationGuard />}
       {storyStatus ? (
         <Story storyContent={storyData.content} />
       ) : (
@@ -31,7 +32,6 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           storyStatusHandler={setStoryStatus}
         />
       )}
-      {screenData.orientation === ORIENTATION.PORTRAIT && <RotationGuard />}
     </>
   );
 };

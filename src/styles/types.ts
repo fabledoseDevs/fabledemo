@@ -38,6 +38,7 @@ export interface Layers {
   medium: string;
   high: string;
   veryTop: string;
+  guard: string;
 }
 
 export interface Theme {

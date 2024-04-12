@@ -49,6 +49,7 @@ const theme: Theme = {
     medium: '5',
     high: '10',
     veryTop: '15',
+    guard: '20',
   },
 };
 

@@ -14,6 +14,7 @@ export const Headline = styled.div`
 `;
 
 export const InfoLine = styled.sup`
+  display: block;
   font-size: 12px;
   text-transform: uppercase;
   text-align: center;
@@ -26,13 +27,17 @@ export const TagSorter = styled.div`
   width: 100%;
   margin-bottom: 48px;
 
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.laptop} {
     flex-direction: row;
   }
 `;
 
 export const TagColumn = styled.div`
-  width: 48%;
+  width: 100%;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    width: 48%;
+  }
 `;
 
 export const Synopsis = styled.p`
