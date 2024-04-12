@@ -6,6 +6,7 @@ import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.pr
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 
 import {
+  LabelWrapper,
   Preview,
   SettingButton,
   SettingElementWrapper,
@@ -126,20 +127,25 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
             </SettingElementWrapper>
           </SettingWrapper>
         </SettingsGroup>
-        <SettingName>Wielkość czcionki ({settings.fontSize})</SettingName>
+        <SettingName>Wielkość czcionki </SettingName>
         <SettingRangeWrapper>
           <input
             ref={fontRange}
             type="range"
-            min="12"
-            max="36"
-            step="1"
+            min="0.8"
+            max="2"
+            step="0.1"
             value={settings.fontSize}
             onChange={() =>
               fontRange.current &&
               handleFontSizeChange(Number(fontRange.current.value))
             }
           />
+          <LabelWrapper>
+            <span>Mała</span>
+            <span>Średnia</span>
+            <span>Duża</span>
+          </LabelWrapper>
         </SettingRangeWrapper>
       </Settings>
       <Preview>

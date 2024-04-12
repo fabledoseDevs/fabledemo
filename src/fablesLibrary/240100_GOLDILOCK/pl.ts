@@ -49,9 +49,9 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
   content: [
     {
       slideId: 1,
-      layout: LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_LEFT,
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT,
       paragraphs: [
-        'Na skraju przytulnego lasu, w drewnianym domu żyły sobie trzy misie. Tata miś, który był duży i silny, mama miś o łagodnym sercu, oraz mały misio co był marudny. W domu misiów było przytulnie. Były w nim trzy fotele oraz trzy, starannie pościelone łóżeczka. Misiowa rodzina codziennie rano jadała owsiankę przygotowywaną przez mamę. To była najlepsza owsianka na świecie — z miodem i jagodami. Jednak bardziej niż owsiankę misie uwielbiały spacery po lesie. Pewnego ranka postanowiły ruszyć na taki spacer wyjątkowo wcześnie. Wstały od stołu, od śniadania, nie skończywszy owsianki, i wyszły do lasu.\n',
+        'Na skraju przytulnego lasu, w drewnianym domu żyły sobie trzy misie. Tata miś, który był duży i silny, mama miś o łagodnym sercu, oraz mały misio co był marudny. W domu misiów było przytulnie. Były w nim trzy fotele oraz trzy, starannie pościelone łóżeczka. Misiowa rodzina codziennie rano jadała owsiankę przygotowywaną przez mamę. To była najlepsza owsianka na świecie — z miodem i jagodami. Jednak bardziej niż owsiankę misie uwielbiały spacery po lesie. Pewnego ranka postanowiły ruszyć na taki spacer wyjątkowo wcześnie. Wstały od stołu, od śniadania, nie skończywszy owsianki, i wyszły do lasu.',
       ],
       picture: {
         description: 'Lorem',
@@ -63,7 +63,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     },
     {
       slideId: 2,
-      layout: LAYOUT_VARIANTS.TWO_COLUMNS_TEXT_RIGHT,
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_RIGHT,
       paragraphs: [
         'Tak się złożyło, że tego dnia nieopodal ich domu przechadzała się złotowłosa dziewczynka. Niesforne to było dziecko, znane z psotnego zachowania i niebaczenia na innych. Złotowłosa zobaczywszy otwarty dom, wślizgnęła się do środka bez zaproszenia.\n',
       ],
@@ -79,10 +79,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       slideId: 3,
       layout: LAYOUT_VARIANTS.WILDCARD,
       wildcardData: [
-        { top: 5, left: 2.5, width: 30 },
-        { top: 30, left: 45, width: 35 },
-        { top: 45, left: 50, width: 35 },
-        { top: 60, left: 55, width: 40 },
+        { top: 5, left: 2.5, width: 40 },
+        { top: 20, left: 48, width: 40 },
+        { top: 40, left: 50, width: 40 },
+        { top: 60, left: 52, width: 40 },
       ],
       paragraphs: [
         'Będąc w środku, od razu poczuła w powietrzu zapach owsianki. Usiadła przy stole kuchennym i zaczęła wyjadać owsiankę należącą do misiów.',
@@ -103,10 +103,10 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       slideId: 6,
       layout: LAYOUT_VARIANTS.WILDCARD,
       wildcardData: [
-        { top: 65, left: 2.5, width: 30 },
+        { top: 55, left: 2.5, width: 30 },
         { top: 10, left: 62, width: 35 },
-        { top: 25, left: 57, width: 35 },
-        { top: 40, left: 52, width: 40 },
+        { top: 25, left: 59, width: 35 },
+        { top: 38, left: 57, width: 35 },
       ],
       paragraphs: [
         'Wtem misie wróciły ze swojego porannego spaceru. I od razu po wejściu do kuchni zorientowały się, że coś jest nie tak. Podeszły do stolika, na którym stała owsianka i zdumione zaczęły ze sobą rozmawiać.',

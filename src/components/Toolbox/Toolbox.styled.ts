@@ -57,12 +57,26 @@ export const SettingElementWrapper = styled.label`
 
 export const SettingRangeWrapper = styled.label`
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   input {
     display: block;
     width: 80%;
     height: 24px;
     margin: 0 auto;
+  }
+`;
+
+export const LabelWrapper = styled.div`
+  width: 80%;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  span {
+    display: block;
   }
 `;
 
