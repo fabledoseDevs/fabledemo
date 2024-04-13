@@ -15,7 +15,11 @@ export const StoryPage: StoryPageType = ({
     <PageBody>
       <StoryPagePicture {...backgroundPicture} />
       <TextContent layout={layout}>
-        <TextBox textboxTheme={settings.theme} fontSize={settings.fontSize}>
+        <TextBox
+          className={'textBox'}
+          textboxTheme={settings.theme}
+          fontSize={settings.fontSize}
+        >
           {text.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
