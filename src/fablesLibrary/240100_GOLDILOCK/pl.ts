@@ -97,7 +97,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Gdy Złotowłosa zobaczyła tak przytulną chatkę, ciekawość wygrała nad dobrym wychowaniem. Weszła do środka bez zaproszenia!',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Złotowłosa dziewczynka zakrada się do domu misiów',
         picSizes: {
           '1080': img_02_hd,
           '720': img_02_sd,
@@ -115,7 +115,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Ta jest w sam raz!" Wykrzyknęła gdy zjadła łyżeczkę owsianki z miseczki Małego Misia. Biedny, biedny Mały Miś! Złotowłosa spałaszowała całą jego owsiankę i jeszcze wylizała miseczkę!',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Dziwczynka zajada owsiankę',
         picSizes: {
           '1080': img_03_hd,
           '720': img_03_sd,
@@ -134,7 +134,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Ten jest w sam raz!" Wykrzyknęła gdy rozsiadła się wygodnie w najmniejszym fotelu, który należał do Małego Misia. I wtem TRACH! Noga od fotelika złamała się, a Złotowłosa wylądowała na podłodze.',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Dziwczynka ułamała nogę od krzesła',
         picSizes: {
           '1080': img_04_hd,
           '720': img_04_sd,
@@ -152,7 +152,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"To jest w sam raz!" Powiedziała po wejściu pod kołderkę w trzecim, najmniejszym łóżeczku. I tam zasnęła.',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Dziwczynka szuka łóżeczka do spania',
         picSizes: {
           '1080': img_05_hd,
           '720': img_05_sd,
@@ -171,7 +171,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Błeee!" Zajęczał Mały Miś-Maruda. "Moją owsiankę ktoś zjadł w całości!"',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Misie szukają intruza w kuchni',
         picSizes: {
           '1080': img_06_hd,
           '720': img_06_sd,
@@ -189,7 +189,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Błeee!" Zajęczał Mały Miś-Maruda. "W moim foteliku ktoś ułamał nogę!"',
       ],
       picture: {
-        description: 'Lorem',
+        description:
+          'Misie szukają intruza w salonie i oglądają popsute foteliki',
         picSizes: {
           '1080': img_07_hd,
           '720': img_07_sd,
@@ -208,7 +209,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Rozmowa Misiów obudziła śpiącą Złotowłosą. Zamrugała trzy razy, a zobaczywszy stojące nad sobą trzy Misie, aż krzyknęła z przerażenia! Zerwała się na równe nogi i jednym susem wyskoczyła przez okno, prosto w zarośla rosnące pod domkiem. Nie oglądając się za siebie, pobiegła najszybciej, jak tylko mogła.',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Misie znajdują Złotowłosą w sypialni',
         picSizes: {
           '1080': img_08_hd,
           '720': img_08_sd,
@@ -225,7 +226,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Powoli, ze zwieszoną głową, wróciła do domku Misiów i nieśmiało zapukała do drzwi. Otworzył Tata Miś i ze srogą miną zapytał:',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Tata miś konfrontuje Złotowłosą',
         picSizes: {
           '1080': img_09_hd,
           '720': img_09_sd,
@@ -243,7 +244,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '"Myślę, że po takich przeprosinach musimy dać jej szansę." Powiedziała Mama Miś do Taty Misia. Życzliwym gestem zaprosiła Złotowłosą do środka: "Proszę, dziewczynko, wejdź. Witamy w naszym domku".\n',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Tata miś konfrontuje Złotowłosą',
         picSizes: {
           '1080': img_09_hd,
           '720': img_09_sd,
@@ -260,7 +261,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         'Chociaż wszyscy wiedzą, że rozrabiać nie wypada, to nie ma takiego dziecka, które nie psoci od czasu do czasu. Jednak najważniejsze jest, aby zawsze przeprosić i naprawić to, co się popsuło.',
       ],
       picture: {
-        description: 'Lorem',
+        description: 'Złotowłosa i misie jedzą wspólną kolację',
         picSizes: {
           '1080': img_10_hd,
           '720': img_10_sd,

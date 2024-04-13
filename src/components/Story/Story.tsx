@@ -93,7 +93,6 @@ export const Story: StoryType = ({ storyContent }) => {
           <Slide key={singlePage.slideId} className="TUTAJ">
             <StoryPage
               layout={singlePage.layout}
-              wildcardsData={singlePage.wildcardData}
               backgroundPicture={singlePage.picture}
               text={singlePage.paragraphs}
             />

@@ -3,9 +3,22 @@ import { css, styled } from 'styled-components';
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
-const flexCenterAlignment = css`
-  align-items: center;
-  align-content: center;
+const fullWidthTextContent = css`
+  width: 100%;
+  height: fit-content;
+`;
+
+const standardTextContent = css`
+  width: 57%;
+  height: fit-content;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 52%;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    width: 47%;
+  }
 `;
 
 export const PageBody = styled.section`
@@ -25,15 +38,39 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  padding: 30px;
+  padding: 10px;
   z-index: ${({ theme }) => theme.zIndex.medium};
+
+  @media ${({ theme }) => theme.media.tablet} {
+    padding: 12px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    padding: 30px;
+  }
 
   ${({ layout }) => {
     switch (layout) {
       case LAYOUT_VARIANTS.WIDE_TEXT_TOP:
-        return css``;
+        return css`
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          div.textBox {
+            ${fullWidthTextContent};
+          }
+        `;
       case LAYOUT_VARIANTS.WIDE_TEXT_MIDDLE:
-        return css``;
+        return css`
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          div.textBox {
+            ${fullWidthTextContent};
+          }
+        `;
       case LAYOUT_VARIANTS.WIDE_TEXT_BOTTOM:
         return css`
           flex-direction: row;
@@ -41,8 +78,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           align-items: flex-end;
 
           div.textBox {
-            width: 100%;
-            height: fit-content;
+            ${fullWidthTextContent};
           }
         `;
 
@@ -53,12 +89,19 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           align-items: flex-start;
 
           div.textBox {
-            width: 47%;
-            height: fit-content;
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_MIDDLE_LEFT:
-        return css``;
+        return css`
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          div.textBox {
+            ${standardTextContent};
+          }
+        `;
       case LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_LEFT:
         return css`
           flex-direction: row;
@@ -66,8 +109,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           align-items: flex-end;
 
           div.textBox {
-            width: 47%;
-            height: fit-content;
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_TOP_RIGHT:
@@ -77,8 +119,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           align-items: flex-start;
 
           div.textBox {
-            width: 47%;
-            height: fit-content;
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_MIDDLE_RIGHT:
@@ -88,8 +129,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           align-items: center;
 
           div.textBox {
-            width: 47%;
-            height: fit-content;
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_RIGHT:
@@ -99,15 +139,9 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           align-items: flex-end;
 
           div.textBox {
-            width: 47%;
-            height: fit-content;
+            ${standardTextContent};
           }
         `;
-
-      case LAYOUT_VARIANTS.DIAGONAL_TOP_LEFT_TO_BOTTOM_RIGHT:
-        return css``;
-      case LAYOUT_VARIANTS.DIAGONAL_TOP_RIGHT_TO_BOTTOM_LEFT:
-        return css``;
       default:
         return css``;
     }
@@ -186,21 +220,21 @@ export const TextBox = styled.div<{
 
     //FONT SIZE
     font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
-    padding: 0.6%;
+    padding: 0.8%;
 
     @media ${({ theme }) => theme.media.tablet} {
       font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
-      padding: 0.8%;
+      padding: 1%;
     }
 
     @media ${({ theme }) => theme.media.laptop} {
       font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
-      padding: 1%;
+      padding: 1.5%;
     }
 
     @media ${({ theme }) => theme.media.desktop} {
       font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
-      padding: 1.2%;
+      padding: 2%;
     }
   }
 `;
