@@ -2,6 +2,7 @@ export interface Info {
   id: string;
   title: string;
   author: string[];
+  editor?: string[];
   translation?: string[];
   pictures: string[];
   thumb: string;

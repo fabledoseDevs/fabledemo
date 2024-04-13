@@ -25,6 +25,7 @@ export const StorySummary: StorySummaryType = ({
   revertLayout,
   author,
   translation,
+  editor,
   picturesAuthor,
   bookTitle,
   extendedSummary,
@@ -57,6 +58,9 @@ export const StorySummary: StorySummaryType = ({
               {translation && ' | Tłumaczenia: '}
               {translation &&
                 translation.map(person => <span key={person}>{person} </span>)}
+              {editor && ' | Edycja: '}
+              {editor &&
+                editor.map(person => <span key={person}>{person} </span>)}
             </p>
           </Credits>
           <TagList
