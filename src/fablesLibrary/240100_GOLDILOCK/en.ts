@@ -77,13 +77,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     },
     {
       slideId: 3,
-      layout: LAYOUT_VARIANTS.WILDCARD,
-      wildcardData: [
-        { top: 5, left: 2.5, width: 40 },
-        { top: 20, left: 48, width: 40 },
-        { top: 40, left: 50, width: 40 },
-        { top: 60, left: 52, width: 40 },
-      ],
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT,
       paragraphs: [
         'Będąc w środku, od razu poczuła w powietrzu zapach owsianki. Usiadła przy stole kuchennym i zaczęła wyjadać owsiankę należącą do misiów.',
         '"Ta jest zbyt gorąca." Powiedziała, zjadłszy łyżeczkę owsianki z miski taty misia.',
@@ -101,13 +95,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
 
     {
       slideId: 6,
-      layout: LAYOUT_VARIANTS.WILDCARD,
-      wildcardData: [
-        { top: 55, left: 2.5, width: 30 },
-        { top: 10, left: 62, width: 35 },
-        { top: 25, left: 59, width: 35 },
-        { top: 38, left: 57, width: 35 },
-      ],
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT,
       paragraphs: [
         'Wtem misie wróciły ze swojego porannego spaceru. I od razu po wejściu do kuchni zorientowały się, że coś jest nie tak. Podeszły do stolika, na którym stała owsianka i zdumione zaczęły ze sobą rozmawiać.',
         '"Ktoś jadł moją owsiankę." Powiedział mocnym głosem tata miś po zerknięciu do swojej miseczki.',
@@ -125,13 +113,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
 
     {
       slideId: 7,
-      layout: LAYOUT_VARIANTS.WILDCARD,
-      wildcardData: [
-        { top: 5, left: 65, width: 30 },
-        { top: 30, left: 60, width: 35 },
-        { top: 45, left: 57, width: 35 },
-        { top: 60, left: 54, width: 40 },
-      ],
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT,
       paragraphs: [
         'Wciąż czujne i nieufne misie przeszły do saloniku, aby sprawdzić, czy intruz wciąż krząta się po domu. Z wielkim zdziwieniem zaczęły badać swoje foteliki.',
         '"Ktoś siedział na moim fotelu." Mocnym głosem powiedział tata miś.',

@@ -27,7 +27,6 @@ export enum LAYOUT_VARIANTS {
   NARROW_TEXT_BOTTOM_RIGHT,
   DIAGONAL_TOP_LEFT_TO_BOTTOM_RIGHT,
   DIAGONAL_TOP_RIGHT_TO_BOTTOM_LEFT,
-  WILDCARD,
 }
 
 export enum TAG_NAMES {
@@ -48,13 +47,6 @@ export enum TAG_NAMES {
   REPARATION = 'reparation',
 }
 
-export interface WildcardData {
-  top: number;
-  left: number;
-  width: number;
-  height?: number;
-}
-
 export interface PictureSizes {
   1080?: string;
   720: string;
@@ -70,7 +62,6 @@ export interface Picture {
 export interface Slide {
   slideId: number;
   layout: LAYOUT_VARIANTS;
-  wildcardData?: WildcardData[];
   paragraphs: string[];
   picture: Picture;
 }

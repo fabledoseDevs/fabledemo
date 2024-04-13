@@ -58,7 +58,7 @@ export const SummaryCard = styled.div<{ decor?: string }>`
 
 export const Logo = styled(Image)`
   display: block;
-  margin: 5px auto;
+  margin: 15px auto;
   width: 120px;
   height: auto;
 
@@ -74,7 +74,7 @@ export const Logo = styled(Image)`
 `;
 
 export const MainContent = styled.div`
-  padding: 10px 10px;
+  padding: 20px;
   height: calc(100dvh - 28px);
   overflow-x: clip;
   overflow-y: scroll;
@@ -117,15 +117,15 @@ export const Title = styled.h1`
 `;
 
 export const Credits = styled.div`
-  font-size: 8px;
+  font-size: 12px;
   margin: 5px 0;
 
   @media ${({ theme }) => theme.media.laptop} {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   @media ${({ theme }) => theme.media.desktop} {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 

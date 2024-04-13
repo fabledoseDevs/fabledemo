@@ -76,5 +76,6 @@ export const ModalContentContainer = styled.div`
     max-width: 70dvw;
     max-height: 90dvh;
     border-radius: 10px;
+    overflow: hidden;
   }
 `;

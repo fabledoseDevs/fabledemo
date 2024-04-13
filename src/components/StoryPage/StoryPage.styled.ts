@@ -1,7 +1,6 @@
 import { css, styled } from 'styled-components';
 
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
-import type { WildcardData } from '@/fablesLibrary/library.types';
 import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
 const flexCenterAlignment = css`
@@ -132,10 +131,6 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
             align-self: flex-start;
           }
         `;
-      case LAYOUT_VARIANTS.WILDCARD:
-        return css`
-          display: block;
-        `;
       default:
         return css`
           flex-direction: row;
@@ -146,30 +141,31 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   }};
 `;
 
-export const TextBox = styled.p<{
+export const TextBox = styled.div<{
   textboxTheme: TEXTBOX_THEME;
   fontSize: number;
-  wildcard?: WildcardData;
 }>`
-  line-height: 1.6;
+  p {
+    line-height: 1.5;
 
-  //FONT SIZE
-  font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
-  padding: 0.8%;
+    //FONT SIZE
+    font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
+    padding: 0.6%;
 
-  @media ${({ theme }) => theme.media.tablet} {
-    font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
-    padding: 1%;
-  }
+    @media ${({ theme }) => theme.media.tablet} {
+      font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
+      padding: 0.8%;
+    }
 
-  @media ${({ theme }) => theme.media.laptop} {
-    font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
-    padding: 1.2%;
-  }
+    @media ${({ theme }) => theme.media.laptop} {
+      font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
+      padding: 1%;
+    }
 
-  @media ${({ theme }) => theme.media.desktop} {
-    font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
-    padding: 1.4%;
+    @media ${({ theme }) => theme.media.desktop} {
+      font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
+      padding: 1.2%;
+    }
   }
 
   //THEME SELECTOR
@@ -233,17 +229,4 @@ export const TextBox = styled.p<{
         `;
     }
   }};
-
-  ${({ wildcard }) => {
-    if (wildcard) {
-      return css`
-        position: absolute;
-        overflow: clip;
-        width: ${wildcard.width}% !important;
-        ${wildcard.height && `height: ${wildcard.height}% !important;`}
-        top: ${wildcard.top}% !important;
-        left: ${wildcard.left}% !important;
-      `;
-    }
-  }}
 `;

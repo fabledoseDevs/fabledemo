@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 
+import { breakpoints } from '@/styles/theme';
+
 import type {
   SettingContextProps,
   SettingsContext as SettingsContextType,
@@ -30,6 +32,32 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
 
   useEffect(() => {
     setCookie('settings', settings, { maxAge: 2592000 });
+  }, [settings]);
+
+  useEffect(() => {
+    const handleFontSizeGuard = () => {
+      const screenWidth = window.innerWidth;
+      if (settings.fontSize > 1) {
+        if (screenWidth <= breakpoints.laptop && settings.fontSize > 1.4) {
+          setSettings(prevSettings => ({ ...prevSettings, fontSize: 1.4 }));
+        } else if (
+          screenWidth <= breakpoints.desktop &&
+          settings.fontSize > 1.6
+        ) {
+          setSettings(prevSettings => ({ ...prevSettings, fontSize: 1.6 }));
+        } else if (
+          screenWidth <= breakpoints.highDef &&
+          settings.fontSize > 2
+        ) {
+          setSettings(prevSettings => ({ ...prevSettings, fontSize: 2 }));
+        }
+      }
+    };
+
+    handleFontSizeGuard();
+
+    window.addEventListener('resize', handleFontSizeGuard);
+    return () => window.removeEventListener('resize', handleFontSizeGuard);
   }, [settings]);
 
   return (
