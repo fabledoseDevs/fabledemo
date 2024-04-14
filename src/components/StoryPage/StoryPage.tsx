@@ -8,7 +8,6 @@ export const StoryPage: StoryPageType = ({
   layout,
   text,
   backgroundPicture,
-  wildcardsData,
 }) => {
   const { settings } = useSettingsContext();
 
@@ -16,16 +15,15 @@ export const StoryPage: StoryPageType = ({
     <PageBody>
       <StoryPagePicture {...backgroundPicture} />
       <TextContent layout={layout}>
-        {text.map((paragraph, index) => (
-          <TextBox
-            key={index}
-            textboxTheme={settings.theme}
-            fontSize={settings.fontSize}
-            wildcard={wildcardsData && wildcardsData[index]}
-          >
-            {paragraph}
-          </TextBox>
-        ))}
+        <TextBox
+          className={'textBox'}
+          textboxTheme={settings.theme}
+          fontSize={settings.fontSize}
+        >
+          {text.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </TextBox>
       </TextContent>
     </PageBody>
   );

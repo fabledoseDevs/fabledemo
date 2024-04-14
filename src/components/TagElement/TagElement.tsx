@@ -16,6 +16,7 @@ export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
 
   const handleMouseEnter = () => {
     setLabelActive(true);
+    setTimeout(() => setLabelActive(false), 2000);
   };
 
   const handleMouseLeave = () => {

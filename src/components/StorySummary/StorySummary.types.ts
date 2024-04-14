@@ -7,6 +7,7 @@ export interface StorySummaryProps {
   revertLayout: boolean;
   author: string[];
   translation?: string[];
+  editor?: string[];
   picturesAuthor: string[];
   bookCover: StoryPagePictureProps;
   coverDecor?: string;

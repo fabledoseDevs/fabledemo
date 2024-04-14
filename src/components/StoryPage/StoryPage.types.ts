@@ -1,15 +1,11 @@
 import type { ReactElement } from 'react';
 
-import type {
-  LAYOUT_VARIANTS,
-  WildcardData,
-} from '@/fablesLibrary/library.types';
+import type { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
 import type { StoryPagePictureProps } from '../StoryPagePicture';
 
 export interface StoryPageProps {
   layout: LAYOUT_VARIANTS;
-  wildcardsData?: WildcardData[];
   text: string[];
   backgroundPicture: StoryPagePictureProps;
 }

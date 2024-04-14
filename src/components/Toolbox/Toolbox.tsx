@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import ModalWindow from '@/components/ModalWindow';
 import { TextBox } from '@/components/StoryPage/StoryPage.styled';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
+import { breakpoints } from '@/styles/theme';
 
 import {
   LabelWrapper,
@@ -20,6 +21,43 @@ import type { Toolbox as ToolboxType } from './Toolbox.types';
 
 export const Toolbox: ToolboxType = ({ exitFunction }) => {
   const { settings, setSettings } = useSettingsContext();
+  const [fontRangeMinMax, setFontRangeMinMax] = useState<{
+    min: number;
+    max: number;
+  }>({ min: 0.8, max: 1.4 });
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      let minFontSize = 0;
+      let maxFontSize = 0;
+
+      switch (true) {
+        case screenWidth <= breakpoints.laptop:
+          minFontSize = 0.8;
+          maxFontSize = 1.4;
+          break;
+        case screenWidth <= breakpoints.desktop:
+          minFontSize = 1;
+          maxFontSize = 1.6;
+          break;
+        case screenWidth <= breakpoints.highDef:
+          minFontSize = 1.2;
+          maxFontSize = 2;
+          break;
+        default:
+          minFontSize = 1.5;
+          maxFontSize = 2.5;
+      }
+
+      setFontRangeMinMax({ min: minFontSize, max: maxFontSize });
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleThemeChange = (theme: TEXTBOX_THEME) => {
     setSettings(prevSettings => ({ ...prevSettings, theme }));
@@ -132,8 +170,8 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
           <input
             ref={fontRange}
             type="range"
-            min="0.8"
-            max="2"
+            min={fontRangeMinMax.min}
+            max={fontRangeMinMax.max}
             step="0.1"
             value={settings.fontSize}
             onChange={() =>
@@ -150,11 +188,14 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
       </Settings>
       <Preview>
         <TextBox textboxTheme={settings.theme} fontSize={settings.fontSize}>
-          Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
-          malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej skóra
-          była biała jak śnieg, a włosy czarne jak atrament. Jednak szczęśliwe
-          życie Śnieżki było zagrożone przez kaprys jej złej macochy, która
-          ponad wszystko, pragnęła być uznawaną za najpięknijeszą...
+          <p>
+            Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
+            malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej
+            skóra była biała jak śnieg, a włosy czarne jak atrament. Jednak
+            szczęśliwe życie Śnieżki było zagrożone przez kaprys jej złej
+            macochy, która ponad wszystko, pragnęła być uznawaną za
+            najpięknijeszą...
+          </p>
         </TextBox>
       </Preview>
     </ModalWindow>

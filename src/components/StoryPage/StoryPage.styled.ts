@@ -1,12 +1,24 @@
 import { css, styled } from 'styled-components';
 
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
-import type { WildcardData } from '@/fablesLibrary/library.types';
 import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
-const flexCenterAlignment = css`
-  align-items: center;
-  align-content: center;
+const fullWidthTextContent = css`
+  width: 100%;
+  height: fit-content;
+`;
+
+const standardTextContent = css`
+  width: 57%;
+  height: fit-content;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 52%;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    width: 47%;
+  }
 `;
 
 export const PageBody = styled.section`
@@ -24,154 +36,131 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   top: 0;
   left: 0;
   display: flex;
-  padding: 30px;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 10px 10px 30px;
   z-index: ${({ theme }) => theme.zIndex.medium};
 
-  p {
-    width: auto;
-    display: block;
+  @media ${({ theme }) => theme.media.tablet} {
+    padding: 12px 12px 30px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    padding: 30px 30px 65px;
   }
 
   ${({ layout }) => {
     switch (layout) {
       case LAYOUT_VARIANTS.WIDE_TEXT_TOP:
         return css`
-          flex-direction: column;
-          ${flexCenterAlignment};
+          flex-direction: row;
           justify-content: flex-start;
+          align-items: flex-start;
+          text-align: center;
+
+          div.textBox {
+            ${fullWidthTextContent};
+          }
         `;
       case LAYOUT_VARIANTS.WIDE_TEXT_MIDDLE:
         return css`
-          flex-direction: column;
-          ${flexCenterAlignment};
-          justify-content: center;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          text-align: center;
+
+          div.textBox {
+            ${fullWidthTextContent};
+          }
         `;
       case LAYOUT_VARIANTS.WIDE_TEXT_BOTTOM:
         return css`
-          flex-direction: column;
-          ${flexCenterAlignment};
-          justify-content: flex-end;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: flex-end;
+          text-align: center;
+
+          div.textBox {
+            ${fullWidthTextContent};
+          }
         `;
 
       case LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT:
         return css`
           flex-direction: row;
+          justify-content: flex-start;
           align-items: flex-start;
-          p {
-            width: 50%;
+          text-align: left;
+
+          div.textBox {
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_MIDDLE_LEFT:
         return css`
           flex-direction: row;
-          ${flexCenterAlignment};
-          p {
-            width: 50%;
+          justify-content: flex-start;
+          align-items: center;
+          text-align: left;
+
+          div.textBox {
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_LEFT:
         return css`
           flex-direction: row;
+          justify-content: flex-start;
           align-items: flex-end;
-          p {
-            width: 50%;
+          text-align: left;
+
+          div.textBox {
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_TOP_RIGHT:
         return css`
           flex-direction: row;
           justify-content: flex-end;
-          p {
-            width: 50%;
+          align-items: flex-start;
+          text-align: right;
+
+          div.textBox {
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_MIDDLE_RIGHT:
         return css`
           flex-direction: row;
-          align-items: center;
           justify-content: flex-end;
-          p {
-            width: 50%;
+          align-items: center;
+          text-align: right;
+
+          div.textBox {
+            ${standardTextContent};
           }
         `;
       case LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_RIGHT:
         return css`
           flex-direction: row;
-          align-items: flex-end;
           justify-content: flex-end;
-          p {
-            width: 50%;
-          }
-        `;
+          align-items: flex-end;
+          text-align: right;
 
-      case LAYOUT_VARIANTS.DIAGONAL_TOP_LEFT_TO_BOTTOM_RIGHT:
-        return css`
-          flex-direction: row;
-          ${flexCenterAlignment};
-          p:first-child {
-            width: 45%;
-            align-self: flex-start;
+          div.textBox {
+            ${standardTextContent};
           }
-          p:last-child {
-            width: 45%;
-            margin-left: 10%;
-            align-self: flex-end;
-          }
-        `;
-      case LAYOUT_VARIANTS.DIAGONAL_TOP_RIGHT_TO_BOTTOM_LEFT:
-        return css`
-          flex-direction: row;
-          ${flexCenterAlignment};
-          p:first-child {
-            width: 45%;
-            align-self: flex-end;
-          }
-          p:last-child {
-            width: 45%;
-            margin-left: 10%;
-            align-self: flex-start;
-          }
-        `;
-      case LAYOUT_VARIANTS.WILDCARD:
-        return css`
-          display: block;
         `;
       default:
-        return css`
-          flex-direction: row;
-          ${flexCenterAlignment};
-          justify-content: flex-end;
-        `;
+        return css``;
     }
   }};
 `;
 
-export const TextBox = styled.p<{
+export const TextBox = styled.div<{
   textboxTheme: TEXTBOX_THEME;
   fontSize: number;
-  wildcard?: WildcardData;
 }>`
-  line-height: 1.6;
-
-  //FONT SIZE
-  font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
-  padding: 0.8%;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
-    padding: 1%;
-  }
-
-  @media ${({ theme }) => theme.media.laptop} {
-    font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
-    padding: 1.2%;
-  }
-
-  @media ${({ theme }) => theme.media.desktop} {
-    font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
-    padding: 1.4%;
-  }
-
   //THEME SELECTOR
   ${({ textboxTheme }) => {
     switch (textboxTheme) {
@@ -234,16 +223,27 @@ export const TextBox = styled.p<{
     }
   }};
 
-  ${({ wildcard }) => {
-    if (wildcard) {
-      return css`
-        position: absolute;
-        overflow: clip;
-        width: ${wildcard.width}% !important;
-        ${wildcard.height && `height: ${wildcard.height}% !important;`}
-        top: ${wildcard.top}% !important;
-        left: ${wildcard.left}% !important;
-      `;
+  p {
+    width: 100%;
+    line-height: 1.5;
+
+    //FONT SIZE
+    font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
+    padding: 0.8%;
+
+    @media ${({ theme }) => theme.media.tablet} {
+      font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
+      padding: 1%;
     }
-  }}
+
+    @media ${({ theme }) => theme.media.laptop} {
+      font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
+      padding: 1.5%;
+    }
+
+    @media ${({ theme }) => theme.media.desktop} {
+      font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
+      padding: 2%;
+    }
+  }
 `;

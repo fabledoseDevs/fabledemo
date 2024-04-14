@@ -2,6 +2,7 @@ import type { Theme } from './types';
 
 export const breakpoints = {
   maxWidth: 1400,
+  highDef: 1920,
   desktop: 1440,
   laptop: 1024,
   tablet: 768,

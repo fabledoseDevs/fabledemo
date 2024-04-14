@@ -90,10 +90,9 @@ export const Story: StoryType = ({ storyContent }) => {
         }}
       >
         {storyContent.map(singlePage => (
-          <Slide key={singlePage.slideId} className="TUTAJ">
+          <Slide key={singlePage.slideId}>
             <StoryPage
               layout={singlePage.layout}
-              wildcardsData={singlePage.wildcardData}
               backgroundPicture={singlePage.picture}
               text={singlePage.paragraphs}
             />

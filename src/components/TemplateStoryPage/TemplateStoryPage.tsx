@@ -22,6 +22,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           revertLayout={false}
           author={storyData.info.author}
           picturesAuthor={storyData.info.pictures}
+          editor={storyData.info.editor}
           bookCover={storyData.info.cover}
           coverDecor={storyData.info.decorator}
           bookTitle={storyData.info.title}

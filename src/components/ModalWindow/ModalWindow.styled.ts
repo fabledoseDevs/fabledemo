@@ -68,7 +68,7 @@ export const ModalContentContainer = styled.div`
   position: relative;
   width: 100dvw;
   max-height: 100dvh;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 24px;
   background: ${({ theme }) => theme.palette.background};
 
@@ -76,5 +76,6 @@ export const ModalContentContainer = styled.div`
     max-width: 70dvw;
     max-height: 90dvh;
     border-radius: 10px;
+    overflow: unset;
   }
 `;
