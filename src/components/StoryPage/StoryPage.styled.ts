@@ -38,11 +38,11 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 10px 30px;
   z-index: ${({ theme }) => theme.zIndex.medium};
 
   @media ${({ theme }) => theme.media.tablet} {
-    padding: 12px;
+    padding: 12px 12px 30px;
   }
 
   @media ${({ theme }) => theme.media.desktop} {
@@ -56,6 +56,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-start;
           align-items: flex-start;
+          text-align: center;
 
           div.textBox {
             ${fullWidthTextContent};
@@ -66,6 +67,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-start;
           align-items: center;
+          text-align: center;
 
           div.textBox {
             ${fullWidthTextContent};
@@ -76,6 +78,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-start;
           align-items: flex-end;
+          text-align: center;
 
           div.textBox {
             ${fullWidthTextContent};
@@ -87,6 +90,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-start;
           align-items: flex-start;
+          text-align: left;
 
           div.textBox {
             ${standardTextContent};
@@ -97,6 +101,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-start;
           align-items: center;
+          text-align: left;
 
           div.textBox {
             ${standardTextContent};
@@ -107,6 +112,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-start;
           align-items: flex-end;
+          text-align: left;
 
           div.textBox {
             ${standardTextContent};
@@ -117,6 +123,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-end;
           align-items: flex-start;
+          text-align: right;
 
           div.textBox {
             ${standardTextContent};
@@ -127,6 +134,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-end;
           align-items: center;
+          text-align: right;
 
           div.textBox {
             ${standardTextContent};
@@ -137,6 +145,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
           flex-direction: row;
           justify-content: flex-end;
           align-items: flex-end;
+          text-align: right;
 
           div.textBox {
             ${standardTextContent};
