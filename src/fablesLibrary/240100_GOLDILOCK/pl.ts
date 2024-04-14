@@ -60,7 +60,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
   content: [
     {
       slideId: 1,
-      layout: LAYOUT_VARIANTS.NARROW_TEXT_TOP_LEFT,
+      layout: LAYOUT_VARIANTS.NARROW_TEXT_BOTTOM_LEFT,
       paragraphs: [
         'W drewnianym domku, na skraju wielkiego lasu, mieszkała rodzinka trzech Misiów: duży i silny Tata Miś, Mama Miś o łagodnym sercu oraz Mały Miś, co wiecznie burczał i marudził. W domu Misiów było bardzo przytulnie, a wszystkiego mieli dokładnie po trzy: trzy krzesełka przy dużym okrągłym stole, trzy miseczki i trzy łyżeczki, trzy fotele, przy których leżały trzy książeczki oraz trzy łóżeczka przykryte puchowymi kołderkami. ',
       ],
@@ -259,6 +259,20 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       paragraphs: [
         'Złotowłosa spędziła cały dzień u Misiów. Najpierw pomogła Mamie Miś przygotować nową porcję owsianki. Potem razem z Tatą Misiem naprawiła popsuty fotelik. Na koniec, razem z Małym Misiem pościeliła wszystkie łóżeczka. \n',
         'Po skończonej pracy usiadła z Misiami do kolacji i razem z nimi zjadła najlepszą owsiankę na świecie. A na deser było nawet ciasto!',
+      ],
+      picture: {
+        description: 'Złotowłosa i misie jedzą wspólną kolację',
+        picSizes: {
+          '1080': img_10_hd,
+          '720': img_10_sd,
+        },
+      },
+    },
+
+    {
+      slideId: 13,
+      layout: LAYOUT_VARIANTS.WIDE_TEXT_BOTTOM,
+      paragraphs: [
         'Chociaż wszyscy wiedzą, że rozrabiać nie wypada, to nie ma takiego dziecka, które nie psoci od czasu do czasu. Jednak najważniejsze jest, aby zawsze przeprosić i naprawić to, co się popsuło.',
       ],
       picture: {

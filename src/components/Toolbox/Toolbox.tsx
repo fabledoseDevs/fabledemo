@@ -175,11 +175,14 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
       </Settings>
       <Preview>
         <TextBox textboxTheme={settings.theme} fontSize={settings.fontSize}>
-          Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
-          malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej skóra
-          była biała jak śnieg, a włosy czarne jak atrament. Jednak szczęśliwe
-          życie Śnieżki było zagrożone przez kaprys jej złej macochy, która
-          ponad wszystko, pragnęła być uznawaną za najpięknijeszą...
+          <p>
+            Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
+            malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej
+            skóra była biała jak śnieg, a włosy czarne jak atrament. Jednak
+            szczęśliwe życie Śnieżki było zagrożone przez kaprys jej złej
+            macochy, która ponad wszystko, pragnęła być uznawaną za
+            najpięknijeszą...
+          </p>
         </TextBox>
       </Preview>
     </ModalWindow>
