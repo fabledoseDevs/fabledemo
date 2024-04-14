@@ -56,7 +56,7 @@ export const DescriptionBox = styled.p`
 export const CustomLabel = styled.div`
   position: absolute;
   text-align: center;
-  top: 0;
+  top: 55px;
   left: 0;
   width: auto;
   min-width: 100px;
