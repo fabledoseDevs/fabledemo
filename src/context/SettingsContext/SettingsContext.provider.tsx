@@ -37,20 +37,27 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
   useEffect(() => {
     const handleFontSizeGuard = () => {
       const screenWidth = window.innerWidth;
-      if (settings.fontSize > 1) {
-        if (screenWidth <= breakpoints.laptop && settings.fontSize > 1.4) {
-          setSettings(prevSettings => ({ ...prevSettings, fontSize: 1.4 }));
-        } else if (
-          screenWidth <= breakpoints.desktop &&
-          settings.fontSize > 1.6
-        ) {
-          setSettings(prevSettings => ({ ...prevSettings, fontSize: 1.6 }));
-        } else if (
-          screenWidth <= breakpoints.highDef &&
-          settings.fontSize > 2
-        ) {
-          setSettings(prevSettings => ({ ...prevSettings, fontSize: 2 }));
-        }
+      let newFontSize = settings.fontSize;
+
+      switch (true) {
+        case screenWidth <= breakpoints.laptop && settings.fontSize > 1.4:
+          newFontSize = 1.4;
+          break;
+        case screenWidth <= breakpoints.desktop && settings.fontSize > 1.6:
+          newFontSize = 1.6;
+          break;
+        case screenWidth <= breakpoints.highDef && settings.fontSize > 2:
+          newFontSize = 2;
+          break;
+        default:
+          break;
+      }
+
+      if (newFontSize !== settings.fontSize) {
+        setSettings(prevSettings => ({
+          ...prevSettings,
+          fontSize: newFontSize,
+        }));
       }
     };
 

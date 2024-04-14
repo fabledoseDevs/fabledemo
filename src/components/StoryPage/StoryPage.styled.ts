@@ -46,7 +46,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   }
 
   @media ${({ theme }) => theme.media.desktop} {
-    padding: 30px;
+    padding: 30px 30px 65px;
   }
 
   ${({ layout }) => {

@@ -106,8 +106,8 @@ export const SettingButton = styled.div`
 
 export const Preview = styled.div`
   width: 100%;
-  height: auto;
-  min-height: 380px;
+  height: fit-content;
+  max-height: 200px;
   padding: 24px;
   box-shadow: ${({ theme }) => theme.palette.innerShadow};
   background-image: url(${mockImage.src});
@@ -118,4 +118,17 @@ export const Preview = styled.div`
   align-items: center;
   align-content: center;
   justify-content: center;
+  overflow: hidden;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    max-height: 220px;
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    max-height: 260px;
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    max-height: 320px;
+  }
 `;

@@ -29,15 +29,28 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth <= breakpoints.laptop) {
-        setFontRangeMinMax({ min: 0.8, max: 1.4 });
-      } else if (screenWidth <= breakpoints.desktop) {
-        setFontRangeMinMax({ min: 1, max: 1.6 });
-      } else if (screenWidth <= breakpoints.highDef) {
-        setFontRangeMinMax({ min: 1.2, max: 2 });
-      } else {
-        setFontRangeMinMax({ min: 1.5, max: 2.5 });
+      let minFontSize = 0;
+      let maxFontSize = 0;
+
+      switch (true) {
+        case screenWidth <= breakpoints.laptop:
+          minFontSize = 0.8;
+          maxFontSize = 1.4;
+          break;
+        case screenWidth <= breakpoints.desktop:
+          minFontSize = 1;
+          maxFontSize = 1.6;
+          break;
+        case screenWidth <= breakpoints.highDef:
+          minFontSize = 1.2;
+          maxFontSize = 2;
+          break;
+        default:
+          minFontSize = 1.5;
+          maxFontSize = 2.5;
       }
+
+      setFontRangeMinMax({ min: minFontSize, max: maxFontSize });
     };
 
     handleResize();
