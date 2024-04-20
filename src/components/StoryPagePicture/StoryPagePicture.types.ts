@@ -10,6 +10,7 @@ export interface AvailableSizes {
 export interface StoryPagePictureProps {
   description: string;
   picSizes: AvailableSizes;
+  isAutoplay?: boolean;
 }
 
 export type StoryPagePicture = (props: StoryPagePictureProps) => ReactElement;

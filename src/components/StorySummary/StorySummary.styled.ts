@@ -13,12 +13,12 @@ export const StoryCoverBody = styled.section`
   overflow: clip;
 `;
 
-export const SummaryLayer = styled.div<{ layout: boolean }>`
+export const SummaryLayer = styled.div<{ $layout: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  justify-content: ${({ layout }) => (layout ? 'flex-end' : 'flex-start')};
+  justify-content: ${({ $layout }) => ($layout ? 'flex-end' : 'flex-start')};
   width: 100dvw;
   height: auto;
   padding: 0;
@@ -29,16 +29,16 @@ export const SummaryLayer = styled.div<{ layout: boolean }>`
   }
 `;
 
-export const SummaryCard = styled.div<{ decor?: string }>`
-  width: 55dvw;
+export const SummaryCard = styled.div<{ $decor?: string }>`
+  width: 55vw;
   height: auto;
   overflow: clip;
   background-color: antiquewhite;
   box-shadow: ${({ theme }) => theme.palette.wideShadow};
 
   @media ${({ theme }) => theme.media.laptop} {
-    width: 45dvw;
-    max-height: 80dvh;
+    width: 45vw;
+    max-height: 80vh;
     border-radius: 10px;
   }
 
@@ -46,10 +46,10 @@ export const SummaryCard = styled.div<{ decor?: string }>`
     width: 40dvw;
   }
 
-  ${({ decor }) =>
-    decor &&
+  ${({ $decor }) =>
+    $decor &&
     css`
-      background-image: url(${decor});
+      background-image: url(${$decor});
       background-position: bottom center;
       background-size: contain;
       background-repeat: repeat-x;
@@ -91,19 +91,6 @@ export const MainContent = styled.div`
   }
 `;
 
-export const Author = styled.p`
-  text-transform: uppercase;
-  font-size: 14px;
-
-  @media ${({ theme }) => theme.media.laptop} {
-    font-size: 18px;
-  }
-
-  @media ${({ theme }) => theme.media.desktop} {
-    font-size: 22px;
-  }
-`;
-
 export const Title = styled.h1`
   font-size: 24px;
 
@@ -119,6 +106,10 @@ export const Title = styled.h1`
 export const Credits = styled.div`
   font-size: 12px;
   margin: 5px 0;
+
+  p {
+    margin: 5px 0;
+  }
 
   @media ${({ theme }) => theme.media.laptop} {
     font-size: 13px;

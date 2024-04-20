@@ -16,7 +16,6 @@ export interface IconsBlock {
 }
 
 export interface ContentBlockProps {
-  author: string[];
   bookTitle: string;
   summary: string;
   synopsis: string;

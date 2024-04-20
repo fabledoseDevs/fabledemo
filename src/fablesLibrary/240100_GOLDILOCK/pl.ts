@@ -30,9 +30,8 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
   info: {
     id: '240100_GOLDILOCK',
     title: 'Złotowłosa i Trzy Misie',
-    author: ['Paweł Modzelewski'],
+    adaptationAuthor: ['Paweł Modzelewski', 'Katarzyna Kacprzak'],
     pictures: ['Edyta Petrzak'],
-    editor: ['Katarzyna Kacprzak'],
     translation: [],
     thumb: thumb.src,
     decorator: decorator.src,

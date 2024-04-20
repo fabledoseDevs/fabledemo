@@ -32,7 +32,7 @@ export const CookieBanner: CookieBannerType = () => {
           <br />
           Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały
           przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody, opuść tę
-          stronę. Jesli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.
+          stronę. Jeśli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.
         </p>
       </TextField>
       <Button

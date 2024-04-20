@@ -100,7 +100,7 @@ export const tagDataSelector: TagDataSelectorType = tagName => {
       return {
         title: 'Zadośćuczynienie',
         description:
-          'Utwór porusza motyw zadośćuczynienia za wyrzadzone krzywdy.',
+          'Utwór porusza motyw zadośćuczynienia za wyrządzone krzywdy.',
         icon: '/images/tags/Zadoscuczynienie.svg',
       };
     default:

@@ -1,7 +1,6 @@
 import Button from '../Button';
 import { TagList } from '../TagList';
 import {
-  Author,
   Excerpt,
   LeftSide,
   MiniCoverImage,
@@ -16,7 +15,6 @@ import type {
 import { BOOKCARD_LAYOUT } from './StoryCard.types';
 
 const ContentBlock: ContentBlockType = ({
-  author,
   bookTitle,
   summary,
   synopsis,
@@ -24,7 +22,6 @@ const ContentBlock: ContentBlockType = ({
   ctaButton,
 }) => (
   <>
-    <Author>{author}</Author>
     <Title>{bookTitle}</Title>
     <Excerpt>{summary}</Excerpt>
     <TagList
