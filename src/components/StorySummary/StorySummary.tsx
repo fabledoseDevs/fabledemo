@@ -8,7 +8,6 @@ import { StoryPagePicture } from '@/components/StoryPagePicture';
 import { TagList } from '@/components/TagList';
 
 import {
-  Author,
   BookExcerpt,
   ButtonsContainer,
   Credits,
@@ -24,8 +23,7 @@ import type { StorySummary as StorySummaryType } from './StorySummary.types';
 export const StorySummary: StorySummaryType = ({
   revertLayout,
   author,
-  translation,
-  editor,
+  adaptationAuthor,
   picturesAuthor,
   bookTitle,
   extendedSummary,
@@ -38,8 +36,8 @@ export const StorySummary: StorySummaryType = ({
 }) => (
   <StoryCoverBody>
     <StoryPagePicture {...bookCover} />
-    <SummaryLayer layout={revertLayout}>
-      <SummaryCard decor={coverDecor}>
+    <SummaryLayer $layout={revertLayout}>
+      <SummaryCard $decor={coverDecor}>
         <Logo
           src="images/logo-01.svg"
           alt="Fabledose Presents"
@@ -47,20 +45,35 @@ export const StorySummary: StorySummaryType = ({
           height={40}
         />
         <MainContent>
-          <Author>{author}</Author>
           <Title>{bookTitle}</Title>
           <Credits>
+            {author && (
+              <p>
+                {'Autor: '}
+                {author.map((auth, index) => (
+                  <span key={auth}>
+                    {auth}
+                    {index !== auth.length - 1 && ', '}
+                  </span>
+                ))}
+              </p>
+            )}
+            {adaptationAuthor && (
+              <p>
+                {'Adaptacja: '}
+                {adaptationAuthor.map((adaptAuth, index) => (
+                  <span key={adaptAuth}>
+                    {adaptAuth}
+                    {index !== adaptationAuthor.length - 1 && ', '}
+                  </span>
+                ))}
+              </p>
+            )}
             <p>
               {'Ilustracje: '}
               {picturesAuthor.map(picAuth => (
                 <span key={picAuth}>{picAuth}</span>
               ))}
-              {translation && ' | Tłumaczenia: '}
-              {translation &&
-                translation.map(person => <span key={person}>{person} </span>)}
-              {editor && ' | Edycja: '}
-              {editor &&
-                editor.map(person => <span key={person}>{person} </span>)}
             </p>
           </Credits>
           <TagList

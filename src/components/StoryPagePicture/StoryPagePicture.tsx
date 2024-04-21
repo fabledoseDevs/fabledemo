@@ -6,7 +6,7 @@ export const StoryPagePicture: StoryPagePictureType = ({
   picSizes,
 }) => (
   <AnimatedPicture
-    autoPlay={true}
+    autoPlay={false}
     muted={true}
     controls={false}
     loop={true}

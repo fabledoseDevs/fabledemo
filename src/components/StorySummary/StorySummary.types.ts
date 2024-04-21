@@ -5,9 +5,9 @@ import type { TAG_NAMES } from '@/fablesLibrary/library.types';
 
 export interface StorySummaryProps {
   revertLayout: boolean;
-  author: string[];
+  author?: string[];
+  adaptationAuthor?: string[];
   translation?: string[];
-  editor?: string[];
   picturesAuthor: string[];
   bookCover: StoryPagePictureProps;
   coverDecor?: string;

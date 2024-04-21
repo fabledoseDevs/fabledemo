@@ -54,8 +54,13 @@ export const Author = styled.div`
 export const Title = styled.div`
   font-family: ${({ theme }) => theme.fonts.poltawskiNowy};
   text-transform: uppercase;
-  font-size: 48px;
-  margin-bottom: 5px;
+  font-size: 24px;
+  margin: 20px 0 5px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 36px;
+    margin: 0 0 5px;
+  }
 `;
 
 export const Excerpt = styled.div`

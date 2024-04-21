@@ -1,8 +1,8 @@
 export interface Info {
   id: string;
   title: string;
-  author: string[];
-  editor?: string[];
+  author?: string[];
+  adaptationAuthor?: string[];
   translation?: string[];
   pictures: string[];
   thumb: string;
