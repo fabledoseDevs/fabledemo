@@ -1,3 +1,13 @@
+import img_01_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_1.jpg';
+import img_02_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_2.jpg';
+import img_03_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_3.jpg';
+import img_04_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_4.jpg';
+import img_05_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_5.jpg';
+import img_06_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_6.jpg';
+import img_07_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_7.jpg';
+import img_08_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_8.jpg';
+import img_09_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_9.jpg';
+import img_10_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_10.jpg';
 import cover_sd from '@/fablesLibrary/240100_GOLDILOCK/images/cover_1280x720.webm';
 import cover_hd from '@/fablesLibrary/240100_GOLDILOCK/images/cover_1920x1080.webm';
 import img_01_sd from '@/fablesLibrary/240100_GOLDILOCK/images/img_1_1280x720.webm';
@@ -34,6 +44,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
     pictures: ['Edyta Petrzak'],
     translation: [],
     thumb: thumb.src,
+    defaultColor: '#4a3016',
     decorator: decorator.src,
     cover: {
       description: 'Złotowłosa i Trzy Misie',
@@ -41,6 +52,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         '1080': cover_hd,
         '720': cover_sd,
       },
+      backup: img_02_backup,
     },
     summary:
       'Złotowłosa dziewczynka natrafia na chatkę niedźwiadków i zaczyna tam psocić, w konsekwencji czego otrzymuje lekcję na temat znaczenia odpowiedzialności.',
@@ -69,6 +81,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_01_hd,
           '720': img_01_sd,
         },
+        backup: img_01_backup,
       },
     },
 
@@ -85,6 +98,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_01_hd,
           '720': img_01_sd,
         },
+        backup: img_01_backup,
       },
     },
 
@@ -102,6 +116,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_02_hd,
           '720': img_02_sd,
         },
+        backup: img_02_backup,
       },
     },
 
@@ -120,6 +135,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_03_hd,
           '720': img_03_sd,
         },
+        backup: img_03_backup,
       },
     },
 
@@ -139,6 +155,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_04_hd,
           '720': img_04_sd,
         },
+        backup: img_04_backup,
       },
     },
 
@@ -157,6 +174,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_05_hd,
           '720': img_05_sd,
         },
+        backup: img_05_backup,
       },
     },
 
@@ -176,6 +194,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_06_hd,
           '720': img_06_sd,
         },
+        backup: img_06_backup,
       },
     },
 
@@ -195,6 +214,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_07_hd,
           '720': img_07_sd,
         },
+        backup: img_07_backup,
       },
     },
 
@@ -214,6 +234,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_08_hd,
           '720': img_08_sd,
         },
+        backup: img_08_backup,
       },
     },
 
@@ -231,6 +252,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_09_hd,
           '720': img_09_sd,
         },
+        backup: img_09_backup,
       },
     },
 
@@ -249,6 +271,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_09_hd,
           '720': img_09_sd,
         },
+        backup: img_09_backup,
       },
     },
 
@@ -265,6 +288,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_10_hd,
           '720': img_10_sd,
         },
+        backup: img_10_backup,
       },
     },
 
@@ -280,6 +304,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
           '1080': img_10_hd,
           '720': img_10_sd,
         },
+        backup: img_10_backup,
       },
     },
   ],

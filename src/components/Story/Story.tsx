@@ -6,6 +6,7 @@ import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-s
 import { CheveronLeft } from '@styled-icons/zondicons';
 import { CheveronRight } from '@styled-icons/zondicons';
 import { useEffect, useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 import Exitbox from '@/components/Exitbox';
 import {
@@ -22,7 +23,7 @@ import Toolbox from '@/components/Toolbox';
 
 import type { Story as StoryType } from './Story.types';
 
-export const Story: StoryType = ({ storyContent }) => {
+export const Story: StoryType = ({ storyContent, defaultColor }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [exitVisibility, setExitVisibility] = useState<boolean>(false);
@@ -61,7 +62,6 @@ export const Story: StoryType = ({ storyContent }) => {
       setCurrentSlide(currentSlide - 1);
     }
   };
-
   const nextSlide = () => {
     if (currentSlide === storyContent.length - 1) {
       return;
@@ -69,6 +69,11 @@ export const Story: StoryType = ({ storyContent }) => {
       setCurrentSlide(currentSlide + 1);
     }
   };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: previousSlide,
+  });
 
   const handleKeyDown = (event: {
     preventDefault: () => void;
@@ -97,11 +102,12 @@ export const Story: StoryType = ({ storyContent }) => {
 
   return (
     <>
-      <ActiveSlide>
+      <ActiveSlide {...swipeHandlers} defaultColor={defaultColor}>
         <StoryPage
           id={storyContent[currentSlide].slideId}
           layout={storyContent[currentSlide].layout}
           backgroundPicture={storyContent[currentSlide].picture}
+          backupPicture={storyContent[currentSlide].picture.backup}
           text={storyContent[currentSlide].paragraphs}
         />
       </ActiveSlide>

@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
@@ -13,17 +16,39 @@ export const StoryPage: StoryPageType = ({
   layout,
   text,
   backgroundPicture,
+  backupPicture,
 }) => {
   const { settings } = useSettingsContext();
   const { screenData } = useScreenContext();
+  const [printBackup, setPrintBackup] = useState<boolean>(false);
 
   const imageUrl =
     screenData.screenWidth >= 1920
       ? backgroundPicture.picSizes['1080']
       : backgroundPicture.picSizes['720'];
 
+  useEffect(() => {
+    const timer = setTimeout(() => setPrintBackup(true), 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <PageBody>
+      {printBackup && (
+        <Image
+          src={backupPicture.src}
+          alt=""
+          layout="fill"
+          objectFit="cover"
+          priority={true}
+          placeholder="blur"
+          blurDataURL={backupPicture.src}
+          key={backupPicture.src}
+        />
+      )}
       <AnimatedPicture
         url={imageUrl}
         loop={true}

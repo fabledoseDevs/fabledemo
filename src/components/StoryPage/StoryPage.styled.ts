@@ -32,6 +32,16 @@ export const PageBody = styled.section`
   height: 100dvh;
   box-sizing: border-box;
   overflow: clip;
+
+  img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    object-fit: cover;
+    animation: ${fadeIn} ease 2s;
+  }
 `;
 
 export const AnimatedPicture = styled(ReactPlayer)`

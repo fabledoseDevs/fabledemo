@@ -1,13 +1,13 @@
 import { css, styled } from 'styled-components';
 
-export const ActiveSlide = styled.div`
+export const ActiveSlide = styled.div<{ defaultColor: string }>`
   width: 100dvw;
   height: 100dvh;
   position: fixed;
   top: 0;
   left: 0;
   line-height: 100dvh;
-  background-color: ${({ theme }) => theme.palette.lightergreen};
+  background-color: ${({ defaultColor }) => defaultColor};
 `;
 
 export const SliderNavigation = styled.div`
