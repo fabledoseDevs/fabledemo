@@ -1,4 +1,5 @@
-import { css, styled } from 'styled-components';
+import ReactPlayer from 'react-player/lazy';
+import { css, keyframes, styled } from 'styled-components';
 
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
@@ -21,12 +22,29 @@ const standardTextContent = css`
   }
 `;
 
+const fadeIn = keyframes`
+    0% {opacity: 0}
+    100% {opacity: 1}
+`;
+
 export const PageBody = styled.section`
   width: 100dvw;
   height: 100dvh;
-  background-color: #184e18;
   box-sizing: border-box;
   overflow: clip;
+`;
+
+export const AnimatedPicture = styled(ReactPlayer)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  animation: ${fadeIn} ease 1s;
+  z-index: ${({ theme }) => theme.zIndex.standard};
+
+  video {
+    object-fit: cover;
+  }
 `;
 
 export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
@@ -39,6 +57,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   flex-wrap: nowrap;
   flex-direction: column;
   padding: 10px 10px 30px;
+  animation: ${fadeIn} ease 1s;
   z-index: ${({ theme }) => theme.zIndex.medium};
 
   @media ${({ theme }) => theme.media.tablet} {
