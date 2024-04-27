@@ -10,11 +10,12 @@ import { useSwipeable } from 'react-swipeable';
 
 import Exitbox from '@/components/Exitbox';
 import {
-  ActiveSlide,
   FullscreenButton,
+  NextPicture,
   Pagination,
   ReturnToMainPage,
   SettingsButton,
+  Slider,
   SliderButton,
   SliderNavigation,
 } from '@/components/Story/Story.styled';
@@ -24,6 +25,7 @@ import Toolbox from '@/components/Toolbox';
 import type { Story as StoryType } from './Story.types';
 
 export const Story: StoryType = ({ storyContent, defaultColor }) => {
+  const [upcomingSlide, setUpcomingSlide] = useState<number>(1);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [exitVisibility, setExitVisibility] = useState<boolean>(false);
@@ -59,14 +61,19 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
     if (currentSlide === 0) {
       return;
     } else {
-      setCurrentSlide(currentSlide - 1);
+      setCurrentSlide(prevState => prevState - 1);
+      setUpcomingSlide(prevState => prevState - 1);
     }
   };
+
   const nextSlide = () => {
     if (currentSlide === storyContent.length - 1) {
       return;
     } else {
-      setCurrentSlide(currentSlide + 1);
+      setCurrentSlide(prevState => prevState + 1);
+      setTimeout(() => {
+        setUpcomingSlide(prevState => prevState + 1);
+      }, 1000);
     }
   };
 
@@ -102,15 +109,30 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
 
   return (
     <>
-      <ActiveSlide {...swipeHandlers} defaultColor={defaultColor}>
-        <StoryPage
-          id={storyContent[currentSlide].slideId}
-          layout={storyContent[currentSlide].layout}
-          backgroundPicture={storyContent[currentSlide].picture}
-          backupPicture={storyContent[currentSlide].picture.backup}
-          text={storyContent[currentSlide].paragraphs}
-        />
-      </ActiveSlide>
+      <Slider {...swipeHandlers} defaultColor={defaultColor}>
+        {upcomingSlide <= storyContent.length && (
+          <NextPicture
+            url={
+              upcomingSlide < storyContent.length &&
+              storyContent[upcomingSlide].picture.picSizes['720']
+            }
+            playing={false}
+            loop={true}
+            muted={true}
+            width={'100dvw'}
+            height={'100dvh'}
+          />
+        )}
+        <div>
+          <StoryPage
+            id={storyContent[currentSlide].slideId}
+            layout={storyContent[currentSlide].layout}
+            backgroundPicture={storyContent[currentSlide].picture}
+            backupPicture={storyContent[currentSlide].picture.backup}
+            text={storyContent[currentSlide].paragraphs}
+          />
+        </div>
+      </Slider>
 
       <SliderNavigation>
         <SliderButton disabled={currentSlide === 0} onClick={previousSlide}>
@@ -123,6 +145,9 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
               key={idx}
               onClick={() => {
                 setCurrentSlide(idx);
+                {
+                  idx < storyContent.length && setUpcomingSlide(idx + 1);
+                }
               }}
             />
           ))}

@@ -40,7 +40,7 @@ export const PageBody = styled.section`
     width: 100dvw;
     height: 100dvh;
     object-fit: cover;
-    animation: ${fadeIn} ease 2s;
+    animation: ${fadeIn} ease 0.75s;
   }
 `;
 
@@ -49,11 +49,11 @@ export const AnimatedPicture = styled(ReactPlayer)`
   top: 0;
   left: 0;
   object-fit: cover;
-  animation: ${fadeIn} ease 1s;
   z-index: ${({ theme }) => theme.zIndex.standard};
 
   video {
     object-fit: cover;
+    animation: ${fadeIn} ease 0.75s;
   }
 `;
 
