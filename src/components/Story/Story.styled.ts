@@ -1,5 +1,5 @@
 import ReactPlayer from 'react-player/lazy';
-import { css, keyframes, styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 
 export const Slider = styled.div<{ defaultColor: string }>`
   width: 100dvw;
