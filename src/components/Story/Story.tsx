@@ -3,15 +3,13 @@ import { FullScreenMaximize as FullscreenUpIcon } from '@styled-icons/fluentui-s
 import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui-system-regular/FullScreenMinimize';
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
-import { CheveronLeft } from '@styled-icons/zondicons';
-import { CheveronRight } from '@styled-icons/zondicons';
+import { CheveronLeft, CheveronRight } from '@styled-icons/zondicons';
 import { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
 import Exitbox from '@/components/Exitbox';
 import {
   FullscreenButton,
-  NextPicture,
   Pagination,
   ReturnToMainPage,
   SettingsButton,
@@ -25,7 +23,6 @@ import Toolbox from '@/components/Toolbox';
 import type { Story as StoryType } from './Story.types';
 
 export const Story: StoryType = ({ storyContent, defaultColor }) => {
-  const [upcomingSlide, setUpcomingSlide] = useState<number>(1);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [exitVisibility, setExitVisibility] = useState<boolean>(false);
@@ -58,22 +55,14 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
   }, []);
 
   const previousSlide = () => {
-    if (currentSlide === 0) {
-      return;
-    } else {
-      setCurrentSlide(prevState => prevState - 1);
-      setUpcomingSlide(prevState => prevState - 1);
+    if (currentSlide !== 0) {
+      setCurrentSlide(currentSlide - 1);
     }
   };
 
   const nextSlide = () => {
-    if (currentSlide === storyContent.length - 1) {
-      return;
-    } else {
-      setCurrentSlide(prevState => prevState + 1);
-      setTimeout(() => {
-        setUpcomingSlide(prevState => prevState + 1);
-      }, 1000);
+    if (currentSlide !== storyContent.length - 1) {
+      setCurrentSlide(currentSlide + 1);
     }
   };
 
@@ -110,28 +99,13 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
   return (
     <>
       <Slider {...swipeHandlers} defaultColor={defaultColor}>
-        {upcomingSlide <= storyContent.length && (
-          <NextPicture
-            url={
-              upcomingSlide < storyContent.length &&
-              storyContent[upcomingSlide].picture.picSizes['720']
-            }
-            playing={false}
-            loop={true}
-            muted={true}
-            width={'100dvw'}
-            height={'100dvh'}
-          />
-        )}
-        <div>
-          <StoryPage
-            id={storyContent[currentSlide].slideId}
-            layout={storyContent[currentSlide].layout}
-            backgroundPicture={storyContent[currentSlide].picture}
-            backupPicture={storyContent[currentSlide].picture.backup}
-            text={storyContent[currentSlide].paragraphs}
-          />
-        </div>
+        <StoryPage
+          id={storyContent[currentSlide].slideId}
+          layout={storyContent[currentSlide].layout}
+          backgroundPicture={storyContent[currentSlide].picture}
+          backupPicture={storyContent[currentSlide].picture.backup}
+          text={storyContent[currentSlide].paragraphs}
+        />
       </Slider>
 
       <SliderNavigation>
@@ -145,9 +119,6 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
               key={idx}
               onClick={() => {
                 setCurrentSlide(idx);
-                {
-                  idx < storyContent.length && setUpcomingSlide(idx + 1);
-                }
               }}
             />
           ))}

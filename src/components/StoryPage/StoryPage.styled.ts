@@ -53,7 +53,6 @@ export const AnimatedPicture = styled(ReactPlayer)`
 
   video {
     object-fit: cover;
-    animation: ${fadeIn} ease 0.75s;
   }
 `;
 
