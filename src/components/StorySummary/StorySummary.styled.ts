@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ReactPlayer from 'react-player/lazy';
 import styled, { css } from 'styled-components';
 
 export const StoryCoverBody = styled.section`
@@ -88,6 +89,18 @@ export const MainContent = styled.div`
   @media ${({ theme }) => theme.media.desktop} {
     padding: 20px 40px;
     overflow-y: hidden;
+  }
+`;
+
+export const AnimatedPicture = styled(ReactPlayer)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: ${({ theme }) => theme.zIndex.standard};
+
+  video {
+    object-fit: cover;
   }
 `;
 

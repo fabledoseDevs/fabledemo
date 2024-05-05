@@ -1,4 +1,6 @@
-import { css, styled } from 'styled-components';
+import Image from 'next/image';
+import ReactPlayer from 'react-player/lazy';
+import { css, keyframes, styled } from 'styled-components';
 
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
@@ -21,12 +23,67 @@ const standardTextContent = css`
   }
 `;
 
+const fadeIn = keyframes`
+    0% {opacity: 0}
+    100% {opacity: 1}
+`;
+
+const fadeOut = keyframes`
+    0% {opacity: 1}
+    100% {opacity: 0}
+`;
+
 export const PageBody = styled.section`
   width: 100dvw;
   height: 100dvh;
-  background-color: #184e18;
   box-sizing: border-box;
   overflow: clip;
+
+  img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    object-fit: cover;
+  }
+`;
+
+export const StaticPicture = styled(Image)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  object-fit: cover;
+  animation: 1s ${fadeOut} ease;
+`;
+
+export const BufferedPicture = styled(ReactPlayer)`
+  position: fixed;
+  top: 0;
+  left: -100dvw;
+  object-fit: cover;
+  visibility: hidden;
+  opacity: 0;
+  z-index: ${({ theme }) => theme.zIndex.standard};
+
+  video {
+    object-fit: cover;
+  }
+`;
+
+export const AnimatedPicture = styled(ReactPlayer)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: ${({ theme }) => theme.zIndex.standard};
+
+  video {
+    object-fit: cover;
+    animation: 1s ${fadeIn} ease;
+  }
 `;
 
 export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
@@ -39,6 +96,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   flex-wrap: nowrap;
   flex-direction: column;
   padding: 10px 10px 30px;
+  animation: 3s ${fadeIn} ease;
   z-index: ${({ theme }) => theme.zIndex.medium};
 
   @media ${({ theme }) => theme.media.tablet} {

@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image';
+
 export interface Info {
   id: string;
   title: string;
@@ -7,6 +9,7 @@ export interface Info {
   pictures: string[];
   thumb: string;
   decorator: string;
+  defaultColor: string;
   cover: Picture;
   summary: string;
   extendedSummary: string;
@@ -56,6 +59,7 @@ export interface PictureSizes {
 export interface Picture {
   description: string;
   picSizes: PictureSizes;
+  backup: StaticImageData;
 }
 
 export interface Slide {

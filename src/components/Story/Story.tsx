@@ -1,104 +1,92 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
 import { ArrowExportRtl as ExitIcon } from '@styled-icons/fluentui-system-regular/ArrowExportRtl';
 import { FullScreenMaximize as FullscreenUpIcon } from '@styled-icons/fluentui-system-regular/FullScreenMaximize';
 import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui-system-regular/FullScreenMinimize';
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
-import { useEffect, useRef, useState } from 'react';
-import {
-  A11y,
-  EffectFade,
-  Keyboard,
-  Mousewheel,
-  Navigation,
-  Pagination,
-} from 'swiper/modules';
+import { CheveronLeft, CheveronRight } from '@styled-icons/zondicons';
+import { useSwipeable } from 'react-swipeable';
 
 import Exitbox from '@/components/Exitbox';
+import { useStory } from '@/components/Story/Story.hook';
 import {
   FullscreenButton,
+  Navigation,
+  NavigationButton,
+  Pagination,
   ReturnToMainPage,
   SettingsButton,
-  Slide,
-  Slider,
+  Stage,
 } from '@/components/Story/Story.styled';
 import StoryPage from '@/components/StoryPage';
 import Toolbox from '@/components/Toolbox';
 
 import type { Story as StoryType } from './Story.types';
 
-export const Story: StoryType = ({ storyContent }) => {
-  const swiperRef = useRef(null);
-  const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
-  const [exitVisibility, setExitVisibility] = useState<boolean>(false);
-  const [fullscreen, setFullscreen] = useState<boolean>();
+export const Story: StoryType = ({ storyContent, defaultColor }) => {
+  const {
+    currentSlide,
+    backgroundSlide,
+    setCurrentSlide,
+    settingsVisibility,
+    setSettingsVisibility,
+    exitVisibility,
+    setExitVisibility,
+    fullscreen,
+    toggleFullscreen,
+    switchSlideBack,
+    switchSlideForward,
+  } = useStory(storyContent);
 
-  const toggleFullscreen = () => {
-    const requestFullscreen = document.documentElement
-      .requestFullscreen()
-      .then(() => {
-        setFullscreen(true);
-      });
-
-    const exitFullscreen =
-      fullscreen &&
-      document.exitFullscreen().then(() => {
-        setFullscreen(false);
-      });
-
-    return document.fullscreenElement ? exitFullscreen : requestFullscreen;
-  };
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setFullscreen(!!document.fullscreenElement);
-    };
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
-    };
-  }, []);
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: switchSlideForward,
+    onSwipedRight: switchSlideBack,
+  });
 
   return (
     <>
-      <Slider
-        ref={swiperRef}
-        modules={[
-          EffectFade,
-          Navigation,
-          Pagination,
-          A11y,
-          Keyboard,
-          Mousewheel,
-        ]}
-        effect={'fade'}
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        keyboard={{
-          enabled: true,
-          pageUpDown: true,
-        }}
-        mousewheel={{
-          sensitivity: 2,
-          invert: false,
-        }}
-      >
-        {storyContent.map(singlePage => (
-          <Slide key={singlePage.slideId}>
-            <StoryPage
-              layout={singlePage.layout}
-              backgroundPicture={singlePage.picture}
-              text={singlePage.paragraphs}
+      <Stage {...swipeHandlers} defaultColor={defaultColor}>
+        <StoryPage
+          key={storyContent[currentSlide].picture.backup.src}
+          id={storyContent[currentSlide].slideId}
+          layout={storyContent[currentSlide].layout}
+          bufferedPicture={
+            storyContent[
+              currentSlide !== storyContent.length - 1 ? currentSlide + 1 : 0
+            ].picture
+          }
+          backgroundPicture={storyContent[currentSlide].picture}
+          staticImage={storyContent[backgroundSlide].picture.backup.src}
+          autoplayAnimation={true}
+          text={storyContent[currentSlide].paragraphs}
+        />
+      </Stage>
+
+      <Navigation>
+        <NavigationButton
+          disabled={currentSlide === 0}
+          onClick={switchSlideBack}
+        >
+          <CheveronLeft />
+        </NavigationButton>
+        <Pagination>
+          {storyContent.map((slide, idx) => (
+            <button
+              className={idx === currentSlide ? 'active' : ''}
+              key={idx}
+              onClick={() => {
+                setCurrentSlide(idx);
+              }}
             />
-          </Slide>
-        ))}
-      </Slider>
+          ))}
+        </Pagination>
+        <NavigationButton
+          disabled={currentSlide === storyContent.length - 1}
+          onClick={switchSlideForward}
+        >
+          <CheveronRight />
+        </NavigationButton>
+      </Navigation>
+
       {settingsVisibility && <Toolbox exitFunction={setSettingsVisibility} />}
       {exitVisibility && <Exitbox exitFunction={setExitVisibility} />}
       <SettingsButton

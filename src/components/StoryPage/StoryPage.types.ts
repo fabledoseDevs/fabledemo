@@ -2,12 +2,26 @@ import type { ReactElement } from 'react';
 
 import type { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
 
-import type { StoryPagePictureProps } from '../StoryPagePicture';
+export interface AvailableSizes {
+  1080?: string; //FHD
+  720: string; //HD
+  480?: string; //SD
+  360?: string; //LQ
+}
+
+export interface StoryPagePictureProps {
+  description: string;
+  picSizes: AvailableSizes;
+}
 
 export interface StoryPageProps {
+  id: number;
   layout: LAYOUT_VARIANTS;
   text: string[];
+  bufferedPicture: StoryPagePictureProps;
   backgroundPicture: StoryPagePictureProps;
+  staticImage: string;
+  autoplayAnimation: boolean;
 }
 
 export type StoryPage = (props: StoryPageProps) => ReactElement;

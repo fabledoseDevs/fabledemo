@@ -35,6 +35,7 @@ class MyDocument extends Document {
     return (
       <Html lang="pl">
         <Head>
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
           <link rel="stylesheet" href="/fonts/fonts.css" />
         </Head>
         <body>

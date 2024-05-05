@@ -1,13 +1,34 @@
 import { css, styled } from 'styled-components';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-const swiperArrowButton = css`
-  top: 10%;
-  width: 5%;
-  height: 80%;
+export const Stage = styled.div<{ defaultColor: string }>`
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 100dvh;
+  background-color: ${({ defaultColor }) => defaultColor};
+`;
+
+export const Navigation = styled.div`
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const NavigationButton = styled.button`
   color: ${({ theme }) => theme.palette.background};
+  background-color: black;
+  border: 0;
+  cursor: pointer;
   opacity: 0.25;
   transition: all 300ms;
+  width: 40px;
+  border-radius: 20px;
 
   &:hover {
     opacity: 1;
@@ -15,67 +36,36 @@ const swiperArrowButton = css`
   }
 `;
 
-export const Slider = styled(Swiper)`
-  width: 100dvw;
-  height: 100dvh;
-  position: fixed;
-  top: 0;
-  left: 0;
+export const Pagination = styled.div`
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  align-content: center;
+  padding: 0 6px;
 
-  div.swiper-button-prev {
-    ${swiperArrowButton};
-    visibility: hidden;
+  button {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    border-radius: 8px;
+    background-color: black;
+    cursor: pointer;
+    opacity: 0.25;
 
-    @media ${({ theme }) => theme.media.laptop} {
-      visibility: visible;
+    &:hover {
+      background-color: white;
+      opacity: 0.5;
     }
   }
 
-  div.swiper-button-next {
-    ${swiperArrowButton};
-    visibility: hidden;
-
-    @media ${({ theme }) => theme.media.laptop} {
-      visibility: visible;
-    }
+  button.active {
+    background-color: white;
+    opacity: 1 !important;
   }
-
-  div.swiper-button-disabled {
-    display: none;
-  }
-
-  div.swiper-pagination {
-    width: auto;
-    right: 6px;
-    left: unset;
-
-    span.swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background-color: ${({ theme }) => theme.palette.secondary};
-
-      @media ${({ theme }) => theme.media.laptop} {
-        width: 14px;
-        height: 14px;
-      }
-    }
-
-    span.swiper-pagination-bullet-active {
-      width: 10px;
-      background-color: ${({ theme }) => theme.palette.background};
-
-      @media ${({ theme }) => theme.media.laptop} {
-        width: 14px;
-      }
-    }
-  }
-`;
-
-export const Slide = styled(SwiperSlide)`
-  width: 100dvw;
-  height: 100dvh;
-  line-height: 100dvh;
-  background-color: ${({ theme }) => theme.palette.lightergreen};
 `;
 
 const iconsCommon = css`
