@@ -1,6 +1,6 @@
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
-import type { StoryPagePictureProps } from '@/components/StoryPagePicture';
+import type { StoryPagePictureProps } from '@/components/StoryPage/StoryPage.types';
 import type { TAG_NAMES } from '@/fablesLibrary/library.types';
 
 export interface StorySummaryProps {
