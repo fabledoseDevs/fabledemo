@@ -1,4 +1,3 @@
-import type { StaticImageData } from 'next/image';
 import type { ReactElement } from 'react';
 
 import type { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
@@ -10,7 +9,8 @@ export interface StoryPageProps {
   layout: LAYOUT_VARIANTS;
   text: string[];
   backgroundPicture: StoryPagePictureProps;
-  backupPicture: StaticImageData;
+  staticImage: string;
+  autoplayAnimation: boolean;
 }
 
 export type StoryPage = (props: StoryPageProps) => ReactElement;

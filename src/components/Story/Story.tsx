@@ -24,9 +24,47 @@ import type { Story as StoryType } from './Story.types';
 
 export const Story: StoryType = ({ storyContent, defaultColor }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [nextSlide, setNextSlide] = useState<number>(1);
+
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [exitVisibility, setExitVisibility] = useState<boolean>(false);
   const [fullscreen, setFullscreen] = useState<boolean>();
+
+  const switchSlideBack = () => {
+    if (currentSlide !== 0) {
+      setCurrentSlide(currentSlide - 1);
+      setNextSlide(currentSlide);
+    }
+  };
+
+  const switchSlideForward = () => {
+    if (currentSlide !== storyContent.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+      setNextSlide(currentSlide);
+    }
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: switchSlideForward,
+    onSwipedRight: switchSlideBack,
+  });
+
+  const handleKeyDown = (event: {
+    preventDefault: () => void;
+    key: string;
+  }) => {
+    event.preventDefault();
+    switch (event.key) {
+      case 'ArrowRight':
+        switchSlideForward();
+        break;
+      case 'ArrowLeft':
+        switchSlideBack();
+        break;
+      default:
+        return;
+    }
+  };
 
   const toggleFullscreen = () => {
     const requestFullscreen = document.documentElement
@@ -54,40 +92,6 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
     };
   }, []);
 
-  const previousSlide = () => {
-    if (currentSlide !== 0) {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
-
-  const nextSlide = () => {
-    if (currentSlide !== storyContent.length - 1) {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: nextSlide,
-    onSwipedRight: previousSlide,
-  });
-
-  const handleKeyDown = (event: {
-    preventDefault: () => void;
-    key: string;
-  }) => {
-    event.preventDefault();
-    switch (event.key) {
-      case 'ArrowRight':
-        nextSlide();
-        break;
-      case 'ArrowLeft':
-        previousSlide();
-        break;
-      default:
-        return;
-    }
-  };
-
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown, { passive: true });
 
@@ -100,16 +104,18 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
     <>
       <Slider {...swipeHandlers} defaultColor={defaultColor}>
         <StoryPage
+          key={storyContent[currentSlide].picture.backup.src}
           id={storyContent[currentSlide].slideId}
           layout={storyContent[currentSlide].layout}
           backgroundPicture={storyContent[currentSlide].picture}
-          backupPicture={storyContent[currentSlide].picture.backup}
+          staticImage={storyContent[nextSlide].picture.backup.src}
+          autoplayAnimation={true}
           text={storyContent[currentSlide].paragraphs}
         />
       </Slider>
 
       <SliderNavigation>
-        <SliderButton disabled={currentSlide === 0} onClick={previousSlide}>
+        <SliderButton disabled={currentSlide === 0} onClick={switchSlideBack}>
           <CheveronLeft />
         </SliderButton>
         <Pagination>
@@ -125,7 +131,7 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
         </Pagination>
         <SliderButton
           disabled={currentSlide === storyContent.length - 1}
-          onClick={nextSlide}
+          onClick={switchSlideForward}
         >
           <CheveronRight />
         </SliderButton>

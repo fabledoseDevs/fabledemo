@@ -1,12 +1,11 @@
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
+import { LAYOUT_VARIANTS } from '@/fablesLibrarylibrary.types';
 
 import {
   AnimatedPicture,
   PageBody,
+  StaticPicture,
   TextBox,
   TextContent,
 } from './StoryPage.styled';
@@ -16,60 +15,49 @@ export const StoryPage: StoryPageType = ({
   layout,
   text,
   backgroundPicture,
-  backupPicture,
+  staticImage,
+  autoplayAnimation,
 }) => {
   const { settings } = useSettingsContext();
   const { screenData } = useScreenContext();
-  const [printBackup, setPrintBackup] = useState<boolean>(false);
 
   const imageUrl =
     screenData.screenWidth >= 1920
       ? backgroundPicture.picSizes['1080']
       : backgroundPicture.picSizes['720'];
 
-  useEffect(() => {
-    const timer = setTimeout(() => setPrintBackup(true), 3000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <PageBody>
-      {printBackup && (
-        <Image
-          src={backupPicture.src}
-          alt=""
-          layout="fill"
-          objectFit="cover"
-          priority={true}
-          placeholder="blur"
-          blurDataURL={backupPicture.src}
-          key={backupPicture.src}
-        />
-      )}
       <AnimatedPicture
         url={imageUrl}
         loop={true}
         controls={false}
         muted={true}
-        playing={true}
+        playing={autoplayAnimation}
         width={'100dvw'}
         height={'100dvh'}
         key={imageUrl}
       />
-      <TextContent layout={layout} key={id}>
-        <TextBox
-          className={'textBox'}
-          textboxTheme={settings.theme}
-          fontSize={settings.fontSize}
-        >
-          {text.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </TextBox>
-      </TextContent>
+      <StaticPicture
+        src={staticImage}
+        alt={'next image'}
+        width={1280}
+        height={720}
+        priority={true}
+      />
+      {!LAYOUT_VARIANTS.EMPTY_SLIDE && (
+        <TextContent layout={layout} key={id}>
+          <TextBox
+            className={'textBox'}
+            textboxTheme={settings.theme}
+            fontSize={settings.fontSize}
+          >
+            {text.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </TextBox>
+        </TextContent>
+      )}
     </PageBody>
   );
 };

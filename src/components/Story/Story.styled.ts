@@ -1,4 +1,3 @@
-import ReactPlayer from 'react-player/lazy';
 import { css, styled } from 'styled-components';
 
 export const Slider = styled.div<{ defaultColor: string }>`
@@ -9,22 +8,6 @@ export const Slider = styled.div<{ defaultColor: string }>`
   left: 0;
   line-height: 100dvh;
   background-color: ${({ defaultColor }) => defaultColor};
-`;
-
-export const NextPicture = styled(ReactPlayer)`
-  position: fixed;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  z-index: ${({ theme }) => theme.zIndex.standard};
-
-  video {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    object-fit: cover;
-  }
 `;
 
 export const SliderNavigation = styled.div`

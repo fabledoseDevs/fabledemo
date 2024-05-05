@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import ReactPlayer from 'react-player/lazy';
 import { css, keyframes, styled } from 'styled-components';
 
@@ -27,6 +28,11 @@ const fadeIn = keyframes`
     100% {opacity: 1}
 `;
 
+const fadeOut = keyframes`
+    0% {opacity: 1}
+    100% {opacity: 0}
+`;
+
 export const PageBody = styled.section`
   width: 100dvw;
   height: 100dvh;
@@ -40,8 +46,17 @@ export const PageBody = styled.section`
     width: 100dvw;
     height: 100dvh;
     object-fit: cover;
-    animation: ${fadeIn} ease 0.75s;
   }
+`;
+
+export const StaticPicture = styled(Image)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  object-fit: cover;
+  animation: 1s ${fadeOut} ease;
 `;
 
 export const AnimatedPicture = styled(ReactPlayer)`
@@ -53,6 +68,7 @@ export const AnimatedPicture = styled(ReactPlayer)`
 
   video {
     object-fit: cover;
+    animation: 1s ${fadeIn} ease;
   }
 `;
 
@@ -66,7 +82,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   flex-wrap: nowrap;
   flex-direction: column;
   padding: 10px 10px 30px;
-  animation: ${fadeIn} ease 1s;
+  animation: 3s ${fadeIn} ease;
   z-index: ${({ theme }) => theme.zIndex.medium};
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -79,6 +95,11 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
 
   ${({ layout }) => {
     switch (layout) {
+      case LAYOUT_VARIANTS.EMPTY_SLIDE:
+        return css`
+          display: none;
+          visibility: hidden;
+        `;
       case LAYOUT_VARIANTS.WIDE_TEXT_TOP:
         return css`
           flex-direction: row;

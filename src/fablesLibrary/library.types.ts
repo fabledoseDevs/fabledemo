@@ -20,6 +20,7 @@ export interface Info {
 }
 
 export enum LAYOUT_VARIANTS {
+  EMPTY_SLIDE,
   WIDE_TEXT_TOP,
   WIDE_TEXT_MIDDLE,
   WIDE_TEXT_BOTTOM,
