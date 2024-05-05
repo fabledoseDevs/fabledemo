@@ -1,9 +1,9 @@
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
-import { LAYOUT_VARIANTS } from '@/fablesLibrarylibrary.types';
 
 import {
   AnimatedPicture,
+  BufferedPicture,
   PageBody,
   StaticPicture,
   TextBox,
@@ -14,6 +14,7 @@ export const StoryPage: StoryPageType = ({
   id,
   layout,
   text,
+  bufferedPicture,
   backgroundPicture,
   staticImage,
   autoplayAnimation,
@@ -26,8 +27,30 @@ export const StoryPage: StoryPageType = ({
       ? backgroundPicture.picSizes['1080']
       : backgroundPicture.picSizes['720'];
 
+  const bufferedImageUrl =
+    screenData.screenWidth >= 1920
+      ? bufferedPicture.picSizes['1080']
+      : bufferedPicture.picSizes['720'];
+
   return (
     <PageBody>
+      <BufferedPicture
+        url={bufferedImageUrl}
+        loop={false}
+        controls={false}
+        muted={true}
+        playing={false}
+        width={'100dvw'}
+        height={'100dvh'}
+        key={bufferedImageUrl}
+      />
+      <StaticPicture
+        src={staticImage}
+        alt={'next image'}
+        width={1280}
+        height={720}
+        priority={true}
+      />
       <AnimatedPicture
         url={imageUrl}
         loop={true}
@@ -38,26 +61,17 @@ export const StoryPage: StoryPageType = ({
         height={'100dvh'}
         key={imageUrl}
       />
-      <StaticPicture
-        src={staticImage}
-        alt={'next image'}
-        width={1280}
-        height={720}
-        priority={true}
-      />
-      {!LAYOUT_VARIANTS.EMPTY_SLIDE && (
-        <TextContent layout={layout} key={id}>
-          <TextBox
-            className={'textBox'}
-            textboxTheme={settings.theme}
-            fontSize={settings.fontSize}
-          >
-            {text.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </TextBox>
-        </TextContent>
-      )}
+      <TextContent layout={layout} key={id}>
+        <TextBox
+          className={'textBox'}
+          textboxTheme={settings.theme}
+          fontSize={settings.fontSize}
+        >
+          {text.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </TextBox>
+      </TextContent>
     </PageBody>
   );
 };

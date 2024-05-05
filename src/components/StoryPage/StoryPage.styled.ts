@@ -59,6 +59,20 @@ export const StaticPicture = styled(Image)`
   animation: 1s ${fadeOut} ease;
 `;
 
+export const BufferedPicture = styled(ReactPlayer)`
+  position: fixed;
+  top: 0;
+  left: -100dvw;
+  object-fit: cover;
+  visibility: hidden;
+  opacity: 0;
+  z-index: ${({ theme }) => theme.zIndex.standard};
+
+  video {
+    object-fit: cover;
+  }
+`;
+
 export const AnimatedPicture = styled(ReactPlayer)`
   position: fixed;
   top: 0;
@@ -95,11 +109,6 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
 
   ${({ layout }) => {
     switch (layout) {
-      case LAYOUT_VARIANTS.EMPTY_SLIDE:
-        return css`
-          display: none;
-          visibility: hidden;
-        `;
       case LAYOUT_VARIANTS.WIDE_TEXT_TOP:
         return css`
           flex-direction: row;

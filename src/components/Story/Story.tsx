@@ -10,12 +10,12 @@ import Exitbox from '@/components/Exitbox';
 import { useStory } from '@/components/Story/Story.hook';
 import {
   FullscreenButton,
+  Navigation,
+  NavigationButton,
   Pagination,
   ReturnToMainPage,
   SettingsButton,
-  Slider,
-  SliderButton,
-  SliderNavigation,
+  Stage,
 } from '@/components/Story/Story.styled';
 import StoryPage from '@/components/StoryPage';
 import Toolbox from '@/components/Toolbox';
@@ -25,7 +25,7 @@ import type { Story as StoryType } from './Story.types';
 export const Story: StoryType = ({ storyContent, defaultColor }) => {
   const {
     currentSlide,
-    nextSlide,
+    backgroundSlide,
     setCurrentSlide,
     settingsVisibility,
     setSettingsVisibility,
@@ -44,22 +44,30 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
 
   return (
     <>
-      <Slider {...swipeHandlers} defaultColor={defaultColor}>
+      <Stage {...swipeHandlers} defaultColor={defaultColor}>
         <StoryPage
           key={storyContent[currentSlide].picture.backup.src}
           id={storyContent[currentSlide].slideId}
           layout={storyContent[currentSlide].layout}
+          bufferedPicture={
+            storyContent[
+              currentSlide !== storyContent.length - 1 ? currentSlide + 1 : 0
+            ].picture
+          }
           backgroundPicture={storyContent[currentSlide].picture}
-          staticImage={storyContent[nextSlide].picture.backup.src}
+          staticImage={storyContent[backgroundSlide].picture.backup.src}
           autoplayAnimation={true}
           text={storyContent[currentSlide].paragraphs}
         />
-      </Slider>
+      </Stage>
 
-      <SliderNavigation>
-        <SliderButton disabled={currentSlide === 0} onClick={switchSlideBack}>
+      <Navigation>
+        <NavigationButton
+          disabled={currentSlide === 0}
+          onClick={switchSlideBack}
+        >
           <CheveronLeft />
-        </SliderButton>
+        </NavigationButton>
         <Pagination>
           {storyContent.map((slide, idx) => (
             <button
@@ -71,13 +79,13 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
             />
           ))}
         </Pagination>
-        <SliderButton
+        <NavigationButton
           disabled={currentSlide === storyContent.length - 1}
           onClick={switchSlideForward}
         >
           <CheveronRight />
-        </SliderButton>
-      </SliderNavigation>
+        </NavigationButton>
+      </Navigation>
 
       {settingsVisibility && <Toolbox exitFunction={setSettingsVisibility} />}
       {exitVisibility && <Exitbox exitFunction={setExitVisibility} />}

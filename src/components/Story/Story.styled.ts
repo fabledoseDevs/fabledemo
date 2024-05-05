@@ -1,6 +1,6 @@
 import { css, styled } from 'styled-components';
 
-export const Slider = styled.div<{ defaultColor: string }>`
+export const Stage = styled.div<{ defaultColor: string }>`
   width: 100dvw;
   height: 100dvh;
   position: fixed;
@@ -10,7 +10,7 @@ export const Slider = styled.div<{ defaultColor: string }>`
   background-color: ${({ defaultColor }) => defaultColor};
 `;
 
-export const SliderNavigation = styled.div`
+export const Navigation = styled.div`
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -20,7 +20,7 @@ export const SliderNavigation = styled.div`
   flex-direction: row;
 `;
 
-export const SliderButton = styled.button`
+export const NavigationButton = styled.button`
   color: ${({ theme }) => theme.palette.background};
   background-color: black;
   border: 0;

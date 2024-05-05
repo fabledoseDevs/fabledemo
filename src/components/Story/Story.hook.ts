@@ -4,7 +4,7 @@ import type { UseStory as UseStoryType } from './Story.types';
 
 export const useStory: UseStoryType = storyContent => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const [nextSlide, setNextSlide] = useState<number>(1);
+  const [backgroundSlide, setBackgroundSlide] = useState<number>(1);
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [exitVisibility, setExitVisibility] = useState<boolean>(false);
   const [fullscreen, setFullscreen] = useState<boolean>();
@@ -12,14 +12,14 @@ export const useStory: UseStoryType = storyContent => {
   const switchSlideBack = () => {
     if (currentSlide !== 0) {
       setCurrentSlide(currentSlide - 1);
-      setNextSlide(currentSlide);
+      setBackgroundSlide(currentSlide);
     }
   };
 
   const switchSlideForward = () => {
     if (currentSlide !== storyContent.length - 1) {
       setCurrentSlide(currentSlide + 1);
-      setNextSlide(currentSlide);
+      setBackgroundSlide(currentSlide);
     }
   };
 
@@ -77,7 +77,7 @@ export const useStory: UseStoryType = storyContent => {
   return {
     currentSlide,
     setCurrentSlide,
-    nextSlide,
+    backgroundSlide,
     settingsVisibility,
     setSettingsVisibility,
     exitVisibility,

@@ -9,7 +9,7 @@ export interface StoryProps {
 
 export interface Hook {
   currentSlide: number;
-  nextSlide: number;
+  backgroundSlide: number;
   setCurrentSlide: (idx: number) => void;
   settingsVisibility: boolean;
   setSettingsVisibility: Dispatch<SetStateAction<boolean>>;

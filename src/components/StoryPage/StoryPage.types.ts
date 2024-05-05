@@ -18,6 +18,7 @@ export interface StoryPageProps {
   id: number;
   layout: LAYOUT_VARIANTS;
   text: string[];
+  bufferedPicture: StoryPagePictureProps;
   backgroundPicture: StoryPagePictureProps;
   staticImage: string;
   autoplayAnimation: boolean;
