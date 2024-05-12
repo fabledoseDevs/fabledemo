@@ -36,7 +36,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
         redLineText={'ożywają'}
         button={{
           purpose: PURPOSE.ANCHOR,
-          label: 'Dowiedz się więcej',
+          label: 'Odkryj Baśnie',
           anchorLink: '#content-start',
           colorVariant: COLOR_VARIANTS.GREEN,
           fontVariant: FONT_VARIANTS.UPPERCASE,

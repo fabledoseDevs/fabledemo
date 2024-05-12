@@ -9,6 +9,7 @@ import {
   MobileSorter,
   SeparatorElement,
   TagListBody,
+  TagListTitle,
   TagsListUl,
   TagsSummaryButton,
 } from './TagList.styled';
@@ -27,24 +28,25 @@ export const TagList: TagListType = ({
       <TagListBody>
         <MobileSorter>
           <TagsListUl>
+            <TagListTitle>Utwór</TagListTitle>
             {mainTags.map((tag: TAG_NAMES) => (
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
           <SeparatorElement />
           <TagsListUl>
+            <TagListTitle>Motywy</TagListTitle>
             {extraTags.map((tag: TAG_NAMES) => (
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
-          <SeparatorElement />
         </MobileSorter>
         <MobileSorter>
           <TagsSummaryButton
             onClick={() => setInfoModalActive(prevState => !prevState)}
           >
             <InfoCircle />
-            <span>Dla rodzica</span>
+            <span>Więcej informacji</span>
           </TagsSummaryButton>
         </MobileSorter>
       </TagListBody>

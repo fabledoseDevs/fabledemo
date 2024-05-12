@@ -17,20 +17,24 @@ export const MobileSorter = styled.div`
 
 export const TagsListUl = styled.ul`
   list-style: none;
-  height: 50px;
+  height: 70px;
   //overflow: hidden;
 `;
 
-export const SeparatorElement = styled.span`
-  display: none;
+export const TagListTitle = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: ${({ theme }) => theme.palette.accent};
+  margin-bottom: 6px;
+`;
 
-  @media ${({ theme }) => theme.media.laptop} {
-    display: block;
-    width: 2px;
-    height: 50px;
-    background-color: ${({ theme }) => theme.palette.accent};
-    margin: 0 15px 0;
-  }
+export const SeparatorElement = styled.span`
+  display: block;
+  width: 2px;
+  height: 40px;
+  background-color: ${({ theme }) => theme.palette.accent};
+  margin: 26px 15px 0;
 `;
 
 export const TagsSummaryButton = styled.button`
@@ -45,9 +49,10 @@ export const TagsSummaryButton = styled.button`
   background-color: ${({ theme }) => theme.palette.accent};
 
   @media ${({ theme }) => theme.media.laptop} {
-    margin-top: 11px;
+    margin: 30px 0 0 24px;
   }
 
+  &:hover,
   &:active {
     background-color: ${({ theme }) => theme.palette.accentActive};
   }

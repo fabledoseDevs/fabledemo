@@ -29,6 +29,15 @@ export const MainForm = styled.form`
   }
 `;
 
+export const CustomValidationWarning = styled.div`
+  color: ${({ theme }) => theme.palette.green};
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 58px;
+  left: 16px;
+`;
+
 export const EmailInput = styled.input`
   width: 100%;
   height: 40px;

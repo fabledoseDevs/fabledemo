@@ -17,6 +17,7 @@ export const ButtonWrapper = styled.div<{
       bgcolorvariant === COLOR_VARIANTS.GREEN
         ? theme.palette.green
         : theme.palette.secondary};
+    &:hover,
     &:active {
       background: ${({ bgcolorvariant, theme }) =>
         bgcolorvariant === COLOR_VARIANTS.GREEN
