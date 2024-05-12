@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
+
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
-import CookieBanner from '@/components/CookieBanner';
+const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
+  ssr: false,
+});
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
 import { ProjectSummary } from '@/components/ProjectSummary';
 import Separator from '@/components/Separator';
