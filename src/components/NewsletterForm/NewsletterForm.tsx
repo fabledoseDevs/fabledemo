@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import useScript from './NewsletterForm.script';
 import {
+  CustomValidationWarning,
   EmailInput,
   EmbedForm,
   MainForm,
@@ -20,10 +21,12 @@ export const NewsletterForm: NewsletterFormType = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [validEmail, setValidEmail] = useState<boolean>(true);
+  const [clickedAsEmpty, setClickedAsEmpty] = useState<boolean>(false);
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
     setValidEmail(true);
+    clickedAsEmpty && setClickedAsEmpty(false);
   };
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -33,8 +36,10 @@ export const NewsletterForm: NewsletterFormType = () => {
 
     if (!isValidEmail) {
       setValidEmail(false);
+      setClickedAsEmpty(true);
       setTimeout(() => {
         setValidEmail(true);
+        setClickedAsEmpty(false);
       }, 5000);
       return;
     }
@@ -75,6 +80,12 @@ export const NewsletterForm: NewsletterFormType = () => {
                 autoComplete="email"
                 onChange={handleEmailChange}
               />
+              {clickedAsEmpty && (
+                <CustomValidationWarning>
+                  Wipsz swój adres email w tym polu, aby zapisać się do
+                  newslettera.
+                </CustomValidationWarning>
+              )}
               <SubmitButton type="submit" className="primary">
                 Zapisz się
               </SubmitButton>

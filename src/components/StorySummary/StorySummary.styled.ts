@@ -32,6 +32,7 @@ export const SummaryLayer = styled.div<{ $layout: boolean }>`
 
 export const SummaryCard = styled.div<{ $decor?: string }>`
   width: 55vw;
+  min-width: 560px;
   height: auto;
   overflow: clip;
   background-color: antiquewhite;

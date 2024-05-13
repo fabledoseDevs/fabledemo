@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
+
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
-import CookieBanner from '@/components/CookieBanner';
+const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
+  ssr: false,
+});
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
 import { ProjectSummary } from '@/components/ProjectSummary';
 import Separator from '@/components/Separator';
@@ -32,7 +36,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
         redLineText={'ożywają'}
         button={{
           purpose: PURPOSE.ANCHOR,
-          label: 'Dowiedz się więcej',
+          label: 'Odkryj Baśnie',
           anchorLink: '#content-start',
           colorVariant: COLOR_VARIANTS.GREEN,
           fontVariant: FONT_VARIANTS.UPPERCASE,

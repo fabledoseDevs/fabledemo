@@ -9,6 +9,7 @@ const Home: NextPage = () => (
   <>
     <Head>
       <title>Fabeldose | DEMO</title>
+      <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="Let's make magic" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>

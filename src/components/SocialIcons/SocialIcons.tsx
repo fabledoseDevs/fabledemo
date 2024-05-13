@@ -17,12 +17,18 @@ export const SocialIcons: SocialIconsType = () => (
           href="https://www.facebook.com/fabledose/"
           target="_blank"
           aria-label="Go to Facebook Page"
+          rel="nofollow"
         >
           <FacebookIcon />
         </a>
       </li>
       <li>
-        <a href="/" target="_blank" aria-label="Go to Instagram Page">
+        <a
+          href="/"
+          target="_blank"
+          aria-label="Go to Instagram Page"
+          rel="nofollow"
+        >
           <InstagramIcon />
         </a>
       </li>
@@ -31,6 +37,7 @@ export const SocialIcons: SocialIconsType = () => (
           href="https://twitter.com/fabledose"
           target="_blank"
           aria-label="Go to Twitter Page"
+          rel="nofollow"
         >
           <TwitterIcon />
         </a>
