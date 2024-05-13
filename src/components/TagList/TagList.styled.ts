@@ -18,11 +18,9 @@ export const MobileSorter = styled.div`
 export const TagsListUl = styled.ul`
   list-style: none;
   height: 70px;
-  //overflow: hidden;
 `;
 
 export const TagListTitle = styled.div`
-  width: 100%;
   text-align: center;
   font-size: 12px;
   color: ${({ theme }) => theme.palette.accent};
