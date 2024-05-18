@@ -2,14 +2,14 @@ import Image from 'next/image';
 import ReactPlayer from 'react-player/lazy';
 import styled, { css } from 'styled-components';
 
-export const StoryCoverBody = styled.section`
+export const StoryCoverBody = styled.section<{ backgroundColor: string }>`
   position: fixed;
   top: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.veryTop};
   width: 100dvw;
   height: 100dvh;
-  background-color: #184e18;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   box-sizing: border-box;
   overflow: clip;
 `;
@@ -54,7 +54,7 @@ export const SummaryCard = styled.div<{ $decor?: string }>`
       background-image: url(${$decor});
       background-position: bottom center;
       background-size: contain;
-      background-repeat: repeat-x;
+      background-repeat: no-repeat;
     `}
 `;
 
@@ -62,16 +62,18 @@ export const Logo = styled(Image)`
   display: block;
   margin: 15px auto;
   width: 120px;
-  height: auto;
+  height: 18px;
 
   @media ${({ theme }) => theme.media.laptop} {
     margin: 10px auto;
     width: 160px;
+    height: 24px;
   }
 
   @media ${({ theme }) => theme.media.desktop} {
     margin: 20px auto;
     width: 200px;
+    height: 30px;
   }
 `;
 
@@ -91,6 +93,16 @@ export const MainContent = styled.div`
     padding: 20px 40px;
     overflow-y: hidden;
   }
+`;
+
+export const BlurPicture = styled(Image)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  object-fit: cover;
+  filter: blur(1.5rem);
 `;
 
 export const AnimatedPicture = styled(ReactPlayer)`

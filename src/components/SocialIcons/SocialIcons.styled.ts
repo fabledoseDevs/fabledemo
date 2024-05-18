@@ -1,8 +1,7 @@
-import { FaPinterest } from 'react-icons/fa';
-import { FaFacebook } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaSquareYoutube } from 'react-icons/fa6';
+import { FaSquareFacebook } from 'react-icons/fa6';
+import { FaSquareInstagram } from 'react-icons/fa6';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 import styled from 'styled-components';
 
 export const SocialIconsBody = styled.div`
@@ -14,25 +13,21 @@ export const SocialIconsBody = styled.div`
   font-size: 26px;
 `;
 
-export const PinterestIcon = styled(FaPinterest)`
+export const TwitterIcon = styled(FaSquareXTwitter)`
   width: 25px;
   height: 25px;
 `;
-export const TwitterIcon = styled(FaXTwitter)`
-  width: 25px;
-  height: 25px;
-`;
-export const FacebookIcon = styled(FaFacebook)`
+export const FacebookIcon = styled(FaSquareFacebook)`
   width: 25px;
   height: 25px;
 `;
 
-export const InstagramIcon = styled(FaInstagram)`
+export const InstagramIcon = styled(FaSquareInstagram)`
   width: 25px;
   height: 25px;
 `;
 
-export const YoutubeIcon = styled(FaYoutube)`
+export const YoutubeIcon = styled(FaSquareYoutube)`
   width: 25px;
   height: 25px;
 `;
@@ -45,6 +40,9 @@ export const List = styled.ul`
   li {
     a {
       transition: color 0.2s ease-in;
+      height: 32px;
+      padding-top: 10px;
+      display: inline-block;
 
       &:hover {
         color: ${({ theme }) => theme.palette.accent};

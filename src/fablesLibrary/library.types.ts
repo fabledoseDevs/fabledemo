@@ -54,6 +54,7 @@ export interface PictureSizes {
   720: string;
   480?: string;
   360?: string;
+  blur?: string;
 }
 
 export interface Picture {

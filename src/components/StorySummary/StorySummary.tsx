@@ -9,6 +9,7 @@ import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider
 
 import {
   AnimatedPicture,
+  BlurPicture,
   BookExcerpt,
   ButtonsContainer,
   Credits,
@@ -30,10 +31,12 @@ export const StorySummary: StorySummaryType = ({
   extendedSummary,
   synopsis,
   bookCover,
+  bookCoverBlur,
   coverDecor,
   mainTags,
   detailedTags,
   storyStatusHandler,
+  defaultColor,
 }) => {
   const { screenData } = useScreenContext();
 
@@ -43,7 +46,16 @@ export const StorySummary: StorySummaryType = ({
       : bookCover.picSizes['720'];
 
   return (
-    <StoryCoverBody>
+    <StoryCoverBody backgroundColor={defaultColor}>
+      {bookCoverBlur && (
+        <BlurPicture
+          src={bookCoverBlur}
+          alt={'next image'}
+          width={1280}
+          height={720}
+          priority={true}
+        />
+      )}
       <AnimatedPicture
         url={imageUrl}
         loop={true}
@@ -59,7 +71,7 @@ export const StorySummary: StorySummaryType = ({
             src="images/logo-01.svg"
             alt="Fabledose Presents"
             width={200}
-            height={40}
+            height={30}
           />
           <MainContent>
             <Title>{bookTitle}</Title>
