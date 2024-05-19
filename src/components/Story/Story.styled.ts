@@ -95,8 +95,8 @@ const iconsCommon = css`
 
 export const ReturnToMainPage = styled.button`
   ${iconsCommon};
-  bottom: 5px;
-  left: 10px;
+  bottom: 15px;
+  left: 20px;
 
   @media ${({ theme }) => theme.media.laptop} {
     bottom: 10px;
@@ -106,8 +106,8 @@ export const ReturnToMainPage = styled.button`
 
 export const SettingsButton = styled.button`
   ${iconsCommon};
-  bottom: 5px;
-  left: 40px;
+  bottom: 15px;
+  left: 50px;
 
   @media ${({ theme }) => theme.media.laptop} {
     bottom: 10px;
@@ -117,8 +117,8 @@ export const SettingsButton = styled.button`
 
 export const FullscreenButton = styled.button`
   ${iconsCommon};
-  bottom: 5px;
-  left: 70px;
+  bottom: 15px;
+  left: 80px;
 
   @media ${({ theme }) => theme.media.laptop} {
     bottom: 10px;
