@@ -13,6 +13,13 @@ const rotated90 = css`
   transform: rotate(90deg);
 `;
 
+const flexCenter = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const IconAnimation = keyframes`
   0% {
     ${blipIn}
@@ -58,12 +65,14 @@ export const GuardBody = styled.div`
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.guard};
   width: 100dvw;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 120dvh;
+  ${flexCenter};
   background: ${({ theme }) => theme.palette.linearBackground};
+`;
+
+export const ContentWrapper = styled.div`
+  margin-top: -20dvh;
+  ${flexCenter};
 `;
 
 export const MainMessage = styled.h2`
