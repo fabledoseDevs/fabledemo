@@ -55,6 +55,10 @@ export const SummaryCard = styled.div<{ $decor?: string }>`
       background-position: bottom center;
       background-size: contain;
       background-repeat: no-repeat;
+
+      @media ${({ theme }) => theme.media.desktop} {
+        background-size: cover;
+      }
     `}
 `;
 
