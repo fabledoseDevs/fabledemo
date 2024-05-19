@@ -53,7 +53,7 @@ const IconAnimation = keyframes`
 `;
 
 export const GuardBody = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.guard};
@@ -63,7 +63,6 @@ export const GuardBody = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
   background: ${({ theme }) => theme.palette.linearBackground};
 `;
 
