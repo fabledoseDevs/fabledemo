@@ -77,7 +77,7 @@ export const ContentWrapper = styled.div`
 
 export const MainMessage = styled.h2`
   text-align: center;
-  font-size: 34px;
+  font-size: 30px;
   font-family: ${({ theme }) => theme.fonts.lato};
 `;
 
@@ -86,7 +86,7 @@ export const RotationIcon = styled(DevicePhoneMobile)`
   width: 180px;
   height: 180px;
   animation: ${IconAnimation} 8s linear infinite;
-  margin: 36px auto;
+  margin: 30px auto;
 `;
 
 export const DetailedMessage = styled.p`
