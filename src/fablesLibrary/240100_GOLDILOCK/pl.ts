@@ -1,3 +1,4 @@
+import cover_blur from '@/fablesLibrary/240100_GOLDILOCK/images/backups/blur.jpg';
 import img_01_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_1.jpg';
 import img_02_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_2.jpg';
 import img_03_backup from '@/fablesLibrary/240100_GOLDILOCK/images/backups/img_3.jpg';
@@ -51,6 +52,7 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
       picSizes: {
         '1080': cover_hd,
         '720': cover_sd,
+        blur: cover_blur.src,
       },
       backup: img_02_backup,
     },

@@ -13,6 +13,13 @@ const rotated90 = css`
   transform: rotate(90deg);
 `;
 
+const flexCenter = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const IconAnimation = keyframes`
   0% {
     ${blipIn}
@@ -53,23 +60,24 @@ const IconAnimation = keyframes`
 `;
 
 export const GuardBody = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: ${({ theme }) => theme.zIndex.guard};
   width: 100dvw;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  height: 120dvh;
+  ${flexCenter};
   background: ${({ theme }) => theme.palette.linearBackground};
+`;
+
+export const ContentWrapper = styled.div`
+  margin-top: -20dvh;
+  ${flexCenter};
 `;
 
 export const MainMessage = styled.h2`
   text-align: center;
-  font-size: 34px;
+  font-size: 30px;
   font-family: ${({ theme }) => theme.fonts.lato};
 `;
 
@@ -78,7 +86,7 @@ export const RotationIcon = styled(DevicePhoneMobile)`
   width: 180px;
   height: 180px;
   animation: ${IconAnimation} 8s linear infinite;
-  margin: 36px auto;
+  margin: 30px auto;
 `;
 
 export const DetailedMessage = styled.p`

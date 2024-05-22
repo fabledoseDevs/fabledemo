@@ -4,7 +4,12 @@ declare module 'styled-components' {
   export type DefaultTheme = Theme;
 }
 
-export type ViewportName = 'desktop' | 'laptop' | 'tablet' | 'mobile';
+export type ViewportName =
+  | 'hdScreen'
+  | 'desktop'
+  | 'laptop'
+  | 'tablet'
+  | 'mobile';
 
 export type StoryPageOptions =
   | 'textboxNone'

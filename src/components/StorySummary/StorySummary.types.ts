@@ -10,6 +10,7 @@ export interface StorySummaryProps {
   translation?: string[];
   picturesAuthor: string[];
   bookCover: StoryPagePictureProps;
+  bookCoverBlur?: string;
   coverDecor?: string;
   bookTitle: string;
   extendedSummary: string;
@@ -17,6 +18,7 @@ export interface StorySummaryProps {
   mainTags: [TAG_NAMES, TAG_NAMES];
   detailedTags: TAG_NAMES[];
   storyStatusHandler: Dispatch<SetStateAction<boolean>>;
+  defaultColor: string;
 }
 
 export type StorySummary = (props: StorySummaryProps) => ReactElement;

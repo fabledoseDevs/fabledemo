@@ -33,6 +33,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           adaptationAuthor={storyData.info.adaptationAuthor}
           picturesAuthor={storyData.info.pictures}
           bookCover={storyData.info.cover}
+          bookCoverBlur={storyData.info.cover.picSizes.blur}
           coverDecor={storyData.info.decorator}
           bookTitle={storyData.info.title}
           extendedSummary={storyData.info.extendedSummary}
@@ -40,6 +41,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           mainTags={storyData.info.mainTags}
           detailedTags={storyData.info.detailedTags}
           storyStatusHandler={setStoryStatus}
+          defaultColor={storyData.info.defaultColor}
         />
       )}
     </>

@@ -40,6 +40,7 @@ const theme: Theme = {
     tablet: `screen and (min-width: ${breakpoints.tablet}px)`,
     laptop: `screen and (min-width: ${breakpoints.laptop}px)`,
     desktop: `screen and (min-width: ${breakpoints.desktop}px)`,
+    hdScreen: `screen and (min-width: ${breakpoints.highDef}px)`,
   },
   fonts: {
     poltawskiNowy: 'Poltawski',

@@ -1,9 +1,12 @@
+import Link from 'next/link';
+
 import {
   FacebookIcon,
   InstagramIcon,
   List,
   SocialIconsBody,
   TwitterIcon,
+  YoutubeIcon,
 } from './SocialIcons.styled';
 import type { SocialIcons as SocialIconsType } from './SocialIcons.types';
 
@@ -13,34 +16,44 @@ export const SocialIcons: SocialIconsType = () => (
     Napisz do nas &nbsp;&nbsp;|
     <List>
       <li>
-        <a
+        <Link
           href="https://www.facebook.com/fabledose/"
           target="_blank"
           aria-label="Go to Facebook Page"
           rel="nofollow"
         >
           <FacebookIcon />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="/"
+        <Link
+          href="https://instagram.com/fabledose"
           target="_blank"
           aria-label="Go to Instagram Page"
           rel="nofollow"
         >
           <InstagramIcon />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          href="https://twitter.com/fabledose"
+        <Link
+          href="https://youtube.com/fabledose"
           target="_blank"
-          aria-label="Go to Twitter Page"
+          aria-label="Go to YouTube channel"
+          rel="nofollow"
+        >
+          <YoutubeIcon />
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="https://x.com/fabledose"
+          target="_blank"
+          aria-label="Go to X Page"
           rel="nofollow"
         >
           <TwitterIcon />
-        </a>
+        </Link>
       </li>
     </List>
   </SocialIconsBody>
