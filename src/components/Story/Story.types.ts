@@ -1,4 +1,5 @@
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
+import type React from 'react';
 
 import type { Slide } from '@/fablesLibrary/library.types';
 
@@ -10,6 +11,10 @@ export interface StoryProps {
 export interface Hook {
   currentSlide: number;
   backgroundSlide: number;
+  switchToInput: () => void;
+  inputShown: boolean;
+  handleInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  switchToSpan: () => void;
   setCurrentSlide: (idx: number) => void;
   settingsVisibility: boolean;
   setSettingsVisibility: Dispatch<SetStateAction<boolean>>;
