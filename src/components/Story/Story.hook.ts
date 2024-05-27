@@ -1,3 +1,4 @@
+import type React from 'react';
 import { useEffect, useState } from 'react';
 
 import type { UseStory as UseStoryType } from './Story.types';
@@ -8,6 +9,7 @@ export const useStory: UseStoryType = storyContent => {
   const [settingsVisibility, setSettingsVisibility] = useState<boolean>(false);
   const [exitVisibility, setExitVisibility] = useState<boolean>(false);
   const [fullscreen, setFullscreen] = useState<boolean>();
+  const [inputShown, setInputShown] = useState(false);
 
   const switchSlideBack = () => {
     if (currentSlide !== 0) {
@@ -15,6 +17,16 @@ export const useStory: UseStoryType = storyContent => {
       setBackgroundSlide(currentSlide);
     }
   };
+
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputVal = Number(event.target.value);
+    if (inputVal >= 1 && inputVal <= storyContent.length)
+      setCurrentSlide(inputVal - 1);
+  };
+
+  const switchToInput = () => setInputShown(true);
+
+  const switchToSpan = () => setInputShown(false);
 
   const switchSlideForward = () => {
     if (currentSlide !== storyContent.length - 1) {
@@ -78,6 +90,10 @@ export const useStory: UseStoryType = storyContent => {
     currentSlide,
     setCurrentSlide,
     backgroundSlide,
+    switchToInput,
+    inputShown,
+    handleInput,
+    switchToSpan,
     settingsVisibility,
     setSettingsVisibility,
     exitVisibility,

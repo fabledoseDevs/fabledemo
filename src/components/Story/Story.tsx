@@ -1,9 +1,10 @@
+import { ArrowCircleLeft } from '@styled-icons/fluentui-system-regular/ArrowCircleLeft';
+import { ArrowCircleRight } from '@styled-icons/fluentui-system-regular/ArrowCircleRight';
 import { ArrowExportRtl as ExitIcon } from '@styled-icons/fluentui-system-regular/ArrowExportRtl';
 import { FullScreenMaximize as FullscreenUpIcon } from '@styled-icons/fluentui-system-regular/FullScreenMaximize';
 import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui-system-regular/FullScreenMinimize';
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
-import { CheveronLeft, CheveronRight } from '@styled-icons/zondicons';
 import { useSwipeable } from 'react-swipeable';
 
 import Exitbox from '@/components/Exitbox';
@@ -26,7 +27,10 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
   const {
     currentSlide,
     backgroundSlide,
-    setCurrentSlide,
+    switchToInput,
+    inputShown,
+    handleInput,
+    switchToSpan,
     settingsVisibility,
     setSettingsVisibility,
     exitVisibility,
@@ -66,24 +70,28 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
           disabled={currentSlide === 0}
           onClick={switchSlideBack}
         >
-          <CheveronLeft />
+          <ArrowCircleLeft />
         </NavigationButton>
-        <Pagination>
-          {storyContent.map((slide, idx) => (
-            <button
-              className={idx === currentSlide ? 'active' : ''}
-              key={idx}
-              onClick={() => {
-                setCurrentSlide(idx);
-              }}
+        <Pagination onClick={switchToInput}>
+          {inputShown ? (
+            <input
+              type="number"
+              value={currentSlide + 1}
+              onChange={handleInput}
+              onBlur={switchToSpan}
+              autoFocus
             />
-          ))}
+          ) : (
+            <span>
+              {currentSlide + 1}/{storyContent.length}
+            </span>
+          )}
         </Pagination>
         <NavigationButton
           disabled={currentSlide === storyContent.length - 1}
           onClick={switchSlideForward}
         >
-          <CheveronRight />
+          <ArrowCircleRight />
         </NavigationButton>
       </Navigation>
 

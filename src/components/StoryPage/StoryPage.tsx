@@ -43,6 +43,7 @@ export const StoryPage: StoryPageType = ({
         width={'100dvw'}
         height={'100dvh'}
         key={bufferedImageUrl}
+        playsinline={true}
       />
       <StaticPicture
         src={staticImage}
@@ -60,6 +61,7 @@ export const StoryPage: StoryPageType = ({
         width={'100dvw'}
         height={'100dvh'}
         key={imageUrl}
+        playsinline={true}
       />
       <TextContent layout={layout} key={id}>
         <TextBox

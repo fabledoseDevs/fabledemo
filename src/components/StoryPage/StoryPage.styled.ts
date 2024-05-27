@@ -100,7 +100,7 @@ export const TextContent = styled.div<{ layout: LAYOUT_VARIANTS }>`
   z-index: ${({ theme }) => theme.zIndex.medium};
 
   @media ${({ theme }) => theme.media.tablet} {
-    padding: 12px 12px 30px;
+    padding: 12px 12px 60px;
   }
 
   @media ${({ theme }) => theme.media.desktop} {

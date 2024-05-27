@@ -12,8 +12,8 @@ export const Stage = styled.div<{ defaultColor: string }>`
 
 export const Navigation = styled.div`
   position: absolute;
-  bottom: 5px;
-  right: 5px;
+  bottom: 15px;
+  right: 15px;
   width: auto;
   height: auto;
   display: flex;
@@ -21,18 +21,20 @@ export const Navigation = styled.div`
 `;
 
 export const NavigationButton = styled.button`
-  color: ${({ theme }) => theme.palette.background};
-  background-color: black;
+  background: none;
   border: 0;
   cursor: pointer;
   opacity: 0.25;
   transition: all 300ms;
-  width: 40px;
+  width: 50px;
   border-radius: 20px;
+
+  svg {
+    color: ${({ theme }) => theme.palette.secondary};
+  }
 
   &:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -47,24 +49,18 @@ export const Pagination = styled.div`
   align-content: center;
   padding: 0 6px;
 
-  button {
-    width: 15px;
-    height: 15px;
-    border: 0;
-    border-radius: 8px;
-    background-color: black;
-    cursor: pointer;
-    opacity: 0.25;
-
-    &:hover {
-      background-color: white;
-      opacity: 0.5;
-    }
+  input {
+    width: 60px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
   }
 
-  button.active {
-    background-color: white;
-    opacity: 1 !important;
+  span {
+    width: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: ${({ theme }) => theme.palette.secondary};
   }
 `;
 
@@ -89,7 +85,7 @@ const iconsCommon = css`
   }
 
   svg {
-    color: #fff;
+    color: ${({ theme }) => theme.palette.secondary};
   }
 `;
 
