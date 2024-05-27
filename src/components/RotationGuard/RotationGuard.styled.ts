@@ -77,8 +77,13 @@ export const ContentWrapper = styled.div`
 
 export const MainMessage = styled.h2`
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: ${({ theme }) => theme.fonts.lato};
+  padding: 0 12px;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    font-size: 30px;
+  }
 `;
 
 export const RotationIcon = styled(DevicePhoneMobile)`
@@ -90,9 +95,13 @@ export const RotationIcon = styled(DevicePhoneMobile)`
 `;
 
 export const DetailedMessage = styled.p`
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.4;
   width: 100%;
   text-align: center;
   padding: 12px;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    font-size: 18px;
+  }
 `;
