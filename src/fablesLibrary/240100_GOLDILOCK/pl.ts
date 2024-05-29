@@ -309,5 +309,19 @@ export const GOLDILOCKS_AND_THREE_BEARS: Story = {
         backup: img_10_backup,
       },
     },
+
+    {
+      slideId: 14,
+      layout: LAYOUT_VARIANTS.FINAL_SLIDE,
+      paragraphs: [], //FINAL_SLIDE won't render any paragraphs.
+      picture: {
+        description: 'Rodzina misiów spacerująca po lesie.',
+        picSizes: {
+          '1080': img_01_hd,
+          '720': img_01_sd,
+        },
+        backup: img_01_backup,
+      },
+    },
   ],
 };
