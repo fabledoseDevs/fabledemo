@@ -28,11 +28,6 @@ const fadeIn = keyframes`
     100% {opacity: 1}
 `;
 
-const fadeOut = keyframes`
-    0% {opacity: 1}
-    100% {opacity: 0}
-`;
-
 export const PageBody = styled.section`
   width: 100dvw;
   height: 100dvh;
@@ -56,21 +51,6 @@ export const StaticPicture = styled(Image)`
   width: 100dvw;
   height: 100dvh;
   object-fit: cover;
-  animation: 1s ${fadeOut} ease;
-`;
-
-export const BufferedPicture = styled(ReactPlayer)`
-  position: fixed;
-  top: 0;
-  left: -100dvw;
-  object-fit: cover;
-  visibility: hidden;
-  opacity: 0;
-  z-index: ${({ theme }) => theme.zIndex.standard};
-
-  video {
-    object-fit: cover;
-  }
 `;
 
 export const AnimatedPicture = styled(ReactPlayer)`
@@ -82,7 +62,6 @@ export const AnimatedPicture = styled(ReactPlayer)`
 
   video {
     object-fit: cover;
-    animation: 1s ${fadeIn} ease;
   }
 `;
 
