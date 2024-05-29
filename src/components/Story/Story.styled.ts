@@ -2,7 +2,7 @@ import { css, styled } from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const Stage = styled(Swiper)<{ defaultColor: string }>`
-  position: fixed;
+  position: fixed !important;
   width: 100dvw;
   height: 100dvh;
   top: 0;
