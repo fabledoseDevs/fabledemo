@@ -3,7 +3,6 @@ import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.pr
 
 import {
   AnimatedPicture,
-  BufferedPicture,
   PageBody,
   StaticPicture,
   TextBox,
@@ -14,7 +13,6 @@ export const StoryPage: StoryPageType = ({
   id,
   layout,
   text,
-  bufferedPicture,
   backgroundPicture,
   staticImage,
   autoplayAnimation,
@@ -27,24 +25,8 @@ export const StoryPage: StoryPageType = ({
       ? backgroundPicture.picSizes['1080']
       : backgroundPicture.picSizes['720'];
 
-  const bufferedImageUrl =
-    screenData.screenWidth >= 1920
-      ? bufferedPicture.picSizes['1080']
-      : bufferedPicture.picSizes['720'];
-
   return (
     <PageBody>
-      <BufferedPicture
-        url={bufferedImageUrl}
-        loop={false}
-        controls={false}
-        muted={true}
-        playing={false}
-        width={'100dvw'}
-        height={'100dvh'}
-        key={bufferedImageUrl}
-        playsinline={true}
-      />
       <StaticPicture
         src={staticImage}
         alt={'next image'}

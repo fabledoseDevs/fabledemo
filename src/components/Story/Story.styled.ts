@@ -1,23 +1,74 @@
 import { css, styled } from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-export const Stage = styled.div<{ defaultColor: string }>`
+export const Stage = styled(Swiper)<{ defaultColor: string }>`
+  position: fixed;
   width: 100dvw;
   height: 100dvh;
-  position: fixed;
   top: 0;
   left: 0;
   line-height: 100dvh;
   background-color: ${({ defaultColor }) => defaultColor};
+
+  div.swiper-slide-next {
+    visibility: hidden !important;
+  }
+
+  div.swiper-pagination {
+    position: absolute;
+    bottom: 20px !important;
+    right: 22px !important;
+    left: unset;
+    width: 90px;
+    height: auto;
+    line-height: 16px;
+    padding: 0 6px;
+    font-size: 16px;
+    text-align: center;
+    color: ${({ theme }) => theme.palette.secondary};
+    opacity: 0.5;
+    cursor: default;
+
+    span {
+      line-height: 16px;
+    }
+
+    @media ${({ theme }) => theme.media.laptop} {
+      line-height: 24px;
+      font-size: 24px;
+      bottom: 23px !important;
+      right: 50px !important;
+
+      span {
+        line-height: 24px;
+      }
+    }
+  }
 `;
 
-export const Navigation = styled.div`
+export const Slide = styled(SwiperSlide)<{ defaultColor: string }>`
+  width: 100dvw;
+  height: 100dvh;
+  line-height: 100dvh;
+  background-color: ${({ defaultColor }) => defaultColor};
+`;
+
+export const NavElements = styled.div`
   position: absolute;
   bottom: 15px;
   right: 15px;
   width: auto;
   height: auto;
   display: flex;
+  gap: 54px;
   flex-direction: row;
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
+
+  @media ${({ theme }) => theme.media.laptop} {
+    gap: 70px;
+    bottom: 10px;
+    right: 10px;
+  }
 `;
 
 export const NavigationButton = styled.button`
@@ -26,8 +77,14 @@ export const NavigationButton = styled.button`
   cursor: pointer;
   opacity: 0.25;
   transition: all 300ms;
-  width: 50px;
+  width: 25px;
+  height: 25px;
   border-radius: 20px;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    width: 50px;
+    height: 50px;
+  }
 
   svg {
     color: ${({ theme }) => theme.palette.secondary};
@@ -35,32 +92,6 @@ export const NavigationButton = styled.button`
 
   &:hover {
     opacity: 1;
-  }
-`;
-
-export const Pagination = styled.div`
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  align-content: center;
-  padding: 0 6px;
-
-  input {
-    width: 60px;
-    height: 40px;
-    font-size: 24px;
-    text-align: center;
-  }
-
-  span {
-    width: 60px;
-    font-size: 24px;
-    text-align: center;
-    color: ${({ theme }) => theme.palette.secondary};
   }
 `;
 
