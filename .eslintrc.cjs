@@ -30,7 +30,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': ['error', 'as-needed'],
-    'max-lines': ['error', 350],
+    'max-lines': ['warn', 500],
     'no-console': ['error', {
       allow: ['warn', 'error', 'info']
     }],

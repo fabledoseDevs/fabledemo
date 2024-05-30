@@ -1,7 +1,7 @@
 import { BookArrowClockwise as RestartIcon } from '@styled-icons/fluentui-system-regular/BookArrowClockwise';
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useSwiper } from 'swiper/react';
 
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
@@ -28,7 +28,7 @@ export const StoryPage: StoryPageType = ({
 }) => {
   const { settings } = useSettingsContext();
   const { screenData } = useScreenContext();
-  const path = usePathname();
+  const swiper = useSwiper();
 
   const imageUrl =
     screenData.screenWidth >= 1920
@@ -62,12 +62,12 @@ export const StoryPage: StoryPageType = ({
             <ActionsContainer>
               <Link href={'/'}>
                 <HomeIcon />
-                <p>Strona główna</p>
+                <span>Strona główna</span>
               </Link>
-              <Link href={path}>
+              <button onClick={() => swiper.slideTo(0)}>
                 <RestartIcon />
-                <p>Od początku</p>
-              </Link>
+                <span>Od początku</span>
+              </button>
             </ActionsContainer>
           </FinalSlideContent>
         ) : (

@@ -300,7 +300,7 @@ export const FinalSlideContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin: -24px auto 0 auto;
+  margin: -64px auto 0 auto;
   width: 70%;
   height: auto;
   padding: 24px;
@@ -329,12 +329,16 @@ export const ActionsContainer = styled.div`
   justify-content: center;
   gap: 24px;
 
-  a {
+  a,
+  button {
     color: white;
     height: 40px;
     line-height: 24px;
     opacity: 0.5;
     transition: opacity 0.5s;
+    background: none;
+    border: 0;
+    cursor: pointer;
 
     &:hover,
     &:active {
@@ -342,8 +346,13 @@ export const ActionsContainer = styled.div`
     }
 
     svg {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
     }
+  }
+
+  span {
+    display: block;
+    font-size: 18px;
   }
 `;
