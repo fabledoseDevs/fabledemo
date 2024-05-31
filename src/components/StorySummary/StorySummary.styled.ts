@@ -32,7 +32,7 @@ export const SummaryLayer = styled.div<{ $layout: boolean }>`
 
 export const SummaryCard = styled.div<{ $decor?: string }>`
   width: 55vw;
-  min-width: 560px;
+  min-width: 360px;
   height: auto;
   overflow: clip;
   background-color: antiquewhite;
@@ -53,12 +53,8 @@ export const SummaryCard = styled.div<{ $decor?: string }>`
     css`
       background-image: url(${$decor});
       background-position: bottom center;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
-
-      @media ${({ theme }) => theme.media.desktop} {
-        background-size: cover;
-      }
     `}
 `;
 
@@ -170,11 +166,19 @@ export const BookExcerpt = styled.p`
 
 export const ButtonsContainer = styled.div`
   width: 100%;
-  margin: 60px 0;
+  margin: 24px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
   align-items: center;
   align-self: flex-end;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    margin: 34px 0;
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    margin: 60px 0;
+  }
 `;
