@@ -1,4 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const heartBeat = keyframes`
+  10% {
+    transform: scale(1);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: scale(1.1);
+    animation-timing-function: ease-out;
+  }
+  100% {
+      transform: scale(1);
+      animation-timing-function: ease-in;
+  }
+`;
 
 export const TagListBody = styled.div`
   display: flex;
@@ -30,24 +45,31 @@ export const TagListTitle = styled.div`
 export const SeparatorElement = styled.span`
   display: block;
   width: 2px;
-  height: 40px;
+  height: 32px;
   background-color: ${({ theme }) => theme.palette.accent};
   margin: 26px 15px 0;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    height: 40px;
+    margin: 26px 15px 0;
+  }
 `;
 
 export const TagsSummaryButton = styled.button`
-  width: auto;
-  height: 32px;
-  padding: 0 14px;
-  border-radius: 20px;
+  width: 34px;
+  height: 34px;
+  border-radius: 22px;
+  margin: 5px 0 0 4px;
   border: none;
-  margin-top: 24px;
   cursor: pointer;
   color: ${({ theme }) => theme.palette.background};
   background-color: ${({ theme }) => theme.palette.accent};
+  transform: scale(1);
+  animation: ${heartBeat} 2.5s ease-in-out infinite both;
 
-  @media ${({ theme }) => theme.media.laptop} {
-    margin: 30px 0 0 24px;
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 42px;
+    height: 42px;
   }
 
   &:hover,
@@ -56,8 +78,13 @@ export const TagsSummaryButton = styled.button`
   }
 
   svg {
-    width: 19px;
-    margin-right: 6px;
+    width: 28px;
+    height: 28px;
+
+    @media ${({ theme }) => theme.media.tablet} {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   span {

@@ -4,12 +4,16 @@ export const TagBody = styled.li<{ extend: boolean }>`
   list-style: none;
   display: inline-block;
   position: relative;
-  width: 50px;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     box-shadow: none;
+
+    @media ${({ theme }) => theme.media.tablet} {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   ${({ extend }) =>

@@ -15,7 +15,7 @@ export const Stage = styled(Swiper)<{ defaultColor: string }>`
   }
 
   div.swiper-pagination {
-    position: absolute;
+    position: fixed !important;
     bottom: 20px !important;
     right: 22px !important;
     left: unset;
@@ -54,7 +54,7 @@ export const Slide = styled(SwiperSlide)<{ defaultColor: string }>`
 `;
 
 export const NavElements = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   right: 15px;
   width: auto;

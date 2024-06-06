@@ -40,14 +40,17 @@ export const TagList: TagListType = ({
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
-        </MobileSorter>
-        <MobileSorter>
-          <TagsSummaryButton
-            onClick={() => setInfoModalActive(prevState => !prevState)}
-          >
-            <InfoCircle />
-            <span>Więcej informacji</span>
-          </TagsSummaryButton>
+          <SeparatorElement />
+          <TagsListUl>
+            <TagListTitle>Szczegóły</TagListTitle>
+            <li>
+              <TagsSummaryButton
+                onClick={() => setInfoModalActive(prevState => !prevState)}
+              >
+                <InfoCircle />
+              </TagsSummaryButton>
+            </li>
+          </TagsListUl>
         </MobileSorter>
       </TagListBody>
       {isInfoModalActive && (
