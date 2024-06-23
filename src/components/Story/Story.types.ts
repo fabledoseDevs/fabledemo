@@ -1,6 +1,6 @@
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
-import type { Slide } from '@/fablesLibrary/library.types';
+import type { Slide } from '@/types/fairytale.types';
 
 export interface StoryProps {
   storyContent: Slide[];

@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import type { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
+import type { LAYOUT_VARIANTS } from '@/types/fairytale.types';
 
 export interface AvailableSizes {
   1080?: string; //FHD
@@ -17,7 +17,7 @@ export interface StoryPagePictureProps {
 export interface StoryPageProps {
   id: number;
   layout: LAYOUT_VARIANTS;
-  text: string[];
+  text?: string[];
   backgroundPicture: StoryPagePictureProps;
   staticImage: string;
   autoplayAnimation: boolean;

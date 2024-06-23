@@ -5,3 +5,5 @@ export type Children =
   | Array<ReactNode>
   | ReactElement
   | Array<ReactElement>;
+
+export type Mapper<T, ContentfulData> = (element: ContentfulData) => T | false;

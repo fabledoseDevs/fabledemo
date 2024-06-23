@@ -4,9 +4,10 @@ export interface Info {
   id: string;
   title: string;
   author?: string[];
-  adaptationAuthor?: string[];
+  adaptationAuthors?: string[];
   translation?: string[];
   pictures: string[];
+  animation: string[];
   thumb: string;
   decorator: string;
   defaultColor: string;
@@ -20,16 +21,16 @@ export interface Info {
 }
 
 export enum LAYOUT_VARIANTS {
-  WIDE_TEXT_TOP,
-  WIDE_TEXT_MIDDLE,
-  WIDE_TEXT_BOTTOM,
-  NARROW_TEXT_TOP_LEFT,
-  NARROW_TEXT_TOP_RIGHT,
-  NARROW_TEXT_MIDDLE_LEFT,
-  NARROW_TEXT_MIDDLE_RIGHT,
-  NARROW_TEXT_BOTTOM_LEFT,
-  NARROW_TEXT_BOTTOM_RIGHT,
-  FINAL_SLIDE,
+  WIDE_TEXT_TOP = 'wide-text-top',
+  WIDE_TEXT_MIDDLE = 'wide-text-middle',
+  WIDE_TEXT_BOTTOM = 'wide-text-bottom',
+  NARROW_TEXT_TOP_LEFT = 'narrow-text-top-left',
+  NARROW_TEXT_TOP_RIGHT = 'narrow-text-top-right',
+  NARROW_TEXT_MIDDLE_LEFT = 'narrow-text-middle-left',
+  NARROW_TEXT_MIDDLE_RIGHT = 'narrow-text-middle-right',
+  NARROW_TEXT_BOTTOM_LEFT = 'narrow-text-bottom-left',
+  NARROW_TEXT_BOTTOM_RIGHT = 'narrow-text-bottom-right',
+  FINAL_SLIDE = 'final-slide',
 }
 
 export enum TAG_NAMES {
@@ -67,7 +68,7 @@ export interface Picture {
 export interface Slide {
   slideId: number;
   layout: LAYOUT_VARIANTS;
-  paragraphs: string[];
+  paragraphs?: string[];
   picture: Picture;
 }
 

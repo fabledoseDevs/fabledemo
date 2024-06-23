@@ -15,7 +15,8 @@ import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import type { TemplateLandingPage as TemplateLandingPageType } from '@/components/TemplateLandingPage/TemplateLandingPage.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
-import { GOLDILOCKS_AND_THREE_BEARS } from '@/fablesLibrary240100_GOLDILOCK/pl';
+
+import { CARD_GOLDILOCK } from './TemplateLandingPage.consts';
 
 const cookieBannerCheckAndRender = (consentStatus: boolean) => {
   if (!consentStatus) {
@@ -46,27 +47,27 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
       <Separator type={'SMALL'} />
       <StoryCard
         bookCover={{
-          src: GOLDILOCKS_AND_THREE_BEARS.info.thumb,
-          alt: GOLDILOCKS_AND_THREE_BEARS.info.title,
+          src: CARD_GOLDILOCK.thumb,
+          alt: CARD_GOLDILOCK.title,
           width: 640,
           height: 340,
         }}
         layout={BOOKCARD_LAYOUT.IMAGE_LEFT}
         content={{
-          bookTitle: GOLDILOCKS_AND_THREE_BEARS.info.title,
+          bookTitle: CARD_GOLDILOCK.title,
           ctaButton: {
             purpose: PURPOSE.ANCHOR,
             label: 'Czytaj',
-            anchorLink: '/goldilocks',
+            anchorLink: CARD_GOLDILOCK.url,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: false,
           },
-          summary: GOLDILOCKS_AND_THREE_BEARS.info.summary,
-          synopsis: GOLDILOCKS_AND_THREE_BEARS.info.synopsis,
+          summary: CARD_GOLDILOCK.summary,
+          synopsis: CARD_GOLDILOCK.synopsis,
           iconsBlock: {
-            mainTags: GOLDILOCKS_AND_THREE_BEARS.info.mainTags,
-            extraTags: GOLDILOCKS_AND_THREE_BEARS.info.detailedTags,
+            mainTags: CARD_GOLDILOCK.mainTags,
+            extraTags: CARD_GOLDILOCK.detailedTags,
           },
         }}
       />

@@ -1,5 +1,5 @@
 import type { TagDataSelector as TagDataSelectorType } from '@/components/TagElement/TagElement.types';
-import { TAG_NAMES } from '@/fablesLibrary/library.types';
+import { TAG_NAMES } from '@/types/fairytale.types';
 
 export const tagDataSelector: TagDataSelectorType = tagName => {
   switch (tagName) {
