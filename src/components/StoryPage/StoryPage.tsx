@@ -5,7 +5,7 @@ import { useSwiper } from 'swiper/react';
 
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
-import { LAYOUT_VARIANTS } from '@/fablesLibrarylibrary.types';
+import { LAYOUT_VARIANTS } from '@/types/fairytale.types';
 
 import {
   ActionsContainer,
@@ -76,9 +76,8 @@ export const StoryPage: StoryPageType = ({
             textboxTheme={settings.theme}
             fontSize={settings.fontSize}
           >
-            {text.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {text &&
+              text.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
           </TextBox>
         )}
       </TextContent>

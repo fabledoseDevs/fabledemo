@@ -30,10 +30,10 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
       ) : (
         <StorySummary
           revertLayout={false}
-          adaptationAuthor={storyData.info.adaptationAuthor}
+          adaptationAuthor={storyData.info.adaptationAuthors}
           picturesAuthor={storyData.info.pictures}
           bookCover={storyData.info.cover}
-          bookCoverBlur={storyData.info.cover.picSizes.blur}
+          bookCoverBlur={storyData.info.cover.backup.src}
           coverDecor={storyData.info.decorator}
           bookTitle={storyData.info.title}
           extendedSummary={storyData.info.extendedSummary}

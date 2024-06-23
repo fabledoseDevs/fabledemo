@@ -1,0 +1,1000 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+}
+
+interface Entry {
+    contentfulMetadata: ContentfulMetadata!
+    sys: Sys!
+}
+
+interface _Node {
+    _id: ID!
+}
+
+"Represents a binary file in a space. An asset can be any file type."
+type Asset {
+    contentType(locale: String): String
+    contentfulMetadata: ContentfulMetadata!
+    description(locale: String): String
+    fileName(locale: String): String
+    height(locale: String): Int
+    linkedFrom(allowedLocales: [String]): AssetLinkingCollections
+    size(locale: String): Int
+    sys: Sys!
+    title(locale: String): String
+    url(locale: String, transform: ImageTransformOptions): String
+    width(locale: String): Int
+}
+
+type AssetCollection {
+    items: [Asset]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type AssetLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    storyCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): StoryCollection
+    storyPageAnimationCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): StoryPageAnimationCollection
+    storyPageCoverCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): StoryPageCoverCollection
+}
+
+type ContentfulMetadata {
+    tags: [ContentfulTag]!
+}
+
+"""
+
+Represents a tag entity for finding and organizing content easily.
+Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags
+"""
+type ContentfulTag {
+    id: String
+    name: String
+}
+
+type EntryCollection {
+    items: [Entry]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type Query {
+    _node(id: ID!, locale: String, preview: Boolean): _Node
+    asset(id: String!, locale: String, preview: Boolean): Asset
+    assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
+    entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
+    story(id: String!, locale: String, preview: Boolean): Story
+    storyCollection(limit: Int = 100, locale: String, order: [StoryOrder], preview: Boolean, skip: Int = 0, where: StoryFilter): StoryCollection
+    storyPage(id: String!, locale: String, preview: Boolean): StoryPage
+    storyPageAnimation(id: String!, locale: String, preview: Boolean): StoryPageAnimation
+    storyPageAnimationCollection(limit: Int = 100, locale: String, order: [StoryPageAnimationOrder], preview: Boolean, skip: Int = 0, where: StoryPageAnimationFilter): StoryPageAnimationCollection
+    storyPageCollection(limit: Int = 100, locale: String, order: [StoryPageOrder], preview: Boolean, skip: Int = 0, where: StoryPageFilter): StoryPageCollection
+    storyPageCover(id: String!, locale: String, preview: Boolean): StoryPageCover
+    storyPageCoverCollection(limit: Int = 100, locale: String, order: [StoryPageCoverOrder], preview: Boolean, skip: Int = 0, where: StoryPageCoverFilter): StoryPageCoverCollection
+    storyPageParagraph(id: String!, locale: String, preview: Boolean): StoryPageParagraph
+    storyPageParagraphCollection(limit: Int = 100, locale: String, order: [StoryPageParagraphOrder], preview: Boolean, skip: Int = 0, where: StoryPageParagraphFilter): StoryPageParagraphCollection
+}
+
+"Full story content (full fable, fairy tale).  [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/story)"
+type Story implements Entry {
+    adaptationAuthors(locale: String): [String]
+    animation(locale: String): [String]
+    contentfulMetadata: ContentfulMetadata!
+    cover(locale: String, preview: Boolean, where: StoryPageCoverFilter): StoryPageCover
+    decorator(locale: String, preview: Boolean): Asset
+    defaultColor(locale: String): String
+    extendedSummary(locale: String): String
+    extendedTags(locale: String): [String]
+    linkedFrom(allowedLocales: [String]): StoryLinkingCollections
+    mainTags(locale: String): [String]
+    name(locale: String): String
+    picturesAuthors(locale: String): [String]
+    slug(locale: String): String
+    storyPagesCollection(limit: Int = 100, locale: String, order: [StoryStoryPagesCollectionOrder], preview: Boolean, skip: Int = 0, where: StoryPageFilter): StoryStoryPagesCollection
+    summary(locale: String): String
+    synopsis(locale: String): String
+    sys: Sys!
+    thumbnail(locale: String, preview: Boolean): Asset
+    title(locale: String): String
+    translation(locale: String): [String]
+}
+
+type StoryCollection {
+    items: [Story]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type StoryLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+"Story page that displays a set of paragraphs and animation in background. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPage)"
+type StoryPage implements Entry {
+    animation(locale: String, preview: Boolean, where: StoryPageAnimationFilter): StoryPageAnimation
+    contentfulMetadata: ContentfulMetadata!
+    id(locale: String): Int
+    layout(locale: String): String
+    linkedFrom(allowedLocales: [String]): StoryPageLinkingCollections
+    name(locale: String): String
+    paragraphsCollection(limit: Int = 100, locale: String, order: [StoryPageParagraphsCollectionOrder], preview: Boolean, skip: Int = 0, where: StoryPageParagraphFilter): StoryPageParagraphsCollection
+    sys: Sys!
+}
+
+"Basic, animated picture used in story page or cover as background of fable. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPageAnimation)"
+type StoryPageAnimation implements Entry {
+    backupImage(locale: String, preview: Boolean): Asset
+    contentfulMetadata: ContentfulMetadata!
+    description(locale: String): String
+    fhdAnimation(locale: String, preview: Boolean): Asset
+    hdAnimation(locale: String, preview: Boolean): Asset
+    ldAnimation(locale: String, preview: Boolean): Asset
+    linkedFrom(allowedLocales: [String]): StoryPageAnimationLinkingCollections
+    name(locale: String): String
+    sdAnimation(locale: String, preview: Boolean): Asset
+    sys: Sys!
+}
+
+type StoryPageAnimationCollection {
+    items: [StoryPageAnimation]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type StoryPageAnimationLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    storyPageCollection(limit: Int = 100, locale: String, order: [StoryPageAnimationLinkingCollectionsStoryPageCollectionOrder], preview: Boolean, skip: Int = 0): StoryPageCollection
+}
+
+type StoryPageCollection {
+    items: [StoryPage]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+"Animated picture used in story summary as background. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPageCover)"
+type StoryPageCover implements Entry {
+    blurImage(locale: String, preview: Boolean): Asset
+    contentfulMetadata: ContentfulMetadata!
+    description(locale: String): String
+    fhdAnimation(locale: String, preview: Boolean): Asset
+    hdAnimation(locale: String, preview: Boolean): Asset
+    ldAnimation(locale: String, preview: Boolean): Asset
+    linkedFrom(allowedLocales: [String]): StoryPageCoverLinkingCollections
+    name(locale: String): String
+    sdAnimation(locale: String, preview: Boolean): Asset
+    sys: Sys!
+}
+
+type StoryPageCoverCollection {
+    items: [StoryPageCover]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type StoryPageCoverLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    storyCollection(limit: Int = 100, locale: String, order: [StoryPageCoverLinkingCollectionsStoryCollectionOrder], preview: Boolean, skip: Int = 0): StoryCollection
+}
+
+type StoryPageLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    storyCollection(limit: Int = 100, locale: String, order: [StoryPageLinkingCollectionsStoryCollectionOrder], preview: Boolean, skip: Int = 0): StoryCollection
+}
+
+"Text paragraph for stroy page. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPageParagraph)"
+type StoryPageParagraph implements Entry {
+    contentfulMetadata: ContentfulMetadata!
+    linkedFrom(allowedLocales: [String]): StoryPageParagraphLinkingCollections
+    name(locale: String): String
+    paragraphContent(locale: String): String
+    sys: Sys!
+}
+
+type StoryPageParagraphCollection {
+    items: [StoryPageParagraph]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type StoryPageParagraphLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    storyPageCollection(limit: Int = 100, locale: String, order: [StoryPageParagraphLinkingCollectionsStoryPageCollectionOrder], preview: Boolean, skip: Int = 0): StoryPageCollection
+}
+
+type StoryPageParagraphsCollection {
+    items: [StoryPageParagraph]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type StoryStoryPagesCollection {
+    items: [StoryPage]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type Sys {
+    environmentId: String!
+    firstPublishedAt: DateTime
+    id: String!
+    "The locale that was requested."
+    locale: String
+    publishedAt: DateTime
+    publishedVersion: Int
+    spaceId: String!
+}
+
+enum AssetOrder {
+    contentType_ASC
+    contentType_DESC
+    fileName_ASC
+    fileName_DESC
+    height_ASC
+    height_DESC
+    size_ASC
+    size_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+    url_ASC
+    url_DESC
+    width_ASC
+    width_DESC
+}
+
+enum EntryOrder {
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum ImageFormat {
+    AVIF
+    "JPG image format."
+    JPG
+    """
+
+    Progressive JPG format stores multiple passes of an image in progressively higher detail.
+    When a progressive image is loading, the viewer will first see a lower quality pixelated version which
+    will gradually improve in detail, until the image is fully downloaded. This is to display an image as
+    early as possible to make the layout look as designed.
+    """
+    JPG_PROGRESSIVE
+    "PNG image format"
+    PNG
+    """
+
+    8-bit PNG images support up to 256 colors and weigh less than the standard 24-bit PNG equivalent.
+    The 8-bit PNG format is mostly used for simple images, such as icons or logos.
+    """
+    PNG8
+    "WebP image format."
+    WEBP
+}
+
+enum ImageResizeFocus {
+    "Focus the resizing on the bottom."
+    BOTTOM
+    "Focus the resizing on the bottom left."
+    BOTTOM_LEFT
+    "Focus the resizing on the bottom right."
+    BOTTOM_RIGHT
+    "Focus the resizing on the center."
+    CENTER
+    "Focus the resizing on the largest face."
+    FACE
+    "Focus the resizing on the area containing all the faces."
+    FACES
+    "Focus the resizing on the left."
+    LEFT
+    "Focus the resizing on the right."
+    RIGHT
+    "Focus the resizing on the top."
+    TOP
+    "Focus the resizing on the top left."
+    TOP_LEFT
+    "Focus the resizing on the top right."
+    TOP_RIGHT
+}
+
+enum ImageResizeStrategy {
+    "Crops a part of the original image to fit into the specified dimensions."
+    CROP
+    "Resizes the image to the specified dimensions, cropping the image if needed."
+    FILL
+    "Resizes the image to fit into the specified dimensions."
+    FIT
+    """
+
+    Resizes the image to the specified dimensions, padding the image if needed.
+    Uses desired background color as padding color.
+    """
+    PAD
+    "Resizes the image to the specified dimensions, changing the original aspect ratio if needed."
+    SCALE
+    "Creates a thumbnail from the image."
+    THUMB
+}
+
+enum StoryOrder {
+    defaultColor_ASC
+    defaultColor_DESC
+    name_ASC
+    name_DESC
+    slug_ASC
+    slug_DESC
+    summary_ASC
+    summary_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+    title_ASC
+    title_DESC
+}
+
+enum StoryPageAnimationLinkingCollectionsStoryPageCollectionOrder {
+    id_ASC
+    id_DESC
+    layout_ASC
+    layout_DESC
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryPageAnimationOrder {
+    description_ASC
+    description_DESC
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryPageCoverLinkingCollectionsStoryCollectionOrder {
+    defaultColor_ASC
+    defaultColor_DESC
+    name_ASC
+    name_DESC
+    slug_ASC
+    slug_DESC
+    summary_ASC
+    summary_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+    title_ASC
+    title_DESC
+}
+
+enum StoryPageCoverOrder {
+    description_ASC
+    description_DESC
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryPageLinkingCollectionsStoryCollectionOrder {
+    defaultColor_ASC
+    defaultColor_DESC
+    name_ASC
+    name_DESC
+    slug_ASC
+    slug_DESC
+    summary_ASC
+    summary_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+    title_ASC
+    title_DESC
+}
+
+enum StoryPageOrder {
+    id_ASC
+    id_DESC
+    layout_ASC
+    layout_DESC
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryPageParagraphLinkingCollectionsStoryPageCollectionOrder {
+    id_ASC
+    id_DESC
+    layout_ASC
+    layout_DESC
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryPageParagraphOrder {
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryPageParagraphsCollectionOrder {
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+enum StoryStoryPagesCollectionOrder {
+    id_ASC
+    id_DESC
+    layout_ASC
+    layout_DESC
+    name_ASC
+    name_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+}
+
+"""
+
+A date-time string at UTC, such as 2007-12-03T10:15:30Z,
+compliant with the 'date-time' format outlined in section 5.6 of
+the RFC 3339 profile of the ISO 8601 standard for representation
+of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+"The 'Dimension' type represents dimensions as whole numeric values between `1` and `4000`."
+scalar Dimension
+
+"The 'HexColor' type represents color in `rgb:ffffff` string format."
+scalar HexColor
+
+"The 'Quality' type represents quality as whole numeric values between `1` and `100`."
+scalar Quality
+
+input AssetFilter {
+    AND: [AssetFilter]
+    OR: [AssetFilter]
+    contentType: String
+    contentType_contains: String
+    contentType_exists: Boolean
+    contentType_in: [String]
+    contentType_not: String
+    contentType_not_contains: String
+    contentType_not_in: [String]
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    fileName: String
+    fileName_contains: String
+    fileName_exists: Boolean
+    fileName_in: [String]
+    fileName_not: String
+    fileName_not_contains: String
+    fileName_not_in: [String]
+    height: Int
+    height_exists: Boolean
+    height_gt: Int
+    height_gte: Int
+    height_in: [Int]
+    height_lt: Int
+    height_lte: Int
+    height_not: Int
+    height_not_in: [Int]
+    size: Int
+    size_exists: Boolean
+    size_gt: Int
+    size_gte: Int
+    size_in: [Int]
+    size_lt: Int
+    size_lte: Int
+    size_not: Int
+    size_not_in: [Int]
+    sys: SysFilter
+    title: String
+    title_contains: String
+    title_exists: Boolean
+    title_in: [String]
+    title_not: String
+    title_not_contains: String
+    title_not_in: [String]
+    url: String
+    url_contains: String
+    url_exists: Boolean
+    url_in: [String]
+    url_not: String
+    url_not_contains: String
+    url_not_in: [String]
+    width: Int
+    width_exists: Boolean
+    width_gt: Int
+    width_gte: Int
+    width_in: [Int]
+    width_lt: Int
+    width_lte: Int
+    width_not: Int
+    width_not_in: [Int]
+}
+
+input ContentfulMetadataFilter {
+    tags: ContentfulMetadataTagsFilter
+    tags_exists: Boolean
+}
+
+input ContentfulMetadataTagsFilter {
+    id_contains_all: [String]
+    id_contains_none: [String]
+    id_contains_some: [String]
+}
+
+input EntryFilter {
+    AND: [EntryFilter]
+    OR: [EntryFilter]
+    contentfulMetadata: ContentfulMetadataFilter
+    sys: SysFilter
+}
+
+input ImageTransformOptions {
+    """
+
+    Desired background color, used with corner radius or `PAD` resize strategy.
+    Defaults to transparent (for `PNG`, `PNG8` and `WEBP`) or white (for `JPG` and `JPG_PROGRESSIVE`).
+    """
+    backgroundColor: HexColor
+    """
+
+    Desired corner radius in pixels.
+    Results in an image with rounded corners (pass `-1` for a full circle/ellipse).
+    Defaults to `0`. Uses desired background color as padding color,
+    unless the format is `JPG` or `JPG_PROGRESSIVE` and resize strategy is `PAD`, then defaults to white.
+    """
+    cornerRadius: Int
+    "Desired image format. Defaults to the original image format."
+    format: ImageFormat
+    "Desired height in pixels. Defaults to the original image height."
+    height: Dimension
+    """
+
+    Desired quality of the image in percents.
+    Used for `PNG8`, `JPG`, `JPG_PROGRESSIVE` and `WEBP` formats.
+    """
+    quality: Quality
+    "Desired resize focus area. Defaults to `CENTER`."
+    resizeFocus: ImageResizeFocus
+    "Desired resize strategy. Defaults to `FIT`."
+    resizeStrategy: ImageResizeStrategy
+    "Desired width in pixels. Defaults to the original image width."
+    width: Dimension
+}
+
+input StoryFilter {
+    AND: [StoryFilter]
+    OR: [StoryFilter]
+    adaptationAuthors_contains_all: [String]
+    adaptationAuthors_contains_none: [String]
+    adaptationAuthors_contains_some: [String]
+    adaptationAuthors_exists: Boolean
+    animation_contains_all: [String]
+    animation_contains_none: [String]
+    animation_contains_some: [String]
+    animation_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    cover: cfStoryPageCoverNestedFilter
+    cover_exists: Boolean
+    decorator_exists: Boolean
+    defaultColor: String
+    defaultColor_contains: String
+    defaultColor_exists: Boolean
+    defaultColor_in: [String]
+    defaultColor_not: String
+    defaultColor_not_contains: String
+    defaultColor_not_in: [String]
+    extendedSummary: String
+    extendedSummary_contains: String
+    extendedSummary_exists: Boolean
+    extendedSummary_in: [String]
+    extendedSummary_not: String
+    extendedSummary_not_contains: String
+    extendedSummary_not_in: [String]
+    extendedTags_contains_all: [String]
+    extendedTags_contains_none: [String]
+    extendedTags_contains_some: [String]
+    extendedTags_exists: Boolean
+    mainTags_contains_all: [String]
+    mainTags_contains_none: [String]
+    mainTags_contains_some: [String]
+    mainTags_exists: Boolean
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    picturesAuthors_contains_all: [String]
+    picturesAuthors_contains_none: [String]
+    picturesAuthors_contains_some: [String]
+    picturesAuthors_exists: Boolean
+    slug: String
+    slug_contains: String
+    slug_exists: Boolean
+    slug_in: [String]
+    slug_not: String
+    slug_not_contains: String
+    slug_not_in: [String]
+    storyPages: cfStoryPageNestedFilter
+    storyPagesCollection_exists: Boolean
+    summary: String
+    summary_contains: String
+    summary_exists: Boolean
+    summary_in: [String]
+    summary_not: String
+    summary_not_contains: String
+    summary_not_in: [String]
+    synopsis: String
+    synopsis_contains: String
+    synopsis_exists: Boolean
+    synopsis_in: [String]
+    synopsis_not: String
+    synopsis_not_contains: String
+    synopsis_not_in: [String]
+    sys: SysFilter
+    thumbnail_exists: Boolean
+    title: String
+    title_contains: String
+    title_exists: Boolean
+    title_in: [String]
+    title_not: String
+    title_not_contains: String
+    title_not_in: [String]
+    translation_contains_all: [String]
+    translation_contains_none: [String]
+    translation_contains_some: [String]
+    translation_exists: Boolean
+}
+
+input StoryPageAnimationFilter {
+    AND: [StoryPageAnimationFilter]
+    OR: [StoryPageAnimationFilter]
+    backupImage_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    fhdAnimation_exists: Boolean
+    hdAnimation_exists: Boolean
+    ldAnimation_exists: Boolean
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    sdAnimation_exists: Boolean
+    sys: SysFilter
+}
+
+input StoryPageCoverFilter {
+    AND: [StoryPageCoverFilter]
+    OR: [StoryPageCoverFilter]
+    blurImage_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    fhdAnimation_exists: Boolean
+    hdAnimation_exists: Boolean
+    ldAnimation_exists: Boolean
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    sdAnimation_exists: Boolean
+    sys: SysFilter
+}
+
+input StoryPageFilter {
+    AND: [StoryPageFilter]
+    OR: [StoryPageFilter]
+    animation: cfStoryPageAnimationNestedFilter
+    animation_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    id: Int
+    id_exists: Boolean
+    id_gt: Int
+    id_gte: Int
+    id_in: [Int]
+    id_lt: Int
+    id_lte: Int
+    id_not: Int
+    id_not_in: [Int]
+    layout: String
+    layout_contains: String
+    layout_exists: Boolean
+    layout_in: [String]
+    layout_not: String
+    layout_not_contains: String
+    layout_not_in: [String]
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    paragraphs: cfStoryPageParagraphNestedFilter
+    paragraphsCollection_exists: Boolean
+    sys: SysFilter
+}
+
+input StoryPageParagraphFilter {
+    AND: [StoryPageParagraphFilter]
+    OR: [StoryPageParagraphFilter]
+    contentfulMetadata: ContentfulMetadataFilter
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    paragraphContent: String
+    paragraphContent_contains: String
+    paragraphContent_exists: Boolean
+    paragraphContent_in: [String]
+    paragraphContent_not: String
+    paragraphContent_not_contains: String
+    paragraphContent_not_in: [String]
+    sys: SysFilter
+}
+
+input SysFilter {
+    firstPublishedAt: DateTime
+    firstPublishedAt_exists: Boolean
+    firstPublishedAt_gt: DateTime
+    firstPublishedAt_gte: DateTime
+    firstPublishedAt_in: [DateTime]
+    firstPublishedAt_lt: DateTime
+    firstPublishedAt_lte: DateTime
+    firstPublishedAt_not: DateTime
+    firstPublishedAt_not_in: [DateTime]
+    id: String
+    id_contains: String
+    id_exists: Boolean
+    id_in: [String]
+    id_not: String
+    id_not_contains: String
+    id_not_in: [String]
+    publishedAt: DateTime
+    publishedAt_exists: Boolean
+    publishedAt_gt: DateTime
+    publishedAt_gte: DateTime
+    publishedAt_in: [DateTime]
+    publishedAt_lt: DateTime
+    publishedAt_lte: DateTime
+    publishedAt_not: DateTime
+    publishedAt_not_in: [DateTime]
+    publishedVersion: Float
+    publishedVersion_exists: Boolean
+    publishedVersion_gt: Float
+    publishedVersion_gte: Float
+    publishedVersion_in: [Float]
+    publishedVersion_lt: Float
+    publishedVersion_lte: Float
+    publishedVersion_not: Float
+    publishedVersion_not_in: [Float]
+}
+
+input cfStoryPageAnimationNestedFilter {
+    AND: [cfStoryPageAnimationNestedFilter]
+    OR: [cfStoryPageAnimationNestedFilter]
+    backupImage_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    fhdAnimation_exists: Boolean
+    hdAnimation_exists: Boolean
+    ldAnimation_exists: Boolean
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    sdAnimation_exists: Boolean
+    sys: SysFilter
+}
+
+input cfStoryPageCoverNestedFilter {
+    AND: [cfStoryPageCoverNestedFilter]
+    OR: [cfStoryPageCoverNestedFilter]
+    blurImage_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    fhdAnimation_exists: Boolean
+    hdAnimation_exists: Boolean
+    ldAnimation_exists: Boolean
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    sdAnimation_exists: Boolean
+    sys: SysFilter
+}
+
+input cfStoryPageNestedFilter {
+    AND: [cfStoryPageNestedFilter]
+    OR: [cfStoryPageNestedFilter]
+    animation_exists: Boolean
+    contentfulMetadata: ContentfulMetadataFilter
+    id: Int
+    id_exists: Boolean
+    id_gt: Int
+    id_gte: Int
+    id_in: [Int]
+    id_lt: Int
+    id_lte: Int
+    id_not: Int
+    id_not_in: [Int]
+    layout: String
+    layout_contains: String
+    layout_exists: Boolean
+    layout_in: [String]
+    layout_not: String
+    layout_not_contains: String
+    layout_not_in: [String]
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    paragraphsCollection_exists: Boolean
+    sys: SysFilter
+}
+
+input cfStoryPageParagraphNestedFilter {
+    AND: [cfStoryPageParagraphNestedFilter]
+    OR: [cfStoryPageParagraphNestedFilter]
+    contentfulMetadata: ContentfulMetadataFilter
+    name: String
+    name_contains: String
+    name_exists: Boolean
+    name_in: [String]
+    name_not: String
+    name_not_contains: String
+    name_not_in: [String]
+    paragraphContent: String
+    paragraphContent_contains: String
+    paragraphContent_exists: Boolean
+    paragraphContent_in: [String]
+    paragraphContent_not: String
+    paragraphContent_not_contains: String
+    paragraphContent_not_in: [String]
+    sys: SysFilter
+}

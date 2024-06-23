@@ -27,7 +27,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*
+.env
 
 # vercel
 .vercel
@@ -44,3 +44,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# graphql
+graphql.config.yml

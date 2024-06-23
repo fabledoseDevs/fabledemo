@@ -1,7 +1,7 @@
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
 import type { StoryPagePictureProps } from '@/components/StoryPage/StoryPage.types';
-import type { TAG_NAMES } from '@/fablesLibrary/library.types';
+import type { TAG_NAMES } from '@/types/fairytale.types';
 
 export interface StorySummaryProps {
   revertLayout: boolean;

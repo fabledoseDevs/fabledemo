@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import mockImage from '@/fablesLibrary240100_GOLDILOCK/images/thumb.png';
+import mockImage from '../../../public/images/toolbox_bg.png';
 
 export const Settings = styled.div`
   width: 100%;
