@@ -1,6 +1,6 @@
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
-import type { TAG_NAMES } from '@/fablesLibrary/library.types';
+import type { TAG_NAMES } from '@/types/fairytale.types';
 
 export interface TagboxProps {
   exitFunction: Dispatch<SetStateAction<boolean>>;

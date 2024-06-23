@@ -1,0 +1,9 @@
+schema: schema.graphql
+extensions:
+  endpoints:
+    Default:
+      url: https://graphql.contentful.com/content/v1/spaces/ouddoh9fyrvm
+      headers:
+        user-agent: Front-End Team
+        Authorization: Bearer FlMOTGKi0QBlF5PQOlENepk8aCS_PUDkYI0xYn4Hfjs
+      introspect: false

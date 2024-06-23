@@ -9,7 +9,7 @@ import {
   TagSorter,
 } from '@/components/Tagbox/Tagbox.styled';
 import TagElement from '@/components/TagElement';
-import type { TAG_NAMES } from '@/fablesLibrary/library.types';
+import type { TAG_NAMES } from '@/types/fairytale.types';
 
 import type { Tagbox as TagboxType } from './Tagbox.types';
 

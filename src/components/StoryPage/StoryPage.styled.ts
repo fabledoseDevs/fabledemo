@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/lazy';
 import { css, keyframes, styled } from 'styled-components';
 
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
-import { LAYOUT_VARIANTS } from '@/fablesLibrary/library.types';
+import { LAYOUT_VARIANTS } from '@/types/fairytale.types';
 
 const fullWidthTextContent = css`
   width: 100%;

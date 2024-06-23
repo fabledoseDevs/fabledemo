@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import type { Story } from '@/fablesLibrary/library.types';
+import type { Story } from '@/types/fairytale.types';
 
 export interface TemplateStoryPageProps {
   storyData: Story;
