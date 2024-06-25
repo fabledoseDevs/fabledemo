@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 
 import { COLOR_VARIANTS, FONT_VARIANTS } from './Button.types';
 
@@ -6,7 +6,8 @@ export const ButtonWrapper = styled.div<{
   bgcolorvariant: COLOR_VARIANTS;
   fontcapvariant: FONT_VARIANTS;
 }>`
-  button {
+  button,
+  a {
     text-transform: ${({ fontcapvariant }) =>
       fontcapvariant === FONT_VARIANTS.STANDARD ? 'none' : 'uppercase'};
     color: ${({ bgcolorvariant, theme }) =>
@@ -32,7 +33,7 @@ export const ButtonWrapper = styled.div<{
   }
 `;
 
-export const ButtonBody = styled.button`
+const buttonStyle = css`
   border: none;
   padding: 10px 40px;
   border-radius: 28px;
@@ -43,4 +44,12 @@ export const ButtonBody = styled.button`
     font-size: 16px;
     padding: 15px 50px;
   }
+`;
+
+export const ButtonBody = styled.button`
+  ${buttonStyle};
+`;
+
+export const LinkButtonBody = styled.a`
+  ${buttonStyle};
 `;

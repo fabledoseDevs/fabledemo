@@ -1,4 +1,4 @@
-import { ButtonBody, ButtonWrapper } from './Button.styled';
+import { ButtonBody, ButtonWrapper, LinkButtonBody } from './Button.styled';
 import type {
   Button as ButtonType,
   PurposeSelector as PurposeSelectorType,
@@ -15,9 +15,9 @@ const purposeSelector: PurposeSelectorType = (
   switch (purpose) {
     case PURPOSE.ANCHOR:
       return (
-        <a href={anchorLink} aria-label={label}>
-          <ButtonBody>{label}</ButtonBody>
-        </a>
+        <LinkButtonBody href={anchorLink} aria-label={label}>
+          {label}
+        </LinkButtonBody>
       );
     case PURPOSE.SUBMIT:
       return (

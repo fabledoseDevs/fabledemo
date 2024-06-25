@@ -25,12 +25,12 @@ export const MainForm = styled.form`
   height: 64px;
 
   input.invalid {
-    border: 3px solid ${({ theme }) => theme.palette.green};
+    border: 3px solid ${({ theme }) => theme.palette.accent};
   }
 `;
 
 export const CustomValidationWarning = styled.div`
-  color: ${({ theme }) => theme.palette.green};
+  color: ${({ theme }) => theme.palette.accent};
   font-size: 14px;
   font-weight: bold;
   position: absolute;
