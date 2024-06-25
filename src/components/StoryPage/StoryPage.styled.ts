@@ -212,6 +212,9 @@ export const TextBox = styled.div<{
   textboxTheme: TEXTBOX_THEME;
   fontSize: number;
 }>`
+  border-radius: 15px;
+  padding: 12px;
+
   //THEME SELECTOR
   ${({ textboxTheme }) => {
     switch (textboxTheme) {
