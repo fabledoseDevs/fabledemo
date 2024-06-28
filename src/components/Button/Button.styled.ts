@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { css, styled } from 'styled-components';
 
 import { COLOR_VARIANTS, FONT_VARIANTS } from './Button.types';
@@ -50,6 +51,6 @@ export const ButtonBody = styled.button`
   ${buttonStyle};
 `;
 
-export const LinkButtonBody = styled.a`
+export const LinkButtonBody = styled(Link)`
   ${buttonStyle};
 `;
