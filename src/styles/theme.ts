@@ -16,6 +16,7 @@ const theme: Theme = {
     offwhite: '#eee',
     green: '#6C7716',
     lightergreen: '#7E8B1A',
+    palegreen: '#898d63',
     accent: '#cc2c28',
     accentActive: '#DC4E49',
     background: '#FAF3D3',

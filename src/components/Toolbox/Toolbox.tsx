@@ -172,7 +172,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
             type="range"
             min={fontRangeMinMax.min}
             max={fontRangeMinMax.max}
-            step="0.1"
+            step="0.01"
             value={settings.fontSize}
             onChange={() =>
               fontRange.current &&
