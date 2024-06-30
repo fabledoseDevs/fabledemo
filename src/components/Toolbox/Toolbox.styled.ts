@@ -64,11 +64,48 @@ export const SettingRangeWrapper = styled.label`
   display: flex;
   flex-direction: column;
 
-  input {
-    display: block;
-    width: 80%;
-    height: 24px;
-    margin: 0 auto;
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 82%;
+    margin: 0 auto 12px;
+  }
+
+  input[type='range']:focus {
+    outline: none;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    background: ${({ theme }) => theme.palette.palegreen};
+    border-radius: 8px;
+    height: 6px;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -7px;
+    background-color: ${({ theme }) => theme.palette.accentActive};
+    border: 2px solid ${({ theme }) => theme.palette.accent};
+    border-radius: 20px;
+    height: 20px;
+    width: 20px;
+  }
+
+  input[type='range']::-moz-range-track {
+    background: ${({ theme }) => theme.palette.palegreen};
+    border-radius: 8px;
+    height: 6px;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    background-color: ${({ theme }) => theme.palette.accentActive};
+    border: 2px solid ${({ theme }) => theme.palette.accent};
+    border-radius: 20px;
+    height: 20px;
+    width: 20px;
   }
 `;
 

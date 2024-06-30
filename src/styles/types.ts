@@ -25,6 +25,7 @@ export interface Palette {
   offwhite: string;
   green: string;
   lightergreen: string;
+  palegreen: string;
   accent: string;
   accentActive: string;
   background: string;
