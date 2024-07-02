@@ -7,13 +7,16 @@ import type { Story } from '@/types/fairytale.types';
 
 import { GET_SLUGS, GET_STORY } from '../lib/queries';
 
+const isThisPreview =
+  process.env.APP_ENVIRONMENT === 'production' ? false : true;
+
 export const getStaticProps: GetStaticProps<{ story: Story | false }> = async ({
   params,
 }) => {
   const { default: client } = await import('@/lib/apollo-client');
   const defaultQuery = await client.query({
     query: GET_STORY,
-    variables: { preview: true, slug: params && params.story },
+    variables: { preview: isThisPreview, slug: params && params.story },
   });
 
   const story = mapStory(defaultQuery.data.storyCollection.items[0]);
@@ -32,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { default: client } = await import('@/lib/apollo-client');
   const defaultQuery = await client.query({
     query: GET_SLUGS,
-    variables: { preview: true },
+    variables: { preview: isThisPreview },
   });
 
   const paths: string[] = defaultQuery.data.storyCollection.items.map(
