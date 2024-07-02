@@ -2,6 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
+    APP_ENVIRONMENT: process.env.APP_ENVIRONMENT,
     NEWSLETTER_SUBMISSION_KEY: process.env.NEWSLETTER_SUBMISSION_KEY,
     NEWSLETTER_CAPTCHA_ID: process.env.NEWSLETTER_CAPTCHA_ID,
     SPACE_ID: process.env.SPACE_ID,

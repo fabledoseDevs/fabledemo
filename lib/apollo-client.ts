@@ -5,7 +5,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const SPACE_ID = process.env.SPACE_ID;
-const TOKEN = process.env.PREVIEW_TOKEN;
+const TOKEN =
+  process.env.APP_ENVIRONMENT === 'production'
+    ? process.env.DELIVERY_TOKEN
+    : process.env.PREVIEW_TOKEN;
 
 const uri = `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}`;
 
