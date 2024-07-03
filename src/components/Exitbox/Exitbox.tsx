@@ -1,10 +1,10 @@
-import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
 import ModalWindow from '@/components/ModalWindow';
+import Button from '@/componentsButton';
 
 import { ExitboxContainer } from './Exitbox.styled';
 import type { Exitbox as ExitboxType } from './Exitbox.types';

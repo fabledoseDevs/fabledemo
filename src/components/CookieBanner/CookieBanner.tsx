@@ -1,4 +1,3 @@
-import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
@@ -8,6 +7,7 @@ import {
   BannerBody,
   TextField,
 } from '@/components/CookieBanner/CookieBanner.styled';
+import Button from '@/componentsButton';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
 import type { CookieBanner as CookieBannerType } from './CookieBanner.types';
