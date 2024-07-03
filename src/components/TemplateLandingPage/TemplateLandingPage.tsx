@@ -11,9 +11,9 @@ const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
 import { ProjectSummary } from '@/components/ProjectSummary';
 import Separator from '@/components/Separator';
-import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import type { TemplateLandingPage as TemplateLandingPageType } from '@/components/TemplateLandingPage/TemplateLandingPage.types';
+import StoryCard from '@/componentsStoryCard';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
 import { CARD_GOLDILOCK } from './TemplateLandingPage.consts';
@@ -79,7 +79,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
           'Już wkrótce uruchomimy kampanię crowdfundingową! Zachęcamy Cię do wsparcia tego projektu. Bez twojego zaangażowania takie projekty jak ten — skupione wokół idei innej niż pieniądze — mają ograniczone szanse na zaistnienie. Dzięki Twojemu wsparciu możemy stworzyć interaktywną platformę, która zanurzy dzieci w magicznym świecie opowieści. Pozostań na bieżąco z dalszymi aktualizacjami. Uruchomimy naszą kampanię wcześniej, niż myślisz!',
         ]}
         supplementaryText={[
-          'Zapraszamy Cię do zaangażowania w tę podróż. Śledź nas na profilach społecznościowych lub użyj poniższego formularza aby zapisać się do naszego newslettera. Pozostań w kontakcie i jako pierwszy dowiaduj się o postępie prac nad projektem. Razem możemy rozpalić iskrę wyobraźni w sercach dzieci i sprawić, że animowane baśnie do czytania będą inspirowały przyszłe pokolenia.',
+          'Zapraszamy Cię do zaangażowania w tę podróż. Śledź nas na profilach społecznościowych lub użyj poniższego przycisku aby zapisać się do naszego newslettera. Pozostań w kontakcie i jako pierwszy dowiaduj się o postępie prac nad projektem. Razem możemy rozpalić iskrę wyobraźni w sercach dzieci i sprawić, że animowane baśnie do czytania będą inspirowały przyszłe pokolenia.',
           'Dziękujemy za zainteresowanie naszym projektem. Do usłyszenia wkrótce!',
         ]}
       />

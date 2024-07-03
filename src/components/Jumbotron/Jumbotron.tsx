@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Button from '@/components/Button';
+import Button from '@/componentsButton';
 
 import MainImage from '../../../public/images/jumbotron.png';
 import RedLine from '../../../public/images/span.png';

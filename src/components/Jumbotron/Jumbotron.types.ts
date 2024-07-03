@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import type { ButtonProps } from '@/components/Button';
+import type { ButtonProps } from '@/componentsButton';
 
 export interface JumbotronProps {
   header: {

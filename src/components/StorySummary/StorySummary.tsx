@@ -1,10 +1,10 @@
-import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
 import { TagList } from '@/components/TagList';
+import Button from '@/componentsButton';
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 
 import {
