@@ -28,17 +28,4 @@ export const LeftColumn = styled.div`
 
 export const RightColumn = styled.div`
   ${basicColumnStyle}
-
-  img {
-    display: block;
-    margin-left: 40px;
-    width: 80%;
-    max-width: 500px;
-    height: auto;
-
-    @media ${({ theme }) => theme.media.laptop} {
-      margin-left: -8px;
-      padding: 24px 48px;
-    },
-  }
 `;

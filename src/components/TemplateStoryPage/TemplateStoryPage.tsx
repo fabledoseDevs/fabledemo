@@ -7,7 +7,7 @@ const RotationGuard = dynamic(() => import('@/components/RotationGuard'), {
 const Story = dynamic(() => import('@/components/Story'), {
   ssr: false,
 });
-const StorySummary = dynamic(() => import('@/components/StorySummary'), {
+const StorySummary = dynamic(() => import('@/componentsStorySummary'), {
   ssr: false,
 });
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
