@@ -2,10 +2,9 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
 import { TemplateStoryPage } from '@/components/TemplateStoryPage';
-import { mapStory } from '@/libmappers';
+import { mapStory } from '@/lib/mappers';
+import { GET_SLUGS, GET_STORY } from '@/lib/queries';
 import type { Story } from '@/types/fairytale.types';
-
-import { GET_SLUGS, GET_STORY } from '../lib/queries';
 
 const isThisPreview =
   process.env.APP_ENVIRONMENT === 'production' ? false : true;
