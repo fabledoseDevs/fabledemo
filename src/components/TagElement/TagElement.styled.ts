@@ -6,9 +6,14 @@ export const TagBody = styled.li<{ extend: boolean }>`
   position: relative;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     box-shadow: none;
+
+    @media ${({ theme }) => theme.media.mobile} {
+      width: 40px;
+      height: 40px;
+    }
 
     @media ${({ theme }) => theme.media.tablet} {
       width: 50px;

@@ -18,7 +18,7 @@ const heartBeat = keyframes`
 export const TagListBody = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 34px 0;
+  margin: 12px 0;
 
   @media ${({ theme }) => theme.media.laptop} {
     flex-direction: row;
@@ -56,8 +56,8 @@ export const SeparatorElement = styled.span`
 `;
 
 export const TagsSummaryButton = styled.button`
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   border-radius: 22px;
   margin: 5px 0 0 4px;
   border: none;
@@ -66,6 +66,11 @@ export const TagsSummaryButton = styled.button`
   background-color: ${({ theme }) => theme.palette.accent};
   transform: scale(1);
   animation: ${heartBeat} 2.5s ease-in-out infinite both;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 34px;
+    height: 34px;
+  }
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 42px;
@@ -78,8 +83,13 @@ export const TagsSummaryButton = styled.button`
   }
 
   svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
+
+    @media ${({ theme }) => theme.media.mobile} {
+      width: 28px;
+      height: 28px;
+    }
 
     @media ${({ theme }) => theme.media.tablet} {
       width: 32px;

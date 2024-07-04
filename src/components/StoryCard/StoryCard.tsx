@@ -1,6 +1,7 @@
 import Button from '../Button';
 import { TagList } from '../TagList';
 import {
+  ButtonPositioner,
   Excerpt,
   LeftSide,
   MiniCoverImage,
@@ -30,7 +31,9 @@ const ContentBlock: ContentBlockType = ({
       mainTags={iconsBlock.mainTags}
       extraTags={iconsBlock.extraTags}
     />
-    <Button {...ctaButton} />
+    <ButtonPositioner>
+      <Button {...ctaButton} />
+    </ButtonPositioner>
   </>
 );
 
