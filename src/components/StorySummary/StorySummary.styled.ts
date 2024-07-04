@@ -34,9 +34,11 @@ export const SummaryCard = styled.div<{ $decor?: string }>`
   width: 55vw;
   min-width: 360px;
   height: auto;
+  padding: 24px 0 48px;
   overflow: clip;
   background-color: antiquewhite;
   box-shadow: ${({ theme }) => theme.palette.wideShadow};
+  text-align: center;
 
   @media ${({ theme }) => theme.media.laptop} {
     width: 45vw;
@@ -58,11 +60,22 @@ export const SummaryCard = styled.div<{ $decor?: string }>`
     `}
 `;
 
-export const Logo = styled(Image)`
+export const Logo = styled(Image)<{ $layout: boolean }>`
+  position: absolute;
+  top: 0;
   display: block;
   margin: 15px auto;
   width: 120px;
   height: 18px;
+
+  ${({ $layout }) =>
+    $layout
+      ? css`
+          left: 24px;
+        `
+      : css`
+          right: 24px;
+        `};
 
   @media ${({ theme }) => theme.media.laptop} {
     margin: 10px auto;
@@ -81,7 +94,7 @@ export const MainContent = styled.div`
   padding: 20px;
   height: calc(100dvh - 28px);
   overflow-x: clip;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @media ${({ theme }) => theme.media.laptop} {
     padding: 10px 20px;
@@ -159,7 +172,7 @@ export const BookExcerpt = styled.p`
 
   @media ${({ theme }) => theme.media.desktop} {
     font-size: 16px;
-    line-height: 2;
+
     margin: 20px 0;
   }
 `;
@@ -179,6 +192,13 @@ export const ButtonsContainer = styled.div`
   }
 
   @media ${({ theme }) => theme.media.laptop} {
-    margin: 60px 0;
+    margin: 32px 0;
   }
+`;
+
+export const TagListPositioner = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
 `;

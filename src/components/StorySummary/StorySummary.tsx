@@ -18,6 +18,7 @@ import {
   StoryCoverBody,
   SummaryCard,
   SummaryLayer,
+  TagListPositioner,
   Title,
 } from './StorySummary.styled';
 import type { StorySummary as StorySummaryType } from './StorySummary.types';
@@ -66,13 +67,14 @@ export const StorySummary: StorySummaryType = ({
         height={'100dvh'}
       />
       <SummaryLayer $layout={revertLayout}>
+        <Logo
+          $layout={revertLayout}
+          src="images/logo-01.svg"
+          alt="Fabledose Presents"
+          width={200}
+          height={30}
+        />
         <SummaryCard $decor={coverDecor}>
-          <Logo
-            src="images/logo-01.svg"
-            alt="Fabledose Presents"
-            width={200}
-            height={30}
-          />
           <MainContent>
             <Title>{bookTitle}</Title>
             <Credits>
@@ -105,13 +107,6 @@ export const StorySummary: StorySummaryType = ({
                 ))}
               </p>
             </Credits>
-            <TagList
-              mainTags={mainTags}
-              synopsis={synopsis}
-              extraTags={detailedTags}
-              storyTitle={bookTitle}
-            />
-            <BookExcerpt>{extendedSummary}</BookExcerpt>
             <ButtonsContainer>
               <Button
                 label="Czytaj Bajkę"
@@ -120,14 +115,23 @@ export const StorySummary: StorySummaryType = ({
                 purpose={PURPOSE.FUNCTION_TRIGGER}
                 onclickAction={() => storyStatusHandler(true)}
               />
-              <Button
-                label="Wyjdź"
-                colorVariant={COLOR_VARIANTS.WHITE}
-                fontVariant={FONT_VARIANTS.UPPERCASE}
-                purpose={PURPOSE.ANCHOR}
-                anchorLink={'/'}
-              />
+              {/*<Button*/}
+              {/*  label="Wyjdź"*/}
+              {/*  colorVariant={COLOR_VARIANTS.WHITE}*/}
+              {/*  fontVariant={FONT_VARIANTS.UPPERCASE}*/}
+              {/*  purpose={PURPOSE.ANCHOR}*/}
+              {/*  anchorLink={'/'}*/}
+              {/*/>*/}
             </ButtonsContainer>
+            <TagListPositioner>
+              <TagList
+                mainTags={mainTags}
+                synopsis={synopsis}
+                extraTags={detailedTags}
+                storyTitle={bookTitle}
+              />
+            </TagListPositioner>
+            <BookExcerpt>{extendedSummary}</BookExcerpt>
           </MainContent>
         </SummaryCard>
       </SummaryLayer>

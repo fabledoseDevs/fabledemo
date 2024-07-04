@@ -8,16 +8,21 @@ export const SubstackButtonBody = styled(Link)`
   flex-direction: row;
   flex-wrap: nowrap;
   width: auto;
-  min-width: 320px;
+  min-width: 300px;
   max-width: 400px;
   height: auto;
   background-color: white;
   border-radius: 15px;
-  margin: 24px 48px;
+  margin: 24px auto;
   overflow: clip;
   box-shadow: ${({ theme }) => theme.palette.closeShadow};
   cursor: pointer;
 
+  @media ${({ theme }) => theme.media.laptop} {
+    margin: 24px 32px;
+  }
+
+  ,
   &:active {
     margin-top: 28px;
     box-shadow: rgba(0, 0, 0, 0.45) 0 6px 6px -6px;
@@ -53,11 +58,15 @@ export const ContentWrapper = styled.div`
 export const Title = styled.div`
   text-align: left;
   font-family: ${({ theme }) => theme.fonts.lato};
-  font-size: 19px;
+  font-size: 14px;
   font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    font-size: 19px;
+  }
 `;
 
 export const ArrowImage = styled(Image)`

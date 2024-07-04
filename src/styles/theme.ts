@@ -6,7 +6,7 @@ export const breakpoints = {
   desktop: 1440,
   laptop: 1024,
   tablet: 768,
-  mobile: 360,
+  mobile: 380,
 };
 
 const theme: Theme = {
@@ -37,7 +37,7 @@ const theme: Theme = {
   },
   maxWidth: `${breakpoints.maxWidth}px`,
   media: {
-    mobile: `screen and (max-width: ${breakpoints.tablet - 1}px)`,
+    mobile: `screen and (min-width: ${breakpoints.mobile}px)`,
     tablet: `screen and (min-width: ${breakpoints.tablet}px)`,
     laptop: `screen and (min-width: ${breakpoints.laptop}px)`,
     desktop: `screen and (min-width: ${breakpoints.desktop}px)`,
