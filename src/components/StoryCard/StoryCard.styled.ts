@@ -16,7 +16,7 @@ export const StoryCardBody = styled.div<{ mobileSort: boolean }>`
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  padding: 2%;
+  padding: 12px 24px;
   margin: 5% 0;
   max-width: ${({ theme }) => theme.maxWidth};
 
@@ -29,7 +29,7 @@ export const LeftSide = styled.div`
   width: 100%;
 
   @media ${({ theme }) => theme.media.tablet} {
-    width: 48%;
+    width: 42%;
   }
 `;
 
@@ -37,7 +37,7 @@ export const RightSide = styled.div`
   width: 100%;
 
   @media ${({ theme }) => theme.media.tablet} {
-    width: 48%;
+    width: 54%;
   }
 `;
 
@@ -69,12 +69,10 @@ export const Excerpt = styled.div`
   margin-bottom: 20px;
 `;
 
-export const IconsBlock = styled.ul`
-  list-style: none;
-  margin-bottom: 20px;
-`;
+export const ButtonPositioner = styled.div`
+  margin-top: 24px;
 
-export const TagIcon = styled.li`
-  padding: 5px;
-  display: inline;
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-top: 48px;
+  }
 `;
