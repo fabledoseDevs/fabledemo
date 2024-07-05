@@ -7,7 +7,7 @@ export interface JumbotronProps {
     before: string;
     after: string;
   };
-  subtitle: string;
+  subtitle?: string;
   redLineText: string;
   button: ButtonProps;
 }

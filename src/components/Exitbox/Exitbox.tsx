@@ -6,6 +6,7 @@ import {
 import ModalWindow from '@/components/ModalWindow';
 import Button from '@/componentsButton';
 
+import { quitStoryUiCleanup } from '../../helpers/storyUiCleanup';
 import { ExitboxContainer } from './Exitbox.styled';
 import type { Exitbox as ExitboxType } from './Exitbox.types';
 
@@ -20,6 +21,7 @@ export const Exitbox: ExitboxType = ({ exitFunction }) => (
           fontVariant={FONT_VARIANTS.STANDARD}
           purpose={PURPOSE.ANCHOR}
           anchorLink={'/'}
+          onclickAction={quitStoryUiCleanup}
         />
         <Button
           label={'Nie, chcę czytać dalej'}
