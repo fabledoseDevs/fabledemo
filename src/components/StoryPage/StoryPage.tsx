@@ -7,6 +7,7 @@ import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import { LAYOUT_VARIANTS } from '@/types/fairytale.types';
 
+import { quitStoryUiCleanup } from '../../helpers/storyUiCleanup';
 import {
   ActionsContainer,
   AnimatedPicture,
@@ -60,7 +61,7 @@ export const StoryPage: StoryPageType = ({
           <FinalSlideContent>
             <h2>Koniec</h2>
             <ActionsContainer>
-              <Link href={'/'}>
+              <Link onClick={quitStoryUiCleanup} href={'/'}>
                 <HomeIcon />
                 <span>Strona główna</span>
               </Link>

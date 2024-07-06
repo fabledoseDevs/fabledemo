@@ -15,7 +15,11 @@ const purposeSelector: PurposeSelectorType = (
   switch (purpose) {
     case PURPOSE.ANCHOR:
       return (
-        <LinkButtonBody href={anchorLink ? anchorLink : '#'} aria-label={label}>
+        <LinkButtonBody
+          href={anchorLink ? anchorLink : '#'}
+          aria-label={label}
+          onClick={onclickAction}
+        >
           {label}
         </LinkButtonBody>
       );

@@ -5,6 +5,8 @@ import {
 } from '@/components/Button/Button.types';
 import {
   BannerBody,
+  ButtonPositioner,
+  ContentContainer,
   TextField,
 } from '@/components/CookieBanner/CookieBanner.styled';
 import Button from '@/componentsButton';
@@ -21,27 +23,31 @@ export const CookieBanner: CookieBannerType = () => {
 
   return (
     <BannerBody>
-      <TextField>
-        <h5>
-          Czy przyniosłeś ciasteczka, aby umilić sobie spotkanie z bajkami?
-        </h5>
-        <p>
-          My przynieśliśmy swoje, ale te nie nadają się do jedzenia. Nasze
-          ciasteczka to niewielkie pliki, które zapisujemy na Twoim urządzeniu,
-          aby móc dostarczyć Ci usługę w najlepszej jakości.
-          <br />
-          Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały
-          przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody, opuść tę
-          stronę. Jeśli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.
-        </p>
-      </TextField>
-      <Button
-        label={'OK'}
-        colorVariant={COLOR_VARIANTS.WHITE}
-        fontVariant={FONT_VARIANTS.UPPERCASE}
-        purpose={PURPOSE.FUNCTION_TRIGGER}
-        onclickAction={() => handleCookieConsent(true)}
-      />
+      <ContentContainer>
+        <TextField>
+          <h5>
+            Czy przyniosłeś ciasteczka, aby umilić sobie spotkanie z bajkami?
+          </h5>
+          <p>
+            My przynieśliśmy swoje, ale te nie nadają się do jedzenia. Nasze
+            ciasteczka to niewielkie pliki, które zapisujemy na Twoim
+            urządzeniu, aby móc dostarczyć Ci usługę w najlepszej jakości.
+            <br />
+            Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały
+            przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody, opuść tę
+            stronę. Jeśli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.
+          </p>
+        </TextField>
+        <ButtonPositioner>
+          <Button
+            label={'OK'}
+            colorVariant={COLOR_VARIANTS.WHITE}
+            fontVariant={FONT_VARIANTS.UPPERCASE}
+            purpose={PURPOSE.FUNCTION_TRIGGER}
+            onclickAction={() => handleCookieConsent(true)}
+          />
+        </ButtonPositioner>
+      </ContentContainer>
     </BannerBody>
   );
 };
