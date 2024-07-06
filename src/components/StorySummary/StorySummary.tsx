@@ -40,8 +40,13 @@ export const StorySummary: StorySummaryType = ({
   detailedTags,
   storyStatusHandler,
   defaultColor,
+  onAnimationReady,
 }) => {
   const { screenData } = useScreenContext();
+
+  const removeLoadingScreen = () => {
+    onAnimationReady();
+  };
 
   const imageUrl =
     screenData.screenWidth >= 1920
@@ -67,6 +72,7 @@ export const StorySummary: StorySummaryType = ({
         playing={true}
         width={'100dvw'}
         height={'100dvh'}
+        onReady={removeLoadingScreen}
       />
       <SummaryLayer $layout={revertLayout}>
         <LogoPositioner $layout={revertLayout}>

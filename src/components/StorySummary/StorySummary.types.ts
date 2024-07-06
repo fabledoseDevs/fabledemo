@@ -19,6 +19,7 @@ export interface StorySummaryProps {
   detailedTags: TAG_NAMES[];
   storyStatusHandler: Dispatch<SetStateAction<boolean>>;
   defaultColor: string;
+  onAnimationReady: () => void;
 }
 
 export type StorySummary = (props: StorySummaryProps) => ReactElement;
