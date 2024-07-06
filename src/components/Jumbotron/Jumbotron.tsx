@@ -5,6 +5,7 @@ import Button from '@/componentsButton';
 import MainImage from '../../../public/images/jumbotron.png';
 import RedLine from '../../../public/images/span.png';
 import {
+  ButtonPositioner,
   ContentWrapper,
   JumbotronImage,
   JumbotronWrapper,
@@ -12,15 +13,10 @@ import {
 } from './Jumbotron.styled';
 import type { Jumbotron as JumbotronType } from './Jumbotron.types';
 
-export const Jumbotron: JumbotronType = ({
-  button,
-  header,
-  subtitle,
-  redLineText,
-}) => (
+export const Jumbotron: JumbotronType = ({ button, header, redLineText }) => (
   <JumbotronWrapper>
     <ContentWrapper>
-      <p>{subtitle}</p>
+      <h1>Biblioteka Fabledose</h1>
       <h2>
         {header.before}
         <br />
@@ -30,7 +26,9 @@ export const Jumbotron: JumbotronType = ({
         </RedSpan>
         {header.after}
       </h2>
-      <Button {...button} />
+      <ButtonPositioner>
+        <Button {...button} />
+      </ButtonPositioner>
     </ContentWrapper>
     <JumbotronImage src={MainImage.src} alt="Jumbo" width={966} height={577} />
   </JumbotronWrapper>

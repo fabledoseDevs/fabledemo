@@ -11,7 +11,6 @@ export const ContentWrapper = styled.div`
   text-transform: uppercase;
   text-align: center;
   max-width: 1280px;
-  gap: 20px;
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.high};
 
@@ -19,6 +18,12 @@ export const ContentWrapper = styled.div`
     font-family: ${({ theme }) => theme.fonts.lato};
     font-weight: 200;
     font-size: 20px;
+  }
+
+  h1 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 12px;
   }
 
   h2 {
@@ -29,8 +34,6 @@ export const ContentWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.media.tablet} {
-    gap: 20px;
-
     p {
       font-size: 24px;
     }
@@ -80,4 +83,8 @@ export const JumbotronWrapper = styled.section`
   @media ${({ theme }) => theme.media.tablet} {
     min-height: 840px;
   }
+`;
+
+export const ButtonPositioner = styled.div`
+  margin-top: 48px;
 `;
