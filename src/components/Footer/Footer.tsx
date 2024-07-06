@@ -1,14 +1,14 @@
-import Image from 'next/image';
 import type { ReactElement } from 'react';
 
-import FooterLogoImage from '@/../public/images/logo-02.svg';
 import SocialIcons from '@/components/SocialIcons';
+import { Logo } from '@/componentsLogo/Logo';
+import { COLOUR_VARIANT } from '@/componentsLogo/Logo.types';
 
 import { StyledFooter } from './Footer.styled';
 
 export const Footer = (): ReactElement => (
   <StyledFooter>
     <SocialIcons />
-    <Image src={FooterLogoImage} alt={''} />
+    <Logo colourVariant={COLOUR_VARIANT.GREEN} logoWidth={140} />
   </StyledFooter>
 );
