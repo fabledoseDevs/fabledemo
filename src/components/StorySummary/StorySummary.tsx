@@ -5,6 +5,8 @@ import {
 } from '@/components/Button/Button.types';
 import { TagList } from '@/components/TagList';
 import Button from '@/componentsButton';
+import { Logo } from '@/componentsLogo/Logo';
+import { COLOUR_VARIANT } from '@/componentsLogo/Logo.types';
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 
 import {
@@ -13,7 +15,7 @@ import {
   BookExcerpt,
   ButtonsContainer,
   Credits,
-  Logo,
+  LogoPositioner,
   MainContent,
   StoryCoverBody,
   SummaryCard,
@@ -38,8 +40,13 @@ export const StorySummary: StorySummaryType = ({
   detailedTags,
   storyStatusHandler,
   defaultColor,
+  onAnimationReady,
 }) => {
   const { screenData } = useScreenContext();
+
+  const removeLoadingScreen = () => {
+    onAnimationReady();
+  };
 
   const imageUrl =
     screenData.screenWidth >= 1920
@@ -65,15 +72,12 @@ export const StorySummary: StorySummaryType = ({
         playing={true}
         width={'100dvw'}
         height={'100dvh'}
+        onReady={removeLoadingScreen}
       />
       <SummaryLayer $layout={revertLayout}>
-        <Logo
-          $layout={revertLayout}
-          src="images/logo-01.svg"
-          alt="Fabledose Presents"
-          width={200}
-          height={30}
-        />
+        <LogoPositioner $layout={revertLayout}>
+          <Logo colourVariant={COLOUR_VARIANT.WHITE} logoWidth={240} />
+        </LogoPositioner>
         <SummaryCard $decor={coverDecor}>
           <MainContent>
             <Title>{bookTitle}</Title>

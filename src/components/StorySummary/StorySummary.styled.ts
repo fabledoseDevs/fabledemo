@@ -60,33 +60,53 @@ export const SummaryCard = styled.div<{ $decor?: string }>`
     `}
 `;
 
-export const Logo = styled(Image)<{ $layout: boolean }>`
+export const LogoPositioner = styled.div<{ $layout: boolean }>`
   position: absolute;
-  top: 0;
+  top: 12px;
   display: block;
-  margin: 15px auto;
-  width: 120px;
-  height: 18px;
 
   ${({ $layout }) =>
     $layout
       ? css`
-          left: 24px;
+          left: 6px;
+
+          @media ${({ theme }) => theme.media.laptop} {
+            right: 12px;
+          }
+
+          @media ${({ theme }) => theme.media.desktop} {
+            left: 24px;
+          }
         `
       : css`
-          right: 24px;
+          right: 6px;
+
+          @media ${({ theme }) => theme.media.laptop} {
+            right: 12px;
+          }
+
+          @media ${({ theme }) => theme.media.desktop} {
+            right: 24px;
+          }
         `};
 
-  @media ${({ theme }) => theme.media.laptop} {
-    margin: 10px auto;
+  img {
     width: 160px;
-    height: 24px;
+    height: 30px;
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    img {
+      width: 200px;
+      height: 40px;
+    }
   }
 
   @media ${({ theme }) => theme.media.desktop} {
-    margin: 20px auto;
-    width: 200px;
-    height: 30px;
+    img {
+      width: 240px;
+      height: 45px;
+    }
   }
 `;
 

@@ -10,6 +10,7 @@ const Story = dynamic(() => import('@/components/Story'), {
 const StorySummary = dynamic(() => import('@/componentsStorySummary'), {
   ssr: false,
 });
+import LoadingScreen from '@/componentsLoadingScreen';
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { ORIENTATION } from '@/context/ScreenContext/ScreenContext.types';
 
@@ -17,10 +18,27 @@ import type { TemplateStoryPage as TemplateStoryPageType } from './TemplateStory
 
 export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
   const [storyStatus, setStoryStatus] = useState<boolean>(false);
+  const [loadingScreenFadeOut, setLoadingScreenFadeOut] =
+    useState<boolean>(false);
+  const [loadingScreenRemoved, setLoadingScreenRemoved] =
+    useState<boolean>(false);
   const { screenData } = useScreenContext();
+
+  const removeLoadingScreen = () => {
+    setLoadingScreenFadeOut(true);
+    setTimeout(() => {
+      setLoadingScreenRemoved(true);
+    }, 750);
+  };
 
   return (
     <>
+      {!loadingScreenRemoved && (
+        <LoadingScreen
+          loadingLabel={'Ładowanie Bajki'}
+          fadeOutReady={loadingScreenFadeOut}
+        />
+      )}
       {screenData.orientation === ORIENTATION.PORTRAIT && <RotationGuard />}
       {storyStatus ? (
         <Story
@@ -42,6 +60,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
           detailedTags={storyData.info.detailedTags}
           storyStatusHandler={setStoryStatus}
           defaultColor={storyData.info.defaultColor}
+          onAnimationReady={removeLoadingScreen}
         />
       )}
     </>
