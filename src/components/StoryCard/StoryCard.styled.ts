@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
+import { BOOKCARD_LAYOUT } from '@/componentsStoryCard/StoryCard.types';
+
 export const MiniCoverImage = styled(Image)`
   display: block;
   width: 100%;
@@ -25,29 +27,21 @@ export const StoryCardBody = styled.div<{ mobileSort: boolean }>`
   }
 `;
 
-export const LeftSide = styled.div`
+export const LeftSide = styled.div<{ layoutInfo: BOOKCARD_LAYOUT }>`
   width: 100%;
 
   @media ${({ theme }) => theme.media.tablet} {
-    width: 42%;
+    width: ${({ layoutInfo }) =>
+      layoutInfo === BOOKCARD_LAYOUT.IMAGE_LEFT ? '42%' : '54%'};
   }
 `;
 
-export const RightSide = styled.div`
+export const RightSide = styled.div<{ layoutInfo: BOOKCARD_LAYOUT }>`
   width: 100%;
 
   @media ${({ theme }) => theme.media.tablet} {
-    width: 54%;
-  }
-`;
-
-export const Author = styled.div`
-  text-transform: uppercase;
-  font-size: 22px;
-  margin: 20px 0 5px;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    margin: 0 0 5px;
+    width: ${({ layoutInfo }) =>
+      layoutInfo === BOOKCARD_LAYOUT.IMAGE_RIGHT ? '42%' : '54%'};
   }
 `;
 

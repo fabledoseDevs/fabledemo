@@ -16,7 +16,10 @@ import type { TemplateLandingPage as TemplateLandingPageType } from '@/component
 import StoryCard from '@/componentsStoryCard';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
-import { CARD_GOLDILOCK } from './TemplateLandingPage.consts';
+import {
+  CARD_GOLDILOCK,
+  CARD_THREE_PIGGIES,
+} from './TemplateLandingPage.consts';
 
 const cookieBannerCheckAndRender = (consentStatus: boolean) => {
   if (!consentStatus) {
@@ -68,6 +71,32 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
           iconsBlock: {
             mainTags: CARD_GOLDILOCK.mainTags,
             extraTags: CARD_GOLDILOCK.detailedTags,
+          },
+        }}
+      />
+      <StoryCard
+        bookCover={{
+          src: CARD_THREE_PIGGIES.thumb,
+          alt: CARD_THREE_PIGGIES.title,
+          width: 640,
+          height: 340,
+        }}
+        layout={CARD_THREE_PIGGIES.cardLayout}
+        content={{
+          bookTitle: CARD_THREE_PIGGIES.title,
+          ctaButton: {
+            purpose: PURPOSE.FUNCTION_TRIGGER,
+            label: 'Dostęne wkrótce',
+            anchorLink: CARD_THREE_PIGGIES.url,
+            colorVariant: COLOR_VARIANTS.GREEN,
+            fontVariant: FONT_VARIANTS.UPPERCASE,
+            isDisabled: true,
+          },
+          summary: CARD_THREE_PIGGIES.summary,
+          synopsis: CARD_THREE_PIGGIES.synopsis,
+          iconsBlock: {
+            mainTags: CARD_THREE_PIGGIES.mainTags,
+            extraTags: CARD_THREE_PIGGIES.detailedTags,
           },
         }}
       />

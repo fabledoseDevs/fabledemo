@@ -1,7 +1,8 @@
 import { BOOKCARD_LAYOUT } from '@/componentsStoryCard/StoryCard.types';
+import goldilockThumb from '@/img/stories-thumbs/thumb-goldilock.png';
+import piggiesThumb from '@/img/stories-thumbs/thumb-piggies.png';
 import { TAG_NAMES } from '@/types/fairytale.types';
 
-import goldilockThumb from '../../../public/images/stories-thumbs/thumb-goldilock.png';
 import type { CardData } from './TemplateLandingPage.types';
 
 export const CARD_GOLDILOCK: CardData = {
@@ -18,5 +19,21 @@ export const CARD_GOLDILOCK: CardData = {
     TAG_NAMES.RESPONSIBILITY,
     TAG_NAMES.PRIVACY,
     TAG_NAMES.REPARATION,
+  ],
+};
+
+export const CARD_THREE_PIGGIES: CardData = {
+  title: 'Trzy Świnki',
+  thumb: piggiesThumb.src,
+  url: '/',
+  summary:
+    'Trzy świnki wyruszają w wielki świat aby rozpocząć samodzielne życie. Ich historia nabiera dramatycznych barw, gdy muszą się skonfrontować z wilkiem.',
+  synopsis: '...',
+  cardLayout: BOOKCARD_LAYOUT.IMAGE_RIGHT,
+  mainTags: [TAG_NAMES.AGE_3, TAG_NAMES.CONTEMPORARY_FABLE],
+  detailedTags: [
+    TAG_NAMES.HELPFULNESS,
+    TAG_NAMES.RESPONSIBILITY,
+    TAG_NAMES.FAMILY,
   ],
 };
