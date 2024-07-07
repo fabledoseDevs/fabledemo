@@ -39,14 +39,14 @@ const ContentBlock: ContentBlockType = ({
 
 export const StoryCard: StoryCardType = ({ layout, bookCover, content }) => (
   <StoryCardBody mobileSort={layout === BOOKCARD_LAYOUT.IMAGE_RIGHT}>
-    <LeftSide>
+    <LeftSide layoutInfo={layout}>
       {layout === BOOKCARD_LAYOUT.IMAGE_LEFT ? (
         <MiniCoverImage {...bookCover} />
       ) : (
         <ContentBlock {...content} />
       )}
     </LeftSide>
-    <RightSide>
+    <RightSide layoutInfo={layout}>
       {layout === BOOKCARD_LAYOUT.IMAGE_RIGHT ? (
         <MiniCoverImage {...bookCover} />
       ) : (
