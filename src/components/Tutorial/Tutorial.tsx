@@ -180,7 +180,9 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
             {currentStep === TUTORIAL_STEPS.TEXT_BOX_ADVANCED && (
               <p>
                 Jeżeli literki są zbyt małe lub zlewają się z animacją w tle,
-                możesz je łatwo dostosować do swoich potrzeb.
+                możesz je łatwo dostosować do swoich potrzeb, zwiekszając
+                rozmiar czcionki, zmieniając jej kolor lub dodając szare tło pod
+                tekstem.
               </p>
             )}
             {currentStep === TUTORIAL_STEPS.OPTIONS && (

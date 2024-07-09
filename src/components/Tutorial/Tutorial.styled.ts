@@ -28,6 +28,26 @@ const flexboxCentered = css`
   justify-content: center;
 `;
 
+const activeFrameCommon = css`
+  position: absolute;
+  bottom: 1dvh;
+  width: auto;
+  padding: 4px;
+  border-radius: 10px;
+  animation: ${pulsingFrame} 3s infinite linear;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 6px;
+`;
+
+const svgIconsCommon = css`
+  width: 40px;
+  height: 40px;
+  color: ${({ theme }) => theme.palette.secondary};
+  opacity: 0.65;
+`;
+
 export const TutorialBody = styled.div`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.guard};
@@ -118,48 +138,24 @@ export const TextBox = styled.div<{ extraBackground: boolean }>`
 `;
 
 export const OptionsActiveFrame = styled.div<{ isActive: boolean }>`
-  position: absolute;
-  bottom: 1dvh;
+  ${activeFrameCommon};
   left: 1dvw;
-  width: auto;
-  padding: 4px;
   border-width: ${({ isActive }) => (isActive ? `6px` : 'none')};
   border-style: ${({ isActive }) => (isActive ? `solid` : 'none')};
-  border-radius: 10px;
-  animation: ${pulsingFrame} 3s infinite linear;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 6px;
 
   svg {
-    width: 40px;
-    height: 40px;
-    color: ${({ theme }) => theme.palette.secondary};
-    opacity: 0.65;
+    ${svgIconsCommon}
   }
 `;
 
 export const SlideSwitchActiveFrame = styled.div<{ isActive: boolean }>`
-  position: absolute;
-  bottom: 1dvh;
+  ${activeFrameCommon};
   right: 1dvw;
-  width: auto;
-  padding: 4px;
   border-width: ${({ isActive }) => (isActive ? `6px` : 'none')};
   border-style: ${({ isActive }) => (isActive ? `solid` : 'none')};
-  border-radius: 10px;
-  animation: ${pulsingFrame} 3s infinite linear;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 6px;
 
   svg {
-    width: 40px;
-    height: 40px;
-    color: ${({ theme }) => theme.palette.secondary};
-    opacity: 0.65;
+    ${svgIconsCommon}
   }
 
   p {
