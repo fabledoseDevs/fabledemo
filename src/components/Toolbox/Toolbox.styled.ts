@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import mockImage from '../../../public/images/toolbox_bg.png';
+import mockImage from '@/img/toolbox-mock.png';
 
 export const Settings = styled.div`
   width: 100%;
