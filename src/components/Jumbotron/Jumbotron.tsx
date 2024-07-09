@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 import Button from '@/componentsButton';
+import MainImage from '@/img/jumbotron.png';
+import RedLine from '@/img/span.png';
 
-import MainImage from '../../../public/images/jumbotron.png';
-import RedLine from '../../../public/images/span.png';
 import {
   ButtonPositioner,
   ContentWrapper,

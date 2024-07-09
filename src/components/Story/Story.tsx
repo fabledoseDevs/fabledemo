@@ -22,6 +22,12 @@ import {
 } from 'swiper/modules';
 
 import Exitbox from '@/components/Exitbox';
+import StoryPage from '@/components/StoryPage';
+import Toolbox from '@/components/Toolbox';
+import Tutorial from '@/components/Tutorial';
+import { useTutorialContext } from '@/context/TutorialContext/TutorialContext.provider';
+
+import { useStory } from './Story.hook';
 import {
   FullscreenButton,
   NavElements,
@@ -30,11 +36,7 @@ import {
   SettingsButton,
   Slide,
   Stage,
-} from '@/components/Story/Story.styled';
-import StoryPage from '@/components/StoryPage';
-import Toolbox from '@/components/Toolbox';
-
-import { useStory } from './Story.hook';
+} from './Story.styled';
 import type { Story as StoryType } from './Story.types';
 
 export const Story: StoryType = ({ storyContent, defaultColor }) => {
@@ -49,8 +51,11 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
     toggleFullscreen,
   } = useStory();
 
+  const { tutorialOff, setTutorialOff } = useTutorialContext();
+
   return (
     <>
+      {!tutorialOff && <Tutorial closeTutorial={setTutorialOff} />}
       <Stage
         defaultColor={defaultColor}
         ref={swiperRef}
