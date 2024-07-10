@@ -93,13 +93,13 @@ export const MainTutorial = styled.div`
   align-content: center;
   justify-content: flex-start;
   padding-top: 4dvh;
-  gap: 24px;
+  gap: 2vw;
 `;
 
 export const BackgroundPicture = styled.div<{ isActive: boolean }>`
   position: relative;
   width: 94vw;
-  height: 80vh;
+  height: 78vh;
   background-image: url(${mockImage.src});
   background-repeat: no-repeat;
   background-position: center;
@@ -190,7 +190,7 @@ export const ExitButton = styled.button`
 
 export const TipsWindow = styled.div`
   width: 94vw;
-  height: auto;
+  height: 20vh;
   overflow-y: auto;
   text-align: center;
   display: flex;
@@ -199,34 +199,41 @@ export const TipsWindow = styled.div`
   align-items: center;
   align-content: center;
   justify-content: center;
-  margin-top: 2dvh;
   gap: 24px;
+  margin-bottom: 2dvw;
 
   div,
   p {
-    font-size: 1.2vw;
+    font-size: 1.6vw;
     width: calc(90% - 148px);
+
+    @media ${({ theme }) => theme.media.tablet} {
+      font-size: 1.4vw;
+    }
+
+    @media ${({ theme }) => theme.media.laptop} {
+      font-size: 1.2vw;
+    }
 
     svg {
       display: inline;
-      width: 28px;
+      width: 12px;
       margin-top: -4px;
-    }
-  }
 
-  div {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 24px;
+      @media ${({ theme }) => theme.media.tablet} {
+        width: 20px;
+      }
+
+      @media ${({ theme }) => theme.media.laptop} {
+        width: 28px;
+      }
+    }
   }
 `;
 
 export const TipsSwitch = styled.button`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius: 25px;
   color: ${({ theme }) => theme.palette.secondary};
@@ -240,5 +247,17 @@ export const TipsSwitch = styled.button`
 
   &:disabled {
     visibility: hidden;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
   }
 `;

@@ -4,7 +4,6 @@ import { FullScreenMaximize } from '@styled-icons/fluentui-system-regular/FullSc
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import { TextBoxSettings } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
 import { Close } from '@styled-icons/ionicons-outline/Close';
-import React, { useState } from 'react';
 
 import Button from '@/componentsButton';
 import {
@@ -12,6 +11,7 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/componentsButton/Button.types';
+import { useTutorial } from '@/componentsTutorial/Tutorial.hook';
 
 import {
   BackgroundPicture,
@@ -32,59 +32,8 @@ import type { Tutorial as TutorialType } from './Tutorial.types';
 import { TUTORIAL_STEPS } from './Tutorial.types';
 
 export const Tutorial: TutorialType = ({ closeTutorial }) => {
-  const [currentStep, setCurrentStep] = useState<TUTORIAL_STEPS>(
-    TUTORIAL_STEPS.INTRO,
-  );
-
-  const nextTip = () => {
-    switch (currentStep) {
-      case TUTORIAL_STEPS.INTRO:
-        setCurrentStep(TUTORIAL_STEPS.SLIDE);
-        break;
-      case TUTORIAL_STEPS.SLIDE:
-        setCurrentStep(TUTORIAL_STEPS.TEXT_BOX_BASIC);
-        break;
-      case TUTORIAL_STEPS.TEXT_BOX_BASIC:
-        setCurrentStep(TUTORIAL_STEPS.TEXT_BOX_ADVANCED);
-        break;
-      case TUTORIAL_STEPS.TEXT_BOX_ADVANCED:
-        setCurrentStep(TUTORIAL_STEPS.OPTIONS);
-        break;
-      case TUTORIAL_STEPS.OPTIONS:
-        setCurrentStep(TUTORIAL_STEPS.SLIDE_SWITCH);
-        break;
-      case TUTORIAL_STEPS.SLIDE_SWITCH:
-        setCurrentStep(TUTORIAL_STEPS.OUTRO);
-        break;
-    }
-  };
-
-  const prevTip = () => {
-    switch (currentStep) {
-      case TUTORIAL_STEPS.OUTRO:
-        setCurrentStep(TUTORIAL_STEPS.SLIDE_SWITCH);
-        break;
-      case TUTORIAL_STEPS.SLIDE_SWITCH:
-        setCurrentStep(TUTORIAL_STEPS.OPTIONS);
-        break;
-      case TUTORIAL_STEPS.OPTIONS:
-        setCurrentStep(TUTORIAL_STEPS.TEXT_BOX_ADVANCED);
-        break;
-      case TUTORIAL_STEPS.TEXT_BOX_ADVANCED:
-        setCurrentStep(TUTORIAL_STEPS.TEXT_BOX_BASIC);
-        break;
-      case TUTORIAL_STEPS.TEXT_BOX_BASIC:
-        setCurrentStep(TUTORIAL_STEPS.SLIDE);
-        break;
-      case TUTORIAL_STEPS.SLIDE:
-        setCurrentStep(TUTORIAL_STEPS.INTRO);
-        break;
-    }
-  };
-
-  const killTutorial = () => {
-    closeTutorial(true);
-  };
+  const { currentStep, setCurrentStep, nextTip, prevTip, killTutorial } =
+    useTutorial(closeTutorial);
 
   return (
     <TutorialBody>
@@ -205,28 +154,16 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
               </p>
             )}
             {currentStep === TUTORIAL_STEPS.OUTRO && (
-              <div>
-                <p>
-                  To tyle! Prawda, że to banalnie proste? Jesteś gotów, aby
-                  rozpocząć przygodę z baśniami Fabledose.
-                </p>
-                <Button
-                  label={'Zakończ Tutorial'}
-                  colorVariant={COLOR_VARIANTS.GREEN}
-                  fontVariant={FONT_VARIANTS.UPPERCASE}
-                  purpose={PURPOSE.FUNCTION_TRIGGER}
-                  onclickAction={killTutorial}
-                />
-              </div>
+              <p>
+                To tyle! Prawda, że to banalnie proste? Jesteś gotów, aby
+                rozpocząć przygodę z baśniami Fabledose. Naciskając strzałkę w
+                prawo, opuścisz tutorial.
+              </p>
             )}
-            <TipsSwitch
-              disabled={currentStep === TUTORIAL_STEPS.OUTRO}
-              onClick={nextTip}
-            >
+            <TipsSwitch onClick={nextTip}>
               <ArrowCircleRight />
             </TipsSwitch>
           </TipsWindow>
-
           <ExitButton>
             <span>Wyłącz Tutorial</span>
             <Close />
