@@ -9,6 +9,7 @@ import { ArrowExportRtl as ExitIcon } from '@styled-icons/fluentui-system-regula
 import { FullScreenMaximize as FullscreenUpIcon } from '@styled-icons/fluentui-system-regular/FullScreenMaximize';
 import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui-system-regular/FullScreenMinimize';
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
+import { QuestionCircle as HelpIcon } from '@styled-icons/fluentui-system-regular/QuestionCircle';
 import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
 import { useRef } from 'react';
 import {
@@ -30,6 +31,7 @@ import { useTutorialContext } from '@/context/TutorialContext/TutorialContext.pr
 import { useStory } from './Story.hook';
 import {
   FullscreenButton,
+  HelpButton,
   NavElements,
   NavigationButton,
   ReturnToMainPage,
@@ -130,6 +132,9 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
       <FullscreenButton onClick={toggleFullscreen}>
         {fullscreen ? <FullscreenDownIcon /> : <FullscreenUpIcon />}
       </FullscreenButton>
+      <HelpButton onClick={() => setTutorialOff(false)}>
+        <HelpIcon />
+      </HelpButton>
       <ReturnToMainPage
         onClick={() => setExitVisibility(prevState => !prevState)}
       >
