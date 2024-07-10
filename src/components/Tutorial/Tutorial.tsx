@@ -41,7 +41,8 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
         <GreeterWrapper>
           <GreeterBody>
             <p>
-              Czy chcesz przejść krótki tutorial o tym, jak ogladać nasze bajki?
+              Czy chcesz skożystać z samouczka, który podpowie ci jak czytać
+              nasze bajki?
             </p>
             <ButtonsPositioner>
               <Button
@@ -164,7 +165,7 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
               <ArrowCircleRight />
             </TipsSwitch>
           </TipsWindow>
-          <ExitButton>
+          <ExitButton onClick={killTutorial}>
             <span>Wyłącz Tutorial</span>
             <Close />
           </ExitButton>

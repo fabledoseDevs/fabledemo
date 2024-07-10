@@ -152,3 +152,14 @@ export const FullscreenButton = styled.button`
     left: 125px;
   }
 `;
+
+export const HelpButton = styled.button`
+  ${iconsCommon};
+  bottom: 15px;
+  left: 110px;
+
+  @media ${({ theme }) => theme.media.laptop} {
+    bottom: 10px;
+    left: 180px;
+  }
+`;
