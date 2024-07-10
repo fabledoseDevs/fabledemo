@@ -15,8 +15,14 @@ export interface TutorialProps {
 }
 
 export interface UseTutorialReturnValues {
-  tutorialStep: TUTORIAL_STEPS;
+  currentStep: TUTORIAL_STEPS;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
+  nextTip: () => void;
+  prevTip: () => void;
+  killTutorial: () => void;
 }
 
 export type Tutorial = (props: TutorialProps) => ReactElement;
-export type UseTutorial = () => UseTutorialReturnValues;
+export type UseTutorial = (
+  closeTutorial: (bool: boolean) => void,
+) => UseTutorialReturnValues;
