@@ -19,7 +19,7 @@ export const StoryCardBody = styled.div<{ mobileSort: boolean }>`
   justify-content: space-between;
   width: 100%;
   padding: 12px 24px;
-  margin: 5% 0;
+  margin: 24px auto;
   max-width: ${({ theme }) => theme.maxWidth};
 
   @media ${({ theme }) => theme.media.tablet} {

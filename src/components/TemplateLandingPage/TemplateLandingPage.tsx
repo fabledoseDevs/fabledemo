@@ -86,7 +86,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
           bookTitle: CARD_THREE_PIGGIES.title,
           ctaButton: {
             purpose: PURPOSE.FUNCTION_TRIGGER,
-            label: 'Dostęne wkrótce',
+            label: 'Dostępne wkrótce',
             anchorLink: CARD_THREE_PIGGIES.url,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,

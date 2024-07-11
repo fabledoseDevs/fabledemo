@@ -13,6 +13,8 @@ const theme: Theme = {
   palette: {
     primary: '#000',
     secondary: '#fff',
+    gray: '#bebebe',
+    darkgray: '#5b5b5b',
     offwhite: '#eee',
     green: '#6C7716',
     lightergreen: '#7E8B1A',

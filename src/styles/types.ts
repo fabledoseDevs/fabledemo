@@ -22,6 +22,8 @@ export type StoryPageOptions =
 export interface Palette {
   primary: string;
   secondary: string;
+  gray: string;
+  darkgray: string;
   offwhite: string;
   green: string;
   lightergreen: string;

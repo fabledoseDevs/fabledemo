@@ -19,6 +19,7 @@ export const ButtonWrapper = styled.div<{
       bgcolorvariant === COLOR_VARIANTS.GREEN
         ? theme.palette.green
         : theme.palette.secondary};
+
     &:hover,
     &:active {
       background: ${({ bgcolorvariant, theme }) =>
@@ -28,8 +29,10 @@ export const ButtonWrapper = styled.div<{
     }
 
     &:disabled {
-      filter: grayscale(1);
+      background: ${({ theme }) => theme.palette.gray};
+      color: ${({ theme }) => theme.palette.darkgray};
       opacity: 0.75;
+      cursor: not-allowed;
     }
   }
 `;
@@ -40,6 +43,7 @@ const buttonStyle = css`
   border-radius: 28px;
   text-align: center;
   cursor: pointer;
+  letter-spacing: 1px;
 
   @media ${({ theme }) => theme.media.tablet} {
     font-size: 16px;
