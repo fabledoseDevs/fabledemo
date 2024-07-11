@@ -41,7 +41,7 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
         <GreeterWrapper>
           <GreeterBody>
             <p>
-              Czy chcesz skożystać z samouczka, który podpowie ci jak czytać
+              Czy chcesz skorzystać z samouczka, który podpowie ci jak czytać
               nasze bajki?
             </p>
             <ButtonsPositioner>
@@ -124,13 +124,13 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
             {currentStep === TUTORIAL_STEPS.TEXT_BOX_BASIC && (
               <p>
                 Animowane tło zawsze jest opatrzone tekstem. Jego treść pokrywa
-                się z obrazem tworząc spójną całość.
+                się z obrazem, tworząc spójną całość.
               </p>
             )}
             {currentStep === TUTORIAL_STEPS.TEXT_BOX_ADVANCED && (
               <p>
                 Jeżeli literki są zbyt małe lub zlewają się z animacją w tle,
-                możesz je łatwo dostosować do swoich potrzeb, zwiekszając
+                możesz je łatwo dostosować do swoich potrzeb, zwiększając
                 rozmiar czcionki, zmieniając jej kolor lub dodając szare tło pod
                 tekstem.
               </p>
@@ -150,7 +150,7 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
                 W prawym dolnym rogu znajduje się informacja na temat długości
                 bajki oraz bieżącej strony. Strzałkami z lewej i prawej strony
                 numeracji możesz przełączać strony. Ponadto strony możesz
-                przeączać gestem przesunięcia (tablet i smartfon), klawiszami
+                przełączać gestem przesunięcia (tablet i smartfon), klawiszami
                 strzałek na klawiaturze oraz kółkiem myszki.
               </p>
             )}
