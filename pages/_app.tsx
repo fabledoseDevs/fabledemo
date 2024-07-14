@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import type { ReactElement } from 'react';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { ScreenProvider } from '@/context/ScreenContext/ScreenContext.provider';
 import { SettingsProvider } from '@/context/SettingsContext/SettingsContext.provider';
@@ -12,8 +13,10 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => (
     <ScreenProvider>
       <SettingsProvider>
         <TutorialProvider>
-          <GlobalStyle theme={theme} />
-          <Component {...pageProps} />
+          <ParallaxProvider>
+            <GlobalStyle theme={theme} />
+            <Component {...pageProps} />
+          </ParallaxProvider>
         </TutorialProvider>
       </SettingsProvider>
     </ScreenProvider>

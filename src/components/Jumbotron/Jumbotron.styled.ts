@@ -1,18 +1,92 @@
-import Image from 'next/image';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const heartBeat = keyframes`
+  10% {
+    transform: scale(1);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: scale(1.1);
+    animation-timing-function: ease-out;
+  }
+  100% {
+      transform: scale(1);
+      animation-timing-function: ease-in;
+  }
+`;
+
+export const JumbotronWrapper = styled.section`
+  position: relative;
+  height: 100vh;
+  background: rgb(255, 254, 244);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 254, 244, 1) 0%,
+    rgba(253, 250, 227, 1) 100%
+  );
+
+  div {
+    height: 100vh;
+  }
+
+  div.mountains-layer {
+    background-position: center bottom -160px !important;
+    inset: 0 !important;
+
+    @media ${({ theme }) => theme.media.laptop} {
+      inset: -100px 0 !important;
+      background-position: center bottom -200px !important;
+    }
+  }
+
+  div.headline-layer {
+    inset: 20px !important;
+
+    @media ${({ theme }) => theme.media.tablet} {
+      inset: 20px !important;
+    }
+
+    @media ${({ theme }) => theme.media.laptop} {
+      inset: 150px !important;
+    }
+  }
+
+  a svg {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 20px);
+    color: ${({ theme }) => theme.palette.accentActive};
+    animation: ${heartBeat} 2.5s ease-in-out infinite both;
+
+    @media ${({ theme }) => theme.media.laptop} {
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      left: calc(50% - 30px);
+    }
+  }
+`;
 
 export const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  justify-content: center;
-  align-items: center;
   text-transform: uppercase;
   text-align: center;
-  max-width: 1280px;
-  position: relative;
-  z-index: ${({ theme }) => theme.zIndex.high};
+
+  @media only screen and (orientation: landscape) {
+    margin: 0 auto;
+  }
+
+  @media only screen and (orientation: portrait) {
+    margin: 80px auto 0;
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    margin: -20px auto 0;
+  }
 
   p {
     font-family: ${({ theme }) => theme.fonts.lato};
@@ -21,16 +95,25 @@ export const ContentWrapper = styled.div`
   }
 
   h1 {
-    font-size: 18px;
+    font-size: 12px;
+    letter-spacing: 4px;
     font-weight: 400;
-    margin-bottom: 12px;
+    width: 100%;
+
+    img {
+      width: 150px;
+
+      @media ${({ theme }) => theme.media.laptop} {
+        width: 300px;
+      }
+    }
   }
 
   h2 {
-    width: 90%;
-    font-size: 32px;
+    width: 100%;
+    font-size: 26px;
     font-weight: 400;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
   }
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -39,7 +122,13 @@ export const ContentWrapper = styled.div`
     }
 
     h2 {
-      font-size: 48px;
+      font-size: 36px;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.laptop} {
+    h2 {
+      margin: 24px auto;
     }
   }
 `;
@@ -53,38 +142,13 @@ export const RedSpan = styled.span`
     height: 140%;
     position: absolute;
     top: -5px;
-    left: -20px;
+    left: -14px;
   }
 
   @media ${({ theme }) => theme.media.tablet} {
     img {
       top: -10px;
-      left: -29px;
+      left: -20px;
     }
   }
-`;
-
-export const JumbotronImage = styled(Image)`
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    min-height: 840px;
-  }
-`;
-
-export const JumbotronWrapper = styled.section`
-  position: relative;
-  min-height: 600px;
-  margin-top: 50px;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    min-height: 840px;
-  }
-`;
-
-export const ButtonPositioner = styled.div`
-  margin-top: 48px;
 `;

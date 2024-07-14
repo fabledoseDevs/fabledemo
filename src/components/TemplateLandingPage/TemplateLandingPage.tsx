@@ -38,13 +38,6 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
           after: ' do czytania',
         }}
         redLineText={'ożywają'}
-        button={{
-          purpose: PURPOSE.ANCHOR,
-          label: 'Odkryj Baśnie',
-          anchorLink: '#content-start',
-          colorVariant: COLOR_VARIANTS.GREEN,
-          fontVariant: FONT_VARIANTS.UPPERCASE,
-        }}
       />
       <div id="content-start" />
       <Separator type={'SMALL'} />
