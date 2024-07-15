@@ -47,6 +47,10 @@ export const JumbotronWrapper = styled.section`
     }
 
     @media ${({ theme }) => theme.media.laptop} {
+      inset: 60px !important;
+    }
+
+    @media ${({ theme }) => theme.media.desktop} {
       inset: 150px !important;
     }
   }
@@ -76,24 +80,6 @@ export const ContentWrapper = styled.div`
   text-transform: uppercase;
   text-align: center;
 
-  @media only screen and (orientation: landscape) {
-    margin: 0 auto;
-  }
-
-  @media only screen and (orientation: portrait) {
-    margin: 80px auto 0;
-  }
-
-  @media ${({ theme }) => theme.media.laptop} {
-    margin: -20px auto 0;
-  }
-
-  p {
-    font-family: ${({ theme }) => theme.fonts.lato};
-    font-weight: 200;
-    font-size: 20px;
-  }
-
   h1 {
     font-size: 12px;
     letter-spacing: 4px;
@@ -116,18 +102,25 @@ export const ContentWrapper = styled.div`
     margin: 0 auto 24px;
   }
 
-  @media ${({ theme }) => theme.media.tablet} {
-    p {
-      font-size: 24px;
-    }
+  @media only screen and (orientation: landscape) {
+    margin: 0 auto;
+  }
 
+  @media only screen and (orientation: portrait) {
+    margin: 80px auto 0;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
     h2 {
-      font-size: 36px;
+      font-size: 28px;
     }
   }
 
   @media ${({ theme }) => theme.media.laptop} {
+    margin: -20px auto 0;
+
     h2 {
+      font-size: 36px;
       margin: 24px auto;
     }
   }

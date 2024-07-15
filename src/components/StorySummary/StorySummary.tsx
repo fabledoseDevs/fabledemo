@@ -1,3 +1,5 @@
+import { LinkExternal } from '@styled-icons/boxicons-regular/LinkExternal';
+
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
@@ -98,7 +100,7 @@ export const StorySummary: StorySummaryType = ({
                   {'Adaptacja: '}
                   {adaptationAuthor.map((adaptAuth, index) => (
                     <span key={adaptAuth}>
-                      {adaptAuth}
+                      {adaptAuth}{' '}
                       {index !== adaptationAuthor.length - 1 && ', '}
                     </span>
                   ))}
@@ -107,7 +109,23 @@ export const StorySummary: StorySummaryType = ({
               <p>
                 {'Ilustracje: '}
                 {picturesAuthor.map(picAuth => (
-                  <span key={picAuth}>{picAuth}</span>
+                  <span key={picAuth}>
+                    {picAuth}
+                    {picAuth === 'Edyta Petrzak' && (
+                      <>
+                        &nbsp;(
+                        <a
+                          href={
+                            'https://www.facebook.com/profile.php?id=100079143065239'
+                          }
+                          target="_blank"
+                        >
+                          Kropką Zmalowane <LinkExternal />
+                        </a>
+                        )
+                      </>
+                    )}
+                  </span>
                 ))}
               </p>
             </Credits>
