@@ -16,7 +16,7 @@ import type { Jumbotron as JumbotronType } from './Jumbotron.types';
 export const Jumbotron: JumbotronType = ({ header, redLineText }) => {
   const headline: BannerLayer = {
     shouldAlwaysCompleteAnimation: true,
-    translateY: [0, 30],
+    translateY: [0, 60],
     children: (
       <ContentWrapper>
         <h1>
@@ -41,6 +41,7 @@ export const Jumbotron: JumbotronType = ({ header, redLineText }) => {
   const mountains: BannerLayer = {
     image: LayerMountains.src,
     speed: -10,
+    scale: [1.1, 1],
     shouldAlwaysCompleteAnimation: true,
     className: 'mountains-layer',
   };
@@ -48,7 +49,7 @@ export const Jumbotron: JumbotronType = ({ header, redLineText }) => {
   const forest: BannerLayer = {
     image: LayerForest.src,
     speed: 0,
-    scale: [1, 1.15],
+    scale: [1, 1.1],
     shouldAlwaysCompleteAnimation: true,
     className: 'forest-layer',
   };

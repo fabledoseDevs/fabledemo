@@ -2,6 +2,7 @@ import { css, styled } from 'styled-components';
 
 const basicColumnStyle = css`
   width: 100%;
+  padding: 24px;
 
   @media ${({ theme }) => theme.media.laptop} {
     width: 50%;
@@ -9,7 +10,7 @@ const basicColumnStyle = css`
 
   p {
     line-height: 2;
-    padding: 12px 24px;
+    padding: 12px 0;
   }
 `;
 
