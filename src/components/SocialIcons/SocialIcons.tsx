@@ -5,14 +5,13 @@ import {
   InstagramIcon,
   List,
   SocialIconsBody,
-  TwitterIcon,
-  YoutubeIcon,
+  SubstackIcon,
 } from './SocialIcons.styled';
 import type { SocialIcons as SocialIconsType } from './SocialIcons.types';
 
-//ToDo: add links to socials
 export const SocialIcons: SocialIconsType = () => (
   <SocialIconsBody>
+    <p>Obserwuj nas na:</p>
     <List>
       <li>
         <Link
@@ -36,22 +35,12 @@ export const SocialIcons: SocialIconsType = () => (
       </li>
       <li>
         <Link
-          href="https://youtube.com/fabledose"
+          href="https://fabledose.substack.com/"
           target="_blank"
-          aria-label="Go to YouTube channel"
+          aria-label="Go to Substack"
           rel="nofollow"
         >
-          <YoutubeIcon />
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="https://x.com/fabledose"
-          target="_blank"
-          aria-label="Go to X Page"
-          rel="nofollow"
-        >
-          <TwitterIcon />
+          <SubstackIcon />
         </Link>
       </li>
     </List>

@@ -117,7 +117,16 @@ export const ContentWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.media.laptop} {
-    margin: -20px auto 0;
+    margin: -60px auto 0;
+
+    h2 {
+      font-size: 36px;
+      margin: 24px auto;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.desktop} {
+    margin: -50px auto 0;
 
     h2 {
       font-size: 36px;
