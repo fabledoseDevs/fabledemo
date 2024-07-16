@@ -1,4 +1,5 @@
-type QuitStoryUiCleanupType = () => Promise<void>;
+type QuitStoryUiCleanupType = () => void;
 
-export const quitStoryUiCleanup: QuitStoryUiCleanupType = () =>
-  document.exitFullscreen();
+export const quitStoryUiCleanup: QuitStoryUiCleanupType = () => {
+  document.fullscreenEnabled && document.exitFullscreen();
+};

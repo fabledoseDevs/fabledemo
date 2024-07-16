@@ -20,7 +20,7 @@ export const StoryCardBody = styled.div<{ mobileSort: boolean }>`
   width: 100%;
   padding: 12px 24px;
   margin: 24px auto;
-  max-width: ${({ theme }) => theme.maxWidth};
+  max-width: 1720px;
 
   @media ${({ theme }) => theme.media.tablet} {
     flex-direction: row;
