@@ -39,6 +39,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
         <LoadingScreen
           loadingLabel={'Ładowanie Bajki'}
           fadeOutReady={loadingScreenFadeOut}
+          bgColor={storyData.info.defaultColor}
         />
       )}
       {screenData.orientation === ORIENTATION.PORTRAIT && <RotationGuard />}
