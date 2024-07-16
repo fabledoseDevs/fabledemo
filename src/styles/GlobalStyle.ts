@@ -17,14 +17,27 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
         align-items: center;
         align-content: center;
         justify-content: center;
-        background-color: #251e1e;
+        background: rgb(255, 254, 244);
+        background: linear-gradient(
+                45deg,
+                rgba(255, 254, 244, 1) 0%,
+                rgba(253, 250, 227, 1) 100%
+        );
+        
     }
 
     main {
         min-height: 100vh;
-        max-width: 1440px;
+        width: 100%;
         background: ${({ theme }) => theme.palette.background};
         background: ${({ theme }) => theme.palette.linearBackground};
+        -webkit-box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
+
+        @media ${({ theme }) => theme.media.hdScreen} {
+           width: 1920px;
+        },
     }
 
     h1, h2 {

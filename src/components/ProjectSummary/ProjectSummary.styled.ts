@@ -6,6 +6,8 @@ const basicColumnStyle = css`
 
   @media ${({ theme }) => theme.media.laptop} {
     width: 50%;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   p {
@@ -21,8 +23,8 @@ export const SummaryBody = styled.section`
 
   @media ${({ theme }) => theme.media.laptop} {
     flex-direction: row;
-      text-align: left;
-  },
+    text-align: left;
+  }
 `;
 
 export const LeftColumn = styled.div`
