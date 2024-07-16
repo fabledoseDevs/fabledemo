@@ -5,14 +5,14 @@ import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import { TextBoxSettings } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
 import { Close } from '@styled-icons/ionicons-outline/Close';
 
-import Button from '@/componentsButton';
+import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
-} from '@/componentsButton/Button.types';
-import { useTutorial } from '@/componentsTutorial/Tutorial.hook';
+} from '@/components/Button/Button.types';
 
+import { useTutorial } from './Tutorial.hook';
 import {
   BackgroundPicture,
   ButtonsPositioner,

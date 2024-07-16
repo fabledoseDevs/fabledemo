@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import type { BannerLayer } from 'react-scroll-parallax/dist/components/ParallaxBanner/types';
 
-import { Logo } from '@/componentsLogo/Logo';
-import { COLOUR_VARIANT } from '@/componentsLogo/Logo.types';
+import Logo from '@/components/Logo';
+import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import LayerMountains from '@/img/jumbo/fable_jumbo_1a.png';
 import LayerForest from '@/img/jumbo/fable_jumbo_2a.png';
 import RedLine from '@/img/span.png';

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { BOOKCARD_LAYOUT } from '@/componentsStoryCard/StoryCard.types';
+import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 
 export const MiniCoverImage = styled(Image)`
   display: block;

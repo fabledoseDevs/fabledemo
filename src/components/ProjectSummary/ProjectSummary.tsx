@@ -1,4 +1,4 @@
-import SubstackButton from '@/componentsSubstackButton';
+import SubstackButton from '@/components/SubstackButton';
 
 import { LeftColumn, RightColumn, SummaryBody } from './ProjectSummary.styled';
 import type { ProjectSummary as ProjectSummaryType } from './ProjectSummary.types';

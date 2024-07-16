@@ -11,15 +11,15 @@ const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
 import { ProjectSummary } from '@/components/ProjectSummary';
 import Separator from '@/components/Separator';
+import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
-import type { TemplateLandingPage as TemplateLandingPageType } from '@/components/TemplateLandingPage/TemplateLandingPage.types';
-import StoryCard from '@/componentsStoryCard';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
 import {
   CARD_GOLDILOCK,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
+import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
 
 const cookieBannerCheckAndRender = (consentStatus: boolean) => {
   if (!consentStatus) {

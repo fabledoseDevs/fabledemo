@@ -28,6 +28,23 @@ export const mapStory: Mapper<Story, QStory> = storyData => {
   try {
     return {
       info: {
+        metaData: {
+          title: storyData.metaData.title,
+          description: storyData.metaData.description,
+          ...(storyData.metaData.ogTitle && {
+            ogTitle: storyData.metaData.ogTitle,
+          }),
+          ...(storyData.metaData.ogDescription && {
+            ogDescription: storyData.metaData.ogDescription,
+          }),
+          ...(storyData.metaData.ogImage && {
+            ogImage: {
+              src: storyData.metaData.ogImage.url,
+              width: storyData.metaData.ogImage.width,
+              height: storyData.metaData.ogImage.height,
+            },
+          }),
+        },
         id: storyData.sys.id,
         title: storyData.title,
         ...(storyData.author && { author: storyData.author }),
