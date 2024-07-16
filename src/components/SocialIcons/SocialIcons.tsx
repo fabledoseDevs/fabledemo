@@ -13,7 +13,6 @@ import type { SocialIcons as SocialIconsType } from './SocialIcons.types';
 //ToDo: add links to socials
 export const SocialIcons: SocialIconsType = () => (
   <SocialIconsBody>
-    Napisz do nas &nbsp;&nbsp;|
     <List>
       <li>
         <Link

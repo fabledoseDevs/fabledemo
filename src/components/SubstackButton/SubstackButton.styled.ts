@@ -19,10 +19,9 @@ export const SubstackButtonBody = styled(Link)`
   cursor: pointer;
 
   @media ${({ theme }) => theme.media.laptop} {
-    margin: 24px 32px;
+    margin: 24px 0;
   }
 
-  ,
   &:active {
     margin-top: 28px;
     box-shadow: rgba(0, 0, 0, 0.45) 0 6px 6px -6px;

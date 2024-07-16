@@ -170,6 +170,16 @@ export const Credits = styled.div`
     margin: 5px 0;
   }
 
+  a {
+    color: ${({ theme }) => theme.palette.green};
+    font-weight: 700;
+
+    svg {
+      display: inline;
+      width: 12px;
+    }
+  }
+
   @media ${({ theme }) => theme.media.laptop} {
     font-size: 13px;
   }

@@ -10,7 +10,7 @@ export const SocialIconsBody = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  font-size: 26px;
+  font-size: 18px;
 `;
 
 export const TwitterIcon = styled(FaSquareXTwitter)`
