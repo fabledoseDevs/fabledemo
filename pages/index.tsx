@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import Footer from '@/components/Footer';
 import { TemplateLandingPage } from '@/components/TemplateLandingPage/TemplateLandingPage';
-import Footer from '@/componentsFooter';
 
 const Home: NextPage = () => (
   <>

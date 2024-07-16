@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
-import { Logo } from '@/componentsLogo/Logo';
-import { COLOUR_VARIANT } from '@/componentsLogo/Logo.types';
+import Logo from '@/components/Logo';
+import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 
 import { Wrapper } from './Header.styled';
 

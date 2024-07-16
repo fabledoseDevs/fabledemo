@@ -1,6 +1,9 @@
 import type { StaticImageData } from 'next/image';
 
+import type { MetaDataProps } from '@/components/MetaData';
+
 export interface Info {
+  metaData: MetaDataProps;
   id: string;
   title: string;
   author?: string[];

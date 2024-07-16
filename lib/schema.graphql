@@ -37,6 +37,7 @@ type AssetCollection {
 
 type AssetLinkingCollections {
     entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    metaDataCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): MetaDataCollection
     storyCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): StoryCollection
     storyPageAnimationCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): StoryPageAnimationCollection
     storyPageCoverCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): StoryPageCoverCollection
@@ -63,11 +64,38 @@ type EntryCollection {
     total: Int!
 }
 
+"[See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/metaData)"
+type MetaData implements Entry & _Node {
+    _id: ID!
+    contentfulMetadata: ContentfulMetadata!
+    description(locale: String): String
+    linkedFrom(allowedLocales: [String]): MetaDataLinkingCollections
+    ogDescription(locale: String): String
+    ogImage(locale: String, preview: Boolean): Asset
+    ogTitle(locale: String): String
+    sys: Sys!
+    title(locale: String): String
+}
+
+type MetaDataCollection {
+    items: [MetaData]!
+    limit: Int!
+    skip: Int!
+    total: Int!
+}
+
+type MetaDataLinkingCollections {
+    entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+    storyCollection(limit: Int = 100, locale: String, order: [MetaDataLinkingCollectionsStoryCollectionOrder], preview: Boolean, skip: Int = 0): StoryCollection
+}
+
 type Query {
     _node(id: ID!, locale: String, preview: Boolean): _Node
     asset(id: String!, locale: String, preview: Boolean): Asset
     assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
     entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
+    metaData(id: String!, locale: String, preview: Boolean): MetaData
+    metaDataCollection(limit: Int = 100, locale: String, order: [MetaDataOrder], preview: Boolean, skip: Int = 0, where: MetaDataFilter): MetaDataCollection
     story(id: String!, locale: String, preview: Boolean): Story
     storyCollection(limit: Int = 100, locale: String, order: [StoryOrder], preview: Boolean, skip: Int = 0, where: StoryFilter): StoryCollection
     storyPage(id: String!, locale: String, preview: Boolean): StoryPage
@@ -81,7 +109,8 @@ type Query {
 }
 
 "Full story content (full fable, fairy tale).  [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/story)"
-type Story implements Entry {
+type Story implements Entry & _Node {
+    _id: ID!
     adaptationAuthors(locale: String): [String]
     animation(locale: String): [String]
     contentfulMetadata: ContentfulMetadata!
@@ -92,6 +121,7 @@ type Story implements Entry {
     extendedTags(locale: String): [String]
     linkedFrom(allowedLocales: [String]): StoryLinkingCollections
     mainTags(locale: String): [String]
+    metaData(locale: String, preview: Boolean, where: MetaDataFilter): MetaData
     name(locale: String): String
     picturesAuthors(locale: String): [String]
     slug(locale: String): String
@@ -116,7 +146,8 @@ type StoryLinkingCollections {
 }
 
 "Story page that displays a set of paragraphs and animation in background. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPage)"
-type StoryPage implements Entry {
+type StoryPage implements Entry & _Node {
+    _id: ID!
     animation(locale: String, preview: Boolean, where: StoryPageAnimationFilter): StoryPageAnimation
     contentfulMetadata: ContentfulMetadata!
     id(locale: String): Int
@@ -128,7 +159,8 @@ type StoryPage implements Entry {
 }
 
 "Basic, animated picture used in story page or cover as background of fable. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPageAnimation)"
-type StoryPageAnimation implements Entry {
+type StoryPageAnimation implements Entry & _Node {
+    _id: ID!
     backupImage(locale: String, preview: Boolean): Asset
     contentfulMetadata: ContentfulMetadata!
     description(locale: String): String
@@ -161,7 +193,8 @@ type StoryPageCollection {
 }
 
 "Animated picture used in story summary as background. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPageCover)"
-type StoryPageCover implements Entry {
+type StoryPageCover implements Entry & _Node {
+    _id: ID!
     blurImage(locale: String, preview: Boolean): Asset
     contentfulMetadata: ContentfulMetadata!
     description(locale: String): String
@@ -192,7 +225,8 @@ type StoryPageLinkingCollections {
 }
 
 "Text paragraph for stroy page. [See type definition](https://app.contentful.com/spaces/ouddoh9fyrvm/content_types/storyPageParagraph)"
-type StoryPageParagraph implements Entry {
+type StoryPageParagraph implements Entry & _Node {
+    _id: ID!
     contentfulMetadata: ContentfulMetadata!
     linkedFrom(allowedLocales: [String]): StoryPageParagraphLinkingCollections
     name(locale: String): String
@@ -337,6 +371,42 @@ enum ImageResizeStrategy {
     SCALE
     "Creates a thumbnail from the image."
     THUMB
+}
+
+enum MetaDataLinkingCollectionsStoryCollectionOrder {
+    defaultColor_ASC
+    defaultColor_DESC
+    name_ASC
+    name_DESC
+    slug_ASC
+    slug_DESC
+    summary_ASC
+    summary_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+    title_ASC
+    title_DESC
+}
+
+enum MetaDataOrder {
+    ogTitle_ASC
+    ogTitle_DESC
+    sys_firstPublishedAt_ASC
+    sys_firstPublishedAt_DESC
+    sys_id_ASC
+    sys_id_DESC
+    sys_publishedAt_ASC
+    sys_publishedAt_DESC
+    sys_publishedVersion_ASC
+    sys_publishedVersion_DESC
+    title_ASC
+    title_DESC
 }
 
 enum StoryOrder {
@@ -664,6 +734,42 @@ input ImageTransformOptions {
     width: Dimension
 }
 
+input MetaDataFilter {
+    AND: [MetaDataFilter]
+    OR: [MetaDataFilter]
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    ogDescription: String
+    ogDescription_contains: String
+    ogDescription_exists: Boolean
+    ogDescription_in: [String]
+    ogDescription_not: String
+    ogDescription_not_contains: String
+    ogDescription_not_in: [String]
+    ogImage_exists: Boolean
+    ogTitle: String
+    ogTitle_contains: String
+    ogTitle_exists: Boolean
+    ogTitle_in: [String]
+    ogTitle_not: String
+    ogTitle_not_contains: String
+    ogTitle_not_in: [String]
+    sys: SysFilter
+    title: String
+    title_contains: String
+    title_exists: Boolean
+    title_in: [String]
+    title_not: String
+    title_not_contains: String
+    title_not_in: [String]
+}
+
 input StoryFilter {
     AND: [StoryFilter]
     OR: [StoryFilter]
@@ -701,6 +807,8 @@ input StoryFilter {
     mainTags_contains_none: [String]
     mainTags_contains_some: [String]
     mainTags_exists: Boolean
+    metaData: cfMetaDataNestedFilter
+    metaData_exists: Boolean
     name: String
     name_contains: String
     name_exists: Boolean
@@ -892,6 +1000,42 @@ input SysFilter {
     publishedVersion_lte: Float
     publishedVersion_not: Float
     publishedVersion_not_in: [Float]
+}
+
+input cfMetaDataNestedFilter {
+    AND: [cfMetaDataNestedFilter]
+    OR: [cfMetaDataNestedFilter]
+    contentfulMetadata: ContentfulMetadataFilter
+    description: String
+    description_contains: String
+    description_exists: Boolean
+    description_in: [String]
+    description_not: String
+    description_not_contains: String
+    description_not_in: [String]
+    ogDescription: String
+    ogDescription_contains: String
+    ogDescription_exists: Boolean
+    ogDescription_in: [String]
+    ogDescription_not: String
+    ogDescription_not_contains: String
+    ogDescription_not_in: [String]
+    ogImage_exists: Boolean
+    ogTitle: String
+    ogTitle_contains: String
+    ogTitle_exists: Boolean
+    ogTitle_in: [String]
+    ogTitle_not: String
+    ogTitle_not_contains: String
+    ogTitle_not_in: [String]
+    sys: SysFilter
+    title: String
+    title_contains: String
+    title_exists: Boolean
+    title_in: [String]
+    title_not: String
+    title_not_contains: String
+    title_not_in: [String]
 }
 
 input cfStoryPageAnimationNestedFilter {

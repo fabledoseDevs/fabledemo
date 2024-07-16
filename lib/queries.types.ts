@@ -2,6 +2,13 @@ export interface QStory {
   sys: {
     id: string;
   };
+  metaData: {
+    title: string;
+    description: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    ogImage?: Pick<Asset, 'url' | 'width' | 'height'>;
+  };
   title: string;
   author: string[];
   adaptationAuthors: string[];

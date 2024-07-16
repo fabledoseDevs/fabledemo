@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react';
 
+import Logo from '@/components/Logo';
+import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import SocialIcons from '@/components/SocialIcons';
-import { Logo } from '@/componentsLogo/Logo';
-import { COLOUR_VARIANT } from '@/componentsLogo/Logo.types';
 
 import { Copyrights, StyledFooter } from './Footer.styled';
 
