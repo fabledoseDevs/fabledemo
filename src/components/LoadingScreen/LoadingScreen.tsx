@@ -6,8 +6,9 @@ import type { LoadingScreen as LoadingScreenType } from './LoadingScreen.types';
 export const LoadingScreen: LoadingScreenType = ({
   loadingLabel,
   fadeOutReady,
+  bgColor,
 }) => (
-  <LoadingScreenBody fadeOutAnimation={fadeOutReady}>
+  <LoadingScreenBody fadeOutAnimation={fadeOutReady} bgColor={bgColor}>
     <Animation
       alt={'Loading...'}
       src={AnimatedCircle.src}

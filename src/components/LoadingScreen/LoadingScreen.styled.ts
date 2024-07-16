@@ -1,19 +1,17 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-export const LoadingScreenBody = styled.div<{ fadeOutAnimation: boolean }>`
+export const LoadingScreenBody = styled.div<{
+  fadeOutAnimation: boolean;
+  bgColor: string;
+}>`
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  background: rgb(137, 141, 99);
-  background: linear-gradient(
-    180deg,
-    rgba(137, 141, 99, 1) 20%,
-    rgba(220, 78, 73, 1) 100%
-  );
+  background-color: ${({ bgColor }) => bgColor};
   color: white;
   display: flex;
   flex-direction: column;
