@@ -69,13 +69,34 @@ export const STORY_CARD_FRAGMENT = gql`
   }
 `;
 
+export const META_DATA = gql`
+  fragment MetaData on MetaData {
+    sys {
+      id
+    }
+    title
+    description
+    ogTitle
+    ogDescription
+    ogImage {
+      url
+      width
+      height
+    }
+  }
+`;
+
 export const STORY_FRAGMENT = gql`
   ${COVER_ANIMATION_FRAGMENT}
   ${MAIN_ANIMATION_FRAGMENT}
   ${STORY_PAGE_FRAGMENT}
+  ${META_DATA}
   fragment storyFragment on Story {
     sys {
       id
+    }
+    metaData {
+      ...MetaData
     }
     title
     adaptationAuthors

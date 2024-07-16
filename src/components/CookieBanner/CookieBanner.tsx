@@ -1,17 +1,17 @@
+import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
+import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
+
 import {
   BannerBody,
   ButtonPositioner,
   ContentContainer,
   TextField,
-} from '@/components/CookieBanner/CookieBanner.styled';
-import Button from '@/componentsButton';
-import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
-
+} from './CookieBanner.styled';
 import type { CookieBanner as CookieBannerType } from './CookieBanner.types';
 
 export const CookieBanner: CookieBannerType = () => {

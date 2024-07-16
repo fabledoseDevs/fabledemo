@@ -1,4 +1,4 @@
-import { BOOKCARD_LAYOUT } from '@/componentsStoryCard/StoryCard.types';
+import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import goldilockThumb from '@/img/stories-thumbs/thumb-goldilock.png';
 import piggiesThumb from '@/img/stories-thumbs/thumb-piggies.png';
 import { TAG_NAMES } from '@/types/fairytale.types';

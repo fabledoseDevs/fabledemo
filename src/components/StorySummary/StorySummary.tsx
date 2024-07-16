@@ -1,14 +1,14 @@
 import { LinkExternal } from '@styled-icons/boxicons-regular/LinkExternal';
 
+import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
+import Logo from '@/components/Logo';
+import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import { TagList } from '@/components/TagList';
-import Button from '@/componentsButton';
-import { Logo } from '@/componentsLogo/Logo';
-import { COLOUR_VARIANT } from '@/componentsLogo/Logo.types';
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 
 import {

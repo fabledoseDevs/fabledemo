@@ -7,10 +7,11 @@ const RotationGuard = dynamic(() => import('@/components/RotationGuard'), {
 const Story = dynamic(() => import('@/components/Story'), {
   ssr: false,
 });
-const StorySummary = dynamic(() => import('@/componentsStorySummary'), {
+const StorySummary = dynamic(() => import('@/components/StorySummary'), {
   ssr: false,
 });
-import LoadingScreen from '@/componentsLoadingScreen';
+import LoadingScreen from '@/components/LoadingScreen';
+import MetaData from '@/components/MetaData';
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { ORIENTATION } from '@/context/ScreenContext/ScreenContext.types';
 
@@ -33,6 +34,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
 
   return (
     <>
+      <MetaData {...storyData.info.metaData} />
       {!loadingScreenRemoved && (
         <LoadingScreen
           loadingLabel={'Ładowanie Bajki'}
