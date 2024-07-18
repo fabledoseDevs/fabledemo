@@ -10,6 +10,7 @@ import LayerMountains from '@/img/jumbo/fable_jumbo_1a.png';
 import LayerForest from '@/img/jumbo/fable_jumbo_2a.png';
 import RedLine from '@/img/span.png';
 
+import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
 import { ContentWrapper, JumbotronWrapper, RedSpan } from './Jumbotron.styled';
 import type { Jumbotron as JumbotronType } from './Jumbotron.types';
 
@@ -56,6 +57,7 @@ export const Jumbotron: JumbotronType = ({ header, redLineText }) => {
 
   return (
     <JumbotronWrapper>
+      <LanguageSelector />
       <ParallaxBanner layers={[mountains, headline, forest]} />
       <Link href="#content-start" aria-label="Scroll Down">
         <ArrowCircleDown />
