@@ -13,6 +13,7 @@ import {
   TagsListUl,
   TagsSummaryButton,
 } from './TagList.styled';
+import { useTranslations } from './TagList.translations';
 import type { TagList as TagListType } from './TagList.types';
 
 export const TagList: TagListType = ({
@@ -22,27 +23,28 @@ export const TagList: TagListType = ({
   synopsis,
 }) => {
   const [isInfoModalActive, setInfoModalActive] = useState<boolean>(false);
+  const { general, themes, details } = useTranslations();
 
   return (
     <>
       <TagListBody>
         <MobileSorter>
           <TagsListUl>
-            <TagListTitle>Utwór</TagListTitle>
+            <TagListTitle>{general}</TagListTitle>
             {mainTags.map((tag: TAG_NAMES) => (
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
           <SeparatorElement />
           <TagsListUl>
-            <TagListTitle>Motywy</TagListTitle>
+            <TagListTitle>{themes}</TagListTitle>
             {extraTags.map((tag: TAG_NAMES) => (
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
           <SeparatorElement />
           <TagsListUl>
-            <TagListTitle>Szczegóły</TagListTitle>
+            <TagListTitle>{details}</TagListTitle>
             <li>
               <TagsSummaryButton
                 onClick={() => setInfoModalActive(prevState => !prevState)}

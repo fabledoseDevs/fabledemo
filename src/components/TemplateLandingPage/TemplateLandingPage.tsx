@@ -8,32 +8,19 @@ import {
 const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
   ssr: false,
 });
-import { useEffect, useState } from 'react';
-
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
 import { ProjectSummary } from '@/components/ProjectSummary';
 import Separator from '@/components/Separator';
 import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
-import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
-import {
-  StoryCardGoldilockEN,
-  StoryCardGoldilockPL,
-  StoryCardThreeLittlePigsEN,
-  StoryCardThreeLittlePigsPL,
-  TemplateLandingPageEN,
-  TemplateLandingPagePL,
-} from '@/translation';
 
 import {
   CARD_GOLDILOCK,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
-import type {
-  ActiveTranslation as ActiveTranslationType,
-  TemplateLandingPage as TemplateLandingPageType,
-} from './TemplateLandingPage.types';
+import { useTranslations } from './TemplateLandingPage.translations';
+import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
 
 const cookieBannerCheckAndRender = (consentStatus: boolean) => {
   if (!consentStatus) {
@@ -41,30 +28,9 @@ const cookieBannerCheckAndRender = (consentStatus: boolean) => {
   }
 };
 
-const translations = {
-  en: {
-    template: TemplateLandingPageEN,
-    goldilock: StoryCardGoldilockEN,
-    pigs: StoryCardThreeLittlePigsEN,
-  },
-  pl: {
-    template: TemplateLandingPagePL,
-    goldilock: StoryCardGoldilockPL,
-    pigs: StoryCardThreeLittlePigsPL,
-  },
-};
-
 export const TemplateLandingPage: TemplateLandingPageType = () => {
   const { settings } = useSettingsContext();
-  const { languageInfo } = useLanguageContext();
-  const [activeTranslations, setActiveTranslations] =
-    useState<ActiveTranslationType>(translations.en);
-
-  useEffect(() => {
-    setActiveTranslations(translations[languageInfo] || translations.en);
-  }, [languageInfo]);
-
-  const { template, goldilock, pigs } = activeTranslations;
+  const { template, goldilock, pigs } = useTranslations();
 
   return (
     <>
