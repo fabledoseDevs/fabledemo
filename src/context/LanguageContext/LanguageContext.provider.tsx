@@ -18,8 +18,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const [cookies, setCookie] = useCookies(['language']);
   const activeLanguage = cookies.language;
 
-  const [languageInfo, setLanguageInfo] =
-    useState<ACTIVE_LANGUAGE>(activeLanguage);
+  const [languageInfo, setLanguageInfo] = useState<ACTIVE_LANGUAGE>(
+    activeLanguage || ACTIVE_LANGUAGE.EN,
+  );
 
   useEffect(() => {
     if (!cookies.language) {
@@ -38,7 +39,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     setCookie('language', languageInfo, { maxAge: 2592000 });
-  }, [languageInfo]);
+  }, [languageInfo, cookies.language]);
 
   return (
     <LanguageContext.Provider value={{ languageInfo, setLanguageInfo }}>

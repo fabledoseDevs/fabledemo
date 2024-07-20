@@ -13,22 +13,22 @@ import {
   LanguageSelectorBody,
   StaticIcon,
 } from './LanguageSelector.styled';
-import type {
-  FlagSelector as FlagSelectorType,
-  LanguageSelector as LanguageSelectorType,
-} from './LanguageSelector.types';
+import type { LanguageSelector as LanguageSelectorType } from './LanguageSelector.types';
 
 export const LanguageSelector: LanguageSelectorType = () => {
   const { languageInfo, setLanguageInfo } = useLanguageContext();
+  const [activeFlag, setActiveFlag] = useState<'pl' | 'en' | ''>('');
   const [expandSelector, setExpandSelector] = useState<boolean>(false);
   const selectorRef = useRef<HTMLDivElement>(null);
 
   const switchToEnglish = () => {
     setLanguageInfo(ACTIVE_LANGUAGE.EN);
+
     setExpandSelector(false);
   };
   const switchToPolski = () => {
     setLanguageInfo(ACTIVE_LANGUAGE.PL);
+
     setExpandSelector(false);
   };
 
@@ -56,27 +56,28 @@ export const LanguageSelector: LanguageSelectorType = () => {
     };
   }, [expandSelector]);
 
-  const flagSelector: FlagSelectorType = language => {
-    switch (language) {
-      case ACTIVE_LANGUAGE.EN:
-        return (
-          <Image src={FlagEN} alt={'English Language'} width={46} height={46} />
-        );
+  useEffect(() => {
+    switch (languageInfo) {
       case ACTIVE_LANGUAGE.PL:
-        return (
-          <Image src={FlagPL} alt={'Język polski'} width={46} height={46} />
-        );
+        setActiveFlag('pl');
+        break;
+      case ACTIVE_LANGUAGE.EN:
+        setActiveFlag('en');
+        break;
       default:
-        return (
-          <Image src={FlagEN} alt={'English Language'} width={46} height={46} />
-        );
+        setActiveFlag('en');
     }
-  };
+  }, [languageInfo]);
 
   return (
     <LanguageSelectorBody ref={selectorRef}>
       <StaticIcon onClick={expandSelectorHandler}>
-        {flagSelector(languageInfo)}
+        {activeFlag === 'en' && (
+          <Image alt={'English'} src={FlagEN} width={46} height={46} />
+        )}
+        {activeFlag === 'pl' && (
+          <Image alt={'Polski'} src={FlagPL} width={46} height={46} />
+        )}
       </StaticIcon>
       {expandSelector && (
         <ExpandedStateWrapper>
@@ -84,7 +85,7 @@ export const LanguageSelector: LanguageSelectorType = () => {
             <Lang>English</Lang>
             <Image
               src={FlagEN}
-              alt={'English Language'}
+              alt={'English language'}
               width={36}
               height={36}
             />

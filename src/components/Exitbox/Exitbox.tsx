@@ -5,32 +5,37 @@ import {
   PURPOSE,
 } from '@/components/Button/Button.types';
 import ModalWindow from '@/components/ModalWindow';
+import { quitStoryUiCleanup } from '@/helpers/storyUiCleanup';
 
-import { quitStoryUiCleanup } from '../../helpers/storyUiCleanup';
 import { ExitboxContainer } from './Exitbox.styled';
+import { useTranslation } from './Exitbox.translations';
 import type { Exitbox as ExitboxType } from './Exitbox.types';
 
-export const Exitbox: ExitboxType = ({ exitFunction }) => (
-  <ModalWindow exitFunction={exitFunction}>
-    <ExitboxContainer>
-      <h3>Czy chesz zakończyć czytanie i wrócić do strony głównej?</h3>
-      <div>
-        <Button
-          label={'Tak, wracam do strony głównej'}
-          colorVariant={COLOR_VARIANTS.GREEN}
-          fontVariant={FONT_VARIANTS.STANDARD}
-          purpose={PURPOSE.ANCHOR}
-          anchorLink={'/'}
-          onclickAction={quitStoryUiCleanup}
-        />
-        <Button
-          label={'Nie, chcę czytać dalej'}
-          colorVariant={COLOR_VARIANTS.WHITE}
-          fontVariant={FONT_VARIANTS.STANDARD}
-          purpose={PURPOSE.FUNCTION_TRIGGER}
-          onclickAction={() => exitFunction(false)}
-        />
-      </div>
-    </ExitboxContainer>
-  </ModalWindow>
-);
+export const Exitbox: ExitboxType = ({ exitFunction }) => {
+  const { headline, acceptButton, declineButton } = useTranslation();
+
+  return (
+    <ModalWindow exitFunction={exitFunction}>
+      <ExitboxContainer>
+        <h3>{headline}</h3>
+        <div>
+          <Button
+            label={acceptButton}
+            colorVariant={COLOR_VARIANTS.GREEN}
+            fontVariant={FONT_VARIANTS.STANDARD}
+            purpose={PURPOSE.ANCHOR}
+            anchorLink={'/'}
+            onclickAction={quitStoryUiCleanup}
+          />
+          <Button
+            label={declineButton}
+            colorVariant={COLOR_VARIANTS.WHITE}
+            fontVariant={FONT_VARIANTS.STANDARD}
+            purpose={PURPOSE.FUNCTION_TRIGGER}
+            onclickAction={() => exitFunction(false)}
+          />
+        </div>
+      </ExitboxContainer>
+    </ModalWindow>
+  );
+};
