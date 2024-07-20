@@ -23,6 +23,7 @@ export const CARD_THREE_PIGGIES: CardData = {
   detailedTags: [
     TAG_NAMES.HELPFULNESS,
     TAG_NAMES.RESPONSIBILITY,
+    TAG_NAMES.DILIGENCE,
     TAG_NAMES.FAMILY,
   ],
 };
