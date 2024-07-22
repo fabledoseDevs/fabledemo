@@ -8,6 +8,7 @@ import FlagPL from '@/img/flags/icons8-poland.png';
 
 import {
   ExpandedStateWrapper,
+  Label,
   Lang,
   LanguageButton,
   LanguageSelectorBody,
@@ -72,6 +73,7 @@ export const LanguageSelector: LanguageSelectorType = () => {
   return (
     <LanguageSelectorBody ref={selectorRef}>
       <StaticIcon onClick={expandSelectorHandler}>
+        <Label>Lang:</Label>
         {activeFlag === 'en' && (
           <Image alt={'English'} src={FlagEN} width={46} height={46} />
         )}

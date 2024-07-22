@@ -95,9 +95,9 @@ interface TemplateLandingPageTT {
   };
 }
 
-export interface Translation<T> {
-  en: T;
-  pl: T;
+export interface Translation<TT> {
+  en: TT;
+  pl: TT;
 }
 
 export type CookieBannerTranslation = Translation<CookieBannerTT>;

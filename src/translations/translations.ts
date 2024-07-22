@@ -294,15 +294,15 @@ export const TemplateLandingPageTranslations: TemplateLandingPageTranslation = {
   },
 };
 
-export const useTranslation = <T>(translations: Translation<T>): T => {
+export const useTranslation = <TT>(translations: Translation<TT>): TT => {
   const { languageInfo } = useLanguageContext();
-  const [activeTranslations, setActiveTranslations] = useState<T>(
+  const [activeTranslations, setActiveTranslations] = useState<TT>(
     translations.en,
   );
 
   useEffect(() => {
     setActiveTranslations(translations[languageInfo] || translations.en);
-  }, [languageInfo, translations]);
+  }, [languageInfo]);
 
   return activeTranslations;
 };
