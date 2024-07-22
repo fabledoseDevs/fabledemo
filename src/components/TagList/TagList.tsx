@@ -13,7 +13,7 @@ import {
   TagsListUl,
   TagsSummaryButton,
 } from './TagList.styled';
-import { useTranslations } from './TagList.translations';
+import { useTranslation } from './TagList.translations';
 import type { TagList as TagListType } from './TagList.types';
 
 export const TagList: TagListType = ({
@@ -23,7 +23,7 @@ export const TagList: TagListType = ({
   synopsis,
 }) => {
   const [isInfoModalActive, setInfoModalActive] = useState<boolean>(false);
-  const { general, themes, details } = useTranslations();
+  const { general, themes, details } = useTranslation();
 
   return (
     <>

@@ -27,7 +27,7 @@ export const CookieBannerTranslations: Translation = {
   },
 };
 
-export const useTranslations: UseTranslationType = () => {
+export const useTranslation: UseTranslationType = () => {
   const { languageInfo } = useLanguageContext();
   const [activeTranslations, setActiveTranslations] = useState<CookieBannerTT>(
     CookieBannerTranslations.en,

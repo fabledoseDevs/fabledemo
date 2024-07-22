@@ -11,7 +11,7 @@ import {
   TagColumn,
   TagSorter,
 } from './Tagbox.styled';
-import { useTranslations } from './Tagbox.translations';
+import { useTranslation } from './Tagbox.translations';
 import type { Tagbox as TagboxType } from './Tagbox.types';
 
 export const Tagbox: TagboxType = ({
@@ -21,7 +21,7 @@ export const Tagbox: TagboxType = ({
   storyTitle,
   synopsis,
 }) => {
-  const { tagboxTitle, tagboxSynopsis } = useTranslations();
+  const { tagboxTitle, tagboxSynopsis } = useTranslation();
 
   return (
     <>

@@ -5,7 +5,7 @@ import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.pr
 import type {
   TagListTT,
   Translation,
-  UseTranslation as UseTranslationsType,
+  UseTranslation as UseTranslationType,
 } from './TagList.types';
 
 export const TagListTranslations: Translation = {
@@ -21,7 +21,7 @@ export const TagListTranslations: Translation = {
   },
 };
 
-export const useTranslations: UseTranslationsType = () => {
+export const useTranslation: UseTranslationType = () => {
   const { languageInfo } = useLanguageContext();
   const [activeTranslations, setActiveTranslations] = useState<TagListTT>(
     TagListTranslations.en,

@@ -14,5 +14,6 @@ export interface Translation {
 export interface ExitboxProps {
   exitFunction: Dispatch<SetStateAction<boolean>>;
 }
+
 export type UseTranslation = () => ExitboxTT;
 export type Exitbox = (props: ExitboxProps) => ReactElement;

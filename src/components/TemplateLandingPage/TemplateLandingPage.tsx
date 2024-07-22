@@ -19,7 +19,7 @@ import {
   CARD_GOLDILOCK,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
-import { useTranslations } from './TemplateLandingPage.translations';
+import { useTranslation } from './TemplateLandingPage.translations';
 import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
 
 const cookieBannerCheckAndRender = (consentStatus: boolean) => {
@@ -30,7 +30,7 @@ const cookieBannerCheckAndRender = (consentStatus: boolean) => {
 
 export const TemplateLandingPage: TemplateLandingPageType = () => {
   const { settings } = useSettingsContext();
-  const { template, goldilock, pigs } = useTranslations();
+  const { template, goldilock, pigs } = useTranslation();
 
   return (
     <>

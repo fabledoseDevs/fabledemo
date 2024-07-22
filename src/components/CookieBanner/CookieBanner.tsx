@@ -4,7 +4,6 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
-import { useTranslations } from '@/components/CookieBanner/CookieBanner.translations';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 
 import {
@@ -13,11 +12,12 @@ import {
   ContentContainer,
   TextField,
 } from './CookieBanner.styled';
+import { useTranslation } from './CookieBanner.translations';
 import type { CookieBanner as CookieBannerType } from './CookieBanner.types';
 
 export const CookieBanner: CookieBannerType = () => {
   const { setSettings } = useSettingsContext();
-  const { headline, firstPart, secondPart } = useTranslations();
+  const { headline, firstPart, secondPart } = useTranslation();
   const handleCookieConsent = (cookieConsent: boolean) => {
     setSettings(prevSettings => ({ ...prevSettings, cookieConsent }));
   };

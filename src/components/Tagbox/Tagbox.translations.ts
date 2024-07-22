@@ -19,7 +19,7 @@ export const TagboxTranslations: Translation = {
   },
 };
 
-export const useTranslations: UseTranslationType = () => {
+export const useTranslation: UseTranslationType = () => {
   const { languageInfo } = useLanguageContext();
   const [activeTranslations, setActiveTranslations] = useState<TagboxTT>(
     TagboxTranslations.en,
