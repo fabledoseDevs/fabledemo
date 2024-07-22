@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import { useTranslation } from '@/components/Footer/Footer.translations';
 import Logo from '@/components/Logo';
 import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import SocialIcons from '@/components/SocialIcons';
+import { FooterTranslations, useTranslation } from '@/translations';
 
 import { Copyrights, StyledFooter } from './Footer.styled';
 import type { Footer as FooterType } from './Footer.types';
@@ -11,7 +11,7 @@ import type { Footer as FooterType } from './Footer.types';
 const date = new Date();
 
 export const Footer: FooterType = () => {
-  const { mainCopyrights, copyrightsNote } = useTranslation();
+  const { mainCopyrights, copyrightsNote } = useTranslation(FooterTranslations);
 
   return (
     <StyledFooter>

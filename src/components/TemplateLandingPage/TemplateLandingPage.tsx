@@ -14,12 +14,18 @@ import Separator from '@/components/Separator';
 import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
+import {
+  JumbotronTranslations,
+  StoryCardGoldilock,
+  StoryCardThreeLittlePigs,
+  TemplateLandingPageTranslations,
+  useTranslation,
+} from '@/translations';
 
 import {
   CARD_GOLDILOCK,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
-import { useTranslation } from './TemplateLandingPage.translations';
 import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
 
 const cookieBannerCheckAndRender = (consentStatus: boolean) => {
@@ -30,40 +36,61 @@ const cookieBannerCheckAndRender = (consentStatus: boolean) => {
 
 export const TemplateLandingPage: TemplateLandingPageType = () => {
   const { settings } = useSettingsContext();
-  const { template, goldilock, pigs } = useTranslation();
+  const {
+    title: goldilockTitle,
+    synopsis: goldilockSynopsis,
+    summary: goldilockSummary,
+    url: goldilockUrl,
+  } = useTranslation(StoryCardGoldilock);
+  const {
+    title: pigsTitle,
+    synopsis: pigsSynopsis,
+    summary: pigsSummary,
+    url: pigsUrl,
+  } = useTranslation(StoryCardThreeLittlePigs);
+  const {
+    subtitle: jumboSubtitle,
+    before: jumboBefore,
+    after: jumboAfter,
+    redLineText: jumboRedLine,
+  } = useTranslation(JumbotronTranslations);
+  const {
+    storyCardButtonLabel: { read, comingSoon },
+    projectSummary: { mainText, supplementaryText },
+  } = useTranslation(TemplateLandingPageTranslations);
 
   return (
     <>
       <Jumbotron
-        subtitle={template.jumbotron.subtitle}
+        subtitle={jumboSubtitle}
         header={{
-          before: template.jumbotron.before,
-          after: template.jumbotron.after,
+          before: jumboBefore,
+          after: jumboAfter,
         }}
-        redLineText={template.jumbotron.redLineText}
+        redLineText={jumboRedLine}
       />
       <div id="content-start" />
       <Separator type={'SMALL'} />
       <StoryCard
         bookCover={{
           src: CARD_GOLDILOCK.thumb,
-          alt: goldilock.title,
+          alt: goldilockTitle,
           width: 640,
           height: 340,
         }}
         layout={BOOKCARD_LAYOUT.IMAGE_LEFT}
         content={{
-          bookTitle: goldilock.title,
+          bookTitle: goldilockTitle,
           ctaButton: {
             purpose: PURPOSE.ANCHOR,
-            label: template.storyCardButtonLabel.read,
-            anchorLink: goldilock.url,
+            label: read,
+            anchorLink: goldilockUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: false,
           },
-          summary: goldilock.summary,
-          synopsis: goldilock.synopsis,
+          summary: goldilockSummary,
+          synopsis: goldilockSynopsis,
           iconsBlock: {
             mainTags: CARD_GOLDILOCK.mainTags,
             extraTags: CARD_GOLDILOCK.detailedTags,
@@ -73,23 +100,23 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
       <StoryCard
         bookCover={{
           src: CARD_THREE_PIGGIES.thumb,
-          alt: pigs.title,
+          alt: pigsTitle,
           width: 640,
           height: 340,
         }}
         layout={CARD_THREE_PIGGIES.cardLayout}
         content={{
-          bookTitle: pigs.title,
+          bookTitle: pigsTitle,
           ctaButton: {
             purpose: PURPOSE.FUNCTION_TRIGGER,
-            label: template.storyCardButtonLabel.comingSoon,
-            anchorLink: pigs.url,
+            label: comingSoon,
+            anchorLink: pigsUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: true,
           },
-          summary: pigs.summary,
-          synopsis: pigs.synopsis,
+          summary: pigsSummary,
+          synopsis: pigsSynopsis,
           iconsBlock: {
             mainTags: CARD_THREE_PIGGIES.mainTags,
             extraTags: CARD_THREE_PIGGIES.detailedTags,
@@ -98,8 +125,8 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
       />
       <Separator type={'SMALL'} />
       <ProjectSummary
-        mainText={template.projectSummary.mainText}
-        supplementaryText={template.projectSummary.supplementaryText}
+        mainText={mainText}
+        supplementaryText={supplementaryText}
       />
       <Separator type={'MEDIUM'} />
       {cookieBannerCheckAndRender(settings.cookieConsent)}

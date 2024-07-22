@@ -24,7 +24,8 @@
       "@/components/*": ["./src/components/*"],
       "@/lib*": ["./lib/*"],
       "@/img/*": ["./public/images/*"],
-      "@/helpers/*": ["./src/helpers/*"]
+      "@/helpers/*": ["./src/helpers/*"],
+      "@/translations": ["./src/translations/translations.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

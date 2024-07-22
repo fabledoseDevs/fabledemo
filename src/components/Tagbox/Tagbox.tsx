@@ -2,6 +2,7 @@ import React from 'react';
 
 import ModalWindow from '@/components/ModalWindow';
 import TagElement from '@/components/TagElement';
+import { TagboxTranslations, useTranslation } from '@/translations';
 import type { TAG_NAMES } from '@/types/fairytale.types';
 
 import {
@@ -11,7 +12,6 @@ import {
   TagColumn,
   TagSorter,
 } from './Tagbox.styled';
-import { useTranslation } from './Tagbox.translations';
 import type { Tagbox as TagboxType } from './Tagbox.types';
 
 export const Tagbox: TagboxType = ({
@@ -21,7 +21,7 @@ export const Tagbox: TagboxType = ({
   storyTitle,
   synopsis,
 }) => {
-  const { tagboxTitle, tagboxSynopsis } = useTranslation();
+  const { tagboxTitle, tagboxSynopsis } = useTranslation(TagboxTranslations);
 
   return (
     <>

@@ -2,6 +2,7 @@ import { InfoCircle } from '@styled-icons/bootstrap/InfoCircle';
 import React, { useState } from 'react';
 
 import Tagbox from '@/components/Tagbox';
+import { TagListTranslations, useTranslation } from '@/translations';
 import type { TAG_NAMES } from '@/types/fairytale.types';
 
 import TagElement from '../TagElement';
@@ -13,7 +14,6 @@ import {
   TagsListUl,
   TagsSummaryButton,
 } from './TagList.styled';
-import { useTranslation } from './TagList.translations';
 import type { TagList as TagListType } from './TagList.types';
 
 export const TagList: TagListType = ({
@@ -23,7 +23,7 @@ export const TagList: TagListType = ({
   synopsis,
 }) => {
   const [isInfoModalActive, setInfoModalActive] = useState<boolean>(false);
-  const { general, themes, details } = useTranslation();
+  const { general, themes, details } = useTranslation(TagListTranslations);
 
   return (
     <>

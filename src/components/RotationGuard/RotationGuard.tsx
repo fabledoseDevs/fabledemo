@@ -1,3 +1,5 @@
+import { RotationGuardTranslations, useTranslation } from '@/translations';
+
 import {
   ContentWrapper,
   DetailedMessage,
@@ -5,11 +7,12 @@ import {
   MainMessage,
   RotationIcon,
 } from './RotationGuard.styled';
-import { useTranslation } from './RotationGuard.translations';
 import type { RotationGuard as RotationGuardType } from './RotationGuard.types';
 
 export const RotationGuard: RotationGuardType = () => {
-  const { mainMessage, detailedMessage } = useTranslation();
+  const { mainMessage, detailedMessage } = useTranslation(
+    RotationGuardTranslations,
+  );
   return (
     <GuardBody>
       <ContentWrapper>

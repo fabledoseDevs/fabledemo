@@ -6,13 +6,14 @@ import {
 } from '@/components/Button/Button.types';
 import ModalWindow from '@/components/ModalWindow';
 import { quitStoryUiCleanup } from '@/helpers/storyUiCleanup';
+import { ExitboxTranslations, useTranslation } from '@/translations';
 
 import { ExitboxContainer } from './Exitbox.styled';
-import { useTranslation } from './Exitbox.translations';
 import type { Exitbox as ExitboxType } from './Exitbox.types';
 
 export const Exitbox: ExitboxType = ({ exitFunction }) => {
-  const { headline, acceptButton, declineButton } = useTranslation();
+  const { headline, acceptButton, declineButton } =
+    useTranslation(ExitboxTranslations);
 
   return (
     <ModalWindow exitFunction={exitFunction}>

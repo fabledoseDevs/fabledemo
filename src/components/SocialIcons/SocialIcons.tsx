@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { SocialIconsTranslations, useTranslation } from '@/translations';
+
 import {
   FacebookIcon,
   InstagramIcon,
@@ -7,12 +9,11 @@ import {
   SocialIconsBody,
   SubstackIcon,
 } from './SocialIcons.styled';
-import { useTranslation } from './SocialIcons.translation';
 import type { SocialIcons as SocialIconsType } from './SocialIcons.types';
 
 export const SocialIcons: SocialIconsType = () => {
   const { cta, fbLabel, fbLink, instLabel, instLink, subLabel, subLink } =
-    useTranslation();
+    useTranslation(SocialIconsTranslations);
 
   return (
     <SocialIconsBody>
