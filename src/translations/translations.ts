@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react';
 
 import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.provider';
 
+import type { StorySummaryTranslation } from './types';
 import type {
   CookieBannerTranslation,
   ExitboxTranslation,
   FooterTranslation,
   JumbotronTranslation,
   LoadingScreenTranslation,
+  ModalWindowTranslation,
   RotationGuardTranslation,
   SocialIconsTranslation,
   StoryCardTranslation,
+  StoryPageTranslation,
+  SubstackButtonTranslation,
   TagboxTranslation,
   TagListTranslation,
   TemplateLandingPageTranslation,
@@ -93,6 +97,12 @@ export const LoadingScreenTranslations: LoadingScreenTranslation = {
   },
 };
 
+// ModalWindow
+export const ModalWindowTranslations: ModalWindowTranslation = {
+  en: { exit: 'Close' },
+  pl: { exit: 'Zamknij' },
+};
+
 // RotationGuard
 export const RotationGuardTranslations: RotationGuardTranslation = {
   en: {
@@ -172,6 +182,48 @@ export const StoryCardThreeLittlePigs: StoryCardTranslation = {
     summary:
       'Trzy świnki wyruszają w wielki świat aby rozpocząć samodzielne życie. Ich historia nabiera dramatycznych barw, gdy muszą się skonfrontować z wilkiem.',
     synopsis: '',
+  },
+};
+
+// StoryPage
+export const StoryPageTranslations: StoryPageTranslation = {
+  en: { theEnd: 'The End', restart: 'Read again', goBack: 'Go to homepage' },
+  pl: {
+    theEnd: 'Koniec',
+    restart: 'Od początku',
+    goBack: 'Strona główna',
+  },
+};
+
+// StorySummary
+export const StorySummaryTranslations: StorySummaryTranslation = {
+  en: {
+    author: 'Author:',
+    adaptation: 'Adaptation:',
+    illustrations: 'Illustrations:',
+    readCTA: 'Read Fable:',
+  },
+  pl: {
+    author: 'Autor:',
+    adaptation: 'Adaptatcja:',
+    illustrations: 'Ilustracje:',
+    readCTA: 'Czytaj Bajkę',
+  },
+};
+
+// SubstackButton
+export const SubstackButtonTranslations: SubstackButtonTranslation = {
+  en: {
+    substackLink: 'https://fabledose.substack.com',
+    ariaLabel: 'Sign in to our Newsletter',
+    title: 'Our Newsletter and Blog',
+    arrowAlt: 'Visit Substack',
+  },
+  pl: {
+    substackLink: 'https://fabledose-polska.substack.com',
+    ariaLabel: 'Zapisz się do Newslettera',
+    title: 'Nasz Newsletter i Blog',
+    arrowAlt: 'Przejdź do Substack',
   },
 };
 

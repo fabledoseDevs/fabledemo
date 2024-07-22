@@ -1,17 +1,18 @@
 import { Close } from '@styled-icons/ionicons-outline/Close';
 import React, { useEffect } from 'react';
 
+import { ModalWindowTranslations, useTranslation } from '@/translations';
+
 import {
   ExitButton,
   ExitLayer,
   ModalContentContainer,
   ModalWindowBody,
 } from './ModalWindow.styled';
-import { useTranslation } from './ModalWindow.translations';
 import type { ModalWindow as ModalWindowType } from './ModalWindow.types';
 
 export const ModalWindow: ModalWindowType = ({ exitFunction, children }) => {
-  const { exit } = useTranslation();
+  const { exit } = useTranslation(ModalWindowTranslations);
 
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {

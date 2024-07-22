@@ -27,6 +27,10 @@ interface LoadingScreenTT {
   alt: string;
 }
 
+export interface ModalWindowTT {
+  exit: string;
+}
+
 interface RotationGuardTT {
   mainMessage: string;
   detailedMessage: string[];
@@ -47,6 +51,26 @@ interface StoryCardTT {
   url: string;
   summary: string;
   synopsis: string;
+}
+
+interface StoryPageTT {
+  theEnd: string;
+  restart: string;
+  goBack: string;
+}
+
+interface StorySummaryTT {
+  author: string;
+  adaptation: string;
+  illustrations: string;
+  readCTA: string;
+}
+
+interface SubstackButtonTT {
+  substackLink: string;
+  ariaLabel: string;
+  title: string;
+  arrowAlt: string;
 }
 
 interface TagboxTT {
@@ -81,9 +105,13 @@ export type ExitboxTranslation = Translation<ExitboxTT>;
 export type FooterTranslation = Translation<FooterTT>;
 export type JumbotronTranslation = Translation<JumbotronTT>;
 export type LoadingScreenTranslation = Translation<LoadingScreenTT>;
+export type ModalWindowTranslation = Translation<ModalWindowTT>;
 export type RotationGuardTranslation = Translation<RotationGuardTT>;
 export type SocialIconsTranslation = Translation<SocialIconsTT>;
 export type StoryCardTranslation = Translation<StoryCardTT>;
+export type StoryPageTranslation = Translation<StoryPageTT>;
+export type StorySummaryTranslation = Translation<StorySummaryTT>;
+export type SubstackButtonTranslation = Translation<SubstackButtonTT>;
 export type TagboxTranslation = Translation<TagboxTT>;
 export type TagListTranslation = Translation<TagListTT>;
 export type TemplateLandingPageTranslation = Translation<TemplateLandingPageTT>;
