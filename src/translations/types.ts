@@ -95,6 +95,37 @@ interface TemplateLandingPageTT {
   };
 }
 
+interface ToolboxTT {
+  textTheme: string;
+  default: string;
+  whiteText: string;
+  yellowText: string;
+  blackText: string;
+  whiteTextLightShadow: string;
+  whiteTextStrongShadow: string;
+  yellowTextLightShadow: string;
+  yellowTextStrongShadow: string;
+  fontSize: string;
+  small: string;
+  medium: string;
+  large: string;
+  previewText: string;
+}
+
+interface TutorialTT {
+  tutorialWelcome: string;
+  yes: string;
+  no: string;
+  previewText: string;
+  stepSlide: string;
+  stepBoxBasic: string;
+  stepBoxAdvanced: string;
+  stepOptions: string | string[];
+  stepSlideSwitch: string;
+  stepOutro: string;
+  killTutorial: string;
+}
+
 export interface Translation<TT> {
   en: TT;
   pl: TT;
@@ -115,3 +146,5 @@ export type SubstackButtonTranslation = Translation<SubstackButtonTT>;
 export type TagboxTranslation = Translation<TagboxTT>;
 export type TagListTranslation = Translation<TagListTT>;
 export type TemplateLandingPageTranslation = Translation<TemplateLandingPageTT>;
+export type ToolboxTranslation = Translation<ToolboxTT>;
+export type TutorialTranslation = Translation<TutorialTT>;

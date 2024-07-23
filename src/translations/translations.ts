@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.provider';
 
-import type { StorySummaryTranslation } from './types';
 import type {
   CookieBannerTranslation,
   ExitboxTranslation,
@@ -14,11 +13,14 @@ import type {
   SocialIconsTranslation,
   StoryCardTranslation,
   StoryPageTranslation,
+  StorySummaryTranslation,
   SubstackButtonTranslation,
   TagboxTranslation,
   TagListTranslation,
   TemplateLandingPageTranslation,
+  ToolboxTranslation,
   Translation,
+  TutorialTranslation,
 } from './types';
 
 // CookieBanner
@@ -256,7 +258,7 @@ export const TagListTranslations: TagListTranslation = {
   },
 };
 
-//TemplateLandingPage
+// TemplateLandingPage
 export const TemplateLandingPageTranslations: TemplateLandingPageTranslation = {
   en: {
     storyCardButtonLabel: {
@@ -291,6 +293,98 @@ export const TemplateLandingPageTranslations: TemplateLandingPageTranslation = {
         'Dziękujemy za zainteresowanie naszym projektem. Do usłyszenia wkrótce!',
       ],
     },
+  },
+};
+
+// Toolbox
+export const ToolboxTranslations: ToolboxTranslation = {
+  en: {
+    textTheme: 'Font theme',
+    default: 'Default',
+    whiteText: 'White',
+    yellowText: 'Yellow',
+    blackText: 'Black',
+    whiteTextLightShadow: 'White on Light Shadow',
+    whiteTextStrongShadow: 'White on Strong Shadow',
+    yellowTextLightShadow: 'Yellow on Light Shadow',
+    yellowTextStrongShadow: 'Yellow on Strong Shadow',
+    fontSize: 'Font size',
+    small: 'Small',
+    medium: 'Medium',
+    large: 'Large',
+    previewText:
+      "Long ago, in a distant land surrounded by dark forests and picturesque mountains, there lived a beautiful princess named Snow White. Her skin was as pale and her hair was as black as ink. However, Snow White's happy life was threatened by the whims of her wicked stepmother, who, above all, desired to be considered the most beautiful...",
+  },
+  pl: {
+    textTheme: 'Wygląd tekstu',
+    default: 'Domyślne',
+    whiteText: 'Biały Tekst',
+    yellowText: 'Żółty Tekst',
+    blackText: 'Czarny Tekst',
+    whiteTextLightShadow: 'Biały Tekst / Delikatny Cień',
+    whiteTextStrongShadow: 'Biały Tekst / Intensywny Cień',
+    yellowTextLightShadow: 'Żółty Tekst / Delikatny Cień',
+    yellowTextStrongShadow: 'Żółty Tekst / Intensywny Cień',
+    fontSize: 'Wielkość czcionki ',
+    small: 'Mała',
+    medium: 'Średnia',
+    large: 'Duża',
+    previewText:
+      'Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej skóra była biała jak śnieg, a włosy czarne jak atrament. Jednak szczęśliwe życie Śnieżki było zagrożone przez kaprys jej złej macochy, która ponad wszystko, pragnęła być uznawaną za najpięknijeszą...',
+  },
+};
+
+// Tutorial
+export const TutorialTranslations: TutorialTranslation = {
+  en: {
+    tutorialWelcome:
+      'Would you like to use the tutorial that will guide you on how to read our fairy tales?',
+    yes: 'Yes',
+    no: 'No',
+    previewText:
+      'His brother Gucio wandered to the river where he decided to build his own house. "I don’t feel like spending too much time on building. I don’t know much about it, and besides, I want to fish in this river. That beaver lodge looks beautiful. I’ll make my house in a similar style." And he set to work. He collected branches, sticks, and fallen tree trunks. Then he built a sturdy hut. He made the door from found planks. He even added a window with shutters. Building took him three days. Satisfied with himself, he dusted off his hands and sat down to fish.',
+    stepSlide:
+      'The Fabledose Library is for displaying animated fairy tales for reading. When you open a fairy tale, you will see an animated page of our virtual children’s book.',
+    stepBoxBasic:
+      'The animated background always comes with text. Its content matches the image, creating a cohesive whole.',
+    stepBoxAdvanced:
+      'If the letters are too small or blend with the animation in the background, you can easily adjust them to your needs by increasing the font size, changing its colour, or adding a grey background behind the text.',
+    stepOptions: [
+      'In the bottom left corner, there are settings icons. The home icon (',
+      ') will take you back to the main page. The settings list icon (',
+      ') will open a settings window where you can define the font size and its background. The frame icon (',
+      ') will switch the fairy tale to full-screen mode.',
+    ],
+    stepSlideSwitch:
+      'In the bottom right corner, there is information about the length of the fairy tale and the current page. You can switch pages with the arrows on the left and right sides of the numbering. Additionally, you can switch pages with a swipe gesture (tablet and smartphone), arrow keys on the keyboard and the mouse wheel.',
+    stepOutro:
+      'That’s it! Isn’t it simple? You are ready to start your adventure with Fabledose fairy tales. By pressing the right arrow, you will exit the tutorial.',
+    killTutorial: 'Turn Off Tutorial',
+  },
+  pl: {
+    tutorialWelcome:
+      'Czy chcesz skorzystać z samouczka, który podpowie ci jak czytać nasze bajki?',
+    yes: 'Tak',
+    no: 'Nie',
+    previewText:
+      'Jego brat Gucio zawędrował nad rzekę, gdzie postanowił zbudować własny domek. "Nie mam ochoty spędzać za dużo czasu na budowaniu. Nie znam się na tym, a poza tym chcę połowić ryby w tej rzece. Tamto żeremie bobrowe wygląda przepięknie. Zrobię swój domek w podobnym tonie" I zabrał się do pracy. Nazbierał gałęzi, patyków i zwalonych pni drzewa. Potem zbudował solidny szałas. Drzwi wykonał ze znalezionych desek. Wstawił nawet okno z okiennicami. Budowanie zajęło mu trzy dni. Zadowolony z siebie otrzepał rączki i usiadł do łowienia ryb.',
+    stepSlide:
+      'Biblioteka Fabledose służy wyświetlaniu animowanych bajek do czytania. Po otworzeniu bajki, Twoim oczom ukaże się animowana strona naszej wirtualnej książki dla dzieci.',
+    stepBoxBasic:
+      'Animowane tło zawsze jest opatrzone tekstem. Jego treść pokrywa się z obrazem, tworząc spójną całość.',
+    stepBoxAdvanced:
+      'Jeżeli literki są zbyt małe lub zlewają się z animacją w tle, możesz je łatwo dostosować do swoich potrzeb, zwiększając rozmiar czcionki, zmieniając jej kolor lub dodając szare tło pod tekstem.',
+    stepOptions: [
+      'W lewym dolnym rogu znajdują się ikony ustawień. Ikona domu (',
+      ') zabierze Cię z powrotem do strony głównej. Ikona listy ustawień (',
+      ') otworzy okno z ustawieniami, gdzie będziesz mógł zdefiniować wielkość czcionki oraz jej tło. Ikona ramki (',
+      ') przełączy bajkę w tryb pełnego ekranu.',
+    ],
+    stepSlideSwitch:
+      'W prawym dolnym rogu znajduje się informacja na temat długości bajki oraz bieżącej strony. Strzałkami z lewej i prawej strony numeracji możesz przełączać strony. Ponadto strony możesz przełączać gestem przesunięcia (tablet i smartfon), klawiszami strzałek na klawiaturze oraz kółkiem myszki.',
+    stepOutro:
+      'To tyle! Prawda, że to banalnie proste? Jesteś gotów, aby rozpocząć przygodę z baśniami Fabledose. Naciskając strzałkę w prawo, opuścisz samouczek.',
+    killTutorial: 'Wyłącz Samouczek',
   },
 };
 
