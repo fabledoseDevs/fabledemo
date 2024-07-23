@@ -1,12 +1,12 @@
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
-import goldilockThumb from '@/img/stories-thumbs/thumb-goldilock.png';
+import goldilocksThumb from '@/img/stories-thumbs/thumb-goldilocks.png';
 import piggiesThumb from '@/img/stories-thumbs/thumb-piggies.png';
 import { TAG_NAMES } from '@/types/fairytale.types';
 
 import type { CardData } from './TemplateLandingPage.types';
 
-export const CARD_GOLDILOCK: CardData = {
-  thumb: goldilockThumb.src,
+export const CARD_GOLDILOCKS: CardData = {
+  thumb: goldilocksThumb.src,
   cardLayout: BOOKCARD_LAYOUT.IMAGE_LEFT,
   mainTags: [TAG_NAMES.AGE_3, TAG_NAMES.CONTEMPORARY_FABLE],
   detailedTags: [

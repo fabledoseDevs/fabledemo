@@ -150,11 +150,11 @@ export const SocialIconsTranslations: SocialIconsTranslation = {
   },
 };
 
-// StoryCard - Goldilock
-export const StoryCardGoldilock: StoryCardTranslation = {
+// StoryCard - Goldilocks
+export const StoryCardGoldilocks: StoryCardTranslation = {
   en: {
-    title: 'Goldilock and Three Bears',
-    url: '/goldilock-and-three-bears',
+    title: 'Goldilocks and Three Bears',
+    url: '/goldilocks-and-three-bears',
     summary:
       "The golden-haired girl accidentally discovers the bears' cabin and begins to create mischief, ultimately learning a lesson about the importance of responsibility.",
     synopsis:

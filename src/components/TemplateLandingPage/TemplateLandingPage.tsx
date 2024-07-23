@@ -16,14 +16,14 @@ import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import {
   JumbotronTranslations,
-  StoryCardGoldilock,
+  StoryCardGoldilocks,
   StoryCardThreeLittlePigs,
   TemplateLandingPageTranslations,
   useTranslation,
 } from '@/translations';
 
 import {
-  CARD_GOLDILOCK,
+  CARD_GOLDILOCKS,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
 import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
@@ -37,11 +37,11 @@ const cookieBannerCheckAndRender = (consentStatus: boolean) => {
 export const TemplateLandingPage: TemplateLandingPageType = () => {
   const { settings } = useSettingsContext();
   const {
-    title: goldilockTitle,
-    synopsis: goldilockSynopsis,
-    summary: goldilockSummary,
-    url: goldilockUrl,
-  } = useTranslation(StoryCardGoldilock);
+    title: goldilocksTitle,
+    synopsis: goldilocksSynopsis,
+    summary: goldilocksSummary,
+    url: goldilocksUrl,
+  } = useTranslation(StoryCardGoldilocks);
   const {
     title: pigsTitle,
     synopsis: pigsSynopsis,
@@ -73,27 +73,27 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
       <Separator type={'SMALL'} />
       <StoryCard
         bookCover={{
-          src: CARD_GOLDILOCK.thumb,
-          alt: goldilockTitle,
+          src: CARD_GOLDILOCKS.thumb,
+          alt: goldilocksTitle,
           width: 640,
           height: 340,
         }}
         layout={BOOKCARD_LAYOUT.IMAGE_LEFT}
         content={{
-          bookTitle: goldilockTitle,
+          bookTitle: goldilocksTitle,
           ctaButton: {
             purpose: PURPOSE.ANCHOR,
             label: read,
-            anchorLink: goldilockUrl,
+            anchorLink: goldilocksUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: false,
           },
-          summary: goldilockSummary,
-          synopsis: goldilockSynopsis,
+          summary: goldilocksSummary,
+          synopsis: goldilocksSynopsis,
           iconsBlock: {
-            mainTags: CARD_GOLDILOCK.mainTags,
-            extraTags: CARD_GOLDILOCK.detailedTags,
+            mainTags: CARD_GOLDILOCKS.mainTags,
+            extraTags: CARD_GOLDILOCKS.detailedTags,
           },
         }}
       />
