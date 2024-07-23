@@ -203,7 +203,7 @@ export const StorySummaryTranslations: StorySummaryTranslation = {
     author: 'Author:',
     adaptation: 'Adaptation:',
     illustrations: 'Illustrations:',
-    readCTA: 'Read Fable:',
+    readCTA: 'Read Fable',
   },
   pl: {
     author: 'Autor:',
