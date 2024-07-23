@@ -11,6 +11,10 @@ export const LanguageSelectorBody = styled.div`
   z-index: 999;
 `;
 
+export const Label = styled.sup`
+  color: ${({ theme }) => theme.palette.darkgray};
+`;
+
 export const StaticIcon = styled.button`
   width: 46px;
   height: 46px;

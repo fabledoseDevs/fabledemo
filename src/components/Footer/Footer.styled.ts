@@ -16,4 +16,14 @@ export const StyledFooter = styled.footer`
 export const Copyrights = styled.p`
   text-align: center;
   font-size: 12px;
+  line-height: 1.5;
+
+  a {
+    font-weight: bold;
+    color: ${({ theme }) => theme.palette.darkgray};
+
+    &:hover {
+      color: ${({ theme }) => theme.palette.green};
+    }
+  }
 `;

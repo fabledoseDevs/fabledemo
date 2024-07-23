@@ -5,9 +5,10 @@ import { useSwiper } from 'swiper/react';
 
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
+import { quitStoryUiCleanup } from '@/helpers/storyUiCleanup';
+import { StoryPageTranslations, useTranslation } from '@/translations';
 import { LAYOUT_VARIANTS } from '@/types/fairytale.types';
 
-import { quitStoryUiCleanup } from '../../helpers/storyUiCleanup';
 import {
   ActionsContainer,
   AnimatedPicture,
@@ -29,6 +30,7 @@ export const StoryPage: StoryPageType = ({
 }) => {
   const { settings } = useSettingsContext();
   const { screenData } = useScreenContext();
+  const { theEnd, restart, goBack } = useTranslation(StoryPageTranslations);
   const swiper = useSwiper();
 
   const imageUrl =
@@ -59,21 +61,21 @@ export const StoryPage: StoryPageType = ({
       <TextContent layout={layout} key={id}>
         {layout === LAYOUT_VARIANTS.FINAL_SLIDE ? (
           <FinalSlideContent>
-            <h2>Koniec</h2>
+            <h2>{theEnd}</h2>
             <ActionsContainer>
               <Link onClick={quitStoryUiCleanup} href={'/'}>
                 <HomeIcon />
-                <span>Strona główna</span>
+                <span>{goBack}</span>
               </Link>
               <button onClick={() => swiper.slideTo(0)}>
                 <RestartIcon />
-                <span>Od początku</span>
+                <span>{restart}</span>
               </button>
             </ActionsContainer>
           </FinalSlideContent>
         ) : (
           <TextBox
-            className={'textBox'}
+            className="textBox"
             textboxTheme={settings.theme}
             fontSize={settings.fontSize}
           >

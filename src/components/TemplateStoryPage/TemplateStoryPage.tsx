@@ -37,7 +37,6 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
       <MetaData {...storyData.info.metaData} />
       {!loadingScreenRemoved && (
         <LoadingScreen
-          loadingLabel={'Ładowanie Bajki'}
           fadeOutReady={loadingScreenFadeOut}
           bgColor={storyData.info.defaultColor}
         />

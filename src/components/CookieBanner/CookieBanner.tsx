@@ -5,6 +5,7 @@ import {
   PURPOSE,
 } from '@/components/Button/Button.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
+import { CookieBannerTranslations, useTranslation } from '@/translations';
 
 import {
   BannerBody,
@@ -16,7 +17,9 @@ import type { CookieBanner as CookieBannerType } from './CookieBanner.types';
 
 export const CookieBanner: CookieBannerType = () => {
   const { setSettings } = useSettingsContext();
-
+  const { headline, firstPart, secondPart } = useTranslation(
+    CookieBannerTranslations,
+  );
   const handleCookieConsent = (cookieConsent: boolean) => {
     setSettings(prevSettings => ({ ...prevSettings, cookieConsent }));
   };
@@ -25,17 +28,11 @@ export const CookieBanner: CookieBannerType = () => {
     <BannerBody>
       <ContentContainer>
         <TextField>
-          <h5>
-            Czy przyniosłeś ciasteczka, aby umilić sobie spotkanie z bajkami?
-          </h5>
+          <h5>{headline}</h5>
           <p>
-            My przynieśliśmy swoje, ale te nie nadają się do jedzenia. Nasze
-            ciasteczka to niewielkie pliki, które zapisujemy na Twoim
-            urządzeniu, aby móc dostarczyć Ci usługę w najlepszej jakości.
+            {firstPart}
             <br />
-            Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały
-            przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody, opuść tę
-            stronę. Jeśli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.
+            {secondPart}
           </p>
         </TextField>
         <ButtonPositioner>

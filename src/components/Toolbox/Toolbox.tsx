@@ -5,6 +5,7 @@ import { TextBox } from '@/components/StoryPage/StoryPage.styled';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import { TEXTBOX_THEME } from '@/context/SettingsContext/SettingsContext.types';
 import { breakpoints } from '@/styles/theme';
+import { ToolboxTranslations, useTranslation } from '@/translations';
 
 import {
   LabelWrapper,
@@ -25,6 +26,22 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
     min: number;
     max: number;
   }>({ min: 0.8, max: 1.4 });
+  const {
+    textTheme,
+    default: textDefault,
+    whiteText,
+    yellowText,
+    blackText,
+    whiteTextLightShadow,
+    whiteTextStrongShadow,
+    yellowTextLightShadow,
+    yellowTextStrongShadow,
+    fontSize,
+    small,
+    medium,
+    large,
+    previewText,
+  } = useTranslation(ToolboxTranslations);
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +89,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
   return (
     <ModalWindow exitFunction={exitFunction}>
       <Settings>
-        <SettingName>Wygląd tekstu</SettingName>
+        <SettingName>{textTheme}</SettingName>
         <SettingsGroup>
           <SettingWrapper>
             <SettingElementWrapper>
@@ -82,7 +99,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                 checked={settings.theme === TEXTBOX_THEME.AUTO}
                 onChange={() => handleThemeChange(TEXTBOX_THEME.AUTO)}
               />
-              <SettingButton>Domyślne</SettingButton>
+              <SettingButton>{textDefault}</SettingButton>
             </SettingElementWrapper>
             <SettingElementWrapper>
               <input
@@ -91,7 +108,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                 checked={settings.theme === TEXTBOX_THEME.TEXT_WHITE}
                 onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_WHITE)}
               />
-              <SettingButton>Biały Tekst</SettingButton>
+              <SettingButton>{whiteText}</SettingButton>
             </SettingElementWrapper>
             <SettingElementWrapper>
               <input
@@ -100,7 +117,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                 checked={settings.theme === TEXTBOX_THEME.TEXT_YELLOW}
                 onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_YELLOW)}
               />
-              <SettingButton>Żółty Tekst</SettingButton>
+              <SettingButton>{yellowText}</SettingButton>
             </SettingElementWrapper>
             <SettingElementWrapper>
               <input
@@ -109,7 +126,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                 checked={settings.theme === TEXTBOX_THEME.TEXT_BLACK}
                 onChange={() => handleThemeChange(TEXTBOX_THEME.TEXT_BLACK)}
               />
-              <SettingButton>Czarny Tekst</SettingButton>
+              <SettingButton>{blackText}</SettingButton>
             </SettingElementWrapper>
           </SettingWrapper>
           <SettingWrapper>
@@ -124,7 +141,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                   handleThemeChange(TEXTBOX_THEME.TEXTBOX_WHITE_STANDARD)
                 }
               />
-              <SettingButton>Biały Tekst / Delikatny Cień</SettingButton>
+              <SettingButton>{whiteTextLightShadow}</SettingButton>
             </SettingElementWrapper>
             <SettingElementWrapper>
               <input
@@ -135,7 +152,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                   handleThemeChange(TEXTBOX_THEME.TEXTBOX_WHITE_INTENSE)
                 }
               />
-              <SettingButton>Biały Tekst / Intensywny Cień</SettingButton>
+              <SettingButton>{whiteTextStrongShadow}</SettingButton>
             </SettingElementWrapper>
             <SettingElementWrapper>
               <input
@@ -148,7 +165,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                   handleThemeChange(TEXTBOX_THEME.TEXTBOX_YELLOW_STANDARD)
                 }
               />
-              <SettingButton>Żółty Tekst / Delikatny Cień</SettingButton>
+              <SettingButton>{yellowTextLightShadow}</SettingButton>
             </SettingElementWrapper>
             <SettingElementWrapper>
               <input
@@ -161,11 +178,11 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
                   handleThemeChange(TEXTBOX_THEME.TEXTBOX_YELLOW_INTENSE)
                 }
               />
-              <SettingButton>Żółty Tekst / Intensywny Cień</SettingButton>
+              <SettingButton>{yellowTextStrongShadow}</SettingButton>
             </SettingElementWrapper>
           </SettingWrapper>
         </SettingsGroup>
-        <SettingName>Wielkość czcionki </SettingName>
+        <SettingName>{fontSize}</SettingName>
         <SettingRangeWrapper>
           <input
             ref={fontRange}
@@ -180,22 +197,15 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
             }
           />
           <LabelWrapper>
-            <span>Mała</span>
-            <span>Średnia</span>
-            <span>Duża</span>
+            <span>{small}</span>
+            <span>{medium}</span>
+            <span>{large}</span>
           </LabelWrapper>
         </SettingRangeWrapper>
       </Settings>
       <Preview>
         <TextBox textboxTheme={settings.theme} fontSize={settings.fontSize}>
-          <p>
-            Dawno temu, w odległej krainie, otoczonej mrocznymi lasami i
-            malowniczymi górami, żyła piękna królewna o imieniu Śnieżka. Jej
-            skóra była biała jak śnieg, a włosy czarne jak atrament. Jednak
-            szczęśliwe życie Śnieżki było zagrożone przez kaprys jej złej
-            macochy, która ponad wszystko, pragnęła być uznawaną za
-            najpięknijeszą...
-          </p>
+          <p>{previewText}</p>
         </TextBox>
       </Preview>
     </ModalWindow>

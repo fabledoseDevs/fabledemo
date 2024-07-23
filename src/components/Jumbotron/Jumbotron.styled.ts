@@ -82,7 +82,7 @@ export const ContentWrapper = styled.div`
 
   h1 {
     font-size: 12px;
-    letter-spacing: 4px;
+    letter-spacing: 16px;
     font-weight: 400;
     width: 100%;
 
@@ -140,17 +140,17 @@ export const RedSpan = styled.span`
   margin-right: 10px;
 
   img {
-    width: 130%;
-    height: 140%;
+    width: 118%;
+    height: 170%;
     position: absolute;
-    top: -5px;
-    left: -14px;
+    top: -8px;
+    left: -10px;
   }
 
   @media ${({ theme }) => theme.media.tablet} {
     img {
-      top: -10px;
-      left: -20px;
+      top: -12px;
+      left: -15px;
     }
   }
 `;

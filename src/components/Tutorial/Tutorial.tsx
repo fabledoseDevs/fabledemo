@@ -11,6 +11,7 @@ import {
   FONT_VARIANTS,
   PURPOSE,
 } from '@/components/Button/Button.types';
+import { TutorialTranslations, useTranslation } from '@/translations';
 
 import { useTutorial } from './Tutorial.hook';
 import {
@@ -34,26 +35,36 @@ import { TUTORIAL_STEPS } from './Tutorial.types';
 export const Tutorial: TutorialType = ({ closeTutorial }) => {
   const { currentStep, setCurrentStep, nextTip, prevTip, killTutorial } =
     useTutorial(closeTutorial);
+  const {
+    tutorialWelcome,
+    yes,
+    no,
+    previewText,
+    stepSlide,
+    stepBoxBasic,
+    stepBoxAdvanced,
+    stepOptions,
+    stepSlideSwitch,
+    stepOutro,
+    killTutorial: killTutorialLabel,
+  } = useTranslation(TutorialTranslations);
 
   return (
     <TutorialBody>
       {currentStep === TUTORIAL_STEPS.INTRO && (
         <GreeterWrapper>
           <GreeterBody>
-            <p>
-              Czy chcesz skorzystać z samouczka, który podpowie ci jak czytać
-              nasze bajki?
-            </p>
+            <p>{tutorialWelcome}</p>
             <ButtonsPositioner>
               <Button
-                label={'Tak'}
+                label={yes}
                 colorVariant={COLOR_VARIANTS.GREEN}
                 fontVariant={FONT_VARIANTS.UPPERCASE}
                 purpose={PURPOSE.FUNCTION_TRIGGER}
                 onclickAction={() => setCurrentStep(TUTORIAL_STEPS.SLIDE)}
               />
               <Button
-                label={'Nie'}
+                label={no}
                 colorVariant={COLOR_VARIANTS.WHITE}
                 fontVariant={FONT_VARIANTS.UPPERCASE}
                 purpose={PURPOSE.FUNCTION_TRIGGER}
@@ -77,18 +88,7 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
                   currentStep === TUTORIAL_STEPS.TEXT_BOX_ADVANCED
                 }
               >
-                <p>
-                  Jego brat Gucio zawędrował nad rzekę, gdzie postanowił
-                  zbudować własny domek. &quot;Nie mam ochoty spędzać za dużo
-                  czasu na budowaniu. Nie znam się na tym, a poza tym chcę
-                  połowić ryby w tej rzece. Tamto żeremie bobrowe wygląda
-                  przepięknie. Zrobię swój domek w podobnym tonie!&quot; I
-                  zabrał się do pracy. Nazbierał gałęzi, patyków i zwalonych pni
-                  drzewa. Potem zbudował solidny szałas. Drzwi wykonał ze
-                  znalezionych desek. Wstawił nawet okno z okiennicami.
-                  Budowanie zajęło mu trzy dni. Zadowolony z siebie otrzepał
-                  rączki i usiadł do łowienia ryb.
-                </p>
+                <p>{previewText}</p>
               </TextBox>
             </TextBoxActiveFrame>
             <OptionsActiveFrame
@@ -114,59 +114,34 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
             >
               <ArrowCircleLeft />
             </TipsSwitch>
-            {currentStep === TUTORIAL_STEPS.SLIDE && (
-              <p>
-                Biblioteka Fabledose służy wyświetlaniu animowanych bajek do
-                czytania. Po otworzeniu bajki, Twoim oczom ukaże się animowana
-                strona naszej wirtualnej książki dla dzieci.
-              </p>
-            )}
+            {currentStep === TUTORIAL_STEPS.SLIDE && <p>{stepSlide}</p>}
             {currentStep === TUTORIAL_STEPS.TEXT_BOX_BASIC && (
-              <p>
-                Animowane tło zawsze jest opatrzone tekstem. Jego treść pokrywa
-                się z obrazem, tworząc spójną całość.
-              </p>
+              <p>{stepBoxBasic}</p>
             )}
             {currentStep === TUTORIAL_STEPS.TEXT_BOX_ADVANCED && (
-              <p>
-                Jeżeli literki są zbyt małe lub zlewają się z animacją w tle,
-                możesz je łatwo dostosować do swoich potrzeb, zwiększając
-                rozmiar czcionki, zmieniając jej kolor lub dodając szare tło pod
-                tekstem.
-              </p>
+              <p>{stepBoxAdvanced}</p>
             )}
             {currentStep === TUTORIAL_STEPS.OPTIONS && (
               <p>
-                W lewym dolnym rogu znajdują się ikony ustawień. Ikona domu (
-                <HomeIcon />) zabierze Cię z powrotem do strony głównej. Ikona
-                listy ustawień (<TextBoxSettings />) otworzy okno z
-                ustawieniami, gdzie będziesz mógł zdefiniować wielkość czcionki
-                oraz jej tło. Ikona ramki (<FullScreenMaximize />) przełączy
-                bajkę w tryb pełnego ekranu.
+                {stepOptions[0]}
+                <HomeIcon />
+                {stepOptions[1]}
+                <TextBoxSettings />
+                {stepOptions[2]}
+                <FullScreenMaximize />
+                {stepOptions[3]}
               </p>
             )}
             {currentStep === TUTORIAL_STEPS.SLIDE_SWITCH && (
-              <p>
-                W prawym dolnym rogu znajduje się informacja na temat długości
-                bajki oraz bieżącej strony. Strzałkami z lewej i prawej strony
-                numeracji możesz przełączać strony. Ponadto strony możesz
-                przełączać gestem przesunięcia (tablet i smartfon), klawiszami
-                strzałek na klawiaturze oraz kółkiem myszki.
-              </p>
+              <p>{stepSlideSwitch}</p>
             )}
-            {currentStep === TUTORIAL_STEPS.OUTRO && (
-              <p>
-                To tyle! Prawda, że to banalnie proste? Jesteś gotów, aby
-                rozpocząć przygodę z baśniami Fabledose. Naciskając strzałkę w
-                prawo, opuścisz tutorial.
-              </p>
-            )}
+            {currentStep === TUTORIAL_STEPS.OUTRO && <p>{stepOutro}</p>}
             <TipsSwitch onClick={nextTip}>
               <ArrowCircleRight />
             </TipsSwitch>
           </TipsWindow>
           <ExitButton onClick={killTutorial}>
-            <span>Wyłącz Tutorial</span>
+            <span>{killTutorialLabel}</span>
             <Close />
           </ExitButton>
         </MainTutorial>
