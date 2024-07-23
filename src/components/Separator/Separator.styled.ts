@@ -10,5 +10,6 @@ export const StyledSeparator = styled.div<{ type: SeparatorType }>`
 
   img {
     width: 100%;
+    height: auto;
   }
 `;

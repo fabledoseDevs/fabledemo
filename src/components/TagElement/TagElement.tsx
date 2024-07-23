@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { tagDataSelector } from './TagElement.helpers';
+import { useActiveTranslation } from '@/helpers/activeTranslation.hook';
+
+import { tagDataSelectorEN, tagDataSelectorPL } from './TagElement.helpers';
 import {
   CustomLabel,
   DescriptionBox,
@@ -12,7 +14,10 @@ import type { TagElement as TagElementType } from './TagElement.types';
 
 export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
   const [labelActive, setLabelActive] = useState<boolean>(false);
-  const tagData = tagDataSelector(tagName);
+  const activeTranslation = useActiveTranslation();
+
+  const tagDataEN = tagDataSelectorEN(tagName);
+  const tagDataPL = tagDataSelectorPL(tagName);
 
   const handleMouseEnter = () => {
     setLabelActive(true);
@@ -28,14 +33,20 @@ export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
       <TagBody extend={true}>
         <IconBox>
           <Image
-            src={tagData.icon}
-            alt={tagData.title}
+            src={activeTranslation === 'pl' ? tagDataPL.icon : tagDataEN.icon}
+            alt={activeTranslation === 'pl' ? tagDataPL.title : tagDataEN.title}
             width={50}
             height={50}
           />
-          <h5>{tagData.title}</h5>
+          <h5>
+            {activeTranslation === 'pl' ? tagDataPL.title : tagDataEN.title}
+          </h5>
         </IconBox>
-        <DescriptionBox>{tagData.description}</DescriptionBox>
+        <DescriptionBox>
+          {activeTranslation === 'pl'
+            ? tagDataPL.description
+            : tagDataEN.description}
+        </DescriptionBox>
       </TagBody>
     );
   }
@@ -46,8 +57,17 @@ export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Image src={tagData.icon} alt={tagData.title} width={50} height={50} />
-      {labelActive && <CustomLabel>{tagData.title}</CustomLabel>}
+      <Image
+        src={activeTranslation === 'pl' ? tagDataPL.icon : tagDataEN.icon}
+        alt={activeTranslation === 'pl' ? tagDataPL.title : tagDataEN.title}
+        width={50}
+        height={50}
+      />
+      {labelActive && (
+        <CustomLabel>
+          {activeTranslation === 'pl' ? tagDataPL.title : tagDataEN.title}
+        </CustomLabel>
+      )}
     </TagBody>
   );
 };

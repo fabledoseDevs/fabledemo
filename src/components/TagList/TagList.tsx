@@ -2,6 +2,7 @@ import { InfoCircle } from '@styled-icons/bootstrap/InfoCircle';
 import React, { useState } from 'react';
 
 import Tagbox from '@/components/Tagbox';
+import { TagListTranslations, useTranslation } from '@/translations';
 import type { TAG_NAMES } from '@/types/fairytale.types';
 
 import TagElement from '../TagElement';
@@ -22,27 +23,28 @@ export const TagList: TagListType = ({
   synopsis,
 }) => {
   const [isInfoModalActive, setInfoModalActive] = useState<boolean>(false);
+  const { general, themes, details } = useTranslation(TagListTranslations);
 
   return (
     <>
       <TagListBody>
         <MobileSorter>
           <TagsListUl>
-            <TagListTitle>Utwór</TagListTitle>
+            <TagListTitle>{general}</TagListTitle>
             {mainTags.map((tag: TAG_NAMES) => (
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
           <SeparatorElement />
           <TagsListUl>
-            <TagListTitle>Motywy</TagListTitle>
+            <TagListTitle>{themes}</TagListTitle>
             {extraTags.map((tag: TAG_NAMES) => (
               <TagElement key={tag} tagName={tag} />
             ))}
           </TagsListUl>
           <SeparatorElement />
           <TagsListUl>
-            <TagListTitle>Szczegóły</TagListTitle>
+            <TagListTitle>{details}</TagListTitle>
             <li>
               <TagsSummaryButton
                 onClick={() => setInfoModalActive(prevState => !prevState)}

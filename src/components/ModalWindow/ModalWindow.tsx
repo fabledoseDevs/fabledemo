@@ -1,6 +1,8 @@
 import { Close } from '@styled-icons/ionicons-outline/Close';
 import React, { useEffect } from 'react';
 
+import { ModalWindowTranslations, useTranslation } from '@/translations';
+
 import {
   ExitButton,
   ExitLayer,
@@ -10,6 +12,8 @@ import {
 import type { ModalWindow as ModalWindowType } from './ModalWindow.types';
 
 export const ModalWindow: ModalWindowType = ({ exitFunction, children }) => {
+  const { exit } = useTranslation(ModalWindowTranslations);
+
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
       event.key === 'Escape' && exitFunction(false);
@@ -26,7 +30,7 @@ export const ModalWindow: ModalWindowType = ({ exitFunction, children }) => {
       <ExitLayer onClick={() => exitFunction(false)} />
       <ModalContentContainer>
         <ExitButton onClick={() => exitFunction(false)}>
-          <span>Zamknij</span>
+          <span>{exit}</span>
           <Close />
         </ExitButton>
         {children}

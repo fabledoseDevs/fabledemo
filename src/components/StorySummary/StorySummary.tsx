@@ -10,6 +10,7 @@ import Logo from '@/components/Logo';
 import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import { TagList } from '@/components/TagList';
 import { useScreenContext } from '@/context/ScreenContext/ScreenContext.provider';
+import { StorySummaryTranslations, useTranslation } from '@/translations';
 
 import {
   AnimatedPicture,
@@ -45,6 +46,12 @@ export const StorySummary: StorySummaryType = ({
   onAnimationReady,
 }) => {
   const { screenData } = useScreenContext();
+  const {
+    author: authorName,
+    adaptation: adaptationAuthors,
+    illustrations: illustrationAuthors,
+    readCTA,
+  } = useTranslation(StorySummaryTranslations);
 
   const removeLoadingScreen = () => {
     onAnimationReady();
@@ -60,7 +67,7 @@ export const StorySummary: StorySummaryType = ({
       {bookCoverBlur && (
         <BlurPicture
           src={bookCoverBlur}
-          alt={'next image'}
+          alt={'next image preview'}
           width={1280}
           height={720}
           priority={true}
@@ -86,7 +93,7 @@ export const StorySummary: StorySummaryType = ({
             <Credits>
               {author && (
                 <p>
-                  {'Autor: '}
+                  {authorName + ' '}
                   {author.map((auth, index) => (
                     <span key={auth}>
                       {auth}
@@ -97,7 +104,7 @@ export const StorySummary: StorySummaryType = ({
               )}
               {adaptationAuthor && (
                 <p>
-                  {'Adaptacja: '}
+                  {adaptationAuthors + ' '}
                   {adaptationAuthor.map((adaptAuth, index) => (
                     <span key={adaptAuth}>
                       {adaptAuth}{' '}
@@ -107,7 +114,7 @@ export const StorySummary: StorySummaryType = ({
                 </p>
               )}
               <p>
-                {'Ilustracje: '}
+                {illustrationAuthors + ' '}
                 {picturesAuthor.map(picAuth => (
                   <span key={picAuth}>
                     {picAuth}
@@ -131,19 +138,12 @@ export const StorySummary: StorySummaryType = ({
             </Credits>
             <ButtonsContainer>
               <Button
-                label="Czytaj Bajkę"
+                label={readCTA}
                 colorVariant={COLOR_VARIANTS.GREEN}
                 fontVariant={FONT_VARIANTS.UPPERCASE}
                 purpose={PURPOSE.FUNCTION_TRIGGER}
                 onclickAction={() => storyStatusHandler(true)}
               />
-              {/*<Button*/}
-              {/*  label="Wyjdź"*/}
-              {/*  colorVariant={COLOR_VARIANTS.WHITE}*/}
-              {/*  fontVariant={FONT_VARIANTS.UPPERCASE}*/}
-              {/*  purpose={PURPOSE.ANCHOR}*/}
-              {/*  anchorLink={'/'}*/}
-              {/*/>*/}
             </ButtonsContainer>
             <TagListPositioner>
               <TagList

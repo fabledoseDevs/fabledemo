@@ -14,9 +14,16 @@ import Separator from '@/components/Separator';
 import StoryCard from '@/components/StoryCard';
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
+import {
+  JumbotronTranslations,
+  StoryCardGoldilocks,
+  StoryCardThreeLittlePigs,
+  TemplateLandingPageTranslations,
+  useTranslation,
+} from '@/translations';
 
 import {
-  CARD_GOLDILOCK,
+  CARD_GOLDILOCKS,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
 import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
@@ -29,64 +36,87 @@ const cookieBannerCheckAndRender = (consentStatus: boolean) => {
 
 export const TemplateLandingPage: TemplateLandingPageType = () => {
   const { settings } = useSettingsContext();
+  const {
+    title: goldilocksTitle,
+    synopsis: goldilocksSynopsis,
+    summary: goldilocksSummary,
+    url: goldilocksUrl,
+  } = useTranslation(StoryCardGoldilocks);
+  const {
+    title: pigsTitle,
+    synopsis: pigsSynopsis,
+    summary: pigsSummary,
+    url: pigsUrl,
+  } = useTranslation(StoryCardThreeLittlePigs);
+  const {
+    subtitle: jumboSubtitle,
+    before: jumboBefore,
+    after: jumboAfter,
+    redLineText: jumboRedLine,
+  } = useTranslation(JumbotronTranslations);
+  const {
+    storyCardButtonLabel: { read, comingSoon },
+    projectSummary: { mainText, supplementaryText },
+  } = useTranslation(TemplateLandingPageTranslations);
+
   return (
     <>
       <Jumbotron
-        subtitle={'Fabledose'}
+        subtitle={jumboSubtitle}
         header={{
-          before: 'tutaj baśnie',
-          after: ' do czytania',
+          before: jumboBefore,
+          after: jumboAfter,
         }}
-        redLineText={'ożywają'}
+        redLineText={jumboRedLine}
       />
       <div id="content-start" />
       <Separator type={'SMALL'} />
       <StoryCard
         bookCover={{
-          src: CARD_GOLDILOCK.thumb,
-          alt: CARD_GOLDILOCK.title,
+          src: CARD_GOLDILOCKS.thumb,
+          alt: goldilocksTitle,
           width: 640,
           height: 340,
         }}
         layout={BOOKCARD_LAYOUT.IMAGE_LEFT}
         content={{
-          bookTitle: CARD_GOLDILOCK.title,
+          bookTitle: goldilocksTitle,
           ctaButton: {
             purpose: PURPOSE.ANCHOR,
-            label: 'Czytaj',
-            anchorLink: CARD_GOLDILOCK.url,
+            label: read,
+            anchorLink: goldilocksUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: false,
           },
-          summary: CARD_GOLDILOCK.summary,
-          synopsis: CARD_GOLDILOCK.synopsis,
+          summary: goldilocksSummary,
+          synopsis: goldilocksSynopsis,
           iconsBlock: {
-            mainTags: CARD_GOLDILOCK.mainTags,
-            extraTags: CARD_GOLDILOCK.detailedTags,
+            mainTags: CARD_GOLDILOCKS.mainTags,
+            extraTags: CARD_GOLDILOCKS.detailedTags,
           },
         }}
       />
       <StoryCard
         bookCover={{
           src: CARD_THREE_PIGGIES.thumb,
-          alt: CARD_THREE_PIGGIES.title,
+          alt: pigsTitle,
           width: 640,
           height: 340,
         }}
         layout={CARD_THREE_PIGGIES.cardLayout}
         content={{
-          bookTitle: CARD_THREE_PIGGIES.title,
+          bookTitle: pigsTitle,
           ctaButton: {
             purpose: PURPOSE.FUNCTION_TRIGGER,
-            label: 'Dostępne wkrótce',
-            anchorLink: CARD_THREE_PIGGIES.url,
+            label: comingSoon,
+            anchorLink: pigsUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: true,
           },
-          summary: CARD_THREE_PIGGIES.summary,
-          synopsis: CARD_THREE_PIGGIES.synopsis,
+          summary: pigsSummary,
+          synopsis: pigsSynopsis,
           iconsBlock: {
             mainTags: CARD_THREE_PIGGIES.mainTags,
             extraTags: CARD_THREE_PIGGIES.detailedTags,
@@ -95,15 +125,8 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
       />
       <Separator type={'SMALL'} />
       <ProjectSummary
-        mainText={[
-          'Jesteśmy grupą przyjaciół i profesjonalistów, których łączy wspólna pasja do baśni i opowiadań dla dzieci. Są wśród nas pedagodzy, nauczyciele przedszkolni i żłobkowi, programiści i artyści. Wszyscy kierujemy się przekonaniem, że czytanie dziecku bajek jest istotną częścią jego rozwoju. Mając to na uwadze, rozpoczęliśmy pracę nad stworzeniem magicznego portalu wypełnionego animowanymi książkami do czytania dla dzieci.',
-          'Chcemy oferować klasyczne baśnie, które przetrwały próbę czasu, opowiedziane nie tylko słowem, ale też animowaną ilustracją. Każda historia została wybrana pod kątem głębi i znaczenia, mając na celu wydobycie tego, co w dziecięcej wyobraźni najlepsze. Możesz bezpiecznie zostawić nasze bajki dziecku do samodzielnego czytania, lub czytać je z własną pociechą na dobranoc. Opowieści te zostały zaprojektowane tak, aby urzekać i inspirować zarówno młodych, jak i starszych.',
-          'Już wkrótce uruchomimy kampanię crowdfundingową! Zachęcamy Cię do wsparcia tego projektu. Bez twojego zaangażowania takie projekty jak ten — skupione wokół idei innej niż pieniądze — mają ograniczone szanse na zaistnienie. Dzięki Twojemu wsparciu możemy stworzyć interaktywną platformę, która zanurzy dzieci w magicznym świecie opowieści. Pozostań na bieżąco z dalszymi aktualizacjami. Uruchomimy naszą kampanię wcześniej, niż myślisz!',
-        ]}
-        supplementaryText={[
-          'Zapraszamy Cię do zaangażowania w tę podróż. Śledź nas na profilach społecznościowych lub użyj poniższego przycisku aby zapisać się do naszego newslettera. Pozostań w kontakcie i jako pierwszy dowiaduj się o postępie prac nad projektem. Razem możemy rozpalić iskrę wyobraźni w sercach dzieci i sprawić, że animowane baśnie do czytania będą inspirowały przyszłe pokolenia.',
-          'Dziękujemy za zainteresowanie naszym projektem. Do usłyszenia wkrótce!',
-        ]}
+        mainText={mainText}
+        supplementaryText={supplementaryText}
       />
       <Separator type={'MEDIUM'} />
       {cookieBannerCheckAndRender(settings.cookieConsent)}

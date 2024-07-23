@@ -1,15 +1,12 @@
-import React, { createContext, useContext } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { type ReactNode } from 'react';
 import { useCookies } from 'react-cookie';
 
 import type {
   LanguageContext as LanguageContextType,
-  LanguageContextProps,
   UseLanguageContext as UseLanguageContextType,
 } from './LanguageContext.types';
-import { ACTIVE_LANGUAGE, ACTIVE_LOCALIZATION } from './LanguageContext.types';
+import { ACTIVE_LANGUAGE } from './LanguageContext.types';
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
@@ -21,17 +18,28 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const [cookies, setCookie] = useCookies(['language']);
   const activeLanguage = cookies.language;
 
-  const [languageInfo, setLanguageInfo] = useState<LanguageContextProps>(
-    () =>
-      activeLanguage || {
-        localization: ACTIVE_LOCALIZATION.GLOBAL,
-        activeLanguage: ACTIVE_LANGUAGE.EN,
-      },
+  const [languageInfo, setLanguageInfo] = useState<ACTIVE_LANGUAGE>(
+    activeLanguage || ACTIVE_LANGUAGE.EN,
   );
 
   useEffect(() => {
+    if (!cookies.language) {
+      const browserLanguage = navigator.language.toLowerCase();
+
+      switch (true) {
+        case browserLanguage.startsWith('pl'):
+          setLanguageInfo(ACTIVE_LANGUAGE.PL);
+          break;
+        case browserLanguage.startsWith('en'):
+          setLanguageInfo(ACTIVE_LANGUAGE.EN);
+          break;
+        default:
+          setLanguageInfo(ACTIVE_LANGUAGE.EN);
+      }
+    }
+
     setCookie('language', languageInfo, { maxAge: 2592000 });
-  }, [languageInfo]);
+  }, [languageInfo, cookies.language]);
 
   return (
     <LanguageContext.Provider value={{ languageInfo, setLanguageInfo }}>
