@@ -229,7 +229,7 @@ export const SubstackButtonTranslations: SubstackButtonTranslation = {
     arrowAlt: 'Visit Substack',
   },
   pl: {
-    substackLink: 'https://fabledose-polska.substack.com',
+    substackLink: 'https://fabledosepolska.substack.com',
     ariaLabel: 'Zapisz się do Newslettera',
     title: 'Nasz Newsletter i Blog',
     arrowAlt: 'Przejdź do Substack',
