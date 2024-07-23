@@ -46,9 +46,9 @@ export const CookieBannerTranslations: CookieBannerTranslation = {
 // Exitbox
 export const ExitboxTranslations: ExitboxTranslation = {
   en: {
-    headline: 'Would you like to stop reading and return to the home page?',
-    acceptButton: 'Yes, take me to the home page',
-    declineButton: 'No, I want to keep reading',
+    headline: 'Would you like to cease reading and return to the homepage?',
+    acceptButton: 'Yes, take me to the homepage',
+    declineButton: 'No, I wish to continue reading',
   },
   pl: {
     headline: 'Czy chesz zakończyć czytanie i wrócić do strony głównej?',
@@ -108,9 +108,10 @@ export const ModalWindowTranslations: ModalWindowTranslation = {
 // RotationGuard
 export const RotationGuardTranslations: RotationGuardTranslation = {
   en: {
-    mainMessage: 'Rotate your device to view our fable.',
+    mainMessage:
+      'Please rotate your device to experience our fable as intended.',
     detailedMessage: [
-      'Our stories have been optimised for devices in a horizontal layout.',
+      'Our stories have been optimized for devices in a horizontal layout.',
       'Rotate your device (or enlarge the browser window) if you see this message.',
       'Tablets, laptops, and larger monitors will provide you with the best reading experience.',
       'If you are using a mobile phone, consider switching to a different device.',
@@ -155,9 +156,9 @@ export const StoryCardGoldilock: StoryCardTranslation = {
     title: 'Goldilock and Three Bears',
     url: '/goldilock-and-three-bears',
     summary:
-      "The golden-haired girl stumbles upon the bears' cabin and starts causing mischief there, learning a lesson about the importance of responsibility.",
+      "The golden-haired girl accidentally discovers the bears' cabin and begins to create mischief, ultimately learning a lesson about the importance of responsibility.",
     synopsis:
-      "The fairy tale tells about three teddy bears who lived in a cozy forest. One day, a golden-haired girl, known for her mischievous nature, broke into their house and caused a ruckus, eating their porridge, breaking their armchair and making a mess in their bedroom. When the bears returned, they realized what had happened and started looking for the intruder. The golden-haired girl, terrified, decided to repair the damage and apologize to the bears. She spent the whole day with them, helping them prepare the porridge, fixing the car seat, and tidying up the bedroom. The fairy tale has a happy ending when the girl learns a lesson about respect for other people's property and enjoys dinner and dessert together with the teddy bears. He emphasizes that although children sometimes do mischief, it is important to apologize and correct mistakes.",
+      "The fairy tale recounts the story of three bears who resided in a cozy forest. One day, a golden-haired girl, known for her mischievous nature, entered their home without permission and caused considerable disruption—eating their porridge, damaging their armchair, and creating a mess in their bedroom. Upon returning, the bears discovered the chaos and began searching for the intruder. Initially overwhelmed by her conscience, the golden-haired girl fled from the bears' cabin. However, after overcoming her fears, she returned to make amends by repairing the damage and apologizing to the bears. She spent the entire day assisting them in preparing porridge, mending the armchair, and tidying up the bedroom. The tale concludes on a positive note, as the girl learns a valuable lesson about respecting others' property and shares a meal and dessert with the bears. It underscores that, although children may occasionally act mischievously, it is crucial to apologize and make amends.",
   },
   pl: {
     title: 'Złotowłosa i Trzy Misie',
@@ -175,21 +176,27 @@ export const StoryCardThreeLittlePigs: StoryCardTranslation = {
     title: 'Three Little Pigs',
     url: '/three-little-pigs',
     summary:
-      'Three little pigs set off into the big world to start an independent life. Their story becomes dramatic when they have to confront the wolf.',
-    synopsis: '',
+      'Three little pigs embark on a journey into the wider world to lead independent lives. Their tale takes a dramatic turn when they must confront a wolf.',
+    synopsis:
+      'Three little pigs leave their home to seek independence and build their own houses. Each pig constructs a dwelling using different materials: straw, sticks, and bricks. Their efforts are soon challenged by a cunning wolf who seeks to devour them. The wolf first attempts to blow down the straw house, then the stick house, but fails to breach the sturdier brick house. In their final refuge, the pigs successfully thwart the wolf’s attempts to enter and remain safe. Ultimately, the story highlights the virtues of diligence and the importance of careful planning, as the pig who built his house with bricks prevails over adversity, demonstrating the benefits of hard work and perseverance.',
   },
   pl: {
     title: 'Trzy Świnki',
     url: '/trzy-swinki',
     summary:
       'Trzy świnki wyruszają w wielki świat aby rozpocząć samodzielne życie. Ich historia nabiera dramatycznych barw, gdy muszą się skonfrontować z wilkiem.',
-    synopsis: '',
+    synopsis:
+      'Trzy małe świnki opuszczają swój dom w poszukiwaniu niezależności. Każda z nich zabiera się do zbudowania własnego domku używając różnych materiałów: słomy, patyków i kamieni. Ich wysiłek wkrótce zostaje wystawiony na próbę przez przebiegłego wilka, który pragnie je pożreć. Wilk skutecznie niszczy dom ze słomy oraz z patyków, ale nie udaje mu się to zburzyć solidniejszego domu z cegły. W swoim ostatnim schronieniu świnki skutecznie udaremniają próby wilka i przepędzają go. Historia ta podkreśla wagę pracowitości, znaczenie staranności oraz wytrwałości.',
   },
 };
 
 // StoryPage
 export const StoryPageTranslations: StoryPageTranslation = {
-  en: { theEnd: 'The End', restart: 'Read again', goBack: 'Go to homepage' },
+  en: {
+    theEnd: 'The End',
+    restart: 'Read Again',
+    goBack: 'Return to Homepage',
+  },
   pl: {
     theEnd: 'Koniec',
     restart: 'Od początku',
@@ -217,7 +224,7 @@ export const StorySummaryTranslations: StorySummaryTranslation = {
 export const SubstackButtonTranslations: SubstackButtonTranslation = {
   en: {
     substackLink: 'https://fabledose.substack.com',
-    ariaLabel: 'Sign in to our Newsletter',
+    ariaLabel: 'Sign in to our newsletter',
     title: 'Our Newsletter and Blog',
     arrowAlt: 'Visit Substack',
   },
@@ -232,7 +239,7 @@ export const SubstackButtonTranslations: SubstackButtonTranslation = {
 // Tagbox
 export const TagboxTranslations: TagboxTranslation = {
   en: {
-    tagboxTitle: 'Themes and recommendation for',
+    tagboxTitle: 'Themes and recommendation',
     tagboxSynopsis: 'Synopsis',
   },
   pl: {
@@ -267,13 +274,14 @@ export const TemplateLandingPageTranslations: TemplateLandingPageTranslation = {
     },
     projectSummary: {
       mainText: [
-        'We are a group of friends and professionals united by a common passion for fairy tales and stories for children. Among us are educators, kindergarten and nursery teachers, programmers and artists. We all believe that reading fairy tales to a child is an important part of their development. With this in mind, we started working on creating a magical portal filled with animated books for children to read.',
-        "We want to offer classic fairy tales that have stood the test of time, told not only in words but also with animated illustrations. Each story has been selected for depth and meaning, with the goal of bringing out the best in children's imaginations. You can safely leave our fairy tales for your child to read on their own or read them with your child at bedtime. These stories are designed to captivate and inspire young and old alike.",
-        'We will launch a crowdfunding campaign soon! We encourage you to support this project. Without your involvement, projects like this - focused on an idea other than money - have a limited chance of coming to fruition. With your support, we can create an interactive platform that will immerse children in the magical world of stories. Stay tuned for further updates. We will launch our campaign sooner than you think!',
+        "We are a collective of friends and professionals bound by a shared passion for fairy tales and children's literature. Our team comprises educators, kindergarten and nursery teachers, programmers, and artists. We all believe that reading fairy tales is a crucial aspect of a child’s development. With this belief, we embarked on creating a magical portal featuring animated books for children.",
+        'Our goal is to present timeless classic fairy tales, not only through text but also with captivating animated illustrations. Each story has been carefully selected for its depth and significance, aiming to spark the imagination of young readers. You can confidently leave these fairy tales for your child to enjoy independently or share them together at bedtime. These stories are crafted to engage and inspire both children and adults.',
+        'We will soon be launching a crowdfunding campaign and encourage you to support this endeavor. Projects like ours, driven by passion rather than profit, depend on community involvement to succeed. With your support, we can develop an interactive platform that immerses children in the enchanting world of stories. Stay tuned for updates—we will be launching our campaign sooner than you might expect!',
       ],
+
       supplementaryText: [
-        "We invite you to engage in this journey. Follow us on social media or use the button below to subscribe to our newsletter. Stay in touch and be the first to know about the project's progress. Together we can ignite the spark of imagination in the hearts of children and ensure that animated fairy tales to read will inspire future generations.",
-        'Thank you for your interest in our project. We look forward to hearing from you soon!',
+        'We invite you to join us on this journey. Follow us on social media or use the button below to subscribe to our newsletter. Stay connected and be the first to learn about the project’s progress. Together, we can ignite the spark of imagination in children and ensure that animated fairy tales inspire future generations.',
+        'Thank you for your interest in our project. We eagerly anticipate your support and look forward to connecting with you soon!',
       ],
     },
   },
@@ -313,7 +321,7 @@ export const ToolboxTranslations: ToolboxTranslation = {
     medium: 'Medium',
     large: 'Large',
     previewText:
-      "Long ago, in a distant land surrounded by dark forests and picturesque mountains, there lived a beautiful princess named Snow White. Her skin was as pale and her hair was as black as ink. However, Snow White's happy life was threatened by the whims of her wicked stepmother, who, above all, desired to be considered the most beautiful...",
+      "Long ago, in a distant land surrounded by dark forests and picturesque mountains, there lived a beautiful princess named Snow White. Her skin was as pale as snow, and her hair was as black as ink. However, Snow White's idyllic life was imperiled by the whims of her malevolent stepmother, who was consumed by a desire to be deemed the fairest of them all.",
   },
   pl: {
     textTheme: 'Wygląd tekstu',
@@ -342,24 +350,24 @@ export const TutorialTranslations: TutorialTranslation = {
     yes: 'Yes',
     no: 'No',
     previewText:
-      'His brother Gucio wandered to the river where he decided to build his own house. "I don’t feel like spending too much time on building. I don’t know much about it, and besides, I want to fish in this river. That beaver lodge looks beautiful. I’ll make my house in a similar style." And he set to work. He collected branches, sticks, and fallen tree trunks. Then he built a sturdy hut. He made the door from found planks. He even added a window with shutters. Building took him three days. Satisfied with himself, he dusted off his hands and sat down to fish.',
+      'As he had said, so he did. He gathered twigs, sticks, and branches to construct a sturdy hut. The door was fashioned from salvaged planks, and he even added a window with shutters. The entire building process took three days. Content with his efforts, he dusted off his hands and settled down to fish.',
     stepSlide:
-      'The Fabledose Library is for displaying animated fairy tales for reading. When you open a fairy tale, you will see an animated page of our virtual children’s book.',
+      'The Fabledose Library displays animated fairy tales for reading. Upon opening a fairy tale, you will be presented with an animated page of our virtual children’s book.',
     stepBoxBasic:
-      'The animated background always comes with text. Its content matches the image, creating a cohesive whole.',
+      'The animated background is accompanied by text that complements the imagery, ensuring a cohesive experience.',
     stepBoxAdvanced:
-      'If the letters are too small or blend with the animation in the background, you can easily adjust them to your needs by increasing the font size, changing its colour, or adding a grey background behind the text.',
+      'If the text appears too small or merges with the animation in the background, you can easily adjust it by increasing the font size, altering its color, or adding a grey background behind the text.',
     stepOptions: [
-      'In the bottom left corner, there are settings icons. The home icon (',
-      ') will take you back to the main page. The settings list icon (',
-      ') will open a settings window where you can define the font size and its background. The frame icon (',
-      ') will switch the fairy tale to full-screen mode.',
+      'In the bottom left corner, you will find settings icons. The home icon (',
+      ') will return you to the main page. The settings list icon (',
+      ') will open a settings window where you can adjust the font size and its background. The frame icon (',
+      ') will enable full-screen mode for the fairy tale.',
     ],
     stepSlideSwitch:
-      'In the bottom right corner, there is information about the length of the fairy tale and the current page. You can switch pages with the arrows on the left and right sides of the numbering. Additionally, you can switch pages with a swipe gesture (tablet and smartphone), arrow keys on the keyboard and the mouse wheel.',
+      'In the bottom right corner, you will find information about the length of the fairy tale and the current page. You can navigate between pages using the arrows on either side of the numbering. Additionally, pages can be turned using a swipe gesture (on tablets and smartphones), arrow keys on the keyboard, or the mouse wheel.',
     stepOutro:
-      'That’s it! Isn’t it simple? You are ready to start your adventure with Fabledose fairy tales. By pressing the right arrow, you will exit the tutorial.',
-    killTutorial: 'Turn Off Tutorial',
+      'That concludes the tutorial! It is quite simple, isn’t it? You are now ready to embark on your adventure with Fabledose fairy tales. Press the right arrow to exit the tutorial.',
+    killTutorial: 'Disable Tutorial',
   },
   pl: {
     tutorialWelcome:
@@ -367,7 +375,7 @@ export const TutorialTranslations: TutorialTranslation = {
     yes: 'Tak',
     no: 'Nie',
     previewText:
-      'Jego brat Gucio zawędrował nad rzekę, gdzie postanowił zbudować własny domek. "Nie mam ochoty spędzać za dużo czasu na budowaniu. Nie znam się na tym, a poza tym chcę połowić ryby w tej rzece. Tamto żeremie bobrowe wygląda przepięknie. Zrobię swój domek w podobnym tonie" I zabrał się do pracy. Nazbierał gałęzi, patyków i zwalonych pni drzewa. Potem zbudował solidny szałas. Drzwi wykonał ze znalezionych desek. Wstawił nawet okno z okiennicami. Budowanie zajęło mu trzy dni. Zadowolony z siebie otrzepał rączki i usiadł do łowienia ryb.',
+      'Jak powiedział, tak też i zrobił. Nazbierał gałązek, patyków i konarów, z których zbudował solidny szałas. Drzwi wykonał ze znalezionych desek. Wstawił nawet okno z okiennicami. Budowanie zajęło mu trzy dni. Zadowolony z siebie otrzepał raciczki i zasiadł do łowienia ryb.',
     stepSlide:
       'Biblioteka Fabledose służy wyświetlaniu animowanych bajek do czytania. Po otworzeniu bajki, Twoim oczom ukaże się animowana strona naszej wirtualnej książki dla dzieci.',
     stepBoxBasic:
