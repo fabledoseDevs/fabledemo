@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.provider';
-import { ACTIVE_LANGUAGE } from '@/context/LanguageContext/LanguageContext.types';
+import { useActiveTranslation } from '@/helpers/activeTranslation.hook';
 
 import { tagDataSelectorEN, tagDataSelectorPL } from './TagElement.helpers';
 import {
@@ -15,26 +14,10 @@ import type { TagElement as TagElementType } from './TagElement.types';
 
 export const TagElement: TagElementType = ({ tagName, extendedTag }) => {
   const [labelActive, setLabelActive] = useState<boolean>(false);
-  const { languageInfo } = useLanguageContext();
-  const [activeTranslation, setActiveTranslation] = useState<'pl' | 'en' | ''>(
-    '',
-  );
+  const activeTranslation = useActiveTranslation();
 
   const tagDataEN = tagDataSelectorEN(tagName);
   const tagDataPL = tagDataSelectorPL(tagName);
-
-  useEffect(() => {
-    switch (languageInfo) {
-      case ACTIVE_LANGUAGE.PL:
-        setActiveTranslation('pl');
-        break;
-      case ACTIVE_LANGUAGE.EN:
-        setActiveTranslation('en');
-        break;
-      default:
-        setActiveTranslation('en');
-    }
-  }, [languageInfo]);
 
   const handleMouseEnter = () => {
     setLabelActive(true);

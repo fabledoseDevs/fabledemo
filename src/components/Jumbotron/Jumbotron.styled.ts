@@ -82,7 +82,7 @@ export const ContentWrapper = styled.div`
 
   h1 {
     font-size: 12px;
-    letter-spacing: 4px;
+    letter-spacing: 16px;
     font-weight: 400;
     width: 100%;
 
