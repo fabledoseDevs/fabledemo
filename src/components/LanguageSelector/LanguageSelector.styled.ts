@@ -12,6 +12,8 @@ export const LanguageSelectorBody = styled.div`
 `;
 
 export const Label = styled.sup`
+  text-transform: uppercase;
+  font-size: 8px;
   color: ${({ theme }) => theme.palette.darkgray};
 `;
 

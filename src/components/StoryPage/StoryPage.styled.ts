@@ -283,21 +283,21 @@ export const TextBox = styled.div<{
 
     //FONT SIZE
     font-size: ${({ fontSize }) => 10 * fontSize + 'px'};
-    padding: 0.8%;
+    padding: ${({ fontSize }) => 5 * fontSize + 'px'};
 
     @media ${({ theme }) => theme.media.tablet} {
       font-size: ${({ fontSize }) => 12 * fontSize + 'px'};
-      padding: 1%;
+      padding: ${({ fontSize }) => 6 * fontSize + 'px'};
     }
 
     @media ${({ theme }) => theme.media.laptop} {
       font-size: ${({ fontSize }) => 14 * fontSize + 'px'};
-      padding: 1.5%;
+      padding: ${({ fontSize }) => 7 * fontSize + 'px'};
     }
 
     @media ${({ theme }) => theme.media.desktop} {
       font-size: ${({ fontSize }) => 16 * fontSize + 'px'};
-      padding: 2%;
+      padding: ${({ fontSize }) => 8 * fontSize + 'px'};
     }
   }
 `;
