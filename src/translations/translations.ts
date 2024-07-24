@@ -27,11 +27,11 @@ import type {
 export const CookieBannerTranslations: CookieBannerTranslation = {
   en: {
     headline:
-      'Did you bring any cookies to make your story time more enjoyable?',
+      'Did you bring any cookies to make your storytime more enjoyable?',
     firstPart:
-      'We brought our own, but these are not suitable for eating. Our cookies are small files that we save on your device to provide you with the best quality service',
+      'We brought our own, but these are not suitable for eating. Our cookies are small files that we use to store application settings, thus providing you with the best quality service.',
     secondPart:
-      'We store information about the application settings you have selected in them. If you do not agree to this, please leave this website. If you would like to find out more, feel free to contact us.',
+      'If you do not agree to this, please leave this website. If you would like to find out more, feel free to contact us.',
   },
   pl: {
     headline:
@@ -76,7 +76,7 @@ export const JumbotronTranslations: JumbotronTranslation = {
   en: {
     subtitle: 'Fabledose',
     before: 'a place where fairy tales',
-    after: 'while reading',
+    after: '',
     redLineText: 'come to life',
   },
   pl: {
