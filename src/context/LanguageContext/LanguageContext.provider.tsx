@@ -19,24 +19,24 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const activeLanguage = cookies.language;
 
   const [languageInfo, setLanguageInfo] = useState<ACTIVE_LANGUAGE>(
-    activeLanguage || ACTIVE_LANGUAGE.EN,
+    activeLanguage || ACTIVE_LANGUAGE.PL,
   );
 
   useEffect(() => {
-    if (!cookies.language) {
-      const browserLanguage = navigator.language.toLowerCase();
-
-      switch (true) {
-        case browserLanguage.startsWith('pl'):
-          setLanguageInfo(ACTIVE_LANGUAGE.PL);
-          break;
-        case browserLanguage.startsWith('en'):
-          setLanguageInfo(ACTIVE_LANGUAGE.EN);
-          break;
-        default:
-          setLanguageInfo(ACTIVE_LANGUAGE.EN);
-      }
-    }
+    // if (!cookies.language) {
+    //   const browserLanguage = navigator.language.toLowerCase();
+    //
+    //   switch (true) {
+    //     case browserLanguage.startsWith('pl'):
+    //       setLanguageInfo(ACTIVE_LANGUAGE.PL);
+    //       break;
+    //     case browserLanguage.startsWith('en'):
+    //       setLanguageInfo(ACTIVE_LANGUAGE.EN);
+    //       break;
+    //     default:
+    //       setLanguageInfo(ACTIVE_LANGUAGE.EN);
+    //   }
+    // }
 
     setCookie('language', languageInfo, { maxAge: 2592000 });
   }, [languageInfo, cookies.language]);
