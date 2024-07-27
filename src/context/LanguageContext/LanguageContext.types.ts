@@ -8,6 +8,7 @@ export enum ACTIVE_LANGUAGE {
 export type LanguageContext = {
   languageInfo: ACTIVE_LANGUAGE;
   setLanguageInfo: Dispatch<SetStateAction<ACTIVE_LANGUAGE>>;
+  removeLanguageCookie: () => void;
 };
 
 export type UseLanguageContext = () => LanguageContext;

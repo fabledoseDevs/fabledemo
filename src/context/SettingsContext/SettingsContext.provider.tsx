@@ -18,8 +18,10 @@ const SettingsContext = createContext<SettingsContextType | undefined>(
 export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cookies, setCookie] = useCookies(['settings']);
+  const [cookies, setCookie, removeCookie] = useCookies(['settings']);
   const storedSettings = cookies.settings;
+  const [lockCookie, setLockCookie] = useState<boolean>(false);
+  const [cookiesOff, setCookiesOff] = useState<boolean>(false);
 
   const [settings, setSettings] = useState<SettingContextProps>(
     () =>
@@ -31,7 +33,7 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
   );
 
   useEffect(() => {
-    setCookie('settings', settings, { maxAge: 2592000 });
+    !lockCookie && setCookie('settings', settings, { maxAge: 604800 });
   }, [settings]);
 
   useEffect(() => {
@@ -67,8 +69,21 @@ export const SettingsProvider: React.FC<{ children: ReactNode }> = ({
     return () => window.removeEventListener('resize', handleFontSizeGuard);
   }, [settings]);
 
+  const removeSettingsCookie = () => {
+    setLockCookie(true);
+    removeCookie('settings');
+  };
+
   return (
-    <SettingsContext.Provider value={{ settings, setSettings }}>
+    <SettingsContext.Provider
+      value={{
+        settings,
+        setSettings,
+        removeSettingsCookie,
+        cookiesOff,
+        setCookiesOff,
+      }}
+    >
       {children}
     </SettingsContext.Provider>
   );

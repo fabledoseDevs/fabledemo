@@ -16,9 +16,14 @@ export const ContentContainer = styled.div`
   width: 100%;
   max-width: 1440px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   align-content: center;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: row;
+  }
 `;
 
 export const TextField = styled.div`
@@ -39,13 +44,32 @@ export const TextField = styled.div`
 `;
 
 export const ButtonPositioner = styled.div`
-  padding: 0 24px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 12px;
 
   @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column;
     padding: 0 48px;
   }
 
   @media ${({ theme }) => theme.media.laptop} {
     padding: 0 72px;
   }
+`;
+
+export const CookieBannerButton = styled.button<{ variant: string }>`
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+
+  background-color: ${({ variant }) =>
+    variant === 'green' ? '#6C7716' : '#ffffff'};
+  color: ${({ variant }) => (variant === 'green' ? '#ffffff' : '#000000')};
 `;

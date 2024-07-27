@@ -1,9 +1,3 @@
-import Button from '@/components/Button';
-import {
-  COLOR_VARIANTS,
-  FONT_VARIANTS,
-  PURPOSE,
-} from '@/components/Button/Button.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import { CookieBannerTranslations, useTranslation } from '@/translations';
 
@@ -11,15 +5,15 @@ import {
   BannerBody,
   ButtonPositioner,
   ContentContainer,
+  CookieBannerButton,
   TextField,
 } from './CookieBanner.styled';
 import type { CookieBanner as CookieBannerType } from './CookieBanner.types';
 
-export const CookieBanner: CookieBannerType = () => {
+export const CookieBanner: CookieBannerType = ({ policyModalHandler }) => {
   const { setSettings } = useSettingsContext();
-  const { headline, firstPart, secondPart } = useTranslation(
-    CookieBannerTranslations,
-  );
+  const { headline, firstPart, secondPart, consentBnt, moreInfoBtn } =
+    useTranslation(CookieBannerTranslations);
   const handleCookieConsent = (cookieConsent: boolean) => {
     setSettings(prevSettings => ({ ...prevSettings, cookieConsent }));
   };
@@ -36,13 +30,18 @@ export const CookieBanner: CookieBannerType = () => {
           </p>
         </TextField>
         <ButtonPositioner>
-          <Button
-            label={'OK'}
-            colorVariant={COLOR_VARIANTS.WHITE}
-            fontVariant={FONT_VARIANTS.UPPERCASE}
-            purpose={PURPOSE.FUNCTION_TRIGGER}
-            onclickAction={() => handleCookieConsent(true)}
-          />
+          <CookieBannerButton
+            variant={'green'}
+            onClick={() => handleCookieConsent(true)}
+          >
+            {consentBnt}
+          </CookieBannerButton>
+          <CookieBannerButton
+            variant={'white'}
+            onClick={() => policyModalHandler(true)}
+          >
+            {moreInfoBtn}
+          </CookieBannerButton>
         </ButtonPositioner>
       </ContentContainer>
     </BannerBody>

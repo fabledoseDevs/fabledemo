@@ -16,6 +16,7 @@ export const ModalWindowBody = styled.div`
   ${flexboxCentered};
   width: 100dvw;
   background: ${({ theme }) => theme.palette.storyPage.textboxStandard};
+  z-index: 99;
 
   @media ${({ theme }) => theme.media.laptop} {
     height: 100dvh;
