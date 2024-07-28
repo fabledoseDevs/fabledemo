@@ -4,6 +4,7 @@ import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.pr
 
 import type {
   CookieBannerTranslation,
+  CookiePolicyTranslation,
   ExitboxTranslation,
   FooterTranslation,
   JumbotronTranslation,
@@ -31,7 +32,9 @@ export const CookieBannerTranslations: CookieBannerTranslation = {
     firstPart:
       'We brought our own, but these are not suitable for eating. Our cookies are small files that we use to store application settings, thus providing you with the best quality service.',
     secondPart:
-      'If you do not agree to this, please leave this website. If you would like to find out more, feel free to contact us.',
+      'If you do not agree to this, feel free to click "Explain" button where you can find out more or deactivate cookies.',
+    consentBnt: 'OK',
+    moreInfoBtn: 'Explain',
   },
   pl: {
     headline:
@@ -39,7 +42,63 @@ export const CookieBannerTranslations: CookieBannerTranslation = {
     firstPart:
       'My przynieśliśmy swoje, ale te nie nadają się do jedzenia. Nasze ciasteczka to niewielkie pliki, które zapisujemy na Twoim urządzeniu, aby móc dostarczyć Ci usługę w najlepszej jakości.',
     secondPart:
-      'Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody, opuść tę stronę. Jeśli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.',
+      'Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody naciśnij na przycisk "Informacja" gdzie dowiesz się więcej i bedziesz miał mozliwość dezaktywacji plików cookie.',
+    consentBnt: 'OK',
+    moreInfoBtn: 'Informacja',
+  },
+};
+
+//CookiePolicy
+export const CookiePolicyTranslations: CookiePolicyTranslation = {
+  en: {
+    policyTitle: 'COOKIE Policy',
+    intro: `This website (Fabledose) <strong> does not collect or process any marketing information or personal data </strong>. Therefore, we do not use any cookies, trackers, or other technologies related to such activities. We will store three cookies on your device. All of them are essential for the proper functioning of the website. Below, you will find detailed information.`,
+    cookieOneTitle: "Language Cookie ('language')",
+    cookieOneExplanation: [
+      'This file contains simple information about the default language of your browser. If you change the language of the website, information about the newly selected language will be stored in it.',
+      'Without this cookie, website cannot permanently define and remember your language settings.',
+    ],
+    cookieTwoTitle: "Settings Cookie ('settings')",
+    cookieTwoExplanation: [
+      'This file contains information about the selected application settings. We save the choice regarding the font size and the background under the text. Information about whether you clicked "OK" on the cookie banner and whether we can hide it is also stored in this file.',
+      'Without this cookie, our website will not remember the selected settings. Each time you visit our website, it would be necessary to define the font anew.',
+    ],
+    cookieThreeTitle: "Tutorial Cookie ('tutorial')",
+    cookieThreeExplanation: [
+      'In this cookie, we save information about whether you have already used the tutorial on our website.',
+      'Without it, the prompt asking about the tutorial will be displayed more than once and may become cumbersome.',
+    ],
+    outro:
+      'These files do not send any information to the website creators or to third parties. They are necessary for the proper functioning of the website. Without them, the website cannot remember anything related to the above-mentioned activities. We recommend keeping them to ensure an uninterrupted experience with the Fabledose service.',
+    deleteParagraph: `If you do not consent to this, use the red button to delete our cookies and <strong>block their use for the duration of this session</strong>. We do not guarantee the correct functioning of the service. You may encounter errors in displaying the language, the font on the story page, the tutorial content, and others.`,
+    deleteButtonBefore:
+      'Delete and block the use of cookies for the duration of this session!',
+    deleteButtonAfter:
+      'Cookies have been disabled for the duration of this session.',
+  },
+  pl: {
+    policyTitle: 'Polityka plików COOKIE',
+    intro: `Ta strona (Fabledose) <strong> nie zbiera i nie przetważa żadnych informacji marketingowych oraz danych osobowych </strong>. W związku z tym nie używamy żadnych ciasteczek, trackerów oraz innych technologii powiązanych z taką działanością. Na Twoim urządzeniu zapiszemy trzy pliki cookie. Wszystkie one są istotne z punktu widzenia prawidowego działania strony. Poniżej znajdziesz szczegółowe informacje.`,
+    cookieOneTitle: "Cookie językowe ('language')",
+    cookieOneExplanation: [
+      'W tym pliku znajduje się prosta informacja o domyślnym języku twojej przeglądarki. Jeżeli zmienisz język strony, zapisze się w nim informacja na temat nowo wybranego języka.',
+      'Bez tego ciasteczka nie możemy trwale określić i zapamiętać ustawień twojego języka.',
+    ],
+    cookieTwoTitle: "Cookie z ustawieniami ('settings')",
+    cookieTwoExplanation: [
+      'W tym pliku znajduje się informacja o wybranych ustawieniach aplikacji. Zaisujemy w nim wybór dotyczący rozmiaru czcionki oraz tła pod tekstem. Informacja o tym, czy kliknąłeś "OK" na banerze ciasteczek i czy w związku z tym możemy go schować, również jest zapsiana w tym pliku.',
+      'Bez tego ciasteczka nasza strona nie zapamięta wybranych ustawień. Za każdym razem, kiedy odwiedzisz naszą stronę, konieczne byłoby definiowanie czcionki na nowo.',
+    ],
+    cookieThreeTitle: "Cookie samouczka ('tutorial')",
+    cookieThreeExplanation: [
+      'W tym ciasteczku zapisujemy informację o tym, czy korzystałeś już z samouczka na naszej stronie.',
+      ' Bez niego monit z pytaniem o samouczek będzie wyświetlał się więcej niż raz i może stać się uciążliwy.',
+    ],
+    outro:
+      'Pliki te nie wysyłają żadnych informacji do twórców witryny oraz podmiotów i osób trzecich. Są to pliki konieczne dla prawidłowego działania strony. Bez nich strona nie umie zapamiętać niczego co wiąże się z wyżej wymienionymi zakresami działania. Zalecamy pozostawienie ich aby doświadczenie z serwisem Fabledose było niezakłócone.',
+    deleteParagraph: `Jeżeli nie wyrażasz na to zgody, użyj czerwonego przycisku aby usunąć nasze pliki cookie i <strong>zablokować ich używanie na czas tej sesji</strong>. Nie gwarantujemy poprawnego działania serwisu. Możesz natknąć się na błędy w wyswietlaniu języka, czcionki na stronie bajki, treści samouczka oraz inne.`,
+    deleteButtonBefore: 'Usuń i zablokuj używanie cisteczek na czas tej sesji!',
+    deleteButtonAfter: 'Cookies zostały wyłączone na czas tej sesji.',
   },
 };
 

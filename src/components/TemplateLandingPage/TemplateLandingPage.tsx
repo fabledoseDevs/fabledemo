@@ -8,7 +8,12 @@ import {
 const CookieBanner = dynamic(() => import('@/components/CookieBanner'), {
   ssr: false,
 });
+import type { Dispatch } from 'react';
+import { useState } from 'react';
+
+import CookiePolicy from '@/components/CookiePolicy';
 import { Jumbotron } from '@/components/Jumbotron/Jumbotron';
+import ModalWindow from '@/components/ModalWindow';
 import { ProjectSummary } from '@/components/ProjectSummary';
 import Separator from '@/components/Separator';
 import StoryCard from '@/components/StoryCard';
@@ -28,13 +33,17 @@ import {
 } from './TemplateLandingPage.consts';
 import type { TemplateLandingPage as TemplateLandingPageType } from './TemplateLandingPage.types';
 
-const cookieBannerCheckAndRender = (consentStatus: boolean) => {
+const cookieBannerCheckAndRender = (
+  consentStatus: boolean,
+  policyModalHandler: Dispatch<boolean>,
+) => {
   if (!consentStatus) {
-    return <CookieBanner />;
+    return <CookieBanner policyModalHandler={policyModalHandler} />;
   }
 };
 
 export const TemplateLandingPage: TemplateLandingPageType = () => {
+  const [cookiePolicyOpen, setCookiePolicyOpen] = useState<boolean>(false);
   const { settings } = useSettingsContext();
   const {
     title: goldilocksTitle,
@@ -129,7 +138,12 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
         supplementaryText={supplementaryText}
       />
       <Separator type={'MEDIUM'} />
-      {cookieBannerCheckAndRender(settings.cookieConsent)}
+      {cookieBannerCheckAndRender(settings.cookieConsent, setCookiePolicyOpen)}
+      {cookiePolicyOpen && (
+        <ModalWindow exitFunction={setCookiePolicyOpen}>
+          <CookiePolicy />
+        </ModalWindow>
+      )}
     </>
   );
 };

@@ -25,6 +25,14 @@ export const ModalWindow: ModalWindowType = ({ exitFunction, children }) => {
     };
   }, [exitFunction]);
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
     <ModalWindowBody>
       <ExitLayer onClick={() => exitFunction(false)} />

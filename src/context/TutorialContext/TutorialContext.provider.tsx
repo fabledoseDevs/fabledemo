@@ -14,7 +14,8 @@ const TutorialContext = createContext<TutorialContextType | undefined>(
 export const TutorialProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cookies, setCookie] = useCookies(['tutorial']);
+  const [cookies, setCookie, removeCookie] = useCookies(['tutorial']);
+  const [lockCookie, setLockCookie] = useState<boolean>(false);
   const currentTutorialState = cookies.tutorial;
 
   const [tutorialOff, setTutorialOff] = useState<boolean>(
@@ -22,11 +23,18 @@ export const TutorialProvider: React.FC<{ children: ReactNode }> = ({
   );
 
   useEffect(() => {
-    setCookie('tutorial', tutorialOff, { maxAge: 2592000 });
+    !lockCookie && setCookie('tutorial', tutorialOff, { maxAge: 604800 });
   }, [tutorialOff]);
 
+  const removeTutorialCookie = () => {
+    setLockCookie(true);
+    removeCookie('tutorial');
+  };
+
   return (
-    <TutorialContext.Provider value={{ tutorialOff, setTutorialOff }}>
+    <TutorialContext.Provider
+      value={{ tutorialOff, setTutorialOff, removeTutorialCookie }}
+    >
       {children}
     </TutorialContext.Provider>
   );

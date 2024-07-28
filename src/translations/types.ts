@@ -2,6 +2,23 @@ interface CookieBannerTT {
   headline: string;
   firstPart: string;
   secondPart: string;
+  consentBnt: string;
+  moreInfoBtn: string;
+}
+
+interface CookiePolicyTT {
+  policyTitle: string;
+  intro: string;
+  cookieOneTitle: string;
+  cookieOneExplanation: string[];
+  cookieTwoTitle: string;
+  cookieTwoExplanation: string[];
+  cookieThreeTitle: string;
+  cookieThreeExplanation: string[];
+  outro: string;
+  deleteParagraph: string;
+  deleteButtonBefore: string;
+  deleteButtonAfter: string;
 }
 
 interface ExitboxTT {
@@ -132,6 +149,7 @@ export interface Translation<TT> {
 }
 
 export type CookieBannerTranslation = Translation<CookieBannerTT>;
+export type CookiePolicyTranslation = Translation<CookiePolicyTT>;
 export type ExitboxTranslation = Translation<ExitboxTT>;
 export type FooterTranslation = Translation<FooterTT>;
 export type JumbotronTranslation = Translation<JumbotronTT>;
