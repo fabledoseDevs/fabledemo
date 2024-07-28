@@ -39,6 +39,21 @@ interface JumbotronTT {
   redLineText: string;
 }
 
+interface LegalTT {
+  adminTitle: string;
+  adminText: string;
+  purposeTitle: string;
+  purposeText: string;
+  purposeList: string[];
+  distributionTitle: string;
+  distributionText: string;
+  removalTitle: string;
+  removalText: string;
+  contactTitle: string;
+  contactText: string;
+  btnContact: string;
+}
+
 interface LoadingScreenTT {
   label: string;
   alt: string;
@@ -84,8 +99,12 @@ interface StorySummaryTT {
 }
 
 interface SubstackButtonTT {
+  legalText: string;
+  legalDetailsBtn: string;
   substackLink: string;
   ariaLabel: string;
+  btnTitleOk: string;
+  btnTitleNo: string;
   title: string;
   arrowAlt: string;
 }
@@ -153,6 +172,7 @@ export type CookiePolicyTranslation = Translation<CookiePolicyTT>;
 export type ExitboxTranslation = Translation<ExitboxTT>;
 export type FooterTranslation = Translation<FooterTT>;
 export type JumbotronTranslation = Translation<JumbotronTT>;
+export type LegalTranslation = Translation<LegalTT>;
 export type LoadingScreenTranslation = Translation<LoadingScreenTT>;
 export type ModalWindowTranslation = Translation<ModalWindowTT>;
 export type RotationGuardTranslation = Translation<RotationGuardTT>;

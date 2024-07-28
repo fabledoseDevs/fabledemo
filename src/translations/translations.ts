@@ -8,6 +8,7 @@ import type {
   ExitboxTranslation,
   FooterTranslation,
   JumbotronTranslation,
+  LegalTranslation,
   LoadingScreenTranslation,
   ModalWindowTranslation,
   RotationGuardTranslation,
@@ -143,6 +144,55 @@ export const JumbotronTranslations: JumbotronTranslation = {
     before: 'miejsce, w którym baśnie',
     after: 'podczas czytania',
     redLineText: 'ożywają',
+  },
+};
+
+// Legal
+export const LegalTranslations: LegalTranslation = {
+  en: {
+    adminTitle: 'Data Controller',
+    adminText:
+      'The Fabledose team, acting as the data controller, is an informal group represented by <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>. Fabledose is committed to processing personal data in accordance with the applicable standards of the European Union, ensuring a high level of privacy and data security.',
+    purposeTitle: 'Purposes of Data Processing',
+    purposeText:
+      'The processing of personal data by the Fabledose team is carried out for the following purposes:',
+    purposeList: [
+      'Email communication regarding project updates: We regularly inform our subscribers about the progress and news related to our project.',
+      'Email communication regarding marketing: We send information about events, promotions, and other marketing activities related to our operations.',
+    ],
+    distributionTitle: 'Newsletter Distribution',
+    distributionText:
+      'We use the Substack platform to distribute our newsletter. To receive our newsletter, it is necessary to create an account on the Substack platform. Alternatively, individuals who do not wish to provide their email address can follow our blog, where we publish updates related to the project. The content of the blog and the newsletter is identical.',
+    removalTitle: 'Data Deletion',
+    removalText:
+      'Every user has the right to delete their personal data from our database. This can be done independently through their Substack account. In case of any difficulties, it is possible to request the deletion of personal data by contacting <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a> via email.',
+    contactTitle: 'Contact',
+    contactText:
+      'If you have any questions or concerns regarding the processing of your personal data, we encourage you to contact <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>, who is our representative responsible for data protection.',
+    btnContact: 'Write to us',
+  },
+  pl: {
+    adminTitle: 'Administrator danych osobowych',
+    adminText:
+      'Zespół Fabledose, działający jako administrator danych osobowych, jest grupą nieformalną, której przedstawicielem jest <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>. Fabledose zobowiązuje się do przetwarzania danych osobowych zgodnie z obowiązującymi standardami Unii Europejskiej, zapewniając wysoki poziom ochrony prywatności i bezpieczeństwa danych.',
+
+    purposeTitle: 'Cele przetwarzania danych',
+    purposeText:
+      'Przetwarzanie danych osobowych przez Zespół Fabledose odbywa się w następujących celach:',
+    purposeList: [
+      'Komunikacja e-mailowa dotycząca postępów projektu: Regularnie informujemy naszych subskrybentów o postępach i nowościach związanych z naszym projektem.',
+      'Komunikacja e-mailowa o charakterze marketingowym: Wysyłamy informacje o wydarzeniach, promocjach oraz innych działaniach marketingowych związanych z naszą działalnością.',
+    ],
+    distributionTitle: 'Dystrybucja newslettera',
+    distributionText:
+      'Do dystrybucji naszego newslettera używamy platformy Substack. Aby otrzymywać nasz newsletter, konieczne jest założenie konta na platformie Substack. Alternatywnie, osoby, które nie chcą udostępniać swojego adresu e-mail, mogą śledzić nasz blog, gdzie publikujemy aktualności związane z projektem. Zawartość bloga oraz zawartość newslettera są identyczne.',
+    removalTitle: 'Usuwanie danych osobowych',
+    removalText:
+      'Każdy użytkownik ma prawo do usunięcia swoich danych osobowych z naszej bazy. Można to zrobić samodzielnie poprzez posiadane konto Substack. W przypadku jakichkolwiek trudności, istnieje możliwość poproszenia o usunięcie danych osobowych kontaktując się drogą mailową z <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>.',
+    contactTitle: 'Kontakt',
+    contactText:
+      'Jeżeli masz jakiekolwiek pytania lub wątpliwości dotyczące przetwarzania Twoich danych osobowych, zachęcamy do kontaktu z <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>, który jest naszym przedstawicielem odpowiedzialnym za ochronę danych osobowych.',
+    btnContact: 'Napisz do nas',
   },
 };
 
@@ -282,14 +332,24 @@ export const StorySummaryTranslations: StorySummaryTranslation = {
 // SubstackButton
 export const SubstackButtonTranslations: SubstackButtonTranslation = {
   en: {
+    legalText:
+      'I consent to the processing of my personal data by the <strong>Fabledose Team</strong> in the form of my email address for the purpose of sending me information about the progress of the <strong>Fabledose</strong> project and marketing information regarding the services offered by the <strong>Fabledose Team</strong> via electronic communication means.',
+    legalDetailsBtn: 'Detailed Information',
     substackLink: 'https://fabledose.substack.com',
     ariaLabel: 'Sign in to our newsletter',
+    btnTitleOk: 'Go to Substack',
+    btnTitleNo: 'You must consent to receive marketing communications',
     title: 'Our Newsletter and Blog',
     arrowAlt: 'Visit Substack',
   },
   pl: {
+    legalText:
+      'Wyrażam zgodę na przetwarzanie przez <strong>Zespół Fabledose</strong> moich danych osobowych w postaci adresu poczty elektronicznej w celu przesyłania mi informacji postępie projektu <strong>Fabledose</strong> oraz informacji marketingowych dotyczących usług oferowanych przez <strong>Zespół Fabledose</strong> za pomocą środków komunikacji elektronicznej, stosownie do treści przepisu art. 10 ust. 1 i 2 ustawy o świadczeniu usług drogą elektroniczną.',
+    legalDetailsBtn: 'Informacja szczegółowa',
     substackLink: 'https://fabledosepolska.substack.com',
     ariaLabel: 'Zapisz się do Newslettera',
+    btnTitleOk: 'Przejdź do Substack',
+    btnTitleNo: 'Musisz wyrazić zgodę na komunikację marketingową',
     title: 'Nasz Newsletter i Blog',
     arrowAlt: 'Przejdź do Substack',
   },

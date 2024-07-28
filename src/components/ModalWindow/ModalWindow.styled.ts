@@ -67,13 +67,14 @@ export const ExitButton = styled.button`
 export const ModalContentContainer = styled.div`
   position: relative;
   width: 100dvw;
-  max-height: 100dvh;
+  height: 100dvh;
   overflow-y: scroll;
   padding: 24px;
   background: ${({ theme }) => theme.palette.background};
 
   @media ${({ theme }) => theme.media.laptop} {
     max-width: 70dvw;
+    height: auto;
     max-height: 90dvh;
     border-radius: 10px;
     overflow: unset;
