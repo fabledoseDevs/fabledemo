@@ -4,7 +4,7 @@ export const BannerBody = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: ${({ theme }) => theme.zIndex.high};
   width: 100dvw;
   height: auto;
   padding: 10px;

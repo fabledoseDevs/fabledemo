@@ -12,11 +12,10 @@ export const ModalWindowBody = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: ${({ theme }) => theme.zIndex.high};
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
   ${flexboxCentered};
   width: 100dvw;
   background: ${({ theme }) => theme.palette.storyPage.textboxStandard};
-  z-index: 99;
 
   @media ${({ theme }) => theme.media.laptop} {
     height: 100dvh;

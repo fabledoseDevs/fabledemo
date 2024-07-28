@@ -76,11 +76,11 @@ export const CookiesDelete = styled.div`
   }
 
   svg {
-    color: white;
+    color: ${({ theme }) => theme.palette.secondary};
     width: 90px;
   }
 
   span {
-    color: white;
+    color: ${({ theme }) => theme.palette.secondary};
   }
 `;

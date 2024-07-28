@@ -86,7 +86,7 @@ export const CookiePolicyTranslations: CookiePolicyTranslation = {
     ],
     cookieTwoTitle: "Cookie z ustawieniami ('settings')",
     cookieTwoExplanation: [
-      'W tym pliku znajduje się informacja o wybranych ustawieniach aplikacji. Zaisujemy w nim wybór dotyczący rozmiaru czcionki oraz tła pod tekstem. Informacja o tym, czy kliknąłeś "OK" na banerze ciasteczek i czy w związku z tym, możemy go schować, również jest zapsiana w tym pliku.',
+      'W tym pliku znajduje się informacja o wybranych ustawieniach aplikacji. Zaisujemy w nim wybór dotyczący rozmiaru czcionki oraz tła pod tekstem. Informacja o tym, czy kliknąłeś "OK" na banerze ciasteczek i czy w związku z tym możemy go schować, również jest zapsiana w tym pliku.',
       'Bez tego ciasteczka nasza strona nie zapamięta wybranych ustawień. Za każdym razem, kiedy odwiedzisz naszą stronę, konieczne byłoby definiowanie czcionki na nowo.',
     ],
     cookieThreeTitle: "Cookie samouczka ('tutorial')",
