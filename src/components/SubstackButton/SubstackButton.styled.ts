@@ -1,8 +1,51 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import styled from 'styled-components';
 
-export const SubstackButtonBody = styled(Link)`
+export const NewsletterForm = styled.div``;
+
+export const LegalCheckbox = styled.label`
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    margin-top: 6px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+`;
+
+export const LegalParagraph = styled.p`
+  line-height: 1.4 !important;
+  padding-top: 0 !important;
+  margin-top: 0;
+  width: calc(100% - 56px);
+  opacity: 0.75;
+  font-size: 14px;
+  text-align: left;
+`;
+
+export const DetailsButton = styled.button`
+  width: 180px;
+  height: 34px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.palette.green};
+  color: ${({ theme }) => theme.palette.secondary};
+  margin-left: 32px;
+
+  &:active,
+  &:hover {
+    background-color: ${({ theme }) => theme.palette.lightergreen};
+  }
+`;
+
+export const SubstackButtonBody = styled.button`
   border: 0;
   display: flex;
   flex-direction: row;
@@ -19,7 +62,18 @@ export const SubstackButtonBody = styled(Link)`
   cursor: pointer;
 
   @media ${({ theme }) => theme.media.laptop} {
-    margin: 24px 0;
+    margin: 24px 0 24px 32px;
+  }
+
+  &:disabled {
+    filter: grayscale(1);
+    box-shadow: none;
+    cursor: not-allowed;
+
+    &:active {
+      margin-top: 24px;
+      box-shadow: none;
+    }
   }
 
   &:active {
