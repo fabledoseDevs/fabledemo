@@ -1,4 +1,5 @@
 import { ArrowCircleDown } from '@styled-icons/fluentui-system-regular/ArrowCircleDown';
+import parse from 'html-react-parser';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ParallaxBanner } from 'react-scroll-parallax';
@@ -39,13 +40,13 @@ export const Jumbotron: JumbotronType = ({ header, redLineText }) => {
           )}
         </h1>
         <h2>
-          {header.before}
+          {parse(header.before)}
           <br />
           <RedSpan>
             <Image src={RedLine.src} alt="Red line" width={282} height={116} />
             {redLineText}
           </RedSpan>
-          {header.after}
+          {parse(header.after)}
         </h2>
       </ContentWrapper>
     ),
