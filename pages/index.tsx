@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -50,6 +51,7 @@ const Home: NextPage = () => (
       <TemplateLandingPage />
       <Footer />
     </main>
+    <Analytics />
   </>
 );
 
