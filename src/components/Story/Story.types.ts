@@ -5,6 +5,7 @@ import type { Slide } from '@/types/fairytale.types';
 export interface StoryProps {
   storyContent: Slide[];
   defaultColor: string;
+  storyTitle: string;
 }
 
 export interface Hook {

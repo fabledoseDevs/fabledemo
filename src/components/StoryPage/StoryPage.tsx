@@ -21,6 +21,7 @@ import {
 import type { StoryPage as StoryPageType } from './StoryPage.types';
 
 export const StoryPage: StoryPageType = ({
+  storyTitle,
   id,
   layout,
   text,
@@ -80,7 +81,11 @@ export const StoryPage: StoryPageType = ({
             fontSize={settings.fontSize}
           >
             {text &&
-              text.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+              text.map((paragraph, index) => (
+                <p key={`${storyTitle} page ${id} paragraph ${index}`}>
+                  {paragraph}
+                </p>
+              ))}
           </TextBox>
         )}
       </TextContent>
