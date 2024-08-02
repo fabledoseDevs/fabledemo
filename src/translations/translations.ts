@@ -135,7 +135,7 @@ export const FooterTranslations: FooterTranslation = {
 export const JumbotronTranslations: JumbotronTranslation = {
   en: {
     subtitle: 'Fabledose',
-    before: 'a place where fairy tales',
+    before: `a place where<br />fairy tales`,
     after: '',
     redLineText: 'come to life',
   },
@@ -323,7 +323,7 @@ export const StorySummaryTranslations: StorySummaryTranslation = {
   },
   pl: {
     author: 'Autor:',
-    adaptation: 'Adaptatcja:',
+    adaptation: 'Adaptacja:',
     illustrations: 'Ilustracje:',
     readCTA: 'Czytaj Bajkę',
   },
