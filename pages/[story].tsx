@@ -14,6 +14,7 @@ export const getStaticProps: GetStaticProps<{ story: Story | false }> = async ({
   const { default: client } = await import('@/lib/apollo-client');
   const defaultQuery = await client.query({
     query: GET_STORY,
+    fetchPolicy: 'no-cache',
     variables: { preview: isThisPreview, slug: params && params.story },
   });
 
