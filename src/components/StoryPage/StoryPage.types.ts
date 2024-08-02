@@ -15,6 +15,7 @@ export interface StoryPagePictureProps {
 }
 
 export interface StoryPageProps {
+  storyTitle: string;
   id: number;
   layout: LAYOUT_VARIANTS;
   text?: string[];
