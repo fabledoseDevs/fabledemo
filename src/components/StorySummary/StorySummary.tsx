@@ -82,6 +82,7 @@ export const StorySummary: StorySummaryType = ({
         width={'100dvw'}
         height={'100dvh'}
         onReady={removeLoadingScreen}
+        playsinline={true}
       />
       <SummaryLayer $layout={revertLayout}>
         <LogoPositioner $layout={revertLayout}>
