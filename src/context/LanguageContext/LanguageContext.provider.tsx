@@ -23,20 +23,20 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   );
 
   useEffect(() => {
-    // if (!cookies.language) {
-    //   const browserLanguage = navigator.language.toLowerCase();
-    //
-    //   switch (true) {
-    //     case browserLanguage.startsWith('pl'):
-    //       setLanguageInfo(ACTIVE_LANGUAGE.PL);
-    //       break;
-    //     case browserLanguage.startsWith('en'):
-    //       setLanguageInfo(ACTIVE_LANGUAGE.EN);
-    //       break;
-    //     default:
-    //       setLanguageInfo(ACTIVE_LANGUAGE.EN);
-    //   }
-    // }
+    if (!cookies.language) {
+      const browserLanguage = navigator.language.toLowerCase();
+
+      switch (true) {
+        case browserLanguage.startsWith('pl'):
+          setLanguageInfo(ACTIVE_LANGUAGE.PL);
+          break;
+        case browserLanguage.startsWith('en'):
+          setLanguageInfo(ACTIVE_LANGUAGE.EN);
+          break;
+        default:
+          setLanguageInfo(ACTIVE_LANGUAGE.EN);
+      }
+    }
 
     !lockCookie && setCookie('language', languageInfo, { maxAge: 604800 });
   }, [languageInfo, cookies.language]);
