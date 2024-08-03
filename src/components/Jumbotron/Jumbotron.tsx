@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import type { BannerLayer } from 'react-scroll-parallax/dist/components/ParallaxBanner/types';
 
+import LanguageSelector from '@/components/LanguageSelector';
 import Logo from '@/components/Logo';
 import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import { useActiveTranslation } from '@/helpers/activeTranslation.hook';
@@ -12,7 +13,6 @@ import LayerMountains from '@/img/jumbo/fable_jumbo_1a.png';
 import LayerForest from '@/img/jumbo/fable_jumbo_2a.png';
 import RedLine from '@/img/span.png';
 
-import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
 import { ContentWrapper, JumbotronWrapper, RedSpan } from './Jumbotron.styled';
 import type { Jumbotron as JumbotronType } from './Jumbotron.types';
 

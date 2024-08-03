@@ -19,7 +19,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const activeLanguage = cookies.language;
   const [lockCookie, setLockCookie] = useState<boolean>(false);
   const [languageInfo, setLanguageInfo] = useState<ACTIVE_LANGUAGE>(
-    activeLanguage || ACTIVE_LANGUAGE.EN,
+    activeLanguage || ACTIVE_LANGUAGE.PL,
   );
 
   useEffect(() => {
