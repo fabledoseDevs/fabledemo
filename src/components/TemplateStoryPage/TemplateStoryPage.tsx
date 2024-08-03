@@ -46,6 +46,7 @@ export const TemplateStoryPage: TemplateStoryPageType = ({ storyData }) => {
         <Story
           storyContent={storyData.content}
           defaultColor={storyData.info.defaultColor}
+          storyTitle={storyData.info.title}
         />
       ) : (
         <StorySummary

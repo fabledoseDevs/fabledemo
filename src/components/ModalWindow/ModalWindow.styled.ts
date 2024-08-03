@@ -12,7 +12,7 @@ export const ModalWindowBody = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: ${({ theme }) => theme.zIndex.high};
+  z-index: ${({ theme }) => theme.zIndex.veryTop};
   ${flexboxCentered};
   width: 100dvw;
   background: ${({ theme }) => theme.palette.storyPage.textboxStandard};
@@ -67,13 +67,14 @@ export const ExitButton = styled.button`
 export const ModalContentContainer = styled.div`
   position: relative;
   width: 100dvw;
-  max-height: 100dvh;
+  height: 100dvh;
   overflow-y: scroll;
   padding: 24px;
   background: ${({ theme }) => theme.palette.background};
 
   @media ${({ theme }) => theme.media.laptop} {
     max-width: 70dvw;
+    height: auto;
     max-height: 90dvh;
     border-radius: 10px;
     overflow: unset;

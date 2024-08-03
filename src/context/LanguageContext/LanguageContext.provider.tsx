@@ -15,9 +15,9 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cookies, setCookie] = useCookies(['language']);
+  const [cookies, setCookie, removeCookie] = useCookies(['language']);
   const activeLanguage = cookies.language;
-
+  const [lockCookie, setLockCookie] = useState<boolean>(false);
   const [languageInfo, setLanguageInfo] = useState<ACTIVE_LANGUAGE>(
     activeLanguage || ACTIVE_LANGUAGE.PL,
   );
@@ -38,11 +38,18 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
     //   }
     // }
 
-    setCookie('language', languageInfo, { maxAge: 2592000 });
+    !lockCookie && setCookie('language', languageInfo, { maxAge: 604800 });
   }, [languageInfo, cookies.language]);
 
+  const removeLanguageCookie = () => {
+    setLockCookie(true);
+    removeCookie('language');
+  };
+
   return (
-    <LanguageContext.Provider value={{ languageInfo, setLanguageInfo }}>
+    <LanguageContext.Provider
+      value={{ languageInfo, setLanguageInfo, removeLanguageCookie }}
+    >
       {children}
     </LanguageContext.Provider>
   );

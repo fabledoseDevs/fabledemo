@@ -20,6 +20,9 @@ export interface SettingContextProps {
 export type SettingsContext = {
   settings: SettingContextProps;
   setSettings: Dispatch<SetStateAction<SettingContextProps>>;
+  removeSettingsCookie: () => void;
+  cookiesOff: boolean;
+  setCookiesOff: Dispatch<SetStateAction<boolean>>;
 };
 
 export type UseSettingsContext = () => SettingsContext;

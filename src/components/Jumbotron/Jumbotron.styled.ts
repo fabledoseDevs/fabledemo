@@ -81,6 +81,7 @@ export const ContentWrapper = styled.div`
   text-align: center;
 
   h1 {
+    margin-top: 24px;
     font-size: 12px;
     letter-spacing: 16px;
     font-weight: 400;
@@ -99,15 +100,15 @@ export const ContentWrapper = styled.div`
     width: 100%;
     font-size: 26px;
     font-weight: 400;
-    margin: 0 auto 24px;
+    margin: 12px auto 24px;
   }
 
   @media only screen and (orientation: landscape) {
-    margin: 0 auto;
+    margin: 24px auto 0;
   }
 
   @media only screen and (orientation: portrait) {
-    margin: 80px auto 0;
+    margin: 32px auto 0;
   }
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -126,7 +127,7 @@ export const ContentWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.media.desktop} {
-    margin: -50px auto 0;
+    margin: -120px auto 0;
 
     h2 {
       font-size: 36px;

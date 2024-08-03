@@ -1,3 +1,7 @@
-import type { ReactElement } from 'react';
+import type { Dispatch, ReactElement } from 'react';
 
-export type CookieBanner = () => ReactElement;
+export interface CookieBannerProps {
+  policyModalHandler: Dispatch<boolean>;
+}
+
+export type CookieBanner = (props: CookieBannerProps) => ReactElement;

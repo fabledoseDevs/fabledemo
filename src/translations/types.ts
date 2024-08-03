@@ -2,6 +2,23 @@ interface CookieBannerTT {
   headline: string;
   firstPart: string;
   secondPart: string;
+  consentBnt: string;
+  moreInfoBtn: string;
+}
+
+interface CookiePolicyTT {
+  policyTitle: string;
+  intro: string;
+  cookieOneTitle: string;
+  cookieOneExplanation: string[];
+  cookieTwoTitle: string;
+  cookieTwoExplanation: string[];
+  cookieThreeTitle: string;
+  cookieThreeExplanation: string[];
+  outro: string;
+  deleteParagraph: string;
+  deleteButtonBefore: string;
+  deleteButtonAfter: string;
 }
 
 interface ExitboxTT {
@@ -20,6 +37,21 @@ interface JumbotronTT {
   before: string;
   after: string;
   redLineText: string;
+}
+
+interface LegalTT {
+  adminTitle: string;
+  adminText: string;
+  purposeTitle: string;
+  purposeText: string;
+  purposeList: string[];
+  distributionTitle: string;
+  distributionText: string;
+  removalTitle: string;
+  removalText: string;
+  contactTitle: string;
+  contactText: string;
+  btnContact: string;
 }
 
 interface LoadingScreenTT {
@@ -67,8 +99,12 @@ interface StorySummaryTT {
 }
 
 interface SubstackButtonTT {
+  legalText: string;
+  legalDetailsBtn: string;
   substackLink: string;
   ariaLabel: string;
+  btnTitleOk: string;
+  btnTitleNo: string;
   title: string;
   arrowAlt: string;
 }
@@ -132,9 +168,11 @@ export interface Translation<TT> {
 }
 
 export type CookieBannerTranslation = Translation<CookieBannerTT>;
+export type CookiePolicyTranslation = Translation<CookiePolicyTT>;
 export type ExitboxTranslation = Translation<ExitboxTT>;
 export type FooterTranslation = Translation<FooterTT>;
 export type JumbotronTranslation = Translation<JumbotronTT>;
+export type LegalTranslation = Translation<LegalTT>;
 export type LoadingScreenTranslation = Translation<LoadingScreenTT>;
 export type ModalWindowTranslation = Translation<ModalWindowTT>;
 export type RotationGuardTranslation = Translation<RotationGuardTT>;

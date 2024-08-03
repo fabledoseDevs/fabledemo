@@ -41,7 +41,11 @@ import {
 } from './Story.styled';
 import type { Story as StoryType } from './Story.types';
 
-export const Story: StoryType = ({ storyContent, defaultColor }) => {
+export const Story: StoryType = ({
+  storyContent,
+  defaultColor,
+  storyTitle,
+}) => {
   const swiperRef = useRef(null);
 
   const {
@@ -97,11 +101,12 @@ export const Story: StoryType = ({ storyContent, defaultColor }) => {
       >
         {storyContent.map((page, index) => (
           <Slide
-            key={page.picture.backup.src}
+            key={`${storyTitle} page ${page.slideId}`}
             virtualIndex={index}
             defaultColor={defaultColor}
           >
             <StoryPage
+              storyTitle={storyTitle}
               id={page.slideId}
               layout={page.layout}
               backgroundPicture={page.picture}

@@ -4,9 +4,11 @@ import { useLanguageContext } from '@/context/LanguageContext/LanguageContext.pr
 
 import type {
   CookieBannerTranslation,
+  CookiePolicyTranslation,
   ExitboxTranslation,
   FooterTranslation,
   JumbotronTranslation,
+  LegalTranslation,
   LoadingScreenTranslation,
   ModalWindowTranslation,
   RotationGuardTranslation,
@@ -31,7 +33,9 @@ export const CookieBannerTranslations: CookieBannerTranslation = {
     firstPart:
       'We brought our own, but these are not suitable for eating. Our cookies are small files that we use to store application settings, thus providing you with the best quality service.',
     secondPart:
-      'If you do not agree to this, please leave this website. If you would like to find out more, feel free to contact us.',
+      'If you do not agree to this, feel free to click "Explain" button where you can find out more or deactivate cookies.',
+    consentBnt: 'OK',
+    moreInfoBtn: 'Explain',
   },
   pl: {
     headline:
@@ -39,7 +43,63 @@ export const CookieBannerTranslations: CookieBannerTranslation = {
     firstPart:
       'My przynieśliśmy swoje, ale te nie nadają się do jedzenia. Nasze ciasteczka to niewielkie pliki, które zapisujemy na Twoim urządzeniu, aby móc dostarczyć Ci usługę w najlepszej jakości.',
     secondPart:
-      'Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody, opuść tę stronę. Jeśli chciałbyś dowiedzeć się więcej, skontaktuj się z nami.',
+      'Zapisujemy w nich informacje o ustawieniach aplikacji, jakie zostały przez ciebie wybrane. Jeżeli nie wyrażasz na to zgody naciśnij na przycisk "Informacja" gdzie dowiesz się więcej i bedziesz miał mozliwość dezaktywacji plików cookie.',
+    consentBnt: 'OK',
+    moreInfoBtn: 'Informacja',
+  },
+};
+
+//CookiePolicy
+export const CookiePolicyTranslations: CookiePolicyTranslation = {
+  en: {
+    policyTitle: 'COOKIE Policy',
+    intro: `This website (Fabledose) <strong> does not collect or process any marketing information or personal data </strong>. Therefore, we do not use any cookies, trackers, or other technologies related to such activities. We will store three cookies on your device. All of them are essential for the proper functioning of the website. Below, you will find detailed information.`,
+    cookieOneTitle: "Language Cookie ('language')",
+    cookieOneExplanation: [
+      'This file contains simple information about the default language of your browser. If you change the language of the website, information about the newly selected language will be stored in it.',
+      'Without this cookie, website cannot permanently define and remember your language settings.',
+    ],
+    cookieTwoTitle: "Settings Cookie ('settings')",
+    cookieTwoExplanation: [
+      'This file contains information about the selected application settings. We save the choice regarding the font size and the background under the text. Information about whether you clicked "OK" on the cookie banner and whether we can hide it is also stored in this file.',
+      'Without this cookie, our website will not remember the selected settings. Each time you visit our website, it would be necessary to define the font anew.',
+    ],
+    cookieThreeTitle: "Tutorial Cookie ('tutorial')",
+    cookieThreeExplanation: [
+      'In this cookie, we save information about whether you have already used the tutorial on our website.',
+      'Without it, the prompt asking about the tutorial will be displayed more than once and may become cumbersome.',
+    ],
+    outro:
+      'These files do not send any information to the website creators or to third parties. They are necessary for the proper functioning of the website. Without them, the website cannot remember anything related to the above-mentioned activities. We recommend keeping them to ensure an uninterrupted experience with the Fabledose service.',
+    deleteParagraph: `If you do not consent to this, use the red button to delete our cookies and <strong>block their use for the duration of this session</strong>. We do not guarantee the correct functioning of the service. You may encounter errors in displaying the language, the font on the story page, the tutorial content, and others.`,
+    deleteButtonBefore:
+      'Delete and block the use of cookies for the duration of this session!',
+    deleteButtonAfter:
+      'Cookies have been disabled for the duration of this session.',
+  },
+  pl: {
+    policyTitle: 'Polityka plików COOKIE',
+    intro: `Ta strona (Fabledose) <strong> nie zbiera i nie przetważa żadnych informacji marketingowych oraz danych osobowych </strong>. W związku z tym nie używamy żadnych ciasteczek, trackerów oraz innych technologii powiązanych z taką działanością. Na Twoim urządzeniu zapiszemy trzy pliki cookie. Wszystkie one są istotne z punktu widzenia prawidowego działania strony. Poniżej znajdziesz szczegółowe informacje.`,
+    cookieOneTitle: "Cookie językowe ('language')",
+    cookieOneExplanation: [
+      'W tym pliku znajduje się prosta informacja o domyślnym języku twojej przeglądarki. Jeżeli zmienisz język strony, zapisze się w nim informacja na temat nowo wybranego języka.',
+      'Bez tego ciasteczka nie możemy trwale określić i zapamiętać ustawień twojego języka.',
+    ],
+    cookieTwoTitle: "Cookie z ustawieniami ('settings')",
+    cookieTwoExplanation: [
+      'W tym pliku znajduje się informacja o wybranych ustawieniach aplikacji. Zaisujemy w nim wybór dotyczący rozmiaru czcionki oraz tła pod tekstem. Informacja o tym, czy kliknąłeś "OK" na banerze ciasteczek i czy w związku z tym możemy go schować, również jest zapsiana w tym pliku.',
+      'Bez tego ciasteczka nasza strona nie zapamięta wybranych ustawień. Za każdym razem, kiedy odwiedzisz naszą stronę, konieczne byłoby definiowanie czcionki na nowo.',
+    ],
+    cookieThreeTitle: "Cookie samouczka ('tutorial')",
+    cookieThreeExplanation: [
+      'W tym ciasteczku zapisujemy informację o tym, czy korzystałeś już z samouczka na naszej stronie.',
+      ' Bez niego monit z pytaniem o samouczek będzie wyświetlał się więcej niż raz i może stać się uciążliwy.',
+    ],
+    outro:
+      'Pliki te nie wysyłają żadnych informacji do twórców witryny oraz podmiotów i osób trzecich. Są to pliki konieczne dla prawidłowego działania strony. Bez nich strona nie umie zapamiętać niczego co wiąże się z wyżej wymienionymi zakresami działania. Zalecamy pozostawienie ich aby doświadczenie z serwisem Fabledose było niezakłócone.',
+    deleteParagraph: `Jeżeli nie wyrażasz na to zgody, użyj czerwonego przycisku aby usunąć nasze pliki cookie i <strong>zablokować ich używanie na czas tej sesji</strong>. Nie gwarantujemy poprawnego działania serwisu. Możesz natknąć się na błędy w wyswietlaniu języka, czcionki na stronie bajki, treści samouczka oraz inne.`,
+    deleteButtonBefore: 'Usuń i zablokuj używanie cisteczek na czas tej sesji!',
+    deleteButtonAfter: 'Cookies zostały wyłączone na czas tej sesji.',
   },
 };
 
@@ -75,7 +135,7 @@ export const FooterTranslations: FooterTranslation = {
 export const JumbotronTranslations: JumbotronTranslation = {
   en: {
     subtitle: 'Fabledose',
-    before: 'a place where fairy tales',
+    before: `a place where<br />fairy tales`,
     after: '',
     redLineText: 'come to life',
   },
@@ -84,6 +144,55 @@ export const JumbotronTranslations: JumbotronTranslation = {
     before: 'miejsce, w którym baśnie',
     after: 'podczas czytania',
     redLineText: 'ożywają',
+  },
+};
+
+// Legal
+export const LegalTranslations: LegalTranslation = {
+  en: {
+    adminTitle: 'Data Controller',
+    adminText:
+      'The Fabledose team, acting as the data controller, is an informal group represented by <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>. Fabledose is committed to processing personal data in accordance with the applicable standards of the European Union, ensuring a high level of privacy and data security.',
+    purposeTitle: 'Purposes of Data Processing',
+    purposeText:
+      'The processing of personal data by the Fabledose team is carried out for the following purposes:',
+    purposeList: [
+      'Email communication regarding project updates: We regularly inform our subscribers about the progress and news related to our project.',
+      'Email communication regarding marketing: We send information about events, promotions, and other marketing activities related to our operations.',
+    ],
+    distributionTitle: 'Newsletter Distribution',
+    distributionText:
+      'We use the Substack platform to distribute our newsletter. To receive our newsletter, it is necessary to create an account on the Substack platform. Alternatively, individuals who do not wish to provide their email address can follow our blog, where we publish updates related to the project. The content of the blog and the newsletter is identical.',
+    removalTitle: 'Data Deletion',
+    removalText:
+      'Every user has the right to delete their personal data from our database. This can be done independently through their Substack account. In case of any difficulties, it is possible to request the deletion of personal data by contacting <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a> via email.',
+    contactTitle: 'Contact',
+    contactText:
+      'If you have any questions or concerns regarding the processing of your personal data, we encourage you to contact <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>, who is our representative responsible for data protection.',
+    btnContact: 'Write to us',
+  },
+  pl: {
+    adminTitle: 'Administrator danych osobowych',
+    adminText:
+      'Zespół Fabledose, działający jako administrator danych osobowych, jest grupą nieformalną, której przedstawicielem jest <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>. Fabledose zobowiązuje się do przetwarzania danych osobowych zgodnie z obowiązującymi standardami Unii Europejskiej, zapewniając wysoki poziom ochrony prywatności i bezpieczeństwa danych.',
+
+    purposeTitle: 'Cele przetwarzania danych',
+    purposeText:
+      'Przetwarzanie danych osobowych przez Zespół Fabledose odbywa się w następujących celach:',
+    purposeList: [
+      'Komunikacja e-mailowa dotycząca postępów projektu: Regularnie informujemy naszych subskrybentów o postępach i nowościach związanych z naszym projektem.',
+      'Komunikacja e-mailowa o charakterze marketingowym: Wysyłamy informacje o wydarzeniach, promocjach oraz innych działaniach marketingowych związanych z naszą działalnością.',
+    ],
+    distributionTitle: 'Dystrybucja newslettera',
+    distributionText:
+      'Do dystrybucji naszego newslettera używamy platformy Substack. Aby otrzymywać nasz newsletter, konieczne jest założenie konta na platformie Substack. Alternatywnie, osoby, które nie chcą udostępniać swojego adresu e-mail, mogą śledzić nasz blog, gdzie publikujemy aktualności związane z projektem. Zawartość bloga oraz zawartość newslettera są identyczne.',
+    removalTitle: 'Usuwanie danych osobowych',
+    removalText:
+      'Każdy użytkownik ma prawo do usunięcia swoich danych osobowych z naszej bazy. Można to zrobić samodzielnie poprzez posiadane konto Substack. W przypadku jakichkolwiek trudności, istnieje możliwość poproszenia o usunięcie danych osobowych kontaktując się drogą mailową z <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>.',
+    contactTitle: 'Kontakt',
+    contactText:
+      'Jeżeli masz jakiekolwiek pytania lub wątpliwości dotyczące przetwarzania Twoich danych osobowych, zachęcamy do kontaktu z <a href="https://www.linkedin.com/in/pawel-modzelewski/" target="_blank">Paweł Modzelewski</a>, który jest naszym przedstawicielem odpowiedzialnym za ochronę danych osobowych.',
+    btnContact: 'Napisz do nas',
   },
 };
 
@@ -214,7 +323,7 @@ export const StorySummaryTranslations: StorySummaryTranslation = {
   },
   pl: {
     author: 'Autor:',
-    adaptation: 'Adaptatcja:',
+    adaptation: 'Adaptacja:',
     illustrations: 'Ilustracje:',
     readCTA: 'Czytaj Bajkę',
   },
@@ -223,14 +332,24 @@ export const StorySummaryTranslations: StorySummaryTranslation = {
 // SubstackButton
 export const SubstackButtonTranslations: SubstackButtonTranslation = {
   en: {
+    legalText:
+      'I consent to the processing of my personal data by the <strong>Fabledose Team</strong> in the form of my email address for the purpose of sending me information about the progress of the <strong>Fabledose</strong> project and marketing information regarding the services offered by the <strong>Fabledose Team</strong> via electronic communication means.',
+    legalDetailsBtn: 'Detailed Information',
     substackLink: 'https://fabledose.substack.com',
     ariaLabel: 'Sign in to our newsletter',
+    btnTitleOk: 'Go to Substack',
+    btnTitleNo: 'You must consent to receive marketing communications',
     title: 'Our Newsletter and Blog',
     arrowAlt: 'Visit Substack',
   },
   pl: {
+    legalText:
+      'Wyrażam zgodę na przetwarzanie przez <strong>Zespół Fabledose</strong> moich danych osobowych w postaci adresu poczty elektronicznej w celu przesyłania mi informacji postępie projektu <strong>Fabledose</strong> oraz informacji marketingowych dotyczących usług oferowanych przez <strong>Zespół Fabledose</strong> za pomocą środków komunikacji elektronicznej, stosownie do treści przepisu art. 10 ust. 1 i 2 ustawy o świadczeniu usług drogą elektroniczną.',
+    legalDetailsBtn: 'Informacja szczegółowa',
     substackLink: 'https://fabledosepolska.substack.com',
     ariaLabel: 'Zapisz się do Newslettera',
+    btnTitleOk: 'Przejdź do Substack',
+    btnTitleNo: 'Musisz wyrazić zgodę na komunikację marketingową',
     title: 'Nasz Newsletter i Blog',
     arrowAlt: 'Przejdź do Substack',
   },
