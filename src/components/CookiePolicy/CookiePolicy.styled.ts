@@ -29,8 +29,13 @@ export const Cookie = styled.li`
   gap: 12px;
 
   svg {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
+
+    @media ${({ theme }) => theme.media.laptop} {
+      width: 60px;
+      height: 60px;
+    }
   }
 `;
 
@@ -49,16 +54,25 @@ export const CookieText = styled.div`
 export const CookiesDelete = styled.div`
   margin-top: 24px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   gap: 12px;
 
+  @media ${({ theme }) => theme.media.laptop} {
+    flex-direction: row;
+  }
+
   p {
-    width: calc(100% - 224px);
+    width: 100%;
+
+    @media ${({ theme }) => theme.media.laptop} {
+      width: calc(100% - 224px);
+    }
   }
 
   button {
-    width: 200px;
+    width: 50%;
+    min-width: 200px;
     padding: 12px;
     gap: 12px;
     display: flex;
@@ -68,10 +82,16 @@ export const CookiesDelete = styled.div`
     align-items: center;
     cursor: pointer;
     background-color: ${({ theme }) => theme.palette.accent};
+    border-radius: 15px;
+    margin: 12px auto;
 
     &:disabled {
       cursor: not-allowed;
       background-color: ${({ theme }) => theme.palette.accentActive};
+    }
+
+    @media ${({ theme }) => theme.media.laptop} {
+      width: 200px;
     }
   }
 
