@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import type { BannerLayer } from 'react-scroll-parallax/dist/components/ParallaxBanner/types';
 
+import LanguageSelector from '@/components/LanguageSelector';
 import Logo from '@/components/Logo';
 import { COLOUR_VARIANT } from '@/components/Logo/Logo.types';
 import { useActiveTranslation } from '@/helpers/activeTranslation.hook';
@@ -70,6 +71,7 @@ export const Jumbotron: JumbotronType = ({ header, redLineText }) => {
 
   return (
     <JumbotronWrapper>
+      <LanguageSelector />
       <ParallaxBanner layers={[mountains, headline, forest]} />
       <Link href="#content-start" aria-label="Scroll Down">
         <ArrowCircleDown />
