@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fabledose.com
+
+# Sitemaps
+Sitemap: https://fabledose.com/sitemap.xml
