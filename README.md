@@ -1,46 +1,56 @@
 ## Fabledose Demo
-Fabledose project demo page.
+Welcome to the Fabledose Demo project! This application showcases a library of animated books designed to engage children in reading.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Overview
 
-### Node version: 
-`20.11.0`
-Best to use [NVM](https://github.com/nvm-sh/nvm)
+This project is built using [Next.js](https://nextjs.org/), a powerful React framework for server-side rendering and generating static websites. It was initialized with `create-next-app`.
 
-run `nvm install` in the root of the project. see the .nvmrc file
+### Prerequisites
 
-### Requirements:
-```json
-{
-  "node": "^18.17.0",
-  "next": "14.0.4",
-  "react": "^18"
-}
+Ensure you have the following installed on your machine:
+* Node.js: v20.11.0 (recommended to use [NVM](https://github.com/nvm-sh/nvm))
+* Next.js: v14.0.4
+* React: v18.x
+
+### Node Version Management
+
+To manage the Node.js version, use [NVM](https://github.com/nvm-sh/nvm). Run the following command in the root of the project to install the correct Node.js version as specified in the `.nvmrc` file:
+
+```
+nvm install
 ```
 
-### Env file
+### Setting Up the Environment
 
-for sending an email you need to create an `.env` file in root 
+You need to create an `.env` file in the root directory and populate it with the necessary environment variables:
 
 ```dotenv
-NEWSLETTER_SUBMISSION_KEY=
-NEWSLETTER_CAPTCHA_ID=
+APP_ENVIRONMENT=
+SPACE_ID=
+PREVIEW_TOKEN=
+DELIVERY_TOKEN=
 ```
 
-### Workflow:
+### Getting Started
 
-Start dev server:
-```bash
+Follow these steps to run the development server:
+
+1. Install the dependencies:
+```
+npm install --legacy-peer-deps
+```
+2. Start the development server:
+```
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open http://localhost:3000 in your browser to see the application in action.
 
-### Learn More
+### Additional Resources
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about Next.js and its features, refer to the following resources:
+* [Next.js Documentation](https://nextjs.org/docs) - Comprehensive documentation on Next.js.
+* [Learn Next.js](https://nextjs.org/learn) - An interactive tutorial to get started with Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Feedback and Contributions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
+We welcome your feedback and contributions! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
