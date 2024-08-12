@@ -1,3 +1,5 @@
+import { track } from '@vercel/analytics';
+
 import Button from '@/components/Button';
 import {
   COLOR_VARIANTS,
@@ -15,6 +17,11 @@ export const Exitbox: ExitboxType = ({ exitFunction }) => {
   const { headline, acceptButton, declineButton } =
     useTranslation(ExitboxTranslations);
 
+  const quitStory = () => {
+    track('Story was abandoned!');
+    quitStoryUiCleanup();
+  };
+
   return (
     <ModalWindow exitFunction={exitFunction}>
       <ExitboxContainer>
@@ -26,7 +33,7 @@ export const Exitbox: ExitboxType = ({ exitFunction }) => {
             fontVariant={FONT_VARIANTS.STANDARD}
             purpose={PURPOSE.ANCHOR}
             anchorLink={'/'}
-            onclickAction={quitStoryUiCleanup}
+            onclickAction={quitStory}
           />
           <Button
             label={declineButton}

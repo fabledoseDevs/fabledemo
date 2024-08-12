@@ -1,3 +1,4 @@
+import { track } from '@vercel/analytics';
 import { useEffect, useRef, useState } from 'react';
 
 import ModalWindow from '@/components/ModalWindow';
@@ -77,6 +78,7 @@ export const Toolbox: ToolboxType = ({ exitFunction }) => {
   }, []);
 
   const handleThemeChange = (theme: TEXTBOX_THEME) => {
+    track(`Theme set to: ${theme}`);
     setSettings(prevSettings => ({ ...prevSettings, theme }));
   };
 

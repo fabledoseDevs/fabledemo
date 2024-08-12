@@ -33,7 +33,7 @@ import type { Tutorial as TutorialType } from './Tutorial.types';
 import { TUTORIAL_STEPS } from './Tutorial.types';
 
 export const Tutorial: TutorialType = ({ closeTutorial }) => {
-  const { currentStep, setCurrentStep, nextTip, prevTip, killTutorial } =
+  const { currentStep, nextTip, prevTip, beginTutorial, killTutorial } =
     useTutorial(closeTutorial);
   const {
     tutorialWelcome,
@@ -61,7 +61,7 @@ export const Tutorial: TutorialType = ({ closeTutorial }) => {
                 colorVariant={COLOR_VARIANTS.GREEN}
                 fontVariant={FONT_VARIANTS.UPPERCASE}
                 purpose={PURPOSE.FUNCTION_TRIGGER}
-                onclickAction={() => setCurrentStep(TUTORIAL_STEPS.SLIDE)}
+                onclickAction={beginTutorial}
               />
               <Button
                 label={no}

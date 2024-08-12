@@ -1,3 +1,4 @@
+import { track } from '@vercel/analytics';
 import { useState } from 'react';
 
 import type { UseTutorial as UseTutorialType } from './Tutorial.types';
@@ -9,7 +10,13 @@ export const useTutorial: UseTutorialType = closeTutorial => {
   );
 
   const killTutorial = () => {
+    track('Tutorial OFF');
     closeTutorial(true);
+  };
+
+  const beginTutorial = () => {
+    track('Tutorial ON');
+    setCurrentStep(TUTORIAL_STEPS.SLIDE);
   };
 
   const nextTip = () => {
@@ -66,6 +73,7 @@ export const useTutorial: UseTutorialType = closeTutorial => {
     setCurrentStep,
     nextTip,
     prevTip,
+    beginTutorial,
     killTutorial,
   };
 };
