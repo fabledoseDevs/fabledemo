@@ -19,6 +19,7 @@ export interface UseTutorialReturnValues {
   setCurrentStep: Dispatch<SetStateAction<number>>;
   nextTip: () => void;
   prevTip: () => void;
+  beginTutorial: () => void;
   killTutorial: () => void;
 }
 

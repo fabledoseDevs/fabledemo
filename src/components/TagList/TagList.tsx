@@ -1,4 +1,5 @@
 import { InfoCircle } from '@styled-icons/bootstrap/InfoCircle';
+import { track } from '@vercel/analytics';
 import React, { useState } from 'react';
 
 import Tagbox from '@/components/Tagbox';
@@ -25,6 +26,11 @@ export const TagList: TagListType = ({
   const [isInfoModalActive, setInfoModalActive] = useState<boolean>(false);
   const { general, themes, details } = useTranslation(TagListTranslations);
 
+  const openTagSummary = () => {
+    track('Open modal: story tags');
+    setInfoModalActive(prevState => !prevState);
+  };
+
   return (
     <>
       <TagListBody>
@@ -46,9 +52,7 @@ export const TagList: TagListType = ({
           <TagsListUl>
             <TagListTitle>{details}</TagListTitle>
             <li>
-              <TagsSummaryButton
-                onClick={() => setInfoModalActive(prevState => !prevState)}
-              >
+              <TagsSummaryButton onClick={openTagSummary}>
                 <InfoCircle />
               </TagsSummaryButton>
             </li>
