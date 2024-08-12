@@ -71,7 +71,7 @@ export const Story: StoryType = ({
     {
       settingsVisibility
         ? track('Settings screen OFF')
-        : track('Settings screen  ON');
+        : track('Settings screen ON');
     }
     setSettingsVisibility(prevState => !prevState);
   };
@@ -138,13 +138,23 @@ export const Story: StoryType = ({
       <NavElements>
         <NavigationButton
           className="swiper-button-prev"
-          onClick={() => track('Slide back')}
+          onClick={() => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            const currentSlideIndex = swiperRef.current?.swiper?.activeIndex;
+            track(`Slide back. New slide number ${currentSlideIndex + 1}.`);
+          }}
         >
           <ArrowCircleLeft />
         </NavigationButton>
         <NavigationButton
           className="swiper-button-next"
-          onClick={() => track('Slide forward')}
+          onClick={() => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            const currentSlideIndex = swiperRef.current?.swiper?.activeIndex;
+            track(`Slide forward. New slide number ${currentSlideIndex + 1}.`);
+          }}
         >
           <ArrowCircleRight />
         </NavigationButton>
