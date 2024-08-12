@@ -11,6 +11,7 @@ import { FullScreenMinimize as FullscreenDownIcon } from '@styled-icons/fluentui
 import { Home as HomeIcon } from '@styled-icons/fluentui-system-regular/Home';
 import { QuestionCircle as HelpIcon } from '@styled-icons/fluentui-system-regular/QuestionCircle';
 import { TextBoxSettings as TextBoxSettingsIcon } from '@styled-icons/fluentui-system-regular/TextBoxSettings';
+import { track } from '@vercel/analytics';
 import { useRef } from 'react';
 import {
   A11y,
@@ -58,6 +59,22 @@ export const Story: StoryType = ({
   } = useStory();
 
   const { tutorialOff, setTutorialOff } = useTutorialContext();
+
+  const fullscreenSwitch = () => {
+    {
+      fullscreen ? track('Fullscreen OFF') : track('Fullscreen ON');
+    }
+    toggleFullscreen();
+  };
+
+  const settingsSwitch = () => {
+    {
+      settingsVisibility
+        ? track('Settings screen OFF')
+        : track('Settings screen  ON');
+    }
+    setSettingsVisibility(prevState => !prevState);
+  };
 
   return (
     <>
@@ -119,22 +136,26 @@ export const Story: StoryType = ({
       </Stage>
 
       <NavElements>
-        <NavigationButton className="swiper-button-prev">
+        <NavigationButton
+          className="swiper-button-prev"
+          onClick={() => track('Slide back')}
+        >
           <ArrowCircleLeft />
         </NavigationButton>
-        <NavigationButton className="swiper-button-next">
+        <NavigationButton
+          className="swiper-button-next"
+          onClick={() => track('Slide forward')}
+        >
           <ArrowCircleRight />
         </NavigationButton>
       </NavElements>
 
-      {settingsVisibility && <Toolbox exitFunction={setSettingsVisibility} />}
+      {settingsVisibility && <Toolbox exitFunction={settingsSwitch} />}
       {exitVisibility && <Exitbox exitFunction={setExitVisibility} />}
-      <SettingsButton
-        onClick={() => setSettingsVisibility(prevState => !prevState)}
-      >
+      <SettingsButton onClick={settingsSwitch}>
         {settingsVisibility ? <ExitIcon /> : <TextBoxSettingsIcon />}
       </SettingsButton>
-      <FullscreenButton onClick={toggleFullscreen}>
+      <FullscreenButton onClick={fullscreenSwitch}>
         {fullscreen ? <FullscreenDownIcon /> : <FullscreenUpIcon />}
       </FullscreenButton>
       <HelpButton onClick={() => setTutorialOff(false)}>

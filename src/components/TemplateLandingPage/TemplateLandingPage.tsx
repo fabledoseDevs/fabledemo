@@ -1,3 +1,4 @@
+import { track } from '@vercel/analytics';
 import dynamic from 'next/dynamic';
 
 import {
@@ -97,6 +98,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: false,
+            onclickAction: () => track('Open story: Glodilocks'),
           },
           summary: goldilocksSummary,
           synopsis: goldilocksSynopsis,
@@ -123,6 +125,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
             isDisabled: true,
+            onclickAction: () => track('Open story: Three Little Pigs'),
           },
           summary: pigsSummary,
           synopsis: pigsSynopsis,
