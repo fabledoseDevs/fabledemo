@@ -1,4 +1,5 @@
 import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
+import goldfishThumb from '@/img/stories-thumbs/thumb-goldfish.png';
 import goldilocksThumb from '@/img/stories-thumbs/thumb-goldilocks.png';
 import piggiesThumb from '@/img/stories-thumbs/thumb-piggies.png';
 import { TAG_NAMES } from '@/types/fairytale.types';
@@ -24,5 +25,16 @@ export const CARD_THREE_PIGGIES: CardData = {
     TAG_NAMES.HELPFULNESS,
     TAG_NAMES.RESPONSIBILITY,
     TAG_NAMES.DILIGENCE,
+  ],
+};
+
+export const CARD_GOLDFISH: CardData = {
+  thumb: goldfishThumb.src,
+  cardLayout: BOOKCARD_LAYOUT.IMAGE_LEFT,
+  mainTags: [TAG_NAMES.AGE_5, TAG_NAMES.CONTEMPORARY_FABLE],
+  detailedTags: [
+    TAG_NAMES.MODERATION,
+    TAG_NAMES.RESPONSIBILITY,
+    TAG_NAMES.CAREFULNESS,
   ],
 };
