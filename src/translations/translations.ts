@@ -283,7 +283,7 @@ export const StoryCardGoldilocks: StoryCardTranslation = {
 export const StoryCardThreeLittlePigs: StoryCardTranslation = {
   en: {
     title: 'The Three Little Pigs',
-    url: '/three-little-pigs',
+    url: '/three-pigs',
     summary:
       'Three little pigs leave the comforts of their childhood home to seek their own place in the vast and exciting world. However, just as everything seemed to be going in the right direction, a new character enters the scene. A character with very large and very sharp teeth…',
     synopsis:
