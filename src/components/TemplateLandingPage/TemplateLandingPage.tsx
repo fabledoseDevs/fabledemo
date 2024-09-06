@@ -22,6 +22,7 @@ import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import {
   JumbotronTranslations,
+  StoryCardFishermanAndTheGoldfish,
   StoryCardGoldilocks,
   StoryCardThreeLittlePigs,
   TemplateLandingPageTranslations,
@@ -29,6 +30,7 @@ import {
 } from '@/translations';
 
 import {
+  CARD_GOLDFISH,
   CARD_GOLDILOCKS,
   CARD_THREE_PIGGIES,
 } from './TemplateLandingPage.consts';
@@ -58,6 +60,12 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
     summary: pigsSummary,
     url: pigsUrl,
   } = useTranslation(StoryCardThreeLittlePigs);
+  const {
+    title: goldfishTitle,
+    synopsis: goldfishSynopsis,
+    summary: goldfishSummary,
+    url: goldfishUrl,
+  } = useTranslation(StoryCardFishermanAndTheGoldfish);
   const {
     subtitle: jumboSubtitle,
     before: jumboBefore,
@@ -119,12 +127,12 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
         content={{
           bookTitle: pigsTitle,
           ctaButton: {
-            purpose: PURPOSE.FUNCTION_TRIGGER,
-            label: comingSoon,
+            purpose: PURPOSE.ANCHOR,
+            label: read,
             anchorLink: pigsUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
-            isDisabled: true,
+            isDisabled: false,
             onclickAction: () => track('Open story: Three Little Pigs'),
           },
           summary: pigsSummary,
@@ -132,6 +140,33 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
           iconsBlock: {
             mainTags: CARD_THREE_PIGGIES.mainTags,
             extraTags: CARD_THREE_PIGGIES.detailedTags,
+          },
+        }}
+      />
+      <StoryCard
+        bookCover={{
+          src: CARD_GOLDFISH.thumb,
+          alt: goldfishTitle,
+          width: 640,
+          height: 340,
+        }}
+        layout={CARD_GOLDFISH.cardLayout}
+        content={{
+          bookTitle: goldfishTitle,
+          ctaButton: {
+            purpose: PURPOSE.FUNCTION_TRIGGER,
+            label: comingSoon,
+            anchorLink: goldfishUrl,
+            colorVariant: COLOR_VARIANTS.GREEN,
+            fontVariant: FONT_VARIANTS.UPPERCASE,
+            isDisabled: true,
+            onclickAction: () => track('Open story: Goldfish'),
+          },
+          summary: goldfishSummary,
+          synopsis: goldfishSynopsis,
+          iconsBlock: {
+            mainTags: CARD_GOLDFISH.mainTags,
+            extraTags: CARD_GOLDFISH.detailedTags,
           },
         }}
       />

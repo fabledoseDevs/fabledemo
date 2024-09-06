@@ -291,11 +291,31 @@ export const StoryCardThreeLittlePigs: StoryCardTranslation = {
   },
   pl: {
     title: 'Trzy Świnki',
-    url: '/trzy-swinki',
+    url: '/trzy-male-swinki',
     summary:
       'Trzy świnki wyruszają w wielki świat aby rozpocząć samodzielne życie. Ich historia nabiera dramatycznych barw, gdy muszą się skonfrontować z wilkiem.',
     synopsis:
       'Trzy małe świnki opuszczają swój dom w poszukiwaniu niezależności. Każda z nich zabiera się do zbudowania własnego domku używając różnych materiałów: słomy, patyków i kamieni. Ich wysiłek wkrótce zostaje wystawiony na próbę przez przebiegłego wilka, który pragnie je pożreć. Wilk skutecznie niszczy dom ze słomy oraz z patyków, ale nie udaje mu się to zburzyć solidniejszego domu z cegły. W swoim ostatnim schronieniu świnki skutecznie udaremniają próby wilka i przepędzają go. Historia ta podkreśla wagę pracowitości, znaczenie staranności oraz wytrwałości.',
+  },
+};
+
+// StoryCard - Three Little Pigs
+export const StoryCardFishermanAndTheGoldfish: StoryCardTranslation = {
+  en: {
+    title: 'The Fisherman and The Goldfish',
+    url: '/fisherman-and-the-goldfish',
+    summary:
+      "A fisherman's life spirals into chaos because of a golden fish. Will he be able to stop the impending disaster and save himself and his wife?",
+    synopsis:
+      "The fairy tale tells the story of a fisherman and his wife. One day, while at sea, the fisherman catches a golden flounder, which promises to grant his wishes in exchange for being set free. The fisherman releases the fish without asking for anything and returns to the shore. His wife encourages him to go back to the fish and ask for a bigger house. The fisherman follows his wife’s wish, finds the flounder, and makes her request. Upon returning to the shore, he finds his wife in a grand house. However, their happiness is short-lived, as the fisherman's wife soon desires more than just a new house. She sends her husband back to sea to find the fish again and ask for a manor. When this wish is granted, her expectations grow even further, and she then asks for a palace and a kingdom, and finally, for power equal to God. When the fisherman expresses his wife's last wish, the fish refuses, the fisherman's boat sinks into the sea, and he is washed ashore. There, his wife finds him, and together they return to their humble home - exactly the same as it was at the beginning of the story.",
+  },
+  pl: {
+    title: 'O Rybaku i Złotej Rybce',
+    url: '/o-rybau-i-zlotej-rybce',
+    summary:
+      'Życie rybaka zamienia się w chaos za sprawą złotej rybki. Czy uda mu się powstrzymać nachodzącą katastrofę i ocalić siebie oraz swoją żonę?',
+    synopsis:
+      'Bajka opowiada o rybaku i jego żonie. Któregoś razu na morzu rybak natrafia na złotą flądrę, która obiecuje spełnić jego życzenia w zamian za wypuszczenie na wolność. Ten wypuszcza rybkę bez żadnych próśb i wraca na ląd. Jego żona zachęca go, aby wrócił do rybki i poprosił ją o większy dom. Rybak spełnia prośbę żony, odnajduje flądrę i wypowiada życzenie żony. Po powrocie na ląd odnajduje żonę w wielkim domu. Jednak ich szczęście nie trwa długo, gdyż żona rybaka wkrótce pragnie więcej niż tylko nowego domu. Wyprawia męża w morze, aby ponownie odnalazł rybkę i poprosił ją o dwór. Gdy to życzenie się spełnia, oczekiwania żony rosą jeszcze bardziej i następnie prosi o pałac i królestwo, potem o moc równą Bogu. Gdy rybak wypowiada ostatnie życzenie żony, rybka odmawia, łódź rybaka tonie w morzu a on zostaje wyrzucony nad brzeg. Tam odnajduje go jego małżonka i razem wracają do swojego skromnego domu - dokładnie takiego jak ten z początku historii.',
   },
 };
 
