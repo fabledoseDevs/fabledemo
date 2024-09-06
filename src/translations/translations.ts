@@ -291,7 +291,7 @@ export const StoryCardThreeLittlePigs: StoryCardTranslation = {
   },
   pl: {
     title: 'Trzy Świnki',
-    url: '/trzy-swinki',
+    url: '/trzy-male-swinki',
     summary:
       'Trzy świnki wyruszają w wielki świat aby rozpocząć samodzielne życie. Ich historia nabiera dramatycznych barw, gdy muszą się skonfrontować z wilkiem.',
     synopsis:
