@@ -262,7 +262,7 @@ export const SocialIconsTranslations: SocialIconsTranslation = {
 // StoryCard - Goldilocks
 export const StoryCardGoldilocks: StoryCardTranslation = {
   en: {
-    title: 'Goldilocks and Three Bears',
+    title: 'Goldilocks and The Three Bears',
     url: '/goldilocks-and-three-bears',
     summary:
       'A golden-haired girl accidentally discovers a little wooden house in the middle of the woods. Despite not knowing the owners, she enters the cabin, wreaking havoc with every step she takes. Will she face the consequences of her actions?',
@@ -290,7 +290,7 @@ export const StoryCardThreeLittlePigs: StoryCardTranslation = {
       'Three little pigs leave their home to seek independence and build their own houses. Each pig constructs a dwelling using different materials: straw, sticks, and bricks. Their efforts are soon challenged by a cunning wolf who intends to eat them. The wolf first tries to blow down the straw house, then the stick house, both attempts successful. However, it fails to destroy the sturdier brick house. The pigs successfully thwart the wolf’s attempts to enter their haven and remain safe. Ultimately, the story highlights the virtues of diligence and the importance of careful planning, as the pig who built his house with bricks perseveres through adversity, demonstrating the benefits of hard work and resilience.',
   },
   pl: {
-    title: 'Trzy Świnki',
+    title: 'Trzy Małe Świnki',
     url: '/trzy-male-swinki',
     summary:
       'Trzy świnki wyruszają w wielki świat aby rozpocząć samodzielne życie. Ich historia nabiera dramatycznych barw, gdy muszą się skonfrontować z wilkiem.',
