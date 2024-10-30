@@ -22,7 +22,7 @@ import { BOOKCARD_LAYOUT } from '@/components/StoryCard/StoryCard.types';
 import { useSettingsContext } from '@/context/SettingsContext/SettingsContext.provider';
 import {
   JumbotronTranslations,
-  StoryCardFishermanAndTheGoldfish,
+  StoryCardFishermanAndHisWife,
   StoryCardGoldilocks,
   StoryCardThreeLittlePigs,
   TemplateLandingPageTranslations,
@@ -65,7 +65,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
     synopsis: goldfishSynopsis,
     summary: goldfishSummary,
     url: goldfishUrl,
-  } = useTranslation(StoryCardFishermanAndTheGoldfish);
+  } = useTranslation(StoryCardFishermanAndHisWife);
   const {
     subtitle: jumboSubtitle,
     before: jumboBefore,
@@ -73,7 +73,7 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
     redLineText: jumboRedLine,
   } = useTranslation(JumbotronTranslations);
   const {
-    storyCardButtonLabel: { read, comingSoon },
+    storyCardButtonLabel: { read },
     projectSummary: { mainText, supplementaryText },
   } = useTranslation(TemplateLandingPageTranslations);
 
@@ -154,12 +154,12 @@ export const TemplateLandingPage: TemplateLandingPageType = () => {
         content={{
           bookTitle: goldfishTitle,
           ctaButton: {
-            purpose: PURPOSE.FUNCTION_TRIGGER,
-            label: comingSoon,
+            purpose: PURPOSE.ANCHOR,
+            label: read,
             anchorLink: goldfishUrl,
             colorVariant: COLOR_VARIANTS.GREEN,
             fontVariant: FONT_VARIANTS.UPPERCASE,
-            isDisabled: true,
+            isDisabled: false,
             onclickAction: () => track('Open story: Goldfish'),
           },
           summary: goldfishSummary,
