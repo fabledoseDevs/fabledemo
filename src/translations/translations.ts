@@ -299,11 +299,11 @@ export const StoryCardThreeLittlePigs: StoryCardTranslation = {
   },
 };
 
-// StoryCard - Three Little Pigs
-export const StoryCardFishermanAndTheGoldfish: StoryCardTranslation = {
+// StoryCard - Fisherman and His Wife
+export const StoryCardFishermanAndHisWife: StoryCardTranslation = {
   en: {
-    title: 'The Fisherman and The Goldfish',
-    url: '/fisherman-and-the-goldfish',
+    title: 'The Fisherman and His Wife',
+    url: '/the-fisherman-and-his-wife',
     summary:
       "A fisherman's life spirals into chaos because of a golden fish. Will he be able to stop the impending disaster and save himself and his wife?",
     synopsis:
@@ -311,7 +311,7 @@ export const StoryCardFishermanAndTheGoldfish: StoryCardTranslation = {
   },
   pl: {
     title: 'O Rybaku i Złotej Rybce',
-    url: '/o-rybau-i-zlotej-rybce',
+    url: '/o-rybaku-i-zlotej-rybce',
     summary:
       'Życie rybaka zamienia się w chaos za sprawą złotej rybki. Czy uda mu się powstrzymać nachodzącą katastrofę i ocalić siebie oraz swoją żonę?',
     synopsis:

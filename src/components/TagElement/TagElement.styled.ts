@@ -56,7 +56,7 @@ export const IconBox = styled.div`
 export const DescriptionBox = styled.p`
   display: flex;
   align-items: center;
-  justify-items: center;
+  text-align: left;
   padding-left: 24px;
   height: 80px;
   width: calc(100% - 120px);
