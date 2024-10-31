@@ -313,7 +313,7 @@ export const StoryCardFishermanAndHisWife: StoryCardTranslation = {
     title: 'O Rybaku i Złotej Rybce',
     url: '/o-rybaku-i-zlotej-rybce',
     summary:
-      'Życie rybaka wypełnia chaos za sprawą złotej rybki. Czy uda mu się powstrzymać nadchodzącą katastrofę i ocalić siebie oraz swoją żonę?',
+      'Życie rybaka wywraca się do góry nogami za sprawą złotej rybki. Czy uda mu się powstrzymać nadchodzącą katastrofę i ocalić siebie oraz swoją żonę?',
     synopsis:
       'Bajka opowiada o rybaku i jego żonie. Pewnego dnia rybak łowi złotą flądrę, która oferuje spełnienie życzeń w zamian za wolność. Początkowo rybak wypuszcza ją bez próśb, lecz po naradzie z żoną wraca do niej i prosi o większy dom. Rybka spełnia życzenie. Jednak żonie rybaka szybko przestaje to wystarczać; wysyła męża po kolejne dary: najpierw dwór, potem pałac i królestwo, a w końcu moc równą Bogu. Gdy rybak wypowiada ostatnie życzenie, flądra odmawia. Jego łódź tonie podczas sztormu, a morze wyrzuca rybaka na brzeg tuż pod domem, który znów jest skromną lepianką.',
   },
